@@ -1,15 +1,17 @@
-import { Component, AfterViewInit, signal } from '@angular/core';
+import { Component, AfterViewInit, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Breadcrumb } from './componentes/breadcrumb/breadcrumb';
 import { Footer } from './componentes/footer/footer';
 import { Header } from './componentes/header/header';
 import { Menu } from './componentes/menu/menu';
+import { FormsModule } from '@angular/forms';
+import { WebcomponentsAngularModule } from '@govbr-ds/webcomponents-angular';
 
 declare const core: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Breadcrumb, Footer, Header, Menu],
+  imports: [RouterOutlet, FormsModule, Footer, Header, Menu, WebcomponentsAngularModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -17,6 +19,14 @@ declare const core: any;
 export class App implements AfterViewInit {
   protected readonly title = signal('prototipoincra');
   ngAfterViewInit(): void {
+
+    const datetimepickerList = []
+    for (const brDateTimePicker of window.document.querySelectorAll(
+      '.br-datetimepicker'
+    )) {
+      datetimepickerList.push(
+        new core.BRDateTimePicker('br-datetimepicker', brDateTimePicker, { minDate: '15/04/2022', maxDate: '20/04/2022' }))
+    };
 
     const header = document.querySelector('.br-header');
     if (header) new core.BRHeader('br-header', header);
@@ -61,6 +71,11 @@ export class App implements AfterViewInit {
       //Exemplo de uso de listener do select
       brSelect.addEventListener('onChange', function (e) { })
       selectList.push(brselect)
+    }
+
+    const listList = []
+    for (const brList of window.document.querySelectorAll(('.br-list'))) {
+      listList.push(new core.BRList('br-list', brList))
     }
 
     const breadcrumbList = []

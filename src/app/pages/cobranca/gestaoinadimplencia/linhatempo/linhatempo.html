@@ -1,0 +1,141 @@
+<br-tab>
+    <br-tab-item tab-item-title="Linha do Tempo Processual" icon="fa-history" is-active="true">
+        <div class="br-card timeline-card">
+            <br-divider></br-divider>
+            <div class="card-content">
+
+                <div class="timeline">
+                    <div *ngFor="let item of itemsComEstado" class="timeline-item" [ngClass]="item.estado">
+
+                        <!-- marcador -->
+                        <div class="timeline-marker">
+                            <ng-container [ngSwitch]="item.estado">
+                                <i *ngSwitchCase="'done'" class="fas fa-check"></i>
+                                <span *ngSwitchDefault>{{ item.id }}</span>
+                            </ng-container>
+                        </div>
+
+                        <!-- conteúdo -->
+                        <div class="timeline-content">
+                            <div class="title">{{ item.titulo }}</div>
+                            <div class="meta" *ngIf="item.meta">{{ item.meta }}</div>
+                            <p>{{ item.descricao }}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </br-tab-item>
+    <br-tab-item tab-item-title="Dados Registrados do Processo" icon="fa-table">
+        <div class="processo-container">
+
+            <!-- 1ª Notificação -->
+            <div class="br-card" *ngIf="etapaAtual >= 2">
+                <div class="card-header">
+                    <h3>1ª Notificação</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data:</strong> 10/01/2026</p>
+                    <p><strong>Endereço conhecido?:</strong> Sim</p>
+                    <p><strong>Endereço notificação:</strong> Rua Platina, 169 - Belo Horizonte/Minas Gerais - 30411-401</p>
+                    <p><strong>Nº SEI:</strong> 1320.1324.571-1000/31</p>
+                </div>
+            </div>
+
+            <!-- Prazo defesa/pagamento -->
+            <div class="br-card" *ngIf="etapaAtual >= 3">
+                <div class="card-header">
+                    <h3>Prazo defesa/pagamento</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data da Defesa:</strong> 18/01/2026</p>
+                    <p><strong>Defesa Apresentada:</strong> Sim</p>
+                    <p><strong>Resultado:</strong> <span class="br-tag danger">Indeferida</span></p>
+                    <p><strong>Analista:</strong> Maria Oliveira</p>
+                    <p><strong>Fundamentação:</strong> Ausência de provas suficientes</p>
+                    <p><strong>Observação:</strong> Mantida penalidade original.</p>
+                </div>
+            </div>
+
+            <!-- Decisão administrativa -->
+            <div class="br-card" *ngIf="etapaAtual >= 4">
+                <div class="card-header">
+                    <h3>Decisão administrativa</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data:</strong> 25/01/2026</p>
+                    <p><strong>Tipo:</strong> Notificação de Decisão</p>
+                    <p><strong>Forma:</strong> Edital</p>
+                    <p><strong>Status:</strong> <span class="br-tag warning">Publicada</span></p>
+                    <p><strong>Responsável:</strong> Carlos Souza</p>
+                    <p><strong>Prazo para recurso:</strong> 10 dias</p>
+                    <p><strong>Observação:</strong> Publicação em diário oficial.</p>
+                </div>
+            </div>
+
+            <!-- 2ª Notificação -->
+            <div class="br-card" *ngIf="etapaAtual >= 5">
+                <div class="card-header">
+                    <h3>2ª Notificação</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data do Recurso:</strong> 02/02/2026</p>
+                    <p><strong>Recurso Apresentado:</strong> Sim</p>
+                    <p><strong>Resultado:</strong> <span class="br-tag danger">Indeferido</span></p>
+                    <p><strong>Julgador:</strong> Comissão Recursal</p>
+                    <p><strong>Fundamentação:</strong> Reiteração de argumentos já analisados</p>
+                    <p><strong>Observação:</strong> Decisão mantida integralmente.</p>
+                </div>
+            </div>
+
+            <!-- Prazo defesa/pagamento -->
+            <div class="br-card" *ngIf="etapaAtual >= 6">
+                <div class="card-header">
+                    <h3>Prazo defesa/pagamento</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data:</strong> 15/02/2026</p>
+                    <p><strong>Houve Recurso:</strong> Sim</p>
+                    <p><strong>Status:</strong> <span class="br-tag info">Encerrado</span></p>
+                    <p><strong>Responsável:</strong> Sistema</p>
+                    <p><strong>Observação:</strong> Não cabem mais recursos administrativos.</p>
+                </div>
+            </div>
+
+            <!-- Recurso ao superintendente -->
+            <div class="br-card" *ngIf="etapaAtual >= 7">
+                <div class="card-header">
+                    <h3>Recurso ao superintendente</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data:</strong> 20/02/2026</p>
+                    <p><strong>Forma:</strong> Pessoal</p>
+                    <p><strong>Status:</strong> <span class="br-tag warning">Entregue</span></p>
+                    <p><strong>Responsável:</strong> Fernanda Lima</p>
+                    <p><strong>Conteúdo:</strong> Comunicação de penalidade definitiva</p>
+                    <p><strong>Observação:</strong> Assinatura confirmada.</p>
+                </div>
+            </div>
+
+            <!-- Trânsito em julgado -->
+            <div class="br-card" *ngIf="etapaAtual >= 8">
+                <div class="card-header">
+                    <h3>Trânsito em julgado</h3>
+                </div>
+                <div class="card-content">
+                    <p><strong>Data de Inscrição:</strong> 05/03/2026</p>
+                    <p><strong>Status:</strong> <span class="br-tag danger">Inscrito</span></p>
+                    <p><strong>Órgão:</strong> Secretaria da Fazenda</p>
+                    <p><strong>Valor:</strong> R$ 12.450,00</p>
+                    <p><strong>CADIN:</strong> Sim</p>
+                    <p><strong>Observação:</strong> Débito encaminhado para cobrança judicial.</p>
+                </div>
+            </div>
+
+        </div>
+    </br-tab-item>
+</br-tab>
+
+<!-- timeline.component.html -->

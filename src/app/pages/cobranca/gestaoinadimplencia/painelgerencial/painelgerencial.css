@@ -1,0 +1,139 @@
+/* CARDS */
+
+.dashboard-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-cards {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.indicador {
+  text-align: center;
+  padding: 16px;
+}
+
+.indicador-numero {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.indicador-texto {
+  font-size: 0.9rem;
+  color: var(--gray-60);
+}
+
+/* cores */
+.azul { color: #1351b4; }
+.vermelho { color: #d9382b; }
+.amarelo { color: #ffb300; }
+.verde { color: #2e7d32; }
+
+
+/* Painel Distribuição de Casos por Fase Processual */
+
+.br-card {
+  padding: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.br-progress {
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.br-progress-bar {
+  height: 100%;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Ajustes de cores (caso não use classes padrão completas) */
+.bg-danger { background-color: #e60000; }
+.bg-warning { background-color: #ffcd07; color: #000; }
+.bg-primary { background-color: #1351b4; }
+.bg-success { background-color: #168821; }
+
+
+
+
+
+/* Casos por Superintendência (Top 5) e Gargalos Operacionais */
+
+.row {
+  display: flex;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.br-card {
+  padding: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Progress */
+.br-progress {
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.br-progress-bar {
+  height: 100%;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Badges estilo GOVBR-like */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.badge.danger {
+  background-color: #e60000;
+  color: #fff;
+}
+
+.badge.warning {
+  background-color: #ffcd07;
+  color: #000;
+}
+
+/* Cores */
+.bg-danger { background-color: #e60000; }
+.bg-warning { background-color: #ffcd07; color: #000; }
+.bg-primary { background-color: #1351b4; }

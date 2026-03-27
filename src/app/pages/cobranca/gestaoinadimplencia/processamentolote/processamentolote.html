@@ -1,0 +1,168 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Cobrança' },
+    { label: 'Gestão de Inadimplência' },
+    { label: 'Emissão em Lote por Fase' }    
+  ]">
+</app-breadcrumb>
+
+<h1>Emissão em Lote por Fase</h1>
+
+
+<div class="br-table">
+    <div class="table-header">
+        <div class="top-bar">
+            <div class="table-title">Título da Tabela</div>
+        </div>
+        <div class="selected-bar">
+            <div class="info"><span class="count">0</span><span class="text">item selecionado</span></div>
+            <div class="actions-trigger text-nowrap">
+                <button class="br-button circle inverted" type="button" id="button-dropdown-selection"
+                    data-toggle="dropdown" data-target="target02-44728" aria-controls="target02-44728"
+                    aria-label="Ver mais opções de ação" aria-haspopup="true"><i class="fas fa-ellipsis-v"
+                        aria-hidden="true"></i>
+                </button>
+                <div class="br-list" id="target02-44728" role="menu" aria-labelledby="button-dropdown-selection"
+                    hidden="hidden">
+                    <button class="br-item" type="button" data-toggle="" role="menuitem">Ação 1
+                    </button><span class="br-divider"></span>
+                    <button class="br-item" type="button" role="menuitem">Ação 2
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table>
+        <caption>Título da Tabela</caption>
+        <thead>
+            <tr>
+                <th class="column-checkbox" scope="col">
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-all-44728" name="check-all-44728" type="checkbox" aria-label="Selecionar tudo"
+                            data-parent="check-01-44728" />
+                        <label for="check-all-44728">Selecionar todas as linhas</label>
+                    </div>
+                </th>
+                <th scope="col">Caso</th>
+                <th scope="col">Beneficiário/CPF</th>
+                <th scope="col">PA/Lote</th>
+                <th scope="col">Débito (R$)</th>
+                <th scope="col">Tipo Notificação</th>
+                <th scope="col">Status</th>
+                <th scope="col">Emissão</th>
+                <th scope="col">Nº Documento SEI</th>
+                <th scope="col">Data</th>
+                <th scope="col">Recebimento</th>
+                <th scope="col">Forma Recebimento</th>
+                <th scope="col">Prazo</th>
+                <th scope="col">Defesa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-line-1-44728" name="check-line-1-44728" type="checkbox"
+                            aria-label="Selecionar linha 1" data-child="check-01-44728" />
+                        <label for="check-line-1-44728">Selecionar linha 1</label>
+                    </div>
+                </td>
+                <td data-th="Título coluna 1">Linha 1 coluna 1</td>
+                <td data-th="Título coluna 2">Linha 1 coluna 2</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 3</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 4</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 5</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 6</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 7</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 8</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 9</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 10</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 11</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 12</td>
+                <td data-th="Título coluna 3">Linha 1 coluna 13</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="table-footer">
+        <nav class="br-pagination" aria-label="paginação" data-total="50" data-current="1" data-per-page="20">
+            <div class="pagination-per-page">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="per-page-selection-random-64610">Exibir</label>
+                        <input id="per-page-selection-random-64610" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-10-random-64610" type="radio" name="per-page-random-64610"
+                                    value="per-page-10-random-64610" checked="checked" />
+                                <label for="per-page-10-random-64610">10</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-20-random-64610" type="radio" name="per-page-random-64610"
+                                    value="per-page-20-random-64610" />
+                                <label for="per-page-20-random-64610">20</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-30-random-64610" type="radio" name="per-page-random-64610"
+                                    value="per-page-30-random-64610" />
+                                <label for="per-page-30-random-64610">30</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
+                    class="per-page">20</span>&nbsp;de&nbsp;<span class="total">50</span>&nbsp;itens</div>
+            <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="go-to-selection-random-43734">Página</label>
+                        <input id="go-to-selection-random-43734" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-1-random-43734" type="radio" name="go-to-random-43734"
+                                    value="go-to-1-random-43734" checked="checked" />
+                                <label for="go-to-1-random-43734">1</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-2-random-43734" type="radio" name="go-to-random-43734"
+                                    value="go-to-2-random-43734" />
+                                <label for="go-to-2-random-43734">2</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-3-random-43734" type="radio" name="go-to-random-43734"
+                                    value="go-to-3-random-43734" />
+                                <label for="go-to-3-random-43734">3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-arrows ml-auto ml-sm-0">
+                <button class="br-button circle" type="button" aria-label="Voltar página"><i class="fas fa-angle-left"
+                        aria-hidden="true"></i>
+                </button>
+                <button class="br-button circle" type="button" aria-label="Página seguinte"><i
+                        class="fas fa-angle-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>

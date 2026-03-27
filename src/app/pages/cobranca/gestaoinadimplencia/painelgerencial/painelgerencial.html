@@ -1,0 +1,263 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Cobrança' },
+    { label: 'Gestão de Inadimplência', url: '/cobranca/gestaoinadimplencia' },
+    { label: 'Painel Gerencial' }
+  ]">
+</app-breadcrumb>
+
+<h1>Painel Gerencial</h1>
+
+<!-- Cards -->
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-cards">
+
+        <div class="br-card indicador">
+            <div class="indicador-numero azul">47</div>
+            <div class="indicador-texto">Total de Casos Ativos em todas as SRs</div>
+        </div>
+
+        <div class="br-card indicador">
+            <div class="indicador-numero vermelho">18</div>
+            <div class="indicador-texto">Risco de Prescrição &lt; 6 meses</div>
+        </div>
+
+        <div class="br-card indicador">
+            <div class="indicador-numero amarelo">42</div>
+            <div class="indicador-texto">Prazos Expirando &lt; 15 dias na etapa atual</div>
+        </div>
+
+        <div class="br-card indicador">
+            <div class="indicador-numero azul">89</div>
+            <div class="indicador-texto">Concluídos (2025) inscritos em dívida ativa</div>
+        </div>
+
+        <div class="br-card indicador">
+            <div class="indicador-numero verde">R$ 1.8M</div>
+            <div class="indicador-texto">Valor Total em Cobrança débitos atualizados</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Painel Distribuição de Casos por Fase Processual -->
+
+<div class="br-card">
+    <div class="card-header d-flex align-items-center">
+        <i class="fas fa-chart-bar text-primary mr-2"></i>
+        <h3 class="mb-0">Distribuição de Casos por Fase Processual</h3>
+    </div>
+
+    <div class="card-content">
+
+        <!-- Item -->
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>1ª Notificação</span>
+                <strong>69</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-danger" style="width: 28%;">28%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>Prazo de Defesa</span>
+                <strong>35</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-warning" style="width: 14%;">14%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>Decisão Administrativa</span>
+                <strong>25</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-primary" style="width: 10%;">10%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>2ª Notificação</span>
+                <strong>30</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-primary" style="width: 12%;">12%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>Recurso</span>
+                <strong>17</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-primary" style="width: 7%;">7%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>Trânsito em Julgado</span>
+                <strong>20</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-success" style="width: 8%;">8%</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex justify-content-between">
+                <span>Notif. Art. 34</span>
+                <strong>27</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-warning" style="width: 11%;">11%</div>
+            </div>
+        </div>
+
+        <div class="mb-0">
+            <div class="d-flex justify-content-between">
+                <span>Dívida Ativa / CADIN</span>
+                <strong>24</strong>
+            </div>
+            <div class="br-progress">
+                <div class="br-progress-bar bg-success" style="width: 10%;">10%</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- Casos por Superintendência (Top 5) e Gargalos Operacionais -->
+
+<div class="row">
+
+  <!-- CARD 1 -->
+  <div class="col-6">
+    <div class="br-card">
+      <div class="card-header d-flex align-items-center">
+        <i class="fas fa-building text-primary mr-2"></i>
+        <h3 class="mb-0">Casos por Superintendência (Top 5)</h3>
+      </div>
+
+      <div class="card-content">
+
+        <table class="br-table">
+          <thead>
+            <tr>
+              <th>SR</th>
+              <th>Ativos</th>
+              <th>Prescrição &lt;6m</th>
+              <th>Concluídos</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><strong>SR-12 (Marabá)</strong></td>
+              <td>47</td>
+              <td><span class="badge danger">5</span></td>
+              <td>22</td>
+            </tr>
+
+            <tr>
+              <td><strong>SR-01 (Belém)</strong></td>
+              <td>38</td>
+              <td><span class="badge danger">3</span></td>
+              <td>15</td>
+            </tr>
+
+            <tr>
+              <td><strong>SR-06 (BH)</strong></td>
+              <td>35</td>
+              <td><span class="badge warning">2</span></td>
+              <td>18</td>
+            </tr>
+
+            <tr>
+              <td><strong>SR-27 (Marabá II)</strong></td>
+              <td>31</td>
+              <td><span class="badge danger">4</span></td>
+              <td>12</td>
+            </tr>
+
+            <tr>
+              <td><strong>SR-21 (Araguaína)</strong></td>
+              <td>28</td>
+              <td><span class="badge warning">1</span></td>
+              <td>10</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="col-6">
+    <div class="br-card">
+      <div class="card-header d-flex align-items-center">
+        <i class="fas fa-triangle-exclamation text-warning mr-2"></i>
+        <h3 class="mb-0">Gargalos Operacionais</h3>
+      </div>
+
+      <div class="card-content">
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Aguard. emissão notificação</span>
+            <strong>42</strong>
+          </div>
+          <div class="br-progress">
+            <div class="br-progress-bar bg-danger" style="width: 65%;">65%</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Sem nº SEI registrado</span>
+            <strong>19</strong>
+          </div>
+          <div class="br-progress">
+            <div class="br-progress-bar bg-warning" style="width: 30%;">30%</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Decisão pendente chefia</span>
+            <strong>14</strong>
+          </div>
+          <div class="br-progress">
+            <div class="br-progress-bar bg-primary" style="width: 22%;">22%</div>
+          </div>
+        </div>
+
+        <div class="mb-0">
+          <div class="d-flex justify-content-between">
+            <span>Recurso sem análise SR/O</span>
+            <strong>8</strong>
+          </div>
+          <div class="br-progress">
+            <div class="br-progress-bar bg-primary" style="width: 12%;">12%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --base-href https://marcorapg.github.io/PrototipoINCRA/ && npx angular-cli-ghpages --dir=dist/prototipoincra/browser"
   },
   "prettier": {
     "printWidth": 100,
@@ -31,6 +32,8 @@
     "@angular/router": "^21.1.0",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@govbr-ds/core": "^3.7.0",
+    "@govbr-ds/webcomponents": "^2.0.0-next.64",
+    "@govbr-ds/webcomponents-angular": "^2.0.0-next.64",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
