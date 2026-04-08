@@ -89,6 +89,6 @@ export class Fase3 {
 
   avancarFase(): void {
     this.db.changePhase(1, 2);
-    this.etapaChange.emit(4);
+    this.etapaChange.emit(5);
   }
 }

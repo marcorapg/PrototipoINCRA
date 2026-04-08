@@ -7,16 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-fase4',
+  selector: 'app-fase7',
   imports: [CommonModule, FormsModule, Cardtarefa, BrDivider, BrDatetimePicker, BrRadio, BrInput, BrSelect, BrMessage],
-  templateUrl: './fase4.html',
-  styleUrl: './fase4.css',
+  templateUrl: './fase7.html',
+  styleUrl: './fase7.css',
 })
-export class Fase4 implements OnInit {
-
+export class Fase7 {
   @Output() etapaChange = new EventEmitter<number>();
 
-  stepnumber: number = 5;
+  stepnumber: number = 7;
 
   enderecoConhecido: string = '';
 
@@ -40,6 +39,8 @@ export class Fase4 implements OnInit {
   etapaAtual = 0;
 
   steps = [
+    { concluido: false },
+    { concluido: false },
     { concluido: false },
     { concluido: false },
     { concluido: false },
@@ -92,6 +93,6 @@ export class Fase4 implements OnInit {
 
   avancarFase(): void {
     this.db.changePhase(1, 2);
-    this.etapaChange.emit(6);
+    this.etapaChange.emit(10);
   }
 }

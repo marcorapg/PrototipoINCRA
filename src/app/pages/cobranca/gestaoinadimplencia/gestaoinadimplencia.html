@@ -1,11 +1,36 @@
 <app-breadcrumb [items]="[
     { label: 'Página inicial', url: '/' },
     { label: 'Cobrança' },
-    { label: 'Minha Fila — Gestão de Inadimplência' }
+    { label: 'Gestão de Inadimplência' }
   ]">
 </app-breadcrumb>
 
-<h1>Minha Fila — Gestão de Inadimplência</h1>
+<div class="page-header">
+
+  <!-- Topo -->
+  <div class="header-top">
+    <h1 class="br-title">Gestão de Inadimplência</h1>
+
+    <button class="br-button success small" [routerLink]="['/cobranca/gestaoinadimplencia/processamentolote']">
+      <i class="fas fa-file-alt mr-1"></i>
+      Emissão em Lote por Fase
+      <i class="fas fa-arrow-right ml-1"></i>
+    </button>
+  </div>
+
+  <!-- Alerta -->
+  <div class="br-message danger custom-warning">
+    <div class="icon">
+      <i class="fas fa-exclamation-triangle"></i>
+    </div>
+
+    <div class="content">
+      <strong>Atenção:</strong>
+      Existem <strong>3 casos</strong> com risco de prescrição nos próximos <strong>3 meses</strong>.
+    </div>
+  </div>
+
+</div>
 
 <!-- Cards -->
 
@@ -19,22 +44,22 @@
 
         <div class="br-card indicador">
             <div class="indicador-numero vermelho">12</div>
-            <div class="indicador-texto">Aguardando Notificação</div>
+            <div class="indicador-texto">Notificações Pendentes</div>
         </div>
 
         <div class="br-card indicador">
             <div class="indicador-numero amarelo">8</div>
-            <div class="indicador-texto">Prazo Expirando (&lt;15d)</div>
+            <div class="indicador-texto">Decisões Pendentes</div>
         </div>
 
         <div class="br-card indicador">
             <div class="indicador-numero azul">5</div>
-            <div class="indicador-texto">Defesas Pendentes</div>
+            <div class="indicador-texto">Certidões Pendentes</div>
         </div>
 
         <div class="br-card indicador">
             <div class="indicador-numero verde">22</div>
-            <div class="indicador-texto">Concluídos este mês</div>
+            <div class="indicador-texto">Concluídos este ano</div>
         </div>
     </div>
 </div>
@@ -100,51 +125,72 @@
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit1" type="checkbox">
-                                <label for="sit1">Aguard. 1ª Notificação</label>
+                                <label for="sit1">1ª Notificação</label>
+                            </div>
+                        </div>
+
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-checkbox">
+                                <input id="sit21" type="checkbox">
+                                <label for="sit21">Acompanhamento de recebimento de notificação</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit2" type="checkbox">
-                                <label for="sit2">Defesa / Decisão</label>
+                                <label for="sit2">Prazo defesa/pagamento</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit3" type="checkbox">
-                                <label for="sit3">Aguard. 2ª Notificação</label>
+                                <label for="sit3">Decisão administrativa</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit4" type="checkbox">
-                                <label for="sit4">Recurso</label>
+                                <label for="sit4">2ª Notificação</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit5" type="checkbox">
-                                <label for="sit5">Trânsito em Julgado</label>
+                                <label for="sit5">Recurso ao superintendente</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit6" type="checkbox">
-                                <label for="sit6">Notif. Art. 34</label>
+                                <label for="sit6">Trânsito em julgado</label>
                             </div>
                         </div>
 
                         <div class="br-item" tabindex="-1">
                             <div class="br-checkbox">
                                 <input id="sit7" type="checkbox">
-                                <label for="sit7">Dívida Ativa / CADIN</label>
+                                <label for="sit7">Notificações finais</label>
                             </div>
                         </div>
+
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-checkbox">
+                                <input id="sit8" type="checkbox">
+                                <label for="sit8">Encaminhamentos para cadastro</label>
+                            </div>
+                        </div>
+
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-checkbox">
+                                <input id="sit9" type="checkbox">
+                                <label for="sit9">Checklist final</label>
+                            </div>
+                        </div>                 
 
                     </div>
                 </div>
@@ -311,5 +357,5 @@
     { field:'fase', header:'Fase', sortable:true, cellTemplate:faseTemplate, center:true },
     { field:'prescricao', header:'Prescrição', sortable:true, cellTemplate:prescricaoTemplate, center:true },
     { field:'vencimento', header:'Vencimento', sortable:true, cellTemplate:vencimentoTemplate, center:true }
-  ]" [data]="users" [actions]="actions" [pageSize]="5">
+  ]" [data]="users" [actions]="actions" [pageSize]="10">
 </app-table>

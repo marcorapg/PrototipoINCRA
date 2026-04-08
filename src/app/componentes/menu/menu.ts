@@ -1,10 +1,11 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 declare const core: any;
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './menu.html',
   styleUrl: './menu.css',
 })

@@ -16,7 +16,7 @@ export class Fase1 implements OnInit {
 
   @Output() etapaChange = new EventEmitter<number>();
 
-  stepnumber: number = 5;
+  stepnumber: number = 7;
 
   enderecoConhecido: string = '';
 
@@ -44,6 +44,8 @@ export class Fase1 implements OnInit {
     { concluido: false },
     { concluido: false },
     { concluido: false },
+    { concluido: false },
+    { concluido: false },    
     { concluido: false }
   ];
 

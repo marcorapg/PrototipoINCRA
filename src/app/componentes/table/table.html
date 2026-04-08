@@ -32,8 +32,8 @@
                     </ng-template>
                 </td>
                 <td *ngIf="actions.length">
-                    <button *ngFor="let action of actions" class="br-button circle small" type="button" [attr.id]="action.id"
-                        [attr.title]="action.tooltip" (click)="executeAction(action,row)">
+                    <button *ngFor="let action of actions" class="br-button circle small" type="button"
+                        [attr.id]="action.id" [attr.title]="action.tooltip" (click)="executeAction(action,row)">
                         <i class="fas" [ngClass]="action.icon"></i>
                     </button>
                 </td>
@@ -42,7 +42,37 @@
     </table>
 </div>
 
-<div class="br-pagination mt-3">
+<div class="pagination-header">
+
+    <!-- Esquerda -->
+    <div class="pagination-left">
+        <span class="label">Exibir</span>
+        <i class="fas fa-chevron-down icon"></i>
+    </div>
+
+
+
+    <!-- Direita (inclui paginação) -->
+
+    <div class="pagination-center">
+        <button class="br-button circle" (click)="prev()" [disabled]="currentPage === 1">
+            ‹
+        </button>
+        <button *ngFor="let p of pages" class="br-button circle" [class.active]="p === currentPage"
+            (click)="changePage(p)">
+            {{ p }}
+        </button>
+        <button class="br-button circle" (click)="next()" [disabled]="currentPage === totalPages">
+            ›
+        </button>
+    </div>
+    <!-- Centro -->
+    <div class="pagination-right">
+        1–20 de 50 itens
+    </div>
+</div>
+
+<!-- <div class="br-pagination mt-3">
     <button class="br-button circle" (click)="prev()" [disabled]="currentPage === 1">
         ‹
     </button>
@@ -52,4 +82,4 @@
     <button class="br-button circle" (click)="next()" [disabled]="currentPage === totalPages">
         ›
     </button>
-</div>
+</div> -->

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Cardtarefa } from '../cardtarefa/cardtarefa';
 import { Gestaoinadimplenciaservice, Registro } from '../../../../services/cobranca/gestaoinadimplenciaservice';
 import { BrDatetimePicker, BrDivider, BrInput, BrMessage, BrRadio, BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
@@ -7,13 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-fase4',
+  selector: 'app-faseacompanhamento',
   imports: [CommonModule, FormsModule, Cardtarefa, BrDivider, BrDatetimePicker, BrRadio, BrInput, BrSelect, BrMessage],
-  templateUrl: './fase4.html',
-  styleUrl: './fase4.css',
+  templateUrl: './faseacompanhamento.html',
+  styleUrl: './faseacompanhamento.css',
 })
-export class Fase4 implements OnInit {
-
+export class Faseacompanhamento {
+  @Input() etapaInput!: number;
   @Output() etapaChange = new EventEmitter<number>();
 
   stepnumber: number = 5;
@@ -91,7 +91,13 @@ export class Fase4 implements OnInit {
   }
 
   avancarFase(): void {
-    this.db.changePhase(1, 2);
-    this.etapaChange.emit(6);
+    //this.db.changePhase(1, 2);
+    console.log(this.etapaInput);
+    if (this.etapaInput == 2)
+      this.etapaChange.emit(3);
+    else if (this.etapaInput == 6)
+      this.etapaChange.emit(7);
+    else if (this.etapaInput == 10)
+      this.etapaChange.emit(11);
   }
 }

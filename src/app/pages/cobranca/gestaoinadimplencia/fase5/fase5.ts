@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class Fase5 {
   @Output() etapaChange = new EventEmitter<number>();
 
-  stepnumber: number = 4;
+  stepnumber: number = 3;
 
   enderecoConhecido: string = '';
 
@@ -39,7 +39,6 @@ export class Fase5 {
   etapaAtual = 0;
 
   steps = [
-    { concluido: false },
     { concluido: false },
     { concluido: false },
     { concluido: false }
@@ -90,6 +89,6 @@ export class Fase5 {
 
   avancarFase(): void {
     this.db.changePhase(1, 2);
-    this.etapaChange.emit(6);
+    this.etapaChange.emit(8);
   }
 }
