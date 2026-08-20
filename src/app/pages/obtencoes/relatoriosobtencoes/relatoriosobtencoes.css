@@ -1,0 +1,43 @@
+.br-card {
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.br-card:hover {
+    box-shadow: var(--shadow-2);
+}
+
+.br-item {
+    display: flex;
+    align-items: center;
+    min-height: 72px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar i {
+    font-size: 1.1rem;
+}
+
+.br-list {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.br-list .br-item {
+    min-height: 56px;
+    cursor: pointer;
+}
+
+.br-list .br-item:hover {
+    background: var(--gray-5);
+}

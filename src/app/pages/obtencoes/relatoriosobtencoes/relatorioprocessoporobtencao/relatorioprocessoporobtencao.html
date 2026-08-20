@@ -1,0 +1,181 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Central de Relatórios', url: '/obtencoes/relatoriosobtencoes' },
+    { label: 'Relatório de Processos por Obtenção', url: '/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao' }
+  ]">
+</app-breadcrumb>
+
+<h3>Relatório de Processos por Obtenção</h3>
+
+<p>Cruze dados por superintendência, forma de obtenção e grupo.</p>
+
+<!-- Filtros -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="br-card">
+            <div class="card-header">
+                <div class="ml-3">
+                    <div class="text-weight-semi-bold text-up-02">Filtros</div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="row mt-3 mb-3">
+                    <div class="col-2">
+                        <br-select label="Superintendências" is-multiple="true" placeholder="Selecione uma opção"
+                            options='[
+                            { "label": "SR(01) PA", "value": "01", "selected": false },
+                            { "label": "SR(02) CE", "value": "02", "selected": false },
+                            { "label": "SR(03) PE", "value": "03", "selected": false },
+                            { "label": "SR(04) GO", "value": "04", "selected": false },
+                            { "label": "SR(05) BA", "value": "05", "selected": false },
+                            { "label": "SR(06) MG", "value": "06", "selected": false },
+                            { "label": "SR(08) SP", "value": "08", "selected": false },
+                            { "label": "SR(09) PR", "value": "09", "selected": false },
+                            { "label": "SR(10) SC", "value": "10", "selected": false },
+                            { "label": "SR(11) RS", "value": "11", "selected": false },
+                            { "label": "SR(12) MA", "value": "12", "selected": false },
+                            { "label": "SR(13) MT", "value": "13", "selected": false },
+                            { "label": "SR(14) AC", "value": "14", "selected": false },
+                            { "label": "SR(15) AM", "value": "15", "selected": false },
+                            { "label": "SR(16) MS", "value": "16", "selected": false },
+                            { "label": "SR(18) PB", "value": "18", "selected": false },
+                            { "label": "SR(19) RN", "value": "19", "selected": false },
+                            { "label": "SR(20) ES", "value": "20", "selected": false },
+                            { "label": "SR(22) AL", "value": "22", "selected": false },
+                            { "label": "SR(23) SE", "value": "23", "selected": false },
+                            { "label": "SR(24) PI", "value": "24", "selected": false },
+                            { "label": "SR(26) TO", "value": "26", "selected": false },
+                            { "label": "SR(27) MBA", "value": "27", "selected": false },
+                            { "label": "SR(28) DFE", "value": "28", "selected": false },
+                            { "label": "SR(29) MSF", "value": "29", "selected": false }
+                        ]'>
+                        </br-select>
+                    </div>
+
+                    <div class="col-4">
+                        <br-select label="Forma de Obtenção" is-multiple="true" placeholder="Selecione uma opção"
+                            options='[
+                        { "label": "Desapropriação Lei 8.629/93", "value": "1", "selected": false },
+                        { "label": "Desapropriação Lei 4.132/62", "value": "2", "selected": false },
+                        { "label": "Compra e Venda Decreto 433/92", "value": "3", "selected": false },
+                        { "label": "Doação", "value": "4", "selected": false },
+                        { "label": "Adjudicação", "value": "5", "selected": false },
+                        { "label": "Aquisição Onerosa (Compensação)", "value": "6", "selected": false },
+                        { "label": "Arrecadação de Terras Públicas  ", "value": "7", "selected": false }                      
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-2">
+                        <br-select label="Grupo" placeholder="Selecione uma opção" options='[
+                        { "label": "Assentamento Luz Maria", "value": "1", "selected": false },
+                        { "label": "Disputas judiciais", "value": "2", "selected": false },
+                        { "label": "Atenção especial", "value": "3", "selected": false }
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-4 mt-4 d-flex justify-content-end">
+
+                        <br-button emphasis="secondary">
+                            <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
+                            Limpar
+                        </br-button>
+
+
+                        <br-button emphasis="primary" class="ml-3" (click)="gerarRelatorio()">
+                            <i class="fas fa-clipboard-list mr-3" aria-hidden="true"></i>
+                            Gerar PDF
+                        </br-button>
+
+                        <br-button emphasis="primary" class="ml-3">
+                            <i class="fas fa-search mr-3" aria-hidden="true"></i>
+                            Buscar
+                        </br-button>
+
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3">
+                    <div class="col-12">
+                        <br-input label="Subtítulo do PDF (Opcional)" placeholder="Ex: Relatório Anual 2026"
+                            density="medium"></br-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid -->
+<div class="br-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Superintendência</th>
+                <th>Forma de Obtenção</th>
+                <th>Grupo</th>
+                <th>Processo</th>
+                <th>Imóvel</th>
+                <th>Município</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of imoveis; track item.processo) {
+            <tr>
+                <td>
+                    <a href="javascript:void(0)">
+                        {{item.superintendencia}}
+                    </a>
+                </td>
+                <td>{{item.forma}}</td>
+                <td>{{item.grupo}}</td>
+                <td>
+                    <span class="br-tag secondary">
+                        {{item.processo}}
+                    </span>
+                </td>
+                <td class="imovel">
+                    {{item.imovel}}
+                </td>
+                <td>{{item.municipio}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<div class="br-pagination mt-4">
+    <button class="br-button circle" aria-label="Anterior">
+        «
+    </button>
+
+    <button class="br-button circle primary">1</button>
+
+    <button class="br-button circle">2</button>
+
+    <button class="br-button circle">3</button>
+
+    <button class="br-button circle">…</button>
+
+    <button class="br-button circle">25</button>
+
+    <button class="br-button circle">26</button>
+
+    <button class="br-button circle">27</button>
+
+    <button class="br-button circle" aria-label="Próximo">
+        »
+    </button>
+
+    <span class="contador">
+        268 Imóveis
+    </span>
+</div>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button emphasis="secondary" [routerLink]="['/obtencoes/relatoriosobtencoes']">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Voltar
+    </br-button>
+</div>

@@ -1,0 +1,71 @@
+.relatorio {
+    padding: 14px;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+
+    table {
+
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+
+    }
+
+    th {
+
+        background: #8DB37D;
+        color: #fff;
+        border: 1px solid #d3d3d3;
+        padding: 4px 6px;
+        text-align: left;
+        font-weight: bold;
+        line-height: 1.1;
+
+    }
+
+    td {
+
+        border: 1px solid #dddddd;
+        padding: 2px 6px;
+        vertical-align: top;
+        line-height: 1.1;
+
+    }
+
+    .numero {
+
+        text-align: right;
+        white-space: nowrap;
+
+    }
+
+    .grupo td {
+
+        font-weight: bold;
+        border-top: 2px solid #4b8b45;
+        background: #fff;
+
+    }
+
+    .subtotal {
+
+        background: #eef7ea;
+        font-weight: bold;
+
+    }
+
+    .subtotal td {
+
+        border-top: 2px solid #4b8b45;
+
+    }
+
+    .total-geral {
+
+        background: #f5f5f5;
+        font-weight: bold;
+        font-size: 14px;
+
+    }
+
+}

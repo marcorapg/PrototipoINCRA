@@ -17,7 +17,7 @@ interface TemplateNotificacao {
 
 @Component({
   selector: 'app-gestaotemplate',
-  imports: [Breadcrumb, BrTable, BrSelect, BrInput, BrButton, BrTag, BrScrim, CommonModule, RouterLink],
+  imports: [Breadcrumb, BrSelect, BrInput, BrButton, BrTag, BrScrim, CommonModule, RouterLink],
   templateUrl: './gestaotemplate.html',
   styleUrl: './gestaotemplate.css',
 })

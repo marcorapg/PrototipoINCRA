@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fase9',
-  imports: [CommonModule, FormsModule, Cardtarefa, BrDivider, BrDatetimePicker, BrRadio, BrInput, BrSelect, BrMessage],
+  imports: [CommonModule, FormsModule, Cardtarefa, BrDivider, BrMessage],
   templateUrl: './fase9.html',
   styleUrl: './fase9.css',
 })

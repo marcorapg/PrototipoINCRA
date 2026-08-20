@@ -1,0 +1,55 @@
+.br-table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+thead th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tbody td {
+    vertical-align: top;
+}
+
+tbody tr:hover {
+    background: var(--background-light);
+}
+
+a {
+    color: var(--blue-warm-vivid-70);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.imovel {
+    font-weight: 600;
+}
+
+.br-tag {
+    cursor: pointer;
+}
+
+.br-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.contador {
+    margin-left: 1rem;
+    padding: .4rem .8rem;
+    border-radius: 4px;
+    background: var(--gray-10);
+    font-size: .875rem;
+}

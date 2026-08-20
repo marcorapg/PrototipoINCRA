@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Breadcrumb } from '../../../../componentes/breadcrumb/breadcrumb';
-import { BrTab, BrTabItem, BrButton, BrInput, BrIcon, BrTag, BrDatetimePicker, BrSelect, BrTable, BrTableCell, BrTableHeaderRow, BrTableRow, BrTableHeaderCell } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrButton, BrInput, BrTag, BrDatetimePicker, BrSelect, BrTable, BrTableCell, BrTableHeaderRow, BrTableRow, BrTableHeaderCell } from '@govbr-ds/webcomponents-angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -28,7 +28,7 @@ interface Notificacao {
 
 @Component({
   selector: 'app-visualizarenvio',
-  imports: [Breadcrumb, BrTab, BrTabItem, BrSelect, BrTag, BrButton, BrInput, BrTable, BrTableCell, BrTableHeaderRow, BrTableHeaderCell, BrTableRow, BrDatetimePicker, QuillModule, BrIcon, CommonModule, FormsModule, RouterLink],
+  imports: [Breadcrumb, BrSelect, BrTag, BrButton, BrInput, BrTable, BrTableCell, BrTableHeaderRow, BrTableHeaderCell, BrTableRow, BrDatetimePicker, QuillModule, CommonModule, FormsModule, RouterLink],
   templateUrl: './visualizarenvio.html',
   styleUrl: './visualizarenvio.css',
 })

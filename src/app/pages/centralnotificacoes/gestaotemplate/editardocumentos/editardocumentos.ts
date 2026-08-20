@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrInput, BrSelect, BrSwitch, BrDivider } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrInput, BrDivider } from '@govbr-ds/webcomponents-angular/standalone';
 import { QuillModule } from 'ngx-quill';
 
 interface VariavelTemplateDocumento {
@@ -12,7 +12,7 @@ interface VariavelTemplateDocumento {
 
 @Component({
   selector: 'app-editardocumentos',
-  imports: [CommonModule, FormsModule, BrInput, BrSelect, BrSwitch, BrDivider, QuillModule],
+  imports: [CommonModule, FormsModule, BrInput, BrDivider, QuillModule],
   templateUrl: './editardocumentos.html',
   styleUrl: './editardocumentos.css',
 })

@@ -11,6 +11,19 @@ import { Visualizarnotificacao } from './pages/centralnotificacoes/gestaonotific
 import { Gestaoenvio } from './pages/centralnotificacoes/gestaoenvio/gestaoenvio';
 import { Visualizarenvio } from './pages/centralnotificacoes/gestaoenvio/visualizarenvio/visualizarenvio';
 import { Centralnotificacoes } from './pages/centralnotificacoes/centralnotificacoes';
+import { Obtencoes } from './pages/obtencoes/obtencoes';
+import { Relatoriosobtencoes } from './pages/obtencoes/relatoriosobtencoes/relatoriosobtencoes';
+import { Relatorioprocessoporobtencao } from './pages/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/relatorioprocessoporobtencao';
+import { Dashboardobtencao } from './pages/obtencoes/dashboardobtencao/dashboardobtencao';
+import { Resultadoprocessoporobtencao } from './pages/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao/resultadoprocessoporobtencao';
+import { Relatorioprocessoporfase } from './pages/obtencoes/relatoriosobtencoes/relatorioprocessoporfase/relatorioprocessoporfase';
+import { Resultadoprocessoporfase } from './pages/obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase/resultadoprocessoporfase';
+import { Resultadofluxoorcamento } from './pages/obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamento/resultadofluxoorcamento';
+import { Relatoriofluxoorcamento } from './pages/obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/relatoriofluxoorcamento';
+import { Relatorioempenho } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/relatorioempenho';
+import { Resultadoempenho } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho/resultadoempenho';
+import { Resultadoorcamentoadjudicacao } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao/resultadoorcamentoadjudicacao';
+import { Resultadoorcamentocompensacao } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao/resultadoorcamentocompensacao';
 
 
 export const routes: Routes = [
@@ -29,5 +42,20 @@ export const routes: Routes = [
     { path: 'centralnotificacoes/gestaotemplate/editartemplate', component: Editartemplate },
     { path: 'centralnotificacoes/gestaonotificacao/visualizarnotificacao', component: Visualizarnotificacao },
     { path: 'centralnotificacoes/gestaoenvio', component: Gestaoenvio }, 
-    { path: 'centralnotificacoes/gestaoenvio/visualizarenvio', component: Visualizarenvio }
+    { path: 'centralnotificacoes/gestaoenvio/visualizarenvio', component: Visualizarenvio },
+
+    //Obtenções
+    { path: 'obtencoes', component: Obtencoes }, 
+    { path: 'obtencoes/relatoriosobtencoes', component: Relatoriosobtencoes },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao', component: Relatorioprocessoporobtencao },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao', component: Resultadoprocessoporobtencao },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporfase', component: Relatorioprocessoporfase },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase', component: Resultadoprocessoporfase },
+    { path: 'obtencoes/relatoriosobtencoes/relatoriofluxoorcamento', component: Relatoriofluxoorcamento },
+    { path: 'obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamento', component: Resultadofluxoorcamento },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioempenho', component: Relatorioempenho },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho', component: Resultadoempenho },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao', component: Resultadoorcamentoadjudicacao },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao', component: Resultadoorcamentocompensacao },
+    { path: 'obtencoes/dashboardobtencao', component: Dashboardobtencao }
 ];

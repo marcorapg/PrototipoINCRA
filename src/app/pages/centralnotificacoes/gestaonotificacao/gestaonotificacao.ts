@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Breadcrumb } from '../../../componentes/breadcrumb/breadcrumb';
-import { BrTable, BrSelect, BrInput, BrButton, BrScrim, BrTag, BrDatetimePicker } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrSelect, BrInput, BrButton, BrTag, BrDatetimePicker } from '@govbr-ds/webcomponents-angular/standalone';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -26,7 +26,7 @@ interface Notificacao {
 
 @Component({
   selector: 'app-gestaonotificacao',
-  imports: [Breadcrumb, BrTable, BrSelect, BrInput, BrButton, BrScrim, BrTag, BrDatetimePicker, CommonModule, RouterLink],
+  imports: [Breadcrumb, BrSelect, BrInput, BrButton, BrTag, BrDatetimePicker, CommonModule, RouterLink],
   templateUrl: './gestaonotificacao.html',
   styleUrl: './gestaonotificacao.css',
 })

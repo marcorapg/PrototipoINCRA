@@ -1,0 +1,67 @@
+.relatorio {
+ padding: 14px;
+    overflow: auto;
+
+    table {
+
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+
+    }
+
+    th {
+
+        background: #8fb581;
+        color: white;
+        padding: 8px;
+        border: 1px solid #d9d9d9;
+        text-align: left;
+        font-weight: 600;
+
+    }
+
+    td {
+
+        border: 1px solid #dcdcdc;
+        padding: 3px 6px;
+        vertical-align: top;
+
+    }
+
+    .numero {
+
+        text-align: right;
+
+    }
+
+    .grupo td {
+
+        font-weight: 600;
+        border-top: 2px solid #4f8c46;
+        background: white;
+
+    }
+
+    .subtotal {
+
+        background: #eef7ea;
+        font-weight: bold;
+
+    }
+
+    .subtotal td {
+
+        border-top: 2px solid #4f8c46;
+
+    }
+
+    .total-geral {
+
+        background: #f3f3f3;
+        font-weight: bold;
+        font-size: 15px;
+
+    }
+
+}

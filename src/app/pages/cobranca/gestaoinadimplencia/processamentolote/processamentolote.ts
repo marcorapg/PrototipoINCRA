@@ -8,7 +8,7 @@ declare const core: any;
 
 @Component({
   selector: 'app-processamentolote',
-  imports: [Breadcrumb, CommonModule, RouterLink, BrTable, BrTableCell, BrTableRow, BrTableHeaderRow, BrTableHeaderCell, BrCheckbox, BrTag, BrSelect, BrInput, BrDatetimePicker, BrTab, BrTabItem],
+  imports: [Breadcrumb, CommonModule, RouterLink, BrTag, BrSelect, BrInput, BrDatetimePicker, BrTab, BrTabItem],
   templateUrl: './processamentolote.html',
   styleUrl: './processamentolote.css',
 })

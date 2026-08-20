@@ -1,0 +1,412 @@
+/* =========================================================
+   RELATÓRIO ORÇAMENTÁRIO MENSAL
+   ========================================================= */
+
+.monthly-budget-report {
+    width: 100%;
+    max-width: 1800px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #263746;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.monthly-budget-report__header {
+    display: grid;
+
+    grid-template-columns:
+        405px 1fr;
+
+    min-height: 28px;
+
+    border-top: 2px solid #23814d;
+    border-bottom: 1px solid #aeb8c0;
+
+    background: #ffffff;
+}
+
+
+/* Filtro */
+
+.monthly-budget-report__filter {
+    display: flex;
+
+    align-items: center;
+
+    padding: 4px 7px;
+
+    border-right: 1px solid #9daab5;
+
+    background: #ffff00;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* Meses */
+
+.monthly-budget-report__months {
+    display: grid;
+
+    grid-template-columns: repeat(12, minmax(115px, 1fr));
+
+    min-width: 1380px;
+}
+
+.monthly-budget-report__months span {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 4px 7px;
+
+    border-right: 1px solid #d2d9df;
+
+    color: #172b3a;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ORÇAMENTO LOA
+   ========================================================= */
+
+.monthly-budget-report__budget {
+    display: grid;
+
+    grid-template-columns: 250px 250px;
+
+    min-height: 29px;
+}
+
+.monthly-budget-report__budget-label {
+    display: flex;
+
+    align-items: center;
+
+    padding: 5px 7px;
+
+    border-right: 1px solid #9daab5;
+    border-bottom: 1px solid #aeb8c0;
+
+    background: #ffc400;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.monthly-budget-report__budget-value {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 5px 8px;
+
+    border-bottom: 1px solid #aeb8c0;
+
+    background: #fff9dc;
+
+    color: #111111;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.monthly-budget-report__table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.monthly-budget-report__table {
+    width: 100%;
+    min-width: 1785px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   COLUNA DE DESCRIÇÃO
+   ========================================================= */
+
+.monthly-budget-report__cell--description {
+    width: 405px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   COLUNAS MENSAIS
+   ========================================================= */
+
+.monthly-budget-report__cell--money {
+    width: 115px;
+
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CÉLULAS
+   ========================================================= */
+
+.monthly-budget-report__cell {
+    height: 24px;
+
+    padding: 0px 0px;
+
+    border-right: 1px solid #d2d9df;
+    border-bottom: 1px solid #d2d9df;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LINHAS DE DADOS
+   ========================================================= */
+
+.monthly-budget-report__row {
+    background: #ffffff;
+}
+
+.monthly-budget-report__row:not(.monthly-budget-report__row--spacer):hover {
+    background: #f3f8f5;
+}
+
+.monthly-budget-report__row:not(.monthly-budget-report__row--spacer) .monthly-budget-report__cell--description {
+    color: #273b4c;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   VALORES NEGATIVOS
+   ========================================================= */
+
+.monthly-budget-report__cell--negative {
+    color: #d62828;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ESPAÇADOR INICIAL
+   ========================================================= */
+
+.monthly-budget-report__row--spacer {
+    background: #ffffff;
+}
+
+.monthly-budget-report__cell--spacer {
+    height: 14px;
+
+    padding: 0;
+
+    border: none;
+}
+
+
+/* =========================================================
+   TOTAL MÊS
+   ========================================================= */
+
+.monthly-budget-report__row--total {
+    border-top: 1px solid #6f7e8a;
+
+    background: #f4f6f8;
+}
+
+.monthly-budget-report__row--total .monthly-budget-report__cell {
+    height: 27px;
+
+    border-top: 1px solid #7d8994;
+
+    color: #172b3a;
+
+    font-weight: 700;
+}
+
+.monthly-budget-report__cell--total-label {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ACUMULADO DO ANO
+   ========================================================= */
+
+.monthly-budget-report__row--accumulated {
+    background: #fafbfc;
+}
+
+.monthly-budget-report__row--accumulated .monthly-budget-report__cell {
+    height: 27px;
+
+    color: #172b3a;
+
+    font-weight: 700;
+}
+
+.monthly-budget-report__row--accumulated .monthly-budget-report__cell--negative {
+    color: #263746;
+}
+
+
+/* =========================================================
+   ESPAÇO ANTES DO SALDO
+   ========================================================= */
+
+.monthly-budget-report__row--spacer .monthly-budget-report__cell--spacer {
+    height: 15px;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   SALDO DISPONÍVEL
+   ========================================================= */
+
+.monthly-budget-report__row--available {
+    background: #ffffff;
+}
+
+.monthly-budget-report__row--available .monthly-budget-report__cell {
+    height: 30px;
+
+    border-top: 2px solid #7d8994;
+
+    border-bottom: 1px solid #9daab5;
+
+    font-weight: 700;
+}
+
+.monthly-budget-report__cell--available-label {
+    color: #172b3a;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+.monthly-budget-report__cell--available-value {
+    color: #172b3a;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .monthly-budget-report__header,
+    .monthly-budget-report__budget {
+        grid-template-columns: 300px 1fr;
+    }
+
+    .monthly-budget-report__filter,
+    .monthly-budget-report__budget-label {
+        width: 300px;
+    }
+
+    .monthly-budget-report__cell--description {
+        width: 300px;
+    }
+
+    .monthly-budget-report__cell--money {
+        width: 115px;
+    }
+
+    .monthly-budget-report__table {
+        min-width: 1680px;
+    }
+}
+
+
+/* =========================================================
+   IMPRESSÃO / PDF
+   ========================================================= */
+
+@media print {
+
+    .monthly-budget-report {
+        max-width: none;
+    }
+
+    .monthly-budget-report__table-wrapper {
+        overflow: visible;
+    }
+
+    .monthly-budget-report__table {
+        min-width: 0;
+    }
+
+    .monthly-budget-report__row:not(.monthly-budget-report__row--spacer):hover {
+        background: inherit;
+    }
+
+    .monthly-budget-report__header,
+    .monthly-budget-report__budget,
+    .monthly-budget-report__row--total,
+    .monthly-budget-report__row--accumulated,
+    .monthly-budget-report__row--available {
+        break-inside: avoid;
+    }
+}

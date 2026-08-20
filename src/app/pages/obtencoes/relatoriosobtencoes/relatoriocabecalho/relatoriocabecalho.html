@@ -1,0 +1,47 @@
+<header class="cabecalho-relatorio">
+
+    <div class="cabecalho-topo">
+
+        <div class="instituicao">
+
+            <div class="linha1">
+                Instituto Nacional de Colonização e Reforma Agrária - INCRA
+            </div>
+
+            <div class="linha2">
+                Diretoria de Obtenção de Terras - DT
+            </div>
+
+            <div class="linha2">
+                Coordenação-Geral de Avaliação e Obtenção de Terras - DTO
+            </div>
+
+        </div>
+
+        <div class="logos">
+
+            <img src="images/logo_relatorio.png" alt="INCRA">
+
+        </div>
+
+    </div>
+
+    <div class="titulo">
+
+        <h1>{{ titulo() }}</h1>
+
+        @if (subtitulo()) {
+        <div class="subtitulo">
+            {{ subtitulo() }}
+        </div>
+        }
+
+        <div class="versao">
+            Sistema PGT - Módulo de Obtenção - Gerado em: 22/07/2026 08:45
+        </div>
+
+    </div>
+
+    <hr>
+
+</header>

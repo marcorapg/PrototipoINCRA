@@ -1,0 +1,764 @@
+/* =========================================================
+   RELATÓRIO DE COMPROMETIMENTO ORÇAMENTÁRIO
+   ========================================================= */
+
+.commitment-report {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 24px 28px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #263746;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.commitment-report__header {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 42px;
+
+    margin-bottom: 18px;
+
+    border-top: 3px solid #237a4b;
+    border-bottom: 1px solid #d9e1e7;
+
+    background: #ffffff;
+}
+
+.commitment-report__title {
+    margin: 0;
+
+    color: #172b3a;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESUMO ORÇAMENTÁRIO
+   ========================================================= */
+
+.commitment-summary {
+    display: grid;
+
+    grid-template-columns:
+        220px 170px 170px 220px;
+
+    width: max-content;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #cdd7df;
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+.commitment-summary__spacer {
+    min-height: 28px;
+
+    background: #ffffff;
+}
+
+.commitment-summary__column {
+    display: flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 5px 10px;
+
+    border-left: 1px solid #d6dee5;
+
+    background: #f6f8fa;
+}
+
+.commitment-summary__column-title {
+    color: #435466;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.commitment-summary__label {
+    display: flex;
+    align-items: center;
+
+    min-height: 31px;
+
+    padding: 5px 10px;
+
+    border-top: 1px solid #d6dee5;
+
+    background: #fff0a8;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.commitment-summary__value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 31px;
+
+    padding: 5px 10px;
+
+    border-top: 1px solid #d6dee5;
+    border-left: 1px solid #d6dee5;
+
+    background: #fffdf3;
+
+    color: #172b3a;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.commitment-summary__value--total {
+    background: #ffc928;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.commitment-table-section {
+    width: 100%;
+
+    border: 1px solid #9daab5;
+
+    overflow: hidden;
+}
+
+.commitment-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.commitment-table {
+    width: 100%;
+    min-width: 1450px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LARGURAS DAS COLUNAS
+   ========================================================= */
+
+.commitment-table__cell--modalidade {
+    width: 120px;
+}
+
+.commitment-table__cell--sr {
+    width: 85px;
+}
+
+.commitment-table__cell--uf {
+    width: 45px;
+}
+
+.commitment-table__cell--imovel {
+    width: 170px;
+}
+
+.commitment-table__cell--processo {
+    width: 65px;
+}
+
+.commitment-table__cell--area {
+    width: 60px;
+}
+
+.commitment-table__cell--familias {
+    width: 60px;
+}
+
+.commitment-table__cell--money {
+    width: 135px;
+}
+
+.commitment-table__cell--saldo {
+    width: 135px;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA TABELA
+   ========================================================= */
+
+.commitment-table__head {
+    background: #f4f6f8;
+}
+
+.commitment-table__row--header .commitment-table__cell {
+    height: 30px;
+
+    padding: 6px 7px;
+
+    border-right: 1px solid #9daab5;
+    border-bottom: 1px solid #7d8994;
+
+    color: #354858;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+.commitment-table__row--header .commitment-table__cell--money {
+    text-align: right;
+}
+
+
+/* =========================================================
+   CORPO DA TABELA
+   ========================================================= */
+
+.commitment-table__body .commitment-table__row {
+    background: #ffffff;
+}
+
+.commitment-table__body .commitment-table__row:nth-child(even) {
+    background: #fafbfc;
+}
+
+.commitment-table__body .commitment-table__row:hover {
+    background: #eef6f1;
+}
+
+.commitment-table__body .commitment-table__cell {
+    height: 27px;
+
+    padding: 4px 6px;
+
+    border-right: 1px solid #aeb8c0;
+    border-bottom: 1px solid #aeb8c0;
+
+    color: #253746;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+.commitment-table__cell--imovel {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.commitment-table__cell--processo {
+    text-align: center;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.commitment-table__cell--number {
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.commitment-table__cell--money {
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   VALORES NEGATIVOS
+   ========================================================= */
+
+.commitment-table__cell--negative {
+    color: #d62828 !important;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BADGES DE MODALIDADE
+   ========================================================= */
+
+.commitment-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 3px 5px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.commitment-badge--desap {
+    background: #eaf2f8;
+    color: #28587d;
+}
+
+.commitment-badge--compra {
+    background: #edf7ef;
+    color: #28703a;
+}
+
+.commitment-badge--leilao {
+    background: #fff4df;
+    color: #966000;
+}
+
+.commitment-badge--badge {
+    text-align: center;
+}
+
+/* =========================================================
+   TOTAL DA TABELA
+   ========================================================= */
+
+.commitment-table__foot {
+    background: #f0f3f5;
+}
+
+.commitment-table__row--total .commitment-table__cell {
+    height: 30px;
+
+    padding: 5px 7px;
+
+    border-top: 2px solid #8796a2;
+    border-right: 1px solid #aeb8c0;
+
+    color: #172b3a;
+
+    font-weight: 700;
+}
+
+.commitment-table__cell--total-label {
+    text-align: right;
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESUMO FINAL
+   ========================================================= */
+
+.commitment-final-summary {
+    display: grid;
+
+    /*
+     * As 7 primeiras colunas da tabela são:
+     *
+     * Modalidade      95px
+     * SR              85px
+     * UF              45px
+     * Imóvel         170px
+     * Processo        65px
+     * Área            60px
+     * Famílias        60px
+     *
+     * Total = 580px
+     *
+     * O resumo começa, portanto, exatamente na coluna
+     * "Valor previsto".
+     */
+    grid-template-columns:
+        580px 135px 135px 135px 160px;
+
+    width: max-content;
+
+    margin-top: 12px;
+    margin-left: auto;
+
+    font-size: 12px;
+}
+
+
+/* Espaço correspondente às sete primeiras colunas */
+
+.commitment-final-summary__spacer {
+    min-height: 30px;
+}
+
+
+/* Rótulos */
+
+.commitment-final-summary__label {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 30px;
+
+    padding: 5px 8px;
+
+    color: #354858;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* Valores */
+
+.commitment-final-summary__value {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    min-height: 30px;
+
+    padding: 5px 8px;
+
+    color: #34495a;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+
+/* Total */
+
+.commitment-final-summary__value--total {
+    color: #172b3a;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPENHADO TOTAL
+   ========================================================= */
+
+.commitment-final-summary__label:not(.commitment-final-summary__label--available) {
+    border-top: 1px solid #d5dde3;
+}
+
+.commitment-final-summary__label:not(.commitment-final-summary__label--available)+.commitment-final-summary__value {
+    border-top: 1px solid #d5dde3;
+}
+
+
+/* =========================================================
+   SALDO DISPONÍVEL
+   ========================================================= */
+
+.commitment-final-summary__label--available {
+    color: #172b3a;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    border-top: 2px solid #8796a2;
+}
+
+.commitment-final-summary__value--available {
+    color: #176b3b;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    border-top: 2px solid #8796a2;
+
+    background: #f3faf5;
+}
+
+.commitment-final-summary__value--available.commitment-final-summary__value--total {
+    color: #176b3b;
+
+    background: #eaf6ed;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .commitment-final-summary {
+        /*
+         * Mantém as proporções da tabela em telas menores.
+         * O container poderá sofrer scroll horizontal junto
+         * com a estrutura do relatório.
+         */
+        margin-left: 0;
+
+        grid-template-columns:
+            580px 135px 135px 135px 160px;
+    }
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.commitment-report__footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding: 8px 3px;
+
+    border-top: 1px solid #dce2e7;
+
+    color: #7c8995;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .commitment-report {
+        padding: 16px;
+    }
+
+    .commitment-summary {
+        grid-template-columns:
+            180px 150px 150px 190px;
+
+        width: 100%;
+    }
+
+    .commitment-final-summary {
+        grid-template-columns:
+            180px 150px 150px 190px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .commitment-report {
+        padding: 10px;
+    }
+
+    .commitment-report__title {
+        font-size: 15px;
+    }
+
+    .commitment-summary {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .commitment-final-summary {
+        width: 100%;
+    }
+
+    .commitment-report__footer {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+}
+
+
+/* =========================================================
+   IMPRESSÃO / PDF
+   ========================================================= */
+
+@media print {
+
+    .commitment-report {
+        max-width: none;
+
+        padding: 0;
+    }
+
+    .commitment-table-wrapper {
+        overflow: visible;
+    }
+
+    .commitment-table {
+        min-width: 0;
+    }
+
+    .commitment-table__body .commitment-table__row:hover {
+        background: inherit;
+    }
+
+    .commitment-report__header,
+    .commitment-summary,
+    .commitment-table-section,
+    .commitment-final-summary {
+        break-inside: avoid;
+    }
+}
+
+/* =========================================================
+   RESUMO DENTRO DA TABELA
+   ========================================================= */
+
+.commitment-table__row--summary {
+    background: #ffffff;
+}
+
+.commitment-table__row--summary .commitment-table__cell {
+    height: 29px;
+
+    padding: 5px 7px;
+
+    border-top: 1px solid #d5dde3;
+
+    color: #34495a;
+
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.commitment-table__cell--summary-label {
+    text-align: right;
+
+    color: #354858 !important;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+.commitment-table__cell--summary-total {
+    color: #172b3a !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   SALDO DISPONÍVEL
+   ========================================================= */
+
+.commitment-table__row--available {
+    background: #f3faf5;
+}
+
+.commitment-table__row--available .commitment-table__cell {
+    height: 31px;
+
+    padding: 5px 7px;
+
+    border-top: 2px solid #8796a2;
+
+    background: #f3faf5;
+
+    color: #176b3b;
+
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.commitment-table__cell--available-label {
+    color: #172b3a !important;
+
+    font-size: 12px;
+
+    font-weight: 700 !important;
+
+    text-align: right;
+}
+
+
+.commitment-table__cell--available.commitment-table__cell--summary-total {
+    background: #e5f4e9;
+
+    color: #176b3b !important;
+
+    font-size: 13px;
+
+    font-weight: 800 !important;
+}
+
+/* =========================================================
+   ESPAÇADOR ENTRE TOTAL E RESUMO FINAL
+   ========================================================= */
+
+.commitment-table__row--spacer {
+    background: #ffffff;
+}
+
+.commitment-table__cell--spacer {
+    height: 14px;
+
+    padding: 0;
+
+    border: none !important;
+
+    background: #ffffff;
+}

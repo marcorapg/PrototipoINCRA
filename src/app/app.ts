@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Footer } from './componentes/footer/footer';
 import { Header } from './componentes/header/header';
 import { Menu } from './componentes/menu/menu';
@@ -18,6 +18,17 @@ declare const core: any;
 
 export class App implements AfterViewInit {
   protected readonly title = signal('prototipoincra');
+
+  constructor(public router: Router) { }
+
+  private readonly telasSemLayout = [
+    '/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao',
+    '/obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase',
+  ];
+
+  get telaSemLayout(): boolean {
+    return this.telasSemLayout.some(url => this.router.url.startsWith(url));
+  }
   ngAfterViewInit(): void {
 
     const datetimepickerList = []

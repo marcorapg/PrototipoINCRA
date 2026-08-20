@@ -1,0 +1,106 @@
+<div id="report">
+    <app-relatoriocabecalho titulo="PROCESSOS POR FORMA DE OBTENÇÃO E FASE PROCESSUAL"></app-relatoriocabecalho>
+
+    <div class="relatorio">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>SUPER.</th>
+                    <th>Forma de Obtenção</th>
+                    <th>Imóvel</th>
+                    <th>Município</th>
+                    <th>Processo SEI</th>
+                    <th class="numero">Área Avaliada (ha)</th>
+                    <th class="numero">Cap. Assent.</th>
+                    <th class="numero">Valor Total (R$)</th>
+                    <th>Fase Atual</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @for(linha of linhas; track $index){
+
+                @switch(linha.tipo){
+
+                @case('grupo'){
+
+                <tr class="grupo">
+
+                    <td>{{linha.sr}}</td>
+
+                    <td colspan="8">
+                        <strong>{{linha.forma}}</strong>
+                    </td>
+
+                </tr>
+
+                }
+
+                @case('item'){
+
+                <tr>
+
+                    <td></td>
+                    <td></td>
+
+                    <td>{{linha.imovel}}</td>
+                    <td>{{linha.municipio}}</td>
+                    <td>{{linha.processo}}</td>
+                    <td class="numero">{{linha.area}}</td>
+                    <td class="numero">{{linha.capacidade}}</td>
+                    <td class="numero">{{linha.valor}}</td>
+                    <td>{{linha.fase}}</td>
+
+                </tr>
+
+                }
+
+                @case('total'){
+
+                <tr class="subtotal">
+
+                    <td>{{linha.sr}}</td>
+                    <td colspan="3">{{linha.imoveis}}</td>
+                    <td>{{linha.processos}}</td>
+                    <td class="numero">{{linha.area}}</td>
+                    <td class="numero">{{linha.capacidade}}</td>
+                    <td class="numero">{{linha.valor}}</td>
+                    <td></td>
+
+                </tr>
+
+                }
+
+                @case('geral'){
+
+                <tr class="total-geral">
+
+                    <td>{{linha.sr}}</td>
+                    <td colspan="3">{{linha.imoveis}}</td>
+                    <td>{{linha.processos}}</td>
+                    <td class="numero">{{linha.area}}</td>
+                    <td class="numero">{{linha.capacidade}}</td>
+                    <td class="numero">{{linha.valor}}</td>
+                    <td></td>
+
+                </tr>
+
+                }
+
+                }
+
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

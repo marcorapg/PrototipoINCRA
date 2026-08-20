@@ -1,3 +1,5 @@
+@if (!telaSemLayout) {
+
 <div class="template-base">
   <app-header></app-header>
 
@@ -9,11 +11,10 @@
           <app-menu></app-menu>
         </div>
 
-        <div class="col mb-5">        
-
+        <div class="col mb-5">
           <router-outlet></router-outlet>
-
         </div>
+
       </div>
     </div>
   </main>
@@ -21,6 +22,12 @@
   <app-footer></app-footer>
   <div class="br-cookiebar default d-none" tabindex="-1"></div>
 </div>
+
+} @else {
+
+<router-outlet></router-outlet>
+
+}
 
 
 

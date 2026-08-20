@@ -1,0 +1,30 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' }
+  ]">
+</app-breadcrumb>
+
+<h3>Obtenções</h3>
+
+<div class="app-card-grid">
+
+    <!-- Relatórios -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <h4>Central de Relatórios</h4>
+
+        <p>
+            Relatórios do módulo de Obtenções.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/relatoriosobtencoes']">
+            Acessar
+        </button>
+
+    </br-card>
+
+</div>

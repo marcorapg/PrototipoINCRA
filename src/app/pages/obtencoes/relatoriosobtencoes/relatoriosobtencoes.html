@@ -1,0 +1,123 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Central de Relatórios', url: '/obtencoes/relatoriosobtencoes' }
+  ]">
+</app-breadcrumb>
+
+<h3>Central de Relatórios</h3>
+
+<p>Gere relatórios de gestão ou consulte os fluxogramas operacionais do sistema.</p>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+
+        <!-- RELATÓRIOS -->
+        <div class="col-lg-8">
+
+            <h6 class="text-up-01 text-weight-semi-bold text-gray-60 mb-3">
+                <i class="fas fa-chart-bar mr-2"></i>
+                RELATÓRIOS DINÂMICOS
+            </h6>
+
+            <div class="br-card mb-3" [routerLink]="['/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao']">
+                <div class="br-item py-3 px-3 d-flex align-items-center">
+
+                    <div class="avatar mr-3 bg-success-10">
+                        <i class="fas fa-chart-pie text-success"></i>
+                    </div>
+
+                    <div class="flex-fill">
+                        <div class="text-weight-semi-bold">
+                            Processos por Obtenção
+                        </div>
+
+                        <div class="text-gray-60 text-small">
+                            Relatório agrupado pelas formas de aquisição
+                            (Compra, Desapropriação, etc).
+                        </div>
+                    </div>
+
+                    <i class="fas fa-chevron-right text-gray-40"></i>
+
+                </div>
+            </div>
+
+            <div class="br-card mb-3" [routerLink]="['/obtencoes/relatoriosobtencoes/relatorioprocessoporfase']">
+                <div class="br-item py-3 px-3 d-flex align-items-center">
+
+                    <div class="avatar mr-3 bg-success-10">
+                        <i class="fas fa-sitemap text-success"></i>
+                    </div>
+
+                    <div class="flex-fill">
+                        <div class="text-weight-semi-bold">
+                            Processos por Fase
+                        </div>
+
+                        <div class="text-gray-60 text-small">
+                            Detalhamento combinando forma de obtenção e etapa processual atual.
+                        </div>
+                    </div>
+
+                    <i class="fas fa-chevron-right text-gray-40"></i>
+
+                </div>
+            </div>
+
+            <div class="br-card" [routerLink]="['/obtencoes/relatoriosobtencoes/relatoriofluxoorcamento']">
+                <div class="br-item py-3 px-3 d-flex align-items-center">
+
+                    <div class="avatar mr-3 bg-warning-10">
+                        <i class="fas fa-sack-dollar text-warning"></i>
+                    </div>
+
+                    <div class="flex-fill">
+                        <div class="text-weight-semi-bold">
+                            Fluxo de Orçamento
+                        </div>
+
+                        <div class="text-gray-60 text-small">
+                            Relatório que mostra receita e gastos por SR por ano.
+                        </div>
+                    </div>
+
+                    <i class="fas fa-chevron-right text-gray-40"></i>
+
+                </div>
+            </div>
+
+            <div class="br-card" [routerLink]="['/obtencoes/relatoriosobtencoes/relatorioempenho']">
+                <div class="br-item py-3 px-3 d-flex align-items-center">
+
+                    <div class="avatar mr-3 bg-warning-10">
+                        <i class="fas fa-chart-pie text-warning"></i>
+                    </div>
+
+                    <div class="flex-fill">
+                        <div class="text-weight-semi-bold">
+                            Relatório de Comprometimento Orçamentário
+                        </div>
+
+                        <div class="text-gray-60 text-small">
+                            Relatório que mostra o comprometimento orçamentário por SR e por forma de obtenção.
+                        </div>
+                    </div>
+
+                    <i class="fas fa-chevron-right text-gray-40"></i>
+
+                </div>
+            </div>            
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button emphasis="secondary" [routerLink]="['/obtencoes/']">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Voltar
+    </br-button>
+</div>
