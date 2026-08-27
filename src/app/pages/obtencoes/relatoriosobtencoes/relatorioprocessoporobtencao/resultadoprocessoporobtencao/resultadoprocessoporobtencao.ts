@@ -13,9 +13,9 @@ export class Resultadoprocessoporobtencao implements AfterViewInit {
   constructor(private pdf: PdfService) { }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.pdf.open('report');
-    });
+    // setTimeout(() => {
+    //   this.pdf.open('report');
+    // });
   }
 
   linhas = [

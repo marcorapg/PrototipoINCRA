@@ -4,7 +4,7 @@
              TÍTULO
         ====================================================== -->
 
-    <app-relatoriocabecalho titulo="Relatório de Comprometimento Orçamentário - LOA"
+    <app-relatoriocabecalho titulo="Relatório de Comprometimento Orçamentário - Restos a pagar"
         [subtitulo]="subtitulo"></app-relatoriocabecalho>
 
     <!-- =====================================================
@@ -35,19 +35,19 @@
 
 
         <div class="commitment-summary__label">
-            Orçamento LOA 2026
+            Saldos Anos Anteriores
         </div>
 
         <div class="commitment-summary__value">
-            R$ 700.000.000
+            R$ 150.000.000
         </div>
 
         <div class="commitment-summary__value">
-            R$ 500.000.000
+            R$ 30.000.000
         </div>
 
         <div class="commitment-summary__value commitment-summary__value--total">
-            R$ 1.200.000.000
+            R$ 180.000.000
         </div>
 
     </section>
@@ -87,16 +87,16 @@
                             Processo
                         </th>
 
+                        <th class="commitment-table__cell commitment-table__cell--processo">
+                            Exercício
+                        </th>                        
+
                         <th class="commitment-table__cell commitment-table__cell--area">
                             Área (ha)
                         </th>
 
                         <th class="commitment-table__cell commitment-table__cell--familias">
                             Famílias
-                        </th>
-
-                        <th class="commitment-table__cell commitment-table__cell--money">
-                            Valor previsto
                         </th>
 
                         <th class="commitment-table__cell commitment-table__cell--money">
@@ -111,17 +111,12 @@
                             Empenhado Total
                         </th>
 
-                        <th class="commitment-table__cell commitment-table__cell--money commitment-table__cell--saldo">
-                            Previsto nāo-empenhado
-                        </th>
-
                     </tr>
 
                 </thead>
 
 
                 <tbody class="commitment-table__body">
-
 
                     <!-- =================================================
                              LINHA 1
@@ -152,15 +147,15 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2023
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             16.754
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
                             300
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 100.000.000,00
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
@@ -173,11 +168,6 @@
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 60.000.000,00
-                        </td>
-
-                        <td
-                            class="commitment-table__cell commitment-table__cell--money commitment-table__cell--negative">
-                            -R$ 40.000.000,00
                         </td>
 
                     </tr>
@@ -212,6 +202,10 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2024
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             456
                         </td>
 
@@ -224,19 +218,11 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 3.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
                             R$ -
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 3.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ -
                         </td>
 
                     </tr>
@@ -271,6 +257,10 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2024
+                        </td>
+                        
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             1.555
                         </td>
 
@@ -279,10 +269,6 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 100.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
                             R$ -
                         </td>
 
@@ -292,14 +278,9 @@
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 100.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ -
                         </td>
 
                     </tr>
-
 
                     <!-- =================================================
                              LINHA 4
@@ -330,15 +311,15 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2025
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             155
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
                             30
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 100.000.000,00
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
@@ -353,13 +334,7 @@
                             R$ 50.000.000,00
                         </td>
 
-                        <td
-                            class="commitment-table__cell commitment-table__cell--money commitment-table__cell--negative">
-                            -R$ 50.000.000,00
-                        </td>
-
                     </tr>
-
 
                     <!-- =================================================
                              LINHA 5
@@ -390,6 +365,10 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2025
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             89.823
                         </td>
 
@@ -398,10 +377,6 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 15.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
                             R$ -
                         </td>
 
@@ -411,14 +386,9 @@
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 15.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ -
                         </td>
 
                     </tr>
-
 
                     <!-- =================================================
                              LINHA 6
@@ -449,6 +419,10 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2025
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             123
                         </td>
 
@@ -457,10 +431,6 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 5.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
                             R$ -
                         </td>
 
@@ -470,14 +440,9 @@
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 5.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ -
                         </td>
 
                     </tr>
-
 
                     <!-- =================================================
                              LINHA 7
@@ -508,6 +473,10 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2026
+                        </td>
+                        
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             252
                         </td>
 
@@ -516,10 +485,6 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 30.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
                             R$ -
                         </td>
 
@@ -529,14 +494,9 @@
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             R$ 30.000.000,00
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ -
                         </td>
 
                     </tr>
-
 
                     <!-- =================================================
                              LINHA 8
@@ -567,15 +527,15 @@
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
+                            2026
+                        </td>
+
+                        <td class="commitment-table__cell commitment-table__cell--number">
                             4.893
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--number">
                             908
-                        </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 5.000.000,00
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
@@ -590,15 +550,9 @@
                             R$ 1.000.000,00
                         </td>
 
-                        <td
-                            class="commitment-table__cell commitment-table__cell--money commitment-table__cell--negative">
-                            -R$ 4.000.000,00
-                        </td>
-
                     </tr>
 
                 </tbody>
-
 
                 <!-- =====================================================
                          TOTAL DA TABELA
@@ -612,20 +566,16 @@
                             Total
                         </td>
 
-                        <td class="commitment-table__cell" colspan="2">
+                        <td class="commitment-table__cell" colspan="3">
                             8 imóveis
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
                             114.011
                         </td>
-                        
-                        <td class="commitment-table__cell commitment-table__cell--money">
-                            3.275
-                        </td>                        
 
                         <td class="commitment-table__cell commitment-table__cell--money">
-                            R$ 358.000.000,00
+                            3.275
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--money">
@@ -640,18 +590,13 @@
                             R$ 264.000.000,00
                         </td>
 
-                        <td
-                            class="commitment-table__cell commitment-table__cell--money commitment-table__cell--negative">
-                            -R$ 90.000.000,00
-                        </td>
-
                     </tr>
 
 
                     <!-- Espaçador -->
                     <tr class="commitment-table__row commitment-table__row--spacer">
 
-                        <td class="commitment-table__cell commitment-table__cell--spacer" colspan="12"></td>
+                        <td class="commitment-table__cell commitment-table__cell--spacer" colspan="9"></td>
 
                     </tr>
 
@@ -676,8 +621,6 @@
                             R$ 528.000.000,00
                         </td>
 
-                        <td class="commitment-table__cell commitment-table__cell--money"></td>
-
                     </tr>
 
 
@@ -691,24 +634,22 @@
 
                         <td
                             class="commitment-table__cell commitment-table__cell--money commitment-table__cell--available">
-                            R$ 607.000.000,00
+                            R$ 42.000.000,00
                         </td>
 
                         <td
                             class="commitment-table__cell commitment-table__cell--money commitment-table__cell--available">
-                            R$ 85.000.000,00
+                            -R$ 390.000.000,00
                         </td>
 
                         <td
                             class="commitment-table__cell commitment-table__cell--money commitment-table__cell--available commitment-table__cell--summary-total">
-                            R$ 692.000.000,00
+                            -R$ 348.000.000,00
                         </td>
-
-                        <td class="commitment-table__cell commitment-table__cell--money"></td>
 
                     </tr>
 
-                </tfoot>    
+                </tfoot>
 
             </table>
 

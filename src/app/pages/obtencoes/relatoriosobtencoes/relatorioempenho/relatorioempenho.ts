@@ -27,9 +27,10 @@ export class Relatorioempenho {
 
   gerarRelatorio() {
     const rotas: { [key: string]: string } = {
-      '1': '/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho',
-      '2': '/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao',
-      '3': '/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao'
+      '1': 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho',
+      '2': 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadorestosapagar',
+      '3': 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao',
+      '4': 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao'
     };
 
     const rota = rotas[this.tipoRelatorio];

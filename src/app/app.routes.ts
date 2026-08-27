@@ -24,6 +24,8 @@ import { Relatorioempenho } from './pages/obtencoes/relatoriosobtencoes/relatori
 import { Resultadoempenho } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho/resultadoempenho';
 import { Resultadoorcamentoadjudicacao } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao/resultadoorcamentoadjudicacao';
 import { Resultadoorcamentocompensacao } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao/resultadoorcamentocompensacao';
+import { Resultadofluxoorcamentoanalitico } from './pages/obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamentoanalitico/resultadofluxoorcamentoanalitico';
+import { Resultadorestosapagar } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadorestosapagar/resultadorestosapagar';
 
 
 export const routes: Routes = [
@@ -53,8 +55,10 @@ export const routes: Routes = [
     { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase', component: Resultadoprocessoporfase },
     { path: 'obtencoes/relatoriosobtencoes/relatoriofluxoorcamento', component: Relatoriofluxoorcamento },
     { path: 'obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamento', component: Resultadofluxoorcamento },
+    { path: 'obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamentoanalitico', component: Resultadofluxoorcamentoanalitico },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho', component: Relatorioempenho },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoempenho', component: Resultadoempenho },
+    { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadorestosapagar', component: Resultadorestosapagar },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao', component: Resultadoorcamentoadjudicacao },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao', component: Resultadoorcamentocompensacao },
     { path: 'obtencoes/dashboardobtencao', component: Dashboardobtencao }

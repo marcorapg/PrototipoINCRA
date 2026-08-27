@@ -12,7 +12,7 @@ import { BrButton, BrInput, BrSelect } from '@govbr-ds/webcomponents-angular/sta
 export class Relatorioprocessoporobtencao {
   gerarRelatorio() {
     window.open(
-      '/obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao',
+      'obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao',
       'Processos por Forma de Obtenção e Fase Processual',
       'width=1200,height=800,left=100,top=100'
     );

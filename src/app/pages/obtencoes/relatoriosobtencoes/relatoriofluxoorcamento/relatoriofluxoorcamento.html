@@ -22,6 +22,14 @@
             <div class="card-content">
                 <div class="row mt-3 mb-3">
                     <div class="col-2">
+                        <br-select label="Tipo de relátorio *" placeholder="Selecione uma opção"
+                            (valueChange)="alterarTipoRelatorio($event)" options='[
+                        { "label": "Sintético", "value": "sintetico", "selected": true },
+                        { "label": "Analítico", "value": "analitico", "selected": false }
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-2">
                         <br-select label="Ano *" placeholder="Selecione uma opção" options='[
                         { "label": "2026", "value": "1", "selected": true },
                         { "label": "2025", "value": "2", "selected": false },
@@ -82,15 +90,14 @@
                             (checkedChange)="incluirPrevistos = $event.detail"></br-checkbox>
                     </div>
 
-                    <div class="col-4 mt-4 d-flex justify-content-end">
+                    <div class="col-2 mt-4 botoes-acoes">
 
                         <br-button emphasis="secondary">
                             <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
                             Limpar
                         </br-button>
 
-
-                        <br-button emphasis="primary" class="ml-3" (click)="gerarRelatorio()">
+                        <br-button emphasis="primary" (click)="gerarRelatorio()">
                             <i class="fas fa-clipboard-list mr-3" aria-hidden="true"></i>
                             Gerar PDF
                         </br-button>
@@ -99,8 +106,8 @@
                 </div>
                 <div class="row mt-3 mb-3">
                     <div class="col-12">
-                        <br-input label="Subtítulo do PDF (Opcional)" placeholder="Ex: Relatório Anual 2026" (valueChange)="onSubtituloChange($event)"
-                            density="medium"></br-input>
+                        <br-input label="Subtítulo do PDF (Opcional)" placeholder="Ex: Relatório Anual 2026"
+                            (valueChange)="onSubtituloChange($event)" density="medium"></br-input>
                     </div>
                 </div>
             </div>

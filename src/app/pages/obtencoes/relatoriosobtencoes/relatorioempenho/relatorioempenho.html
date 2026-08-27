@@ -25,14 +25,15 @@
                    <div class="col-2">
                         <br-select label="Tipo de relatório *" is-multiple="false" required="true" placeholder="Selecione uma opção"
                             (valueChange)="alterarTipoRelatorio($event)" options='[
-                            { "label": "LOA", "value": "1", "selected": true },
-                            { "label": "Adjudicação", "value": "2", "selected": false },
-                            { "label": "Compensação", "value": "3", "selected": false }
+                            { "label": "LOA atual", "value": "1", "selected": true },
+                            { "label": "Restos a pagar", "value": "2", "selected": false },
+                            { "label": "Adjudicação", "value": "3", "selected": false },
+                            { "label": "Compensação", "value": "4", "selected": false }
                         ]'>
                         </br-select>
-                    </div>                    
+                    </div>
                     <div class="col-3">
-                        <br-select [hidden]="tipoRelatorio !== '1'" label="Forma de Obtenção" is-multiple="true"
+                        <br-select [hidden]="tipoRelatorio == '3' || tipoRelatorio == '4'" label="Forma de Obtenção" is-multiple="true"
                             placeholder="Selecione uma opção" options='[
                         { "label": "Desapropriação Lei 8.629/93", "value": "1", "selected": false },
                         { "label": "Desapropriação Lei 4.132/62", "value": "2", "selected": false },
@@ -40,7 +41,7 @@
                         { "label": "Leilão", "value": "4", "selected": false }
                         ]'></br-select>
 
-                        <br-select [hidden]="tipoRelatorio == '1'" label="Ano *" is-multiple="false"
+                        <br-select [hidden]="tipoRelatorio == '1' || tipoRelatorio == '2'" label="Ano *" is-multiple="false"
                             placeholder="Selecione uma opção" options='[
                         { "label": "2026", "value": "1", "selected": false },
                         { "label": "2025", "value": "2", "selected": false },

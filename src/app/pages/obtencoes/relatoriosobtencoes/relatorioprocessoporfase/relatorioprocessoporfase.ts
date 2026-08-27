@@ -13,7 +13,7 @@ export class Relatorioprocessoporfase {
 
   gerarRelatorio() {
     window.open(
-      '/obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase',
+      'obtencoes/relatoriosobtencoes/relatorioprocessoporfase/resultadoprocessoporfase',
       'Processos por Forma de Obtenção e Fase Processual',
       'width=1200,height=800,left=100,top=100'
     );

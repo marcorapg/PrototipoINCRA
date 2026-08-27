@@ -262,6 +262,14 @@
     font-weight: 700;
 }
 
+.header-separator{
+    color: darkred;
+    text-align: left;
+    background-color: lightcyan;
+    font-weight: 700;
+    padding-left: 30px;
+}
+
 /* =========================================================
    TOTAL MÊS
    ========================================================= */
