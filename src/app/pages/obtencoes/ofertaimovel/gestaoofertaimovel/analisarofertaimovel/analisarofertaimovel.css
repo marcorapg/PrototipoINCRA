@@ -1,0 +1,431 @@
+.readonly-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-height: 3.5rem;
+    padding: 0.5rem 0;
+}
+
+.field-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.field-value {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.document-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.document-link i {
+    font-size: 1rem;
+}
+
+.declaration {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.declaration-icon {
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   TÍTULO
+   ===================================================== */
+
+.title-area {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 24px 0 32px;
+}
+
+.title-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    color: #16823b;
+
+    font-size: 25px;
+}
+
+.title-content {
+    flex: 1;
+}
+
+.title-content h1 {
+    margin: 0 0 8px;
+
+    color: #222;
+
+    font-size: 30px;
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.title-content p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 16px;
+}
+
+.incra-logo {
+    color: #16823b;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.form-card {
+    display: block;
+
+    margin-bottom: 48px;
+}
+
+
+/* =====================================================
+   SEÇÕES
+   ===================================================== */
+
+.form-section {
+    padding: 28px 24px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.section-title {
+    margin: 0 0 24px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #ccc;
+
+    color: #1351b4;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.section-description {
+    margin: -8px 0 24px;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   GRID
+   ===================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.span-1 {
+    grid-column: span 1;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+.span-6 {
+    grid-column: span 6;
+}
+
+.span-7 {
+    grid-column: span 7;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+.span-9 {
+    grid-column: span 9;
+}
+
+.span-10 {
+    grid-column: span 10;
+}
+
+.span-11 {
+    grid-column: span 11;
+}
+
+.span-12 {
+    grid-column: span 12;
+}
+
+
+/* =====================================================
+   DECLARAÇÃO
+   ===================================================== */
+
+.declaration {
+    padding: 4px 0;
+}
+
+
+/* =====================================================
+   DOCUMENTOS
+   ===================================================== */
+
+.document-item {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 280px;
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.document-item:last-child {
+    border-bottom: none;
+}
+
+.document-info {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.document-info>i {
+    width: 28px;
+
+    padding-top: 3px;
+
+    color: #1351b4;
+
+    font-size: 20px;
+
+    text-align: center;
+}
+
+.document-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.document-info strong {
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.document-info span {
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   RODAPÉ DO FORMULÁRIO
+   ===================================================== */
+
+.form-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 24px;
+
+    background: #fafafa;
+}
+
+.required-info {
+    color: #555;
+
+    font-size: 14px;
+}
+
+.required-info span {
+    color: #c62828;
+
+    font-weight: 700;
+}
+
+.buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.page-footer {
+    padding: 28px 0;
+
+    background: #fff;
+
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+.footer-logo {
+    color: #555;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.footer-content strong {
+    font-size: 14px;
+}
+
+.footer-content p {
+    margin: 4px 0 0;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .span-3,
+    .span-4 {
+        grid-column: span 6;
+    }
+
+    .document-item {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container,
+    .header-container {
+        width: calc(100% - 32px);
+    }
+
+    .gov-brand span {
+        display: none;
+    }
+
+    .title-area {
+        align-items: flex-start;
+    }
+
+    .title-content h1 {
+        font-size: 22px;
+    }
+
+    .incra-logo {
+        display: none;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .span-3,
+    .span-4,
+    .span-6,
+    .span-12 {
+        grid-column: span 1;
+    }
+
+    .form-section {
+        padding: 24px 16px;
+    }
+
+    .form-footer {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+}

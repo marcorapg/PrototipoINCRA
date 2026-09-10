@@ -1,0 +1,574 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel' },
+    { label: 'Formulário de Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel/formularioofertaimovel' },
+  ]">
+</app-breadcrumb>
+
+<h3>Formulário de Oferta de Imóvel Rural</h3>
+
+<p>Preencha o formulário abaixo para fazer uma oferta de imóvel rural.</p>
+
+<!-- ================================================= -->
+<!-- CARD DO FORMULÁRIO                               -->
+<!-- ================================================= -->
+
+<br-card class="form-card">
+
+
+    <!-- =============================================== -->
+    <!-- DADOS DO OFERTANTE                              -->
+    <!-- =============================================== -->
+
+    <section class="form-section">
+
+        <h2 class="section-title">
+            Dados do ofertante
+        </h2>
+
+
+        <div class="form-grid">
+
+
+            <!-- Nome -->
+
+            <div class="field span-6">
+
+                <br-input label="Nome" placeholder="Digite o nome completo"></br-input>
+
+            </div>
+
+
+            <!-- CPF -->
+
+            <div class="field span-2">
+
+                <br-input label="CPF" placeholder="000.000.000-00" mask="###.###.###-##"></br-input>
+
+            </div>
+
+
+            <!-- Nacionalidade -->
+
+            <div class="field span-2">
+
+                <br-select label="Nacionalidade" placeholder="Selecione" [options]="nacionalidadeOptions"></br-select>
+
+            </div>
+
+
+            <!-- Estado civil -->
+
+            <div class="field span-2">
+
+                <br-select label="Estado civil" placeholder="Selecione" [options]="estadoCivilOptions"></br-select>
+
+            </div>
+
+            <!-- CEP -->
+            <div class="field span-2">
+
+                <br-input label="CEP" placeholder="00000-000" mask="#####-##"></br-input>
+
+            </div>
+
+            <!-- Logradouro -->
+
+            <div class="field span-4">
+
+                <br-input label="Logradouro"></br-input>
+
+            </div>
+
+            <!-- Número -->
+
+            <div class="field span-2">
+
+                <br-input label="Número"></br-input>
+
+            </div>
+
+
+            <!-- Complemento -->
+
+            <div class="field span-2">
+
+                <br-input label="Complemento" placeholder="Ex: Apto. 302"></br-input>
+
+            </div>
+
+            <!-- Bairro -->
+
+            <div class="field span-2">
+
+                <br-input label="Bairro"></br-input>
+
+            </div>
+
+            <!-- Telefone -->
+
+            <div class="field span-3">
+
+                <br-input label="Telefone de contato" placeholder="(00) 00000-0000"></br-input>
+
+            </div>
+
+            <!-- Email para contato -->
+
+            <div class="field span-3">
+
+                <br-input label="Email para contato"></br-input>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================== -->
+    <!-- DADOS DA OFERTA                                 -->
+    <!-- =============================================== -->
+
+    <section class="form-section">
+
+        <h2 class="section-title">
+            Dados da oferta e do imóvel
+        </h2>
+
+
+        <div class="form-grid">
+
+            <!-- Nome do imóvel -->
+
+            <div class="field span-12">
+
+                <br-input label="Nome do imóvel"></br-input>
+
+            </div>
+
+            <!-- Tipo de oferta -->
+
+            <div class="field span-4">
+
+                <br-select label="Tipo de oferta" placeholder="Selecione o tipo de oferta"
+                    (valueChange)="alterarTipoOferta($event)" [options]="tipoOfertaOptions"></br-select>
+
+            </div>
+
+
+            <!-- Município -->
+
+            <div class="field span-4">
+
+                <br-select label="Município do imóvel" placeholder="Selecione o município"
+                    [options]="municipios"></br-select>
+
+            </div>
+
+
+            <!-- Estado -->
+
+            <div class="field span-4">
+
+                <br-select label="Estado do imóvel" placeholder="Selecione o estado" [options]="estados"></br-select>
+
+            </div>
+
+
+            <!-- Área -->
+
+            <div class="field span-4">
+
+                <br-input label="Área registrada (ha)" placeholder="Ex.: 125,50"></br-input>
+
+            </div>
+
+
+            <!-- Matrículas -->
+
+            <div class="field span-4">
+
+                <br-input label="Matrículas" placeholder="Ex.: 12.345, 12.346"></br-input>
+
+            </div>
+
+
+            <!-- Cartório -->
+
+            <div class="field span-4">
+
+                <br-input label="Cartório de registro" placeholder="Informe o cartório"></br-input>
+
+            </div>
+
+
+            <!-- Valor do imóvel -->
+
+            <div class="field span-4">
+
+                <br-input label="Valor do imóvel (R$)" placeholder="R$ 0,00"></br-input>
+
+            </div>
+
+
+            <!-- Benfeitorias -->
+
+            <div class="field span-4">
+
+                <br-input label="Valor de benfeitorias (R$)" placeholder="R$ 0,00"></br-input>
+
+            </div>
+
+
+            <!-- Terra nua -->
+
+            <div class="field span-4">
+
+                <br-input label="Valor da terra nua (R$)" placeholder="R$ 0,00"></br-input>
+
+            </div>
+
+
+            <!-- Forma de pagamento -->
+
+            <div class="field span-12">
+
+                <br-input label="Forma de pagamento" placeholder="Descreva a forma de pagamento proposta"></br-input>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================== -->
+    <!-- DECLARAÇÃO                                      -->
+    <!-- =============================================== -->
+
+    <section class="form-section">
+
+        <h2 class="section-title">
+            Declaração
+        </h2>
+
+
+        <div class="declaration">
+
+            <br-checkbox
+                label="Manifesto expressa permissão ao Incra para adentrar ao imóvel para proceder a avaliação do imóvel ofertado."></br-checkbox>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================== -->
+    <!-- DOCUMENTOS                                      -->
+    <!-- =============================================== -->
+
+    <section class="form-section">
+
+        <h2 class="section-title">
+            Documentos
+        </h2>
+
+
+        <p class="section-description">
+
+            Anexe os documentos necessários para análise da oferta.
+
+            <br>
+
+            Formatos aceitos: PDF, JPG e PNG.
+            Tamanho máximo recomendado: 10 MB por arquivo.
+
+        </p>
+
+        <!-- Edital do leilão -->
+
+        @if (tipoOferta === 'leilao') {
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-file"></i>
+
+                <div>
+
+                    <strong>
+                        Edital do leilão do imóvel
+                    </strong>
+
+                    <span>
+                        Documento obrigatório
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+        }
+
+
+        <!-- Matrícula -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-file-alt"></i>
+
+                <div>
+
+                    <strong>
+                        Matrícula atualizada do imóvel
+                    </strong>
+
+                    <span>
+                        Documento obrigatório
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- CPF -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-id-card"></i>
+
+                <div>
+
+                    <strong>
+                        Cópia do CPF/MF do proprietário(a)
+                    </strong>
+
+                    <span>
+                        Para pessoa física
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- Certidão -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-file-signature"></i>
+
+                <div>
+
+                    <strong>
+                        Certidão de casamento dos proprietários
+                    </strong>
+
+                    <span>
+                        Documento obrigatório
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- Pessoa jurídica -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-building"></i>
+
+                <div>
+
+                    <strong>
+                        Documentação da pessoa jurídica
+                    </strong>
+
+                    <span>
+                        Caso o domínio pertença a pessoa jurídica
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- Planta -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-map"></i>
+
+                <div>
+
+                    <strong>
+                        Planta georreferenciada do imóvel
+                    </strong>
+
+                    <span>
+                        Documento obrigatório
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- SIGEF -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-map-marked-alt"></i>
+
+                <div>
+
+                    <strong>
+                        Certificação no SIGEF
+                    </strong>
+
+                    <span>
+                        Se houver
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- CAR -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-leaf"></i>
+
+                <div>
+
+                    <strong>
+                        Cadastro no CAR do imóvel
+                    </strong>
+
+                    <span>
+                        Se houver
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+
+        <!-- Procuração -->
+
+        <div class="document-item">
+
+            <div class="document-info">
+
+                <i class="fas fa-file-contract"></i>
+
+                <div>
+
+                    <strong>
+                        Procuração
+                    </strong>
+
+                    <span>
+                        Caso aplicável
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <br-upload label="Selecionar arquivo" accept=".pdf,.jpg,.jpeg,.png"></br-upload>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================== -->
+    <!-- RODAPÉ / AÇÕES                                  -->
+    <!-- =============================================== -->
+
+    <div class="form-footer">
+
+        <span class="required-info">
+            <span>*</span>
+            Campos obrigatórios
+        </span>
+
+
+        <div class="buttons">
+
+            <br-button emphasis="secondary" [routerLink]="['/obtencoes/ofertaimovel']">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Cancelar
+            </br-button>
+
+            <br-button emphasis="primary">
+                Enviar oferta
+            </br-button>
+
+        </div>
+
+    </div>
+
+
+</br-card>

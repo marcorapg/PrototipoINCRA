@@ -1,0 +1,41 @@
+<div class="action-menu">
+
+    <br-button shape="circle" emphasis="secondary" aria-label="Ações" (click)="toggleMenu()">
+
+        <br-icon icon-name="fa6-solid:ellipsis-vertical">
+        </br-icon>
+
+    </br-button>
+
+    @if (menuOpen) {
+
+    <div class="action-menu__dropdown">
+
+        <div class="action-menu__header">
+            <span>Ações</span>
+        </div>
+
+        <div class="action-menu__content">
+
+            @for (action of actions; track action.label) {
+
+            <button type="button" class="action-menu__item" (click)="executeAction(action)">
+
+                @if (action.icon) {
+                <br-icon [attr.icon-name]="action.icon">
+                </br-icon>
+                }
+
+                <span>{{ action.label }}</span>
+
+            </button>
+
+            }
+
+        </div>
+
+    </div>
+
+    }
+
+</div>

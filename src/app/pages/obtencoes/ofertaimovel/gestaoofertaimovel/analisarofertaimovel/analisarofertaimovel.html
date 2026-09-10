@@ -1,0 +1,225 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel' },
+    { label: 'Analisar Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel' }
+  ]">
+</app-breadcrumb>
+
+<h3>Analisar Oferta de Imóvel Rural</h3>
+
+<br-card class="form-card">
+    <!-- =============================================== -->
+    <!-- DADOS DO OFERTANTE -->
+    <!-- =============================================== -->
+    <section class="form-section">
+        <h2 class="section-title"> Dados do ofertante </h2>
+        <div class="form-grid">
+            <div class="field span-6">
+                <div class="readonly-field"> <span class="field-label">Nome</span> <span class="field-value">João da
+                        Silva Santos</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">CPF</span> <span
+                        class="field-value">123.456.789-00</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">Nacionalidade</span> <span
+                        class="field-value">Brasileira</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">Estado civil</span> <span
+                        class="field-value">Casado</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">CEP</span> <span
+                        class="field-value">30130-100</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Logradouro</span> <span class="field-value">Rua
+                        dos Ipês</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">Número</span> <span
+                        class="field-value">125</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">Complemento</span> <span
+                        class="field-value">Apto. 302</span> </div>
+            </div>
+            <div class="field span-2">
+                <div class="readonly-field"> <span class="field-label">Bairro</span> <span
+                        class="field-value">Centro</span> </div>
+            </div>
+            <div class="field span-3">
+                <div class="readonly-field"> <span class="field-label">Telefone de contato</span> <span
+                        class="field-value">(31) 99999-9999</span> </div>
+            </div>
+            <div class="field span-3">
+                <div class="readonly-field"> <span class="field-label">Email para contato</span> <span
+                        class="field-value">joao.silva@email.com</span> </div>
+            </div>
+        </div>
+    </section>
+    <!-- =============================================== -->
+    <!-- DADOS DA OFERTA -->
+    <!-- =============================================== -->
+    <section class="form-section">
+        <h2 class="section-title"> Dados da oferta e do imóvel </h2>
+        <div class="form-grid">
+            <div class="field span-12">
+                <div class="readonly-field"> <span class="field-label">Nome do imóvel</span> <span
+                        class="field-value">Fazendo São Gonçalo</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Tipo de oferta</span> <span
+                        class="field-value">Leilão</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Município do imóvel</span> <span
+                        class="field-value">Belo Horizonte</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Estado do imóvel</span> <span
+                        class="field-value">Minas Gerais</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Área registrada (ha)</span> <span
+                        class="field-value">125,50 ha</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Matrículas</span> <span
+                        class="field-value">12.345, 12.346</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Cartório de registro</span> <span
+                        class="field-value">2º Cartório de Registro de Imóveis</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Valor do imóvel (R$)</span> <span
+                        class="field-value">R$ 1.500.000,00</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Valor de benfeitorias (R$)</span> <span
+                        class="field-value">R$ 350.000,00</span> </div>
+            </div>
+            <div class="field span-4">
+                <div class="readonly-field"> <span class="field-label">Valor da terra nua (R$)</span> <span
+                        class="field-value">R$ 1.150.000,00</span> </div>
+            </div>
+            <div class="field span-12">
+                <div class="readonly-field"> <span class="field-label">Forma de pagamento</span> <span
+                        class="field-value"> Pagamento integral após a conclusão da análise e formalização da aquisição.
+                    </span> </div>
+            </div>
+        </div>
+    </section> <!-- =============================================== --> <!-- DECLARAÇÃO -->
+    <!-- =============================================== -->
+    <section class="form-section">
+        <h2 class="section-title"> Declaração </h2>
+        <div class="declaration"> <i class="fas fa-check-circle declaration-icon"></i> <span> O ofertante manifestou
+                expressa permissão ao Incra para adentrar ao imóvel para proceder a avaliação do imóvel ofertado.
+            </span> </div>
+    </section> <!-- =============================================== --> <!-- DOCUMENTOS -->
+    <!-- =============================================== -->
+    <section class="form-section">
+        <h2 class="section-title"> Documentos </h2>
+        <p class="section-description"> Documentos apresentados pelo ofertante para análise da oferta. </p>
+        <!-- Edital do leilão -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-file"></i>
+                <div> <strong>Edital do leilão do imóvel</strong> <span>Documento obrigatório</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> edital-leilao.pdf </a>
+        </div>
+        <!-- Matrícula -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-file-alt"></i>
+                <div> <strong>Matrícula atualizada do imóvel</strong> <span>Documento obrigatório</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> matricula-atualizada.pdf </a>
+        </div>
+        <!-- CPF -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-id-card"></i>
+                <div> <strong>Cópia do CPF/MF do proprietário(a)</strong> <span>Para pessoa física</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> cpf-proprietario.pdf </a>
+        </div>
+        <!-- Certidão -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-file-signature"></i>
+                <div> <strong>Certidão de casamento dos proprietários</strong> <span>Documento obrigatório</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> certidao-casamento.pdf </a>
+        </div>
+        <!-- Pessoa jurídica -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-building"></i>
+                <div> <strong>Documentação da pessoa jurídica</strong> <span>Caso o domínio pertença a pessoa
+                        jurídica</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> documentacao-pessoa-juridica.pdf
+            </a>
+        </div>
+        <!-- Planta -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-map"></i>
+                <div> <strong>Planta georreferenciada do imóvel</strong> <span>Documento obrigatório</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> planta-georreferenciada.pdf </a>
+        </div>
+        <!-- SIGEF -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-map-marked-alt"></i>
+                <div> <strong>Certificação no SIGEF</strong> <span>Se houver</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> certificacao-sigef.pdf </a>
+        </div>
+        <!-- CAR -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-leaf"></i>
+                <div> <strong>Cadastro no CAR do imóvel</strong> <span>Se houver</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> cadastro-car.pdf </a>
+        </div>
+        <!-- Procuração -->
+        <div class="document-item">
+            <div class="document-info"> <i class="fas fa-file-contract"></i>
+                <div> <strong>Procuração</strong> <span>Caso aplicável</span> </div>
+            </div> <a href="#" class="document-link"> <i class="fas fa-paperclip"></i> procuracao.pdf </a>
+        </div>
+    </section>
+    <!-- =============================================== -->
+    <!-- RESULTADO DA ANÁLISE -->
+    <!-- =============================================== -->
+    <section class="form-section">
+        <h2 class="section-title"> Resultado da análise </h2>
+        <div class="form-grid">
+            <div class="field span-12">
+                <br-select label="Resultado da análise" placeholder="Selecione o resultado"
+                    [options]="resultadoAnaliseOptions"> </br-select>
+            </div>
+            <div class="field span-12">
+                <br-textarea label="Observação" style="width: 100%;"
+                    placeholder="Informe as observações referentes à análise da oferta..." rows="5"> </br-textarea>
+            </div>
+        </div>
+    </section>
+    <!-- =============================================== -->
+    <!-- RODAPÉ / AÇÕES -->
+    <!-- =============================================== -->
+    <div class="form-footer">
+
+        <span class="required-info">
+
+        </span>
+
+
+        <div class="buttons">
+
+            <br-button emphasis="secondary" [routerLink]="['/obtencoes/ofertaimovel/gestaoofertaimovel']">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Cancelar
+            </br-button>
+
+            <br-button emphasis="primary">
+                Salvar
+            </br-button>
+
+        </div>
+
+    </div>
+</br-card>

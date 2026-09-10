@@ -26,6 +26,10 @@ import { Resultadoorcamentoadjudicacao } from './pages/obtencoes/relatoriosobten
 import { Resultadoorcamentocompensacao } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao/resultadoorcamentocompensacao';
 import { Resultadofluxoorcamentoanalitico } from './pages/obtencoes/relatoriosobtencoes/relatoriofluxoorcamento/resultadofluxoorcamentoanalitico/resultadofluxoorcamentoanalitico';
 import { Resultadorestosapagar } from './pages/obtencoes/relatoriosobtencoes/relatorioempenho/resultadorestosapagar/resultadorestosapagar';
+import { Ofertaimovel } from './pages/obtencoes/ofertaimovel/ofertaimovel';
+import { Formularioofertaimovel } from './pages/obtencoes/ofertaimovel/formularioofertaimovel/formularioofertaimovel';
+import { Gestaoofertaimovel } from './pages/obtencoes/ofertaimovel/gestaoofertaimovel/gestaoofertaimovel';
+import { Analisarofertaimovel } from './pages/obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel/analisarofertaimovel';
 
 
 export const routes: Routes = [
@@ -61,5 +65,9 @@ export const routes: Routes = [
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadorestosapagar', component: Resultadorestosapagar },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentoadjudicacao', component: Resultadoorcamentoadjudicacao },
     { path: 'obtencoes/relatoriosobtencoes/relatorioempenho/resultadoorcamentocompensacao', component: Resultadoorcamentocompensacao },
-    { path: 'obtencoes/dashboardobtencao', component: Dashboardobtencao }
+    { path: 'obtencoes/dashboardobtencao', component: Dashboardobtencao },
+    { path: 'obtencoes/ofertaimovel', component: Ofertaimovel },
+    { path: 'obtencoes/ofertaimovel/formularioofertaimovel', component: Formularioofertaimovel },
+    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel', component: Gestaoofertaimovel  },
+    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel', component: Analisarofertaimovel  }
 ];

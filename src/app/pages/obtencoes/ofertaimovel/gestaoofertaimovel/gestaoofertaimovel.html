@@ -1,0 +1,209 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel' },
+    { label: 'Gestão de Ofertas de Imóveis Rurais', url: '/obtencoes/ofertaimovel/gestaoofertaimovel  ' }
+  ]">
+</app-breadcrumb>
+
+<h3>Gestão de Ofertas de Imóveis Rurais</h3>
+
+<p>Gerencie as ofertas de imóveis rurais cadastrados.</p>
+
+<!-- Filtros -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="br-card">
+            <div class="card-header">
+                <div class="ml-3">
+                    <div class="text-weight-semi-bold text-up-02">Filtros</div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="row mt-3 mb-3">
+                    <div class="col-4">
+                        <br-input label="Nome do Imóvel" density="medium"></br-input>
+                    </div>
+
+                    <div class="col-2">
+                        <br-select label="Estado" placeholder="Selecione uma opção" options='[
+                            { "label": "AC", "value": "AC", "selected": false },
+                            { "label": "AL", "value": "AL", "selected": false },
+                            { "label": "AP", "value": "AP", "selected": false },
+                            { "label": "AM", "value": "AM", "selected": false },
+                            { "label": "BA", "value": "BA", "selected": false },
+                            { "label": "CE", "value": "CE", "selected": false },
+                            { "label": "DF", "value": "DF", "selected": false },
+                            { "label": "ES", "value": "ES", "selected": false },
+                            { "label": "GO", "value": "GO", "selected": false },
+                            { "label": "MA", "value": "MA", "selected": false },
+                            { "label": "MT", "value": "MT", "selected": false },
+                            { "label": "MS", "value": "MS", "selected": false },
+                            { "label": "MG", "value": "MG", "selected": false },
+                            { "label": "PA", "value": "PA", "selected": false },
+                            { "label": "PB", "value": "PB", "selected": false },
+                            { "label": "PR", "value": "PR", "selected": false },
+                            { "label": "PE", "value": "PE", "selected": false },
+                            { "label": "PI", "value": "PI", "selected": false },
+                            { "label": "RJ", "value": "RJ", "selected": false },
+                            { "label": "RN", "value": "RN", "selected": false },
+                            { "label": "RS", "value": "RS", "selected": false },
+                            { "label": "RO", "value": "RO", "selected": false },
+                            { "label": "RR", "value": "RR", "selected": false },
+                            { "label": "SC", "value": "SC", "selected": false },
+                            { "label": "SP", "value": "SP", "selected": false },
+                            { "label": "SE", "value": "SE", "selected": false },
+                            { "label": "TO", "value": "TO", "selected": false }
+                        ]'>
+                        </br-select>
+                    </div>
+
+                    <div class="col-4">
+                        <br-input label="Município" density="medium"></br-input>
+                    </div>
+
+                    <div class="col-2">
+                        <br-select label="Superintendências" is-multiple="true" placeholder="Selecione uma opção"
+                            options='[
+                            { "label": "SR(01) PA", "value": "01", "selected": false },
+                            { "label": "SR(02) CE", "value": "02", "selected": false },
+                            { "label": "SR(03) PE", "value": "03", "selected": false },
+                            { "label": "SR(04) GO", "value": "04", "selected": false },
+                            { "label": "SR(05) BA", "value": "05", "selected": false },
+                            { "label": "SR(06) MG", "value": "06", "selected": false },
+                            { "label": "SR(08) SP", "value": "08", "selected": false },
+                            { "label": "SR(09) PR", "value": "09", "selected": false },
+                            { "label": "SR(10) SC", "value": "10", "selected": false },
+                            { "label": "SR(11) RS", "value": "11", "selected": false },
+                            { "label": "SR(12) MA", "value": "12", "selected": false },
+                            { "label": "SR(13) MT", "value": "13", "selected": false },
+                            { "label": "SR(14) AC", "value": "14", "selected": false },
+                            { "label": "SR(15) AM", "value": "15", "selected": false },
+                            { "label": "SR(16) MS", "value": "16", "selected": false },
+                            { "label": "SR(18) PB", "value": "18", "selected": false },
+                            { "label": "SR(19) RN", "value": "19", "selected": false },
+                            { "label": "SR(20) ES", "value": "20", "selected": false },
+                            { "label": "SR(22) AL", "value": "22", "selected": false },
+                            { "label": "SR(23) SE", "value": "23", "selected": false },
+                            { "label": "SR(24) PI", "value": "24", "selected": false },
+                            { "label": "SR(26) TO", "value": "26", "selected": false },
+                            { "label": "SR(27) MBA", "value": "27", "selected": false },
+                            { "label": "SR(28) DFE", "value": "28", "selected": false },
+                            { "label": "SR(29) MSF", "value": "29", "selected": false }
+                        ]'>
+                        </br-select>
+                    </div>
+
+                    <div class="col-4">
+                        <br-select label="Tipo de Oferta" is-multiple="true" placeholder="Selecione uma opção" options='[
+                        { "label": "Venda", "value": "1", "selected": false },
+                        { "label": "Doação", "value": "2", "selected": false },
+                        { "label": "Leilão", "value": "3", "selected": false }
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-4">
+                        <br-select label="Situação" is-multiple="true" placeholder="Selecione uma opção" options='[
+                        { "label": "Solicitado", "value": "1", "selected": false },
+                        { "label": "Em análise", "value": "2", "selected": false },
+                        { "label": "Concluído", "value": "3", "selected": false },
+                        { "label": "Rejeitado", "value": "4", "selected": false }
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-4 mt-4 d-flex justify-content-end">
+
+                        <br-button emphasis="secondary">
+                            <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
+                            Limpar
+                        </br-button>
+
+                        <br-button emphasis="primary" class="ml-3">
+                            <i class="fas fa-search mr-3" aria-hidden="true"></i>
+                            Buscar
+                        </br-button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid -->
+<div class="br-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do imóvel</th>
+                <th>Estado</th>
+                <th>Município</th>
+                <th>Superintendência</th>
+                <th>Tipo de oferta</th>
+                <th>Área</th>
+                <th>Valor</th>
+                <th>Situação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of ofertas; track item.nomeImovel) {
+            <tr>
+                <td>{{item.nomeImovel}}</td>
+                <td>{{item.estado}}</td>
+                <td>{{item.municipio}}</td>
+                <td>{{item.superintendencia}}</td>
+                <td> <br-tag [attr.bg-color]="getStatusColor(item.tipoOferta)" [label]="item.tipoOferta" shape="rounded"
+                        [title]="item.tipoOferta"></br-tag>
+                </td>
+                <td>{{item.area}}</td>
+                <td>{{item.valor}}</td>
+                <td>
+                    <br-tag [attr.bg-color]="getStatusColor(item.situacao)" [label]="item.situacao" shape="rounded"
+                        [title]="item.situacao"></br-tag>
+                </td>
+                <td>
+                    <app-actionmenu [actions]="ofertaActions" (modalAction)="onModalAction($event)">
+                    </app-actionmenu>
+                    <!-- <br-button shape="circle" emphasis="secondary" aria-label="Ícone ilustrativo"> <br-icon
+                            icon-name="fa6-solid:ellipsis-vertical"></br-icon> </br-button> -->
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<div class="br-pagination mt-4">
+    <button class="br-button circle" aria-label="Anterior">
+        «
+    </button>
+
+    <button class="br-button circle primary">1</button>
+
+    <button class="br-button circle">2</button>
+
+    <button class="br-button circle">3</button>
+
+    <button class="br-button circle">…</button>
+
+    <button class="br-button circle">25</button>
+
+    <button class="br-button circle">26</button>
+
+    <button class="br-button circle">27</button>
+
+    <button class="br-button circle" aria-label="Próximo">
+        »
+    </button>
+
+</div>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button emphasis="secondary" [routerLink]="['/obtencoes/ofertaimovel']">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Voltar
+    </br-button>
+</div>

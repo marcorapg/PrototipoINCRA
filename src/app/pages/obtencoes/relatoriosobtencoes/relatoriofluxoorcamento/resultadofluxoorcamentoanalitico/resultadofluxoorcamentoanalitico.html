@@ -1,6 +1,1677 @@
 <app-relatoriocabecalho titulo="Fluxo de Orçamento - Analítico" [subtitulo]="subtitulo"></app-relatoriocabecalho>
 
-@if(incluirPrevistos) {
+@if(!incluirPrevistos) {
+<!-- LOA -->
+<section class="monthly-budget-report">
+
+    <!-- =====================================================
+         ORÇAMENTO
+    ====================================================== -->
+
+    <div class="monthly-budget-report__budget">
+
+        <div class="monthly-budget-report__budget-label">
+            Orçamento LOA 2026
+        </div>
+
+        <div class="monthly-budget-report__budget-value">
+            R$ 1.200.000.000
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DADOS MENSAIS
+    ====================================================== -->
+
+    <div class="monthly-budget-report__table-wrapper">
+
+        <table class="monthly-budget-report__table">
+
+            <tbody>
+
+                <!-- Espaçamento inicial -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-budget">Processo</td>
+                    <td class="monthly-budget-report__cell header-budget">Imóvel</td>
+                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
+                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
+                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
+                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
+                    <td class="monthly-budget-report__cell header-budget">set/26</td>
+                    <td class="monthly-budget-report__cell header-budget">out/26</td>
+                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
+                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
+                </tr>
+
+                <!-- Compra e venda -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-separator" colspan="14">Compra e Venda 433/92</td>
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        1354892
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Rodeador
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 18.000.000,00
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        4245745
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Santa Rita
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 25.000.000,00
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        1234153
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda São Luis
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 55.000.000,00
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <!-- Desapropriação 8.629/93 -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-separator" colspan="14">Desapropriação 8.629/93</td>
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        1234153
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda São Luis
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 6.500.000,00
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        234523
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Surubim
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 100.000.000,00
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        6487921
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda São Francisco I
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <!-- Leilão -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-separator" colspan="14">Leilão</td>
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        5679441
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Pântano
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 22.000.000,00
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        677981
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Periquito
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 11.000.000,00
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <!-- Desapropriação 4.132/62 -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-separator" colspan="14">Desapropriação 4.132/62</td>
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        132548
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Vale dos Santos
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 8.000.000,00
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        756841
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda São Geraldo
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 17.000.000,00
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <!-- =================================================
+                     TOTAL MÊS
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Total Mês
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 66.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 18.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 6.500.000,00
+                    </td>
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 25.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 25.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 122.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     ACUMULADO
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Acumulado Ano
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 66.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 84.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 84.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 90.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 90.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 105.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 130.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 130.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 252.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 252.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 252.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 252.500.000,00
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     ESPAÇADOR
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
+                </tr>
+
+
+                <!-- =================================================
+                     SALDO DISPONÍVEL
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
+                        Saldo Disponível
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.134.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.116.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.116.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.109.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.109.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.094.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.069.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 1.069.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 947.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 947.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 947.500.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 947.500.000,00
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<br-divider thickness="large"></br-divider>
+
+<!-- Adjudicação -->
+<section class="monthly-budget-report">
+
+    <!-- =====================================================
+         ORÇAMENTO
+    ====================================================== -->
+
+    <div class="monthly-budget-report__budget">
+
+        <div class="monthly-budget-report__budget-label">
+            Orçamento Adjudicação 2026
+        </div>
+
+        <div class="monthly-budget-report__budget-value">
+            R$ 700.000.000
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DADOS MENSAIS
+    ====================================================== -->
+
+    <div class="monthly-budget-report__table-wrapper">
+
+        <table class="monthly-budget-report__table">
+
+            <tbody>
+
+                <!-- Espaçamento inicial -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-budget">Processo</td>
+                    <td class="monthly-budget-report__cell header-budget">Imóvel</td>
+                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
+                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
+                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
+                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
+                    <td class="monthly-budget-report__cell header-budget">set/26</td>
+                    <td class="monthly-budget-report__cell header-budget">out/26</td>
+                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
+                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
+                </tr>
+
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        9442613
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Monte Verde
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        9982721
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Joâo Silva
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <!-- =================================================
+                     TOTAL MÊS
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Total Mês
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     ACUMULADO
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Acumulado Ano
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 23.000.000,00
+                    </td>
+
+                </tr>
+
+                <!-- =================================================
+                     ESPAÇADOR
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
+                </tr>
+
+
+                <!-- =================================================
+                     SALDO DISPONÍVEL
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
+                        Saldo Disponível
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 677.000.000,00
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<br-divider thickness="large"></br-divider>
+
+<!-- Compensação -->
+<section class="monthly-budget-report">
+
+    <!-- =====================================================
+         ORÇAMENTO
+    ====================================================== -->
+
+    <div class="monthly-budget-report__budget">
+
+        <div class="monthly-budget-report__budget-label">
+            Orçamento Compensação 2026
+        </div>
+
+        <div class="monthly-budget-report__budget-value">
+            R$ 500.000.000
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DADOS MENSAIS
+    ====================================================== -->
+
+    <div class="monthly-budget-report__table-wrapper">
+
+        <table class="monthly-budget-report__table">
+
+            <tbody>
+
+                <!-- Espaçamento inicial -->
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell header-budget">Processo</td>
+                    <td class="monthly-budget-report__cell header-budget">Imóvel</td>
+                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
+                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
+                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
+                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
+                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
+                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
+                    <td class="monthly-budget-report__cell header-budget">set/26</td>
+                    <td class="monthly-budget-report__cell header-budget">out/26</td>
+                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
+                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
+                </tr>
+
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        1438474
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda Januária
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+                <tr class="monthly-budget-report__row">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        4987621
+                    </td>
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description">
+                        Fazenda São Marcos
+                    </td>
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jan -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- fev -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- mar -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- abr -->
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td> <!-- maio -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jun -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- jul -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- ago -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- set -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- out -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- nov -->
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td> <!-- dez -->
+
+                </tr>
+
+
+                <!-- =================================================
+                     TOTAL MÊS
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Total Mês
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     ACUMULADO
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
+                        Acumulado Ano
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        R$ -
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
+                        -R$ 15.000.000,00
+                    </td>
+
+                </tr>
+
+                <!-- =================================================
+                     ESPAÇADOR
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
+                </tr>
+
+
+                <!-- =================================================
+                     SALDO DISPONÍVEL
+                ================================================== -->
+
+                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
+
+                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
+                        Saldo Disponível
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 500.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 500.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 485.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 467.000.000,00
+                    </td>
+
+                    <td
+                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
+                        R$ 467.000.000,00
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+}
+@else {
 <!-- LOA -->
 <section class="monthly-budget-report">
 
@@ -1659,1041 +3330,6 @@
                     <td
                         class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
                         R$ 467.000.000,00
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-}
-@else {
-<section class="monthly-budget-report">
-    <!-- =====================================================
-         ORÇAMENTO
-    ====================================================== -->
-    <div class="monthly-budget-report__budget">
-        <div class="monthly-budget-report__budget-label">
-            Orçamento LOA 2026
-        </div>
-        <div class="monthly-budget-report__budget-value">
-            R$ 1.200.000.000
-        </div>
-    </div>
-    <!-- =====================================================
-         DADOS MENSAIS
-    ====================================================== -->
-    <div class="monthly-budget-report__table-wrapper">
-        <table class="monthly-budget-report__table">
-            <tbody>
-                <!-- Espaçamento inicial -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell header-budget" colspan="2">Modalidade</td>
-                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
-                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
-                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
-                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
-                    <td class="monthly-budget-report__cell header-budget">set/26</td>
-                    <td class="monthly-budget-report__cell header-budget">out/26</td>
-                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
-                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
-                </tr>
-                <!-- Compra e Venda 433/92 -->
-                <tr class="monthly-budget-report__row">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--compra">Compra e Venda 433/92</span>
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.500.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 1.500.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.500.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
-                        R$ -
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.300.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.500.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 6.300.000,00
-                    </td>
-                </tr>
-                <!-- Desapropriação Lei 8.629/93 -->
-                <tr class="monthly-budget-report__row">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--desap">Desapropriação Lei 8.629/93</span>
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 780.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 3.800.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
-                        -R$ 200.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.200.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 8.200.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.900.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                </tr>
-                <!-- Leilão -->
-                <tr class="monthly-budget-report__row">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--leilao">Leilão</span>
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.500.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.600.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 16.700.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 3.600.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 10.000.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.800.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                </tr>
-                <!-- Desapropriação Lei 4.132/62 -->
-                <tr class="monthly-budget-report__row">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--desap">Desapropriação Lei 4.132/62</span>
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 590.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 1.000.000,00
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 7.100.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
-                        R$ -
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 7.200.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.902.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 7.900.000,00
-                    </td>
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">R$ -</td>
-                </tr>
-                <!-- =================================================
-                     TOTAL MÊS
-                ================================================== -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Total Mês
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.370.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 11.100.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 24.000.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 7.100.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 3.400.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.400.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.300.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 10.000.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 18.902.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 12.400.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 7.900.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 6.300.000,00</td>
-                </tr>
-                <!-- =================================================
-                     ACUMULADO
-                ================================================== -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Acumulado Ano
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.370.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 20.470.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 44.470.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 51.570.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 54.970.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 64.370.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 69.670.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 79.670.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 98.572.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 110.972.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 118.872.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 125.172.000,00</td>
-                </tr>
-                <!-- =================================================
-                     ESPAÇADOR
-                ================================================== -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
-                </tr>
-                <!-- =================================================
-                     SALDO DISPONÍVEL
-                ================================================== -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
-                        Saldo Disponível
-                    </td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.190.630.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.179.530.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.155.530.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.148.430.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.145.030.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.135.630.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.130.330.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.120.330.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.101.428.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.089.028.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.081.128.000,00</td>
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 1.074.828.000,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<br-divider thickness="large"></br-divider>
-
-<section class="monthly-budget-report">
-
-    <!-- =====================================================
-         ORÇAMENTO
-    ====================================================== -->
-
-    <div class="monthly-budget-report__budget">
-
-        <div class="monthly-budget-report__budget-label">
-            Orçamento Adjudicação 2026
-        </div>
-
-        <div class="monthly-budget-report__budget-value">
-            R$ 700.000.000
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         DADOS MENSAIS
-    ====================================================== -->
-
-    <div class="monthly-budget-report__table-wrapper">
-
-        <table class="monthly-budget-report__table">
-
-            <tbody>
-
-                <!-- Espaçamento inicial -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell header-budget" colspan="2">Modalidade</td>
-                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
-                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
-                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
-                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
-                    <td class="monthly-budget-report__cell header-budget">set/26</td>
-                    <td class="monthly-budget-report__cell header-budget">out/26</td>
-                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
-                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
-                </tr>
-
-
-                <!-- Adjudicação -->
-                <tr class="monthly-budget-report__row">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--adjudicacao">Adjudicação</span>
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 3.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 6.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 8.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.900.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                </tr>
-
-
-                <!-- =================================================
-                     TOTAL MÊS
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Total Mês
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 3.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 2.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 6.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 8.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 9.900.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                </tr>
-
-
-                <!-- =================================================
-                     ACUMULADO
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Acumulado Ano
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -3.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -3.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -3.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -6.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -10.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -16.400.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -24.600.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -34.500.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -34.500.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ -34.500.000,00
-                    </td>
-
-                </tr>
-
-                <!-- =================================================
-                     ESPAÇADOR
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
-                </tr>
-
-
-                <!-- =================================================
-                     SALDO DISPONÍVEL
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
-                        Saldo Disponível
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 700.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 700.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 696.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 696.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 696.200.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 694.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 689.800.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 683.600.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 675.400.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 665.500.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 665.500.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 665.500.000,00
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-<br-divider thickness="large"></br-divider>
-
-<section class="monthly-budget-report">
-
-    <!-- =====================================================
-         ORÇAMENTO
-    ====================================================== -->
-
-    <div class="monthly-budget-report__budget">
-
-        <div class="monthly-budget-report__budget-label">
-            Orçamento Compensação 2026
-        </div>
-
-        <div class="monthly-budget-report__budget-value">
-            R$ 500.000.000
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         DADOS MENSAIS
-    ====================================================== -->
-
-    <div class="monthly-budget-report__table-wrapper">
-
-        <table class="monthly-budget-report__table">
-
-            <tbody>
-
-                <!-- Espaçamento inicial -->
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell header-budget" colspan="2">Modalidade</td>
-                    <td class="monthly-budget-report__cell header-budget">jan/26</td>
-                    <td class="monthly-budget-report__cell header-budget">fev/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mar/26</td>
-                    <td class="monthly-budget-report__cell header-budget">abr/26</td>
-                    <td class="monthly-budget-report__cell header-budget">mai/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jun/26</td>
-                    <td class="monthly-budget-report__cell header-budget">jul/26</td>
-                    <td class="monthly-budget-report__cell header-budget">ago/26</td>
-                    <td class="monthly-budget-report__cell header-budget">set/26</td>
-                    <td class="monthly-budget-report__cell header-budget">out/26</td>
-                    <td class="monthly-budget-report__cell header-budget">nov/26</td>
-                    <td class="monthly-budget-report__cell header-budget">dez/26</td>
-                </tr>
-
-
-                <!-- Adjudicação -->
-                <tr class="monthly-budget-report__row">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--description"
-                        style="text-align: center;" colspan="2">
-                        <span class="commitment-badge commitment-badge--compensacao">Compensação</span>
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 590.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.300.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 1.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.400.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 8.700.000,00
-                    </td>
-
-                </tr>
-
-
-                <!-- =================================================
-                     TOTAL MÊS
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--total">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Total Mês
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 590.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.300.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 1.000.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--money">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.400.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        R$ -
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 8.700.000,00
-                    </td>
-
-                </tr>
-
-
-                <!-- =================================================
-                     ACUMULADO
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--accumulated">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--total-label" colspan="2">
-                        Acumulado Ano
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 590.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 4.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 5.890.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 11.290.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 11.290.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--negative">
-                        -R$ 19.990.000,00
-                    </td>
-
-                </tr>
-
-                <!-- =================================================
-                     ESPAÇADOR
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--spacer">
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--spacer" colspan="14"></td>
-                </tr>
-
-
-                <!-- =================================================
-                     SALDO DISPONÍVEL
-                ================================================== -->
-
-                <tr class="monthly-budget-report__row monthly-budget-report__row--available">
-
-                    <td class="monthly-budget-report__cell monthly-budget-report__cell--available-label" colspan="2">
-                        Saldo Disponível
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 499.410.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 495.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 494.110.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 488.710.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 488.710.000,00
-                    </td>
-
-                    <td
-                        class="monthly-budget-report__cell monthly-budget-report__cell--money monthly-budget-report__cell--available-value">
-                        R$ 480.010.000,00
                     </td>
 
                 </tr>

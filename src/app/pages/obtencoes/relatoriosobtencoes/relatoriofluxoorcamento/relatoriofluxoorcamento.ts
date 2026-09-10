@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BrButton, BrCheckbox, BrInput, BrSelect, BrRadio } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrButton, BrCheckbox, BrInput, BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
 import { Breadcrumb } from '../../../../componentes/breadcrumb/breadcrumb';
 
 @Component({
   selector: 'app-relatoriofluxoorcamento',
-  imports: [RouterLink, BrButton, BrSelect, BrInput, BrCheckbox, BrRadio, Breadcrumb],
+  imports: [RouterLink, BrButton, BrSelect, BrInput, BrCheckbox, Breadcrumb],
   templateUrl: './relatoriofluxoorcamento.html',
   styleUrl: './relatoriofluxoorcamento.css',
 })

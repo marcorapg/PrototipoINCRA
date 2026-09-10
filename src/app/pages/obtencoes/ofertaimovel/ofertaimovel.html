@@ -1,0 +1,50 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Oferta de Imóvel Rural', url: '/obtencoes/ofertaimovel' }
+  ]">
+</app-breadcrumb>
+
+<h3>Oferta de Imóvel Rural</h3>
+
+<div class="app-card-grid">
+
+    <!-- Formulário de Oferta de Imóvel Rural -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <h4>Formulário de Oferta de Imóvel Rural</h4>
+
+        <p>
+            Processo para criação de oferta de imóvel rural ao INCRA.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/ofertaimovel/formularioofertaimovel']">
+            Acessar
+        </button>
+
+    </br-card>
+
+    <!-- Gestão de Ofertas de Imóveis Rurais -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-chart-bar"></i>
+        </div>
+
+        <h4>Gestão de Ofertas de Imóveis Rurais</h4>
+
+        <p>
+            Permite a gestão das ofertas de imóveis rurais cadastradas.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/ofertaimovel/gestaoofertaimovel']">
+            Acessar
+        </button>
+
+    </br-card>    
+
+</div>
