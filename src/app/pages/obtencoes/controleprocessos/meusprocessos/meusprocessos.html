@@ -1,0 +1,140 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Controle de Processos', url: '/obtencoes/controleprocessos' },
+    { label: 'Caixa de Operação', url: '/obtencoes/controleprocessos/meusprocessos' }
+  ]">
+</app-breadcrumb>
+
+<h3>Caixa de Operação</h3>
+
+<p>Visualize os processos atribuídos a você.</p>
+
+<!-- Filtros -->
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="br-card">
+            <div class="card-header">
+                <div class="ml-3">
+                    <div class="text-weight-semi-bold text-up-02">Filtros</div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="row mt-3 mb-3">
+
+                    <div class="col-2">
+                        <br-input label="Nome do Imóvel" density="medium"></br-input>
+                    </div>
+
+                    <div class="col-2">
+                        <br-input label="Número do Processo SEI" density="medium"></br-input>
+                    </div>
+
+                    <div class="col-2">
+                        <br-select label="Fase do Processo" placeholder="Selecione uma opção" is-multiple="true"
+                            options='[
+                            { "label": "Análise Inicial", "value": "analise-inicial", "selected": false },
+                            { "label": "Abertura", "value": "abertura", "selected": false },
+                            { "label": "Instrução básica", "value": "instrucao-basica", "selected": false },
+                            { "label": "Vistoria e Laudos", "value": "vistoria-laudos", "selected": false },
+                            { "label": "Consulta de Interesses", "value": "consulta-interesses", "selected": false },
+                            { "label": "Cadeia Dominial", "value": "cadeia-dominial", "selected": false },
+                            { "label": "Revisões e Deliberações", "value": "revisoes-deliberacoes", "selected": false },
+                            { "label": "Ato para pagamento", "value": "ato-pagamento", "selected": false },
+                            { "label": "Atos para escrituração", "value": "atos-escrituracao", "selected": false },
+                            { "label": "Destinação do Imóvel", "value": "destinacao-imovel", "selected": false },
+                            { "label": "Específicos da modalidade", "value": "especificos-modalidade", "selected": false }
+                        ]'>
+                        </br-select>
+                    </div>
+
+                    <div class="col-3">
+                        <label for="datetime-picker-form">Prazo Inicial</label>
+
+                        <br-datetime-picker id="datetime-picker-form" name="agendamento" mode="date" locale="pt-BR"
+                            selection-mode="single" initial-moment="now" required>
+                        </br-datetime-picker>
+                    </div>
+                    <div class="col-3">
+                        <label for="datetime-picker-form">Prazo Final</label>
+
+                        <br-datetime-picker id="datetime-picker-form" name="agendamento" mode="date" locale="pt-BR"
+                            selection-mode="single" initial-moment="now" required>
+                        </br-datetime-picker>
+                    </div>
+
+                    <div class="col-12 mt-4 d-flex justify-content-end">
+
+                        <br-button emphasis="secondary">
+                            <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
+                            Limpar
+                        </br-button>
+
+                        <br-button emphasis="primary" class="ml-3">
+                            <i class="fas fa-search mr-3" aria-hidden="true"></i>
+                            Buscar
+                        </br-button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid -->
+<div class="br-table">
+    <table>
+        <thead>
+            <tr>
+                <th>SR</th>
+                <th>Nome do Imóvel</th>
+                <th>Processo</th>
+                <th>Fase do Processo</th>
+                <th>Prazo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of controleProcessos; track item.nomeImovel) {
+            <tr>
+                <td>{{item.superintendencia}}</td>
+                <td>{{item.nomeImovel}}</td>
+                <td>{{item.processo}}</td>
+                <td> <br-tag [attr.bg-color]="getStatusColor(item.faseProcesso)" [label]="item.faseProcesso"
+                        shape="rounded" [title]="item.faseProcesso"></br-tag>
+                </td>
+                <td>{{item.prazo}}</td>
+                <td>
+                    <app-actionmenu [actions]="controleProcessosActions" (modalAction)="onModalAction($event)">
+                    </app-actionmenu>
+                    <!-- <br-button shape="circle" emphasis="secondary" aria-label="Ícone ilustrativo"> <br-icon
+                            icon-name="fa6-solid:ellipsis-vertical"></br-icon> </br-button> -->
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<div class="br-pagination mt-4">
+    <button class="br-button circle" aria-label="Anterior">
+        «
+    </button>
+
+    <button class="br-button circle primary">1</button>
+
+    <button class="br-button circle" aria-label="Próximo">
+        »
+    </button>
+
+</div>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button emphasis="secondary" [routerLink]="['/obtencoes/controleprocessos']">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Voltar
+    </br-button>
+</div>

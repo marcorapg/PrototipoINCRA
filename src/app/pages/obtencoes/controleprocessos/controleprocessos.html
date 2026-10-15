@@ -1,0 +1,50 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Controle de Processos', url: '/obtencoes/controleprocessos' }
+  ]">
+</app-breadcrumb>
+
+<h3>Controle de Processos</h3>
+
+<div class="app-card-grid">
+
+    <!-- Gestão Operacional -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-timeline"></i>
+        </div>
+
+        <h4>Gestão Operacional</h4>
+
+        <p>
+            Permite a atribuição de processos à servidores.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/controleprocessos/gestaocontroleprocessos']">
+            Acessar
+        </button>
+
+    </br-card>
+
+    <!-- Caixa de Operação -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-clipboard-check"></i>
+        </div>
+
+        <h4>Caixa de Operação</h4>
+
+        <p>
+            Permite acessar os processos atribuídos a cada servidor.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/controleprocessos/meusprocessos']">
+            Acessar
+        </button>
+
+    </br-card>        
+
+</div>

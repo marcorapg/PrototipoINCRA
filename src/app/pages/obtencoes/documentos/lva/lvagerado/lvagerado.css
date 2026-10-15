@@ -1,0 +1,231 @@
+/* =========================================
+   LAUDO
+========================================= */
+
+.laudo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 45px 60px;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: #000;
+    background: #fff;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho {
+    text-align: center;
+}
+
+.brasao {
+    display: block;
+
+    width: 200px;
+    height: 200px;
+
+    margin: 0 auto 8px;
+
+    object-fit: contain;
+}
+
+.orgao {
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 58px;
+}
+
+.cabecalho h1 {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   IDENTIFICAÇÃO
+========================================= */
+
+.identificacao {
+    margin-top: 48px;
+}
+
+.identificacao p {
+    margin: 0 0 7px 0;
+}
+
+.identificacao strong {
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RESPONSÁVEIS TÉCNICOS
+========================================= */
+
+.responsaveis {
+    margin-top: 36px;
+}
+
+.titulo-secao {
+    margin: 0 0 8px 0;
+
+    font-weight: 600
+}
+
+.responsavel {
+    margin-bottom: 21px;
+}
+
+.responsavel p {
+    margin: 0;
+}
+
+
+/* =========================================
+   IMPRESSÃO
+========================================= */
+
+@media print {
+
+    .laudo {
+        max-width: none;
+        padding: 35px 50px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .laudo {
+        padding: 30px 25px;
+    }
+
+    .orgao {
+        font-size: 15px;
+        margin-bottom: 45px;
+    }
+
+    .cabecalho h1 {
+        font-size: 16px;
+    }
+
+}
+
+
+
+
+
+
+/* ------ SECTION ------ */
+section {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 18px 40px 30px 40px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.42;
+
+    color: #000;
+}
+
+/* ------ ANEXOS ------ */
+.anexos h2 {
+    margin: 0 0 14px 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.lista-anexos {
+    margin-left: 26px;
+}
+
+.lista-anexos p {
+    margin: 0 0 12px 0;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+
+/* ------ BIBLIOGRAFIA ------ */
+.referencias {
+    width: 100%;
+}
+
+.referencia {
+    margin: 0 0 13px 0;
+    padding: 0;
+
+    text-align: left;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.42;
+}
+
+.referencia strong {
+    font-weight: 700;
+}
+
+/* ------ DATA LOCAL ------ */
+.data-local {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding-right: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    text-align: right;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #000;
+}
+
+/* ------ ASSINATURAS ------ */
+.peritos-lista {
+    padding: 46px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.perito {
+    margin-bottom: 55px;
+}
+
+.perito strong,
+.perito span {
+    display: block;
+}
+
+.perito strong {
+    font-weight: 700;
+    margin-bottom: 0;
+}

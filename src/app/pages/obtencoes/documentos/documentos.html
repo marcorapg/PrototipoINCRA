@@ -1,0 +1,31 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Documentos', url: '/obtencoes/documentos' }
+  ]">
+</app-breadcrumb>
+
+<h3>Documentos</h3>
+
+<div class="app-card-grid">
+
+    <!-- LAUDO DE VISTORIA E AVALIAÇÃO - LVA -->
+    <br-card class="app-feature-card">
+
+        <div class="app-feature-icon notificacoes">
+            <i class="fas fa-file-alt"></i>
+        </div>
+
+        <h4>Laudo de Vistoria e Avaliação - LVA</h4>
+
+        <p>
+            Permite o preenchimento e geração do Laudo de Vistoria e Avaliação - LVA.
+        </p>
+
+        <button class="br-button primary small" type="button" [routerLink]="['/obtencoes/documentos/lva']">
+            Acessar
+        </button>
+
+    </br-card>
+
+</div>

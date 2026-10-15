@@ -5,6 +5,7 @@ import {
   Input,
   Output
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { BrButton, BrIcon } from '@govbr-ds/webcomponents-angular/standalone';
 
 export interface MenuAction {
@@ -23,6 +24,8 @@ export interface MenuAction {
 })
 
 export class ActionMenu {
+  constructor(private router: Router) {}
+
   @Input() actions: MenuAction[] = [];
 
   @Output() modalAction = new EventEmitter<MenuAction>();
@@ -47,7 +50,7 @@ export class ActionMenu {
 
     if (action.type === 'link' && action.url) {
       this.closeMenu();
-      window.location.href = action.url;
+      this.router.navigateByUrl(action.url);
     }
   }
 

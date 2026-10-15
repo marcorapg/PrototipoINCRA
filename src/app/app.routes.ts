@@ -30,6 +30,12 @@ import { Ofertaimovel } from './pages/obtencoes/ofertaimovel/ofertaimovel';
 import { Formularioofertaimovel } from './pages/obtencoes/ofertaimovel/formularioofertaimovel/formularioofertaimovel';
 import { Gestaoofertaimovel } from './pages/obtencoes/ofertaimovel/gestaoofertaimovel/gestaoofertaimovel';
 import { Analisarofertaimovel } from './pages/obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel/analisarofertaimovel';
+import { Controleprocessos } from './pages/obtencoes/controleprocessos/controleprocessos';
+import { Gestaocontroleprocessos } from './pages/obtencoes/controleprocessos/gestaocontroleprocessos/gestaocontroleprocessos';
+import { Meusprocessos } from './pages/obtencoes/controleprocessos/meusprocessos/meusprocessos';
+import { Documentos } from './pages/obtencoes/documentos/documentos';
+import { Lva } from './pages/obtencoes/documentos/lva/lva';
+import { Lvagerado } from './pages/obtencoes/documentos/lva/lvagerado/lvagerado';
 
 
 export const routes: Routes = [
@@ -69,5 +75,11 @@ export const routes: Routes = [
     { path: 'obtencoes/ofertaimovel', component: Ofertaimovel },
     { path: 'obtencoes/ofertaimovel/formularioofertaimovel', component: Formularioofertaimovel },
     { path: 'obtencoes/ofertaimovel/gestaoofertaimovel', component: Gestaoofertaimovel  },
-    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel', component: Analisarofertaimovel  }
+    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel', component: Analisarofertaimovel  },
+    { path: 'obtencoes/controleprocessos', component: Controleprocessos  },
+    { path: 'obtencoes/controleprocessos/gestaocontroleprocessos', component: Gestaocontroleprocessos  },
+    { path: 'obtencoes/controleprocessos/meusprocessos', component: Meusprocessos  },
+    { path: 'obtencoes/documentos', component: Documentos  },
+    { path: 'obtencoes/documentos/lva', component: Lva  },
+    { path: 'obtencoes/documentos/lva/lvagerado', component: Lvagerado  }
 ];

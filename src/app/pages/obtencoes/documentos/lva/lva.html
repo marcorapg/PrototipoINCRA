@@ -1,0 +1,3334 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Documentos', url: '/obtencoes/documentos' },
+    { label: 'Laudo de Vistoria e Avaliação', url: '/obtencoes/documentos/lva' }
+  ]">
+</app-breadcrumb>
+
+<div class="row mt-3 mb-3 align-items-center">
+    <div class="col-3">
+        <div class="h3 mb-0">Laudo de Vistoria e Avaliação</div>
+    </div>
+
+    <div class="col-9 d-flex justify-content-end align-items-center">
+        <br-button id="saveScrim" emphasis="primary">
+            <i class="fas fa-save mr-2"></i>
+            Salvar
+        </br-button>
+
+        <br-button class="ml-3" id="closeScrim" emphasis="secondary"
+            [routerLink]="['/obtencoes/documentos/lva/lvagerado']">
+            <i class="fas fa-check-double mr-2"></i>
+            Finalizar Laudo
+        </br-button>
+    </div>
+</div>
+
+<br-tab>
+    <br-tab-item tab-item-title="Dados Gerais" icon="fa6-solid:clipboard" is-active="true">
+        <div class="h3">Dados Gerais</div>
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <label for="ordemServico" class="label-input-disabled">
+                    Ordem de Serviço
+                </label>
+                <br-input id="ordemServico" density="medium" readonly="true" state="warning"
+                    value="1111213">123146</br-input>
+            </div>
+            <div class="col-6">
+                <label for="dataAvaliacao" class="label-input-disabled">
+                    Data da Avaliação *
+                </label>
+                <br-datetime-picker id="dataAvaliacao" name="agendamento" mode="date" locale="pt-BR"
+                    selection-mode="single" initial-moment="now" disabled-dates="12/05/2026 20/05/2026"
+                    placeholder="Selecione data" required>
+                </br-datetime-picker>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <label for="responsaveis" class="label-input-disabled">
+                    Responsáveis Técnicos
+                </label>
+                <br-input id="responsaveis" readonly="true" state="warning" density="medium"
+                    value="Engº. Agrônomo Claudinei Chalito da Silva, Engº. Agrônomo Rodrigo Camargo de Andrade Pinto, Engº. Agrônomo Geraldo Batista Martins"></br-input>
+            </div>
+        </div>
+
+        <h3>1.1. Introdução</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h3>1.2. Identificação do Imóvel</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-input id="processoObtencao" label="Processo de Obtenção" readonly="true" state="warning"
+                    density="medium" value="3547961"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="imovel" label="Imóvel" density="medium" readonly="true" state="warning"
+                    value="Fazenda Nossa Senhora do Carmo ou Brasileira"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="municipio" label="Municípios" readonly="true" state="warning" density="medium"
+                    value="Ortigueira e Faxinal"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="uf" label="UF" density="medium" readonly="true" state="warning" value="PR"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-input id="areaRegistrada" label="Área registrada (ha)" density="medium" readonly="true"
+                    state="warning" value="1.303,79"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="areaGeorreferenciada" label="Área georreferenciada e certificada (ha)" density="medium"
+                    value="1500" [value]="areaTotal" (valueChange)="areaTotal = +$event.detail"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="modulosFiscais" label="Módulos Fiscais (MF)" density="medium" readonly="true"
+                    state="warning" value="529,2077"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="fracaoMinima" label="Fração Mínima de Parcelamento (FMP)" density="medium" readonly="true"
+                    state="warning" value="Ortigueira: 2 ha; Faxinal: 3 ha"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-4">
+                <br-input id="distanciaSede" label="Distância da sede (km)" density="medium" value=""></br-input>
+            </div>
+            <div class="col-4">
+                <br-select label="Município Pólo de Influência" placeholder="Selecione uma opção" options='[
+                    { "label": "Petrópolis", "value": "Petrópolis", "selected": false },
+                    { "label": "Leopoldina", "value": "Leopoldina", "selected": false },
+                    { "label": "São Carlos", "value": "São Carlos", "selected": false },
+                    { "label": "Ribeirão Preto", "value": "Ribeirão Preto", "selected": false }
+                ]'>
+                </br-select>
+            </div>
+            <div class="col-4">
+                <br-input id="distanciaPoloInfluencia" label="Distância do Pólo de Influência (km)" density="medium"
+                    value=""></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <br-input id="codigoSNCR" label="Código SNCR" density="medium" readonly="true" state="warning"
+                    value="710.040.724.254.8"></br-input>
+            </div>
+            <div class="col-6">
+                <br-input id="codigoReceitaFederal" label="Código Receita Federal" density="medium"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <br-input id="codigoSIGEF" label="Código da Certificação SIGEF " density="medium" value=""></br-input>
+            </div>
+            <div class="col-6">
+                <br-input id="codigoCAR" label="Código do CAR" density="medium"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-input id="fracaoMinima" label="Proprietários" density="medium" readonly="true" state="warning"
+                    value="Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli"></br-input>
+            </div>
+        </div>
+
+        <h3>1.3. Localização/Acesso</h3>
+
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Situação
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Acesso Terrestre
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Acesso Fluvial
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Importância das Distancias
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Practibilidade durante o ano
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="tipoSituacaoLocalizacao"
+                        (valueChange)="tipoSituacaoLocalizacao = $event.detail" options='[
+                            { "label": "Ótima", "value": "Ótima", "selected": false },
+                            { "label": "Muito Boa", "value": "Muito Boa", "selected": false },
+                            { "label": "Boa", "value": "Boa", "selected": false },
+                            { "label": "Regular", "value": "Regular", "selected": false },
+                            { "label": "Desfavorável", "value": "Desfavorável", "selected": false },
+                            { "label": "Má", "value": "Má", "selected": false }
+                        ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{
+                    tipoSituacaoLocalizacao === 'Ótima' ? 'Asfaltada' :
+                    tipoSituacaoLocalizacao === 'Muito Boa' ? '1ª classe não asfaltada' :
+                    tipoSituacaoLocalizacao === 'Boa' ? 'Não pavimentada' :
+                    tipoSituacaoLocalizacao === 'Regular' ? 'Estradas e Servidões de passagem' :
+                    tipoSituacaoLocalizacao === 'Desfavorável' ? 'Fechos nas servidões' :
+                    tipoSituacaoLocalizacao === 'Má' ? 'Fechos e interceptada por córrego sem ponte' :
+                    '-'
+                    }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{
+                    tipoSituacaoLocalizacao === 'Ótima' ? '0 - 1 h' :
+                    tipoSituacaoLocalizacao === 'Muito Boa' ? '1 - 3 h' :
+                    tipoSituacaoLocalizacao === 'Boa' ? '3 - 6 h' :
+                    tipoSituacaoLocalizacao === 'Regular' ? '6 - 12 h' :
+                    tipoSituacaoLocalizacao === 'Desfavorável' ? 'Parte do ano' :
+                    tipoSituacaoLocalizacao === 'Má' ? 'Restrita' :
+                    '-'
+                    }}
+                </br-table-cell>
+
+
+                <br-table-cell>
+                    {{
+                    tipoSituacaoLocalizacao === 'Ótima' ? 'Não significativa' :
+                    tipoSituacaoLocalizacao === 'Muito Boa' ? 'Relativa' :
+                    tipoSituacaoLocalizacao === 'Boa' ? 'Significativa' :
+                    tipoSituacaoLocalizacao === 'Regular' ? 'Significativa' :
+                    tipoSituacaoLocalizacao === 'Desfavorável' ? 'Significativa' :
+                    tipoSituacaoLocalizacao === 'Má' ? 'Significativa' :
+                    '-'
+                    }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{
+                    tipoSituacaoLocalizacao === 'Ótima' ? 'Permanente' :
+                    tipoSituacaoLocalizacao === 'Muito Boa' ? 'Permanente' :
+                    tipoSituacaoLocalizacao === 'Boa' ? 'Permanente' :
+                    tipoSituacaoLocalizacao === 'Regular' ? 'Sem condições satisfatórias' :
+                    tipoSituacaoLocalizacao === 'Desfavorável' ? 'Problemas sérios na estação chuvosa' :
+                    tipoSituacaoLocalizacao === 'Má' ? 'Problemas sérios mesmo na seca' :
+                    '-'
+                    }}
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h4>Descrição do acesso, limites, confrontantes e mapa</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h3>1.4. Situação Dominial</h3>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-input id="fracaoMinima" label="Proprietários" density="medium" readonly="true" state="warning"
+                    value="Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-input id="responsaveis" label="Inventariante" density="medium"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: x-large; font-weight: 700;">Matriculas Apresentadas</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarRegistro()">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Novo
+
+                </br-button>
+            </div>
+        </div>
+
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Forma de Obtenção
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Registro
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Livro
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Comarca
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Ofício
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Data do Registro
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Ações
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let registro of registros; let i = index">
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.area">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.formaObtencao">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.registro">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.livro">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.comarca">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.oficio">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="registro.dataRegistro" placeholder="00/00/0000"
+                        mask="##/##/####">
+                    </br-input>
+                </br-table-cell>
+
+                <!-- AÇÕES -->
+                <br-table-cell>
+                    <br-button shape="circle" emphasis="tertiary" aria-label="delete" (click)="removerRegistro(i)">
+
+                        <br-icon icon-name="fa6-solid:trash"></br-icon>
+
+                    </br-button>
+                </br-table-cell>
+            </br-table-row>
+        </br-table>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <h4>Fontes da Situação Dominial</h4>
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <h4>Observações da Situação Dominial</h4>
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Características do Imóvel" icon="fa6-solid:house">
+        <div class="h3">Características Físicas, Edafoclimáticas, Econômicas e Sociais do Imóvel</div>
+        <h3>2.1. Vegetação, recursos hídricas e solo</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h3>2.2. Uso atual do imóvel</h3>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: x-large; font-weight: 700;">Itens de Uso do Imóvel</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarUsoImovel()">
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Novo
+                </br-button>
+            </div>
+        </div>
+
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Uso
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    % área
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    Ações
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let usoImovel of listaUsoImovel; let i = index">
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [options]="getOpcoesUsoImovel(usoImovel.uso)">
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="usoImovel.area" (valueChange)="usoImovel.area = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ usoImovel.area / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+                <!-- AÇÕES -->
+                <br-table-cell horizontalAlign="center">
+                    <br-button shape="circle" emphasis="tertiary" aria-label="delete" (click)="removerUsoImovel(i)">
+                        <br-icon icon-name="fa6-solid:trash"></br-icon>
+                    </br-button>
+                </br-table-cell>
+            </br-table-row>
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Total
+                </br-table-cell>
+
+                <br-table-cell>
+                    <label>
+                        {{ listaUsoImovel.reduce((total, item) => total + item.area, 0) }}
+                    </label>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <label>
+                        {{ (listaUsoImovel.reduce((total, item) => total + item.area, 0) / areaTotal * 100).toFixed(2)
+                        }}%
+                    </label>
+                </br-table-cell>
+
+                <!-- AÇÕES -->
+                <br-table-cell horizontalAlign="center">
+                </br-table-cell>
+            </br-table-row>
+        </br-table>
+
+        <h3>2.3. Classe de Capacidade de Uso das Terras</h3>
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Fatores limitantes
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Características
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Classe
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Fertilidade natural
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="fertilidadeNatural"
+                        (valueChange)="alterarFertilidadeNatural($event)" options='[
+                        { "label": "Muito Alta", "value": "Muito Alta", "selected": false },
+                        { "label": "Alta", "value": "Alta", "selected": false },
+                        { "label": "Média", "value": "Média", "selected": false },
+                        { "label": "Baixa", "value": "Baixa", "selected": false },
+                        { "label": "Muito Baixa", "value": "Muito Baixa", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeFertilidadeNatural }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Profundidade efetiva
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="profundidadeSolo"
+                        (valueChange)="alterarProfundidadeSolo($event)" options='[
+                        { "label": "Muito Profunda", "value": "Muito Profunda", "selected": false },
+                        { "label": "Profunda", "value": "Profunda", "selected": false },
+                        { "label": "Pouco profundo", "value": "Pouco profundo", "selected": false },
+                        { "label": "Rasa", "value": "Rasa", "selected": false },
+                        { "label": "Muito rasa", "value": "Muito rasa", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeProfundidadeSolo }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Drenagem interna
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="drenagemInterna"
+                        (valueChange)="alterarDrenagemInterna($event)" options='[
+                        { "label": "Excessiva", "value": "Excessiva", "selected": false },
+                        { "label": "Forte", "value": "Forte", "selected": false },
+                        { "label": "Acentuada", "value": "Acentuada", "selected": false },
+                        { "label": "Bem Drenado", "value": "Bem Drenado", "selected": false },
+                        { "label": "Moderada", "value": "Moderada", "selected": false },
+                        { "label": "Imperfeita", "value": "Imperfeita", "selected": false },
+                        { "label": "Mal Drenado", "value": "Mal Drenado", "selected": false },
+                        { "label": "Muito mal drenado", "value": "Muito mal drenado", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeDrenagemInterna }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Deflúvio superficial
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="defluvioSuperficial"
+                        (valueChange)="alterarDefluvioSuperficial($event)" options='[
+                        { "label": "Muito Rápido", "value": "Muito Rápido", "selected": false },
+                        { "label": "Rápido", "value": "Rápido", "selected": false },
+                        { "label": "Moderado", "value": "Moderado", "selected": false },
+                        { "label": "Lento", "value": "Lento", "selected": false },
+                        { "label": "Muito Lento", "value": "Muito Lento", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeDefluvioSuperficial }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Pedregosidade
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="pedregosidade"
+                        (valueChange)="alterarPedregosidade($event)" options='[
+                        { "label": "Sem Pedras", "value": "Sem Pedras", "selected": false },
+                        { "label": "Ligeiramente Pedregoso", "value": "Ligeiramente Pedregoso", "selected": false },
+                        { "label": "Moderadamente Pedregoso", "value": "Moderadamente Pedregoso", "selected": false },
+                        { "label": "Pedregoso", "value": "Pedregoso", "selected": false },
+                        { "label": "Muito Pedregoso", "value": "Muito Pedregoso", "selected": false },
+                        { "label": "Extremamente Pedregoso", "value": "Extremamente Pedregoso", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classePedregosidade }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Riscos de Inundação
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="riscosInundacao"
+                        (valueChange)="alterarRiscosInundacao($event)" options='[
+                        { "label": "Ocasional", "value": "Ocasional", "selected": false },
+                        { "label": "Freqüente", "value": "Freqüente", "selected": false },
+                        { "label": "Muito Freqüente", "value": "Muito Freqüente", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeRiscosInundacao }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe de Declividade
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="classeDeclividade"
+                        (valueChange)="alterarClasseDeclividade($event)" options='[
+                        { "label": "Plano", "value": "Plano", "selected": false },
+                        { "label": "Suave ondulado", "value": "Suave ondulado", "selected": false },
+                        { "label": "Moderadamente Ondulado", "value": "Moderadamente Ondulado", "selected": false },
+                        { "label": "Ondulado", "value": "Ondulado", "selected": false },
+                        { "label": "Forte Ondulado", "value": "Forte Ondulado", "selected": false },
+                        { "label": "Montanhoso", "value": "Montanhoso", "selected": false },
+                        { "label": "Escarpado", "value": "Escarpado", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeClasseDeclividade }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Grau de erosão laminar
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="grauErosaoLaminar"
+                        (valueChange)="alterarGrauErosaoLaminar($event)" options='[
+                        { "label": "Não Aparente", "value": "Não Aparente", "selected": false },
+                        { "label": "Ligeira", "value": "Ligeira", "selected": false },
+                        { "label": "Moderada", "value": "Moderada", "selected": false },
+                        { "label": "Severa", "value": "Severa", "selected": false },
+                        { "label": "Muito Severa", "value": "Muito Severa", "selected": false },
+                        { "label": "Extremamente severa", "value": "Extremamente severa", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeGrauErosaoLaminar }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Sulcos rasos
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="sulcosRasos"
+                        (valueChange)="alterarSulcosRasos($event)" options='[
+                        { "label": "Ocasionais", "value": "Ocasionais", "selected": false },
+                        { "label": "Freqüentes", "value": "Freqüentes", "selected": false },
+                        { "label": "Muito Freqüentes", "value": "Muito Freqüentes", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeSulcosRasos }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Sulcos médios
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="sulcosMedios"
+                        (valueChange)="alterarSulcosMedios($event)" options='[
+                        { "label": "Ocasionais", "value": "Ocasionais", "selected": false },
+                        { "label": "Freqüentes", "value": "Freqüentes", "selected": false },
+                        { "label": "Muito Freqüentes", "value": "Muito Freqüentes", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeSulcosMedios }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Sulcos profundos
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="sulcosProfundos"
+                        (valueChange)="alterarSulcosProfundos($event)" options='[
+                        { "label": "Ocasionais", "value": "Ocasionais", "selected": false },
+                        { "label": "Freqüentes", "value": "Freqüentes", "selected": false },
+                        { "label": "Muito Freqüentes", "value": "Muito Freqüentes", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeSulcosProfundos }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Seca Edafológica
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select placeholder="Selecione uma opção" [value]="secaEdafologica"
+                        (valueChange)="alterarSecaEdafologica($event)" options='[
+                        { "label": "Ligeira", "value": "Ligeira", "selected": false },
+                        { "label": "Curta", "value": "Curta", "selected": false },
+                        { "label": "Média", "value": "Média", "selected": false },
+                        { "label": "Longa", "value": "Longa", "selected": false },
+                        { "label": "Muito longa", "value": "Muito longa", "selected": false }
+                    ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classeSecaEdafologica }}
+                </br-table-cell>
+
+            </br-table-row>
+        </br-table>
+
+        <h3>2.4. Relevo</h3>
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Classe de relevo
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Classe de declividade (%)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área aproximada (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    % da área
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 1 - plano
+                </br-table-cell>
+
+                <br-table-cell>
+                    0 - 2
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe1" density="small" mask="############" [value]="classe1"
+                        (valueChange)="classe1 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe1 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 2 - suave moderado
+                </br-table-cell>
+
+                <br-table-cell>
+                    2 - 5
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe2" density="small" mask="############" [value]="classe2"
+                        (valueChange)="classe2 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe2 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 3 - moderamente ondulado
+                </br-table-cell>
+
+                <br-table-cell>
+                    5 - 10
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe3" density="small" mask="############" [value]="classe3"
+                        (valueChange)="classe3 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe3 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 4 - ondulado
+                </br-table-cell>
+
+                <br-table-cell>
+                    10 - 15
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe4" density="small" mask="############" [value]="classe4"
+                        (valueChange)="classe4 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe4 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 5 - forte ondulado
+                </br-table-cell>
+
+                <br-table-cell>
+                    15 - 45
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe5" density="small" mask="############" [value]="classe5"
+                        (valueChange)="classe5 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe5 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 6 - montanhoso
+                </br-table-cell>
+
+                <br-table-cell>
+                    45 - 70
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe6" density="small" mask="############" [value]="classe6"
+                        (valueChange)="classe6 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe6 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 7 - escarpado
+                </br-table-cell>
+
+                <br-table-cell>
+                    > 70
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe7" density="small" mask="############" [value]="classe7"
+                        (valueChange)="classe7 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe7 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Classe 8 - escarpado APP
+                </br-table-cell>
+
+                <br-table-cell>
+                    > 100
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input id="classe8" density="small" mask="############" [value]="classe8"
+                        (valueChange)="classe8 = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe8 / areaTotal * 100 | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    Total
+                </br-table-cell>
+
+                <br-table-cell>
+
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classe1 + classe2 + classe3 + classe4 + classe5 + classe6 + classe7 + classe8 }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ (classe1 / areaTotal * 100) +
+                    (classe2 / areaTotal * 100) +
+                    (classe3 / areaTotal * 100) +
+                    (classe4 / areaTotal * 100) +
+                    (classe5 / areaTotal * 100) +
+                    (classe6 / areaTotal * 100) +
+                    (classe7 / areaTotal * 100) +
+                    (classe8 / areaTotal * 100) | number:'1.2-2' }}%
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>2.5. Nota Agronômica</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-select label="Situação" placeholder="Selecione uma opção" [value]="localizacaoTerreno"
+                    (valueChange)="alterarLocalizacaoTerreno($event)" options='[
+                        { "label": "Ótima", "value": "Ótima", "selected": false },
+                        { "label": "Muito Boa", "value": "Muito Boa", "selected": false },
+                        { "label": "Boa", "value": "Boa", "selected": false },
+                        { "label": "Regular", "value": "Regular", "selected": false },
+                        { "label": "Desfavorável", "value": "Desfavorável", "selected": false },
+                        { "label": "Má", "value": "Má", "selected": false }
+                    ]'>
+                </br-select>
+            </div>
+        </div>
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Classe
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Discriminação
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    % da área
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Índice
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]" slot="row">
+
+                <br-table-cell>
+                    {{ getNomeClasse(i) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ classesUsoDiscriminacao[i - 1] }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [id]="'classeNota' + (i + 1)" density="small" mask="#########"
+                        (valueChange)="areaClasses[i-1] = +((+$event.detail / areaTotal * 100).toFixed(2))">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaClasses[i - 1] }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ getFatorUso(localizacaoTerreno, i-1) }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Nota agronômica</b>
+                </br-table-cell>
+
+                <br-table-cell>
+
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ (areaClasses.reduce((total, area) => total + area, 0)) | number:'1.2-2' }}%
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ calcularSomaAreaIndice(localizacaoTerreno) | number:'1.2-2'}}
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>2.6. Aspectos Produtivos e Trabalhistas</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h3>2.7. Aspectos Sociais</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Avaliação do Imóvel Rural" icon="fa6-solid:ruler-combined" style="min-height: 4400px;">
+        <div class="h3">Avaliação do Imóvel Rural</div>
+        <h3>3.1. Avaliação das Benfeitorias</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: x-large; font-weight: 700;">Inventário das Benfeitorias</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarInventarioBenfeitorias()">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Nova Benfeitoria
+
+                </br-button>
+            </div>
+        </div>
+
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Tipo
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Descrição
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Unidade de medida
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Quantidade
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Valor unitário
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Valor total
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Depreciação
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Valor final
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Ações
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let inventario of inventarioBenfeitorias; let i = index">
+
+                <br-table-cell>
+                    <br-select [value]="inventario.tipo" (valueChange)="inventario.tipo = $event.detail" options='[
+                            { "label": "Reprodutiva", "value": "Reprodutiva", "selected": false },
+                            { "label": "Não Reprodutiva", "value": "Não Reprodutiva", "selected": false }
+                        ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input density="medium" [value]="inventario.descricao">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select [value]="inventario.unidadeMedida"
+                        (valueChange)="inventario.unidadeMedida = $event.detail" options='[
+                            { "label": "M²", "value": "M²", "selected": false },
+                            { "label": "UD", "value": "UD", "selected": false },
+                            { "label": "H/MAQ", "value": "H/MAQ", "selected": false }
+                        ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="inventario.quantidade" (valueChange)="inventario.quantidade = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="inventario.valorUnitario"
+                        (valueChange)="inventario.valorUnitario = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ ((inventario.valorUnitario || 0) * (inventario.quantidade || 0)) | number:'1.2-2' }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select [value]="inventario.depreciacao" (valueChange)="inventario.depreciacao = $event.detail"
+                        options='[
+                            { "label": "0.2", "value": "0.2", "selected": false },
+                            { "label": "0.4", "value": "0.4", "selected": false },
+                            { "label": "0.6", "value": "0.6", "selected": false },
+                            { "label": "0.8", "value": "0.8", "selected": false }
+                        ]'>
+                    </br-select>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ ((inventario.valorUnitario || 0) * (inventario.quantidade || 0) * ($any(inventario.depreciacao
+                    || 0))) | number:'1.2-2' }}
+                </br-table-cell>
+
+                <!-- AÇÕES -->
+                <br-table-cell>
+                    <br-button shape="circle" emphasis="tertiary" aria-label="delete"
+                        (click)="removerInventarioBenfeitorias(i)">
+
+                        <br-icon icon-name="fa6-solid:trash"></br-icon>
+
+                    </br-button>
+                </br-table-cell>
+            </br-table-row>
+        </br-table>
+
+        <table class="tabela-resumo-benfeitorias">
+            <tbody>
+                <tr>
+                    <td class="titulo">Valor Total das Benfeitorias</td>
+                    <td class="valor">
+                        R$
+                        {{ inventarioBenfeitorias.reduce( (total, item) => total + ( (item.valorUnitario || 0) *
+                        (item.quantidade || 0) * (+item.depreciacao || 0) ), 0 ) | number:'1.2-2' }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="titulo">Benfeitorias Reprodutivas</td>
+                    <td class="valor">
+                        R$
+                        {{
+                        inventarioBenfeitorias
+                        .filter(item => item.tipo === 'Reprodutiva')
+                        .reduce( (total, item) => total + ( (item.valorUnitario || 0) *
+                        (item.quantidade || 0) * (+item.depreciacao || 0) ), 0 ) | number:'1.2-2' }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="titulo">Benfeitorias Não Reprodutivas</td>
+                    <td class="valor">
+                        R$
+                        {{
+                        inventarioBenfeitorias
+                        .filter(item => item.tipo === 'Não Reprodutiva')
+                        .reduce( (total, item) => total + ( (item.valorUnitario || 0) *
+                        (item.quantidade || 0) * (+item.depreciacao || 0) ), 0 ) | number:'1.2-2' }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.2. Capacidade de Assentamento de Famílias Estimada</h3>
+        <h4>Introdução</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-select label="Método de cálculo de capacidade de famílias" placeholder="Selecione uma opção"
+                    [value]="tipoCalculoCapacidadeFamilias"
+                    (valueChange)="tipoCalculoCapacidadeFamilias = $event.detail" options='[
+                        { "label": "Pela Área e Módulo Fiscal", "value": "Pela Área e Módulo Fiscal", "selected": false },
+                        { "label": "Pela Capacidade de renda do solo", "value": "Pela Capacidade de renda do solo", "selected": false }
+                    ]'>
+                </br-select>
+            </div>
+        </div>
+
+        <br-table [hidden]="tipoCalculoCapacidadeFamilias != 'Pela Área e Módulo Fiscal'">
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" style="width: 40%;">
+
+                <br-table-cell>
+                    <b>Capacidade de Famílias pelo Módulo Fiscal</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    253
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <br-table [hidden]="tipoCalculoCapacidadeFamilias != 'Pela Capacidade de renda do solo'">
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell>
+                    <b>20% da Reserva Legal</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaTotal * 0.2 | number:'1.2-2' }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-select label="Classe" placeholder="Selecione uma opção"
+                        [value]="classeCalculoCapacidadeFamilias"
+                        (valueChange)="classeCalculoCapacidadeFamilias = $event.detail; cacularTabelaCapacidadeFamilias()"
+                        options='[
+                            { "label": "Classe I", "value": "Classe I", "selected": false },
+                            { "label": "Classe II", "value": "Classe II", "selected": false },
+                            { "label": "Classe III", "value": "Classe III", "selected": false },
+                            { "label": "Classe IV", "value": "Classe IV", "selected": false },
+                            { "label": "Classe V", "value": "Classe V", "selected": false },
+                            { "label": "Classe VI", "value": "Classe VI", "selected": false },
+                            { "label": "Classe VII", "value": "Classe VII", "selected": false }
+                        ]'>
+                    </br-select>
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <br-table [hidden]="tipoCalculoCapacidadeFamilias != 'Pela Capacidade de renda do solo'">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell horizontalAlign="center">
+                    Classe
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    I
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    II
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    III
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    IV
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    V
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    VI
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    VII
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    VIII
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell style="background: #F0F0F0">
+                    Área Calculada
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseI }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseII }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseIII }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseIV }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseV }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseVI }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseVII }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaCalculadaPorClasseVIII }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell style="background: #F0F0F0">
+                    Renda por classe
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseI.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseII.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseIII.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseIV.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseV.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseVI.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseVII.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2
+                    }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaPorClasseVIII.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits:
+                    2 }) }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell style="background: #F0F0F0">
+                    Renda líquida anual
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseI.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseII.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseIII.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseIV.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseV.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseVI.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseVII.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ {{ rendaLiquidaPorClasseVIII.toLocaleString('pt-BR', { minimumFractionDigits: 2,
+                    maximumFractionDigits: 2 }) }}
+                </br-table-cell>
+
+            </br-table-row>
+
+
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell style="background: lightgrey">
+                    <b>Capacidade de Famílias pela Renda do Solo</b>
+                </br-table-cell>
+
+                <br-table-cell>
+
+                </br-table-cell>
+
+                <br-table-cell>
+                    <b>{{ capacidadeFamiliasRendaSolo }}</b>
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h4>Conclusão</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h3>3.3. Áreas de Reserva Legal (ARL) e de Preservação Permanente (APP)</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>ARL e APP total (ha)</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="appTotal" (valueChange)="appTotal = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>% ARL e APP total</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ (appTotal / areaTotal) * 100 | number:'1.2-2' }} %
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>ARL e APP indevido (ha)</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="appIndevido" (valueChange)="appIndevido = +$event.detail">
+                    </br-input>
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>% ARL e APP indevido</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ (appIndevido / areaTotal) * 100 | number:'1.2-2' }} %
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>3.4. Ativo Ambiental</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+            <div class="col-12">
+                <br-input label="Valor" density="medium">
+                </br-input>
+            </div>
+        </div>
+
+        <h3>3.5. Passivo Ambiental e Recuperação Ambiental</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+            <div class="col-12">
+                <br-input label="Valor" density="medium">
+                </br-input>
+            </div>
+        </div>
+
+        <h3>3.6. Ancianidade das Ocupações</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h4>Índices de homogeneização quanto à ancianidade das ocupações</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-4">
+                <br-select label="Tempo de ocupação" [value]="tempoOcupacao"
+                    (valueChange)="tempoOcupacao = +$event.detail" options='[
+                            { "label": "Não possui posseiros", "value": "0", "selected": true },
+                            { "label": "Posseiros com 1 ano ou menos", "value": "1", "selected": false },
+                            { "label": "Posseiros com mais de 1 ano até 5 anos (F1)", "value": "2", "selected": false },
+                            { "label": "Posseiros com mais de 5 anos", "value": "3", "selected": false }
+                        ]'>
+                </br-select>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col-4">
+                <br-select label="% de área ocupada" [value]="percentualAreaOcupada"
+                    (valueChange)="percentualAreaOcupada = +$event.detail" options='[
+                            { "label": "Sem ocupação", "value": "0", "selected": true },
+                            { "label": "Menos que 20%", "value": "1", "selected": false },
+                            { "label": "De 20% a 29%", "value": "2", "selected": false },
+                            { "label": "De 30% a 49%", "value": "3", "selected": false },
+                            { "label": "De 50% a 69%", "value": "4", "selected": false },
+                            { "label": "De 70% a 100%", "value": "5", "selected": false }
+                        ]'>
+                </br-select>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <p><b>Ancianidade das ocupações: </b>{{
+                    (
+                    percentualAreaOcupada === 0 || tempoOcupacao === 0
+                    ? 0
+                    : percentualAreaOcupada === 1
+                    ? (tempoOcupacao === 1 ? 1 : tempoOcupacao === 2 ? 0.92 : 0.88)
+                    : percentualAreaOcupada === 2
+                    ? (tempoOcupacao === 1 ? 1 : tempoOcupacao === 2 ? 0.88 : 0.80)
+                    : percentualAreaOcupada === 3
+                    ? (tempoOcupacao === 1 ? 1 : tempoOcupacao === 2 ? 0.80 : 0.70)
+                    : percentualAreaOcupada === 4
+                    ? (tempoOcupacao === 1 ? 1 : tempoOcupacao === 2 ? 0.70 : 0.60)
+                    : (tempoOcupacao === 1 ? 1 : tempoOcupacao === 2 ? 0.60 : 0.40)
+                    ) | number:'1.2-2'
+                    }}</p>
+            </div>
+        </div>
+
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Valor do Imóvel" icon="fa6-solid:money-bill-wave" style="min-height: 4000px;">
+        <h3>4.1. Fundamentação</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <br-table style="width: 30%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Grau de Fundamentação
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Limites
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Fundamentação II</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    0,70 a 1,40
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <br-table style="width: 30%;">
+
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Cálculos
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+
+                </br-table-header-cell>
+
+            </br-table-header-row>
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Área mínima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaMinima === 0 ? '-' : areaMinima + ' ha' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Área máxima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaMaxima === 0 ? '-' : areaMaxima + ' ha' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Nota agronômica mínima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ notaAgronomicaMinima === 0 ? '-' : notaAgronomicaMinima | number:'1.2-2' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Nota agronômica máxima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ notaAgronomicaMaxima === 0 ? '-' : notaAgronomicaMaxima | number:'1.2-2' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2. Pesquisa de Mercado e Homogeneização</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+
+        <h3>4.2.1. Elementos Amostrais da Pesquisa de Mercado de Terras</h3>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: x-large; font-weight: 700;">Elementos</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="abrirModalIncluirElemento()">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Novo Elemento
+
+                </br-button>
+            </div>
+        </div>
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    ID
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Elemento
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTI
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/h
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Nota Solos
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator Área
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 3
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 4
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    FHT
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/ha
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Saneamento
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Ações
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let elemento of elementos; let i = index">
+
+                <br-table-cell>
+                    {{elemento.contador}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.elemento}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.area}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vti}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtn}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnh}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.notaAgronomica}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fatorArea}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator3}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator4}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fht}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnha}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.saneamento}}
+                </br-table-cell>
+
+                <!-- AÇÕES -->
+                <br-table-cell>
+                    <br-button shape="circle" emphasis="tertiary" aria-label="delete"
+                        (click)="removerElemento(elemento.contador)">
+
+                        <br-icon icon-name="fa6-solid:trash"></br-icon>
+
+                    </br-button>
+                </br-table-cell>
+            </br-table-row>
+        </br-table>
+
+        <h3>4.2.2. Parâmetros Estatísticos Pós Homogeneização</h3>
+        <br-table style="width: 50%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>Média</b>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>Desvio Padrão</b>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>CV</b>
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Saneado</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.542,37
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 1.284,56
+                </br-table-cell>
+
+                <br-table-cell>
+                    15,04%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Simples</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.731,25
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 1.452,83
+                </br-table-cell>
+
+                <br-table-cell>
+                    16,64%
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2.3. Definição do Intervalo de Confiança VTN/ha (IC 80%)</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>n-1</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    24
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Inversa da Distribuição t de Student</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    1,318
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.204,73
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.880,01
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    7,96% < µ < 8,95% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Grau de precisão</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    4,14%
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2.4. Campo de Arbítrio do VTN</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 6.832,00
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 10.248,00
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    80% < µ < 120% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b style="font-size: 20px;">VTN Médio</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.540,00
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+
+        <h3>4.2.4. Campo de Arbítrio do VTI</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 6.221.445,21
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 9.332.167,82
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    80% < µ < 120% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b style="font-size: 20px;">VTI Médio</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 7.776.806,51
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.3. Resumo da Avaliação do Valor do Imóvel</h3>
+        <h4>Introdução</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <br-table style="width: 50%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell [ariaColSpan]="2" horizontalAlign="center">
+                    <b>Valores Unitários</b>
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+                <br-table-cell>
+                    VTN/ha
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 6.221.445,21
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    VTI/ha
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 5.217.215,63
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Custo/Família
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 16.241.615,31
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Perc. Benfeitorias
+                </br-table-cell>
+
+                <br-table-cell>
+                    13%
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Passivo ambiental
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 130.000,00
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Ativo ambiental
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 533.000,00
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor da Terra Nua mínima
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 111.342.112,81
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor da Terra Nua média
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 115.241.352,16
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor da Terra Nua máxima
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 118.641.222,71
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor das Benfeitorias
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 2.232.162,77
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor Total do Imóvel mínima
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 121.516.743,12
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor Total do Imóvel média
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 130.312.546,47
+                </br-table-cell>
+            </br-table-row>
+
+            <br-table-row slot="row">
+                <br-table-cell>
+                    Valor Total do Imóvel máxima
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 150.123.346,12
+                </br-table-cell>
+            </br-table-row>
+
+        </br-table>
+
+        <h4>Conclusão</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Considerações Finais" icon="fa6-solid:note-sticky">
+        <div class="h3">Considerações Finais</div>
+        <quill-editor theme="snow" class="editor-full" placeholder="">
+        </quill-editor>
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Anexos" icon="fa6-solid:paperclip">
+        <div class="h3">Anexos</div>
+        <quill-editor theme="snow" class="editor-full" placeholder="">
+        </quill-editor>
+        <h4>Anexo 1 - Mapas Temáticos</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-upload [multiple]=true label="Mapa de Uso e Ocupação do Solo"></br-upload>
+                <br-message state="info" is-feedback show-icon aria-label="Mensagem do aria-label para acessibilidade">
+                    <span>Os arquivos devem ser no formato PNG, JPG, PDF e ter no máximo 1GB.</span>
+                </br-message>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-upload [multiple]=true label="Mapa de Uso Atual do Solo"></br-upload>
+                <br-message state="info" is-feedback show-icon aria-label="Mensagem do aria-label para acessibilidade">
+                    <span>Os arquivos devem ser no formato PNG, JPG, PDF e ter no máximo 1GB.</span>
+                </br-message>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-upload [multiple]=true label="Mapa de Declividade"></br-upload>
+                <br-message state="info" is-feedback show-icon aria-label="Mensagem do aria-label para acessibilidade">
+                    <span>Os arquivos devem ser no formato PNG, JPG, PDF e ter no máximo 1GB.</span>
+                </br-message>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-upload [multiple]=true label="Mapa de Classes de Capacidade de Uso"></br-upload>
+                <br-message state="info" is-feedback show-icon aria-label="Mensagem do aria-label para acessibilidade">
+                    <span>Os arquivos devem ser no formato PNG, JPG, PDF e ter no máximo 1GB.</span>
+                </br-message>
+            </div>
+        </div>
+
+        <h4>Anexo 2 - Painel Fotográfico do imóvel avaliando</h4>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: large; font-weight: 700;">Fotografias do Imóvel</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarAnexo(fotografiasImovel)">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Nova Fotografia
+
+                </br-button>
+            </div>
+        </div>
+        <div class="br-table" title="Fotografias do Imóvel">
+            <table>
+                <colgroup>
+                    <col span="6" style="width: 10%;">
+                    <col span="3" style="width: 10%;">
+                    <col span="1" style="width: 10%;">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th colspan="6">Descrição</th>
+                        <th colspan="3">Anexo</th>
+                        <th colspan="1">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let fotografia of fotografiasImovel; let i = index">
+                        <td colspan="6">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-input density="medium"></br-input>
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-upload label=""></br-upload>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <br-button shape="circle" emphasis="tertiary" aria-label="delete"
+                                (click)="removerAnexo(fotografiasImovel, i)">
+                                <br-icon icon-name="fa6-solid:trash"></br-icon>
+                            </br-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row mt-5 mb-3">
+            <div class="col-12">
+                <br-input label="Repositório das fotografias originais" density="medium"></br-input>
+            </div>
+        </div>
+
+        <h4>Anexo 3 - Painel fotográfico das benfeitorias</h4>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: large; font-weight: 700;">Fotografias das Benfeitorias</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarAnexo(fotografiasBenfeitorias)">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Nova Fotografia
+
+                </br-button>
+            </div>
+        </div>
+        <div class="br-table" title="Fotografias das Benfeitorias">
+            <table>
+                <colgroup>
+                    <col span="6" style="width: 10%;">
+                    <col span="3" style="width: 10%;">
+                    <col span="1" style="width: 10%;">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th colspan="6">Descrição</th>
+                        <th colspan="3">Anexo</th>
+                        <th colspan="1">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let fotografia of fotografiasBenfeitorias; let i = index">
+                        <td colspan="6">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-input density="medium"></br-input>
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-upload label=""></br-upload>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <br-button shape="circle" emphasis="tertiary" aria-label="delete"
+                                (click)="removerAnexo(fotografiasBenfeitorias, i)">
+                                <br-icon icon-name="fa6-solid:trash"></br-icon>
+                            </br-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Anexo 4 - Ficha pesquisa dos elementos de amostras</h4>
+
+        <h4>Anexo 5 - Painel fotográfico dos elementos amostrais</h4>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: large; font-weight: 700;">Fotografias dos Elementos Amostrais</p>
+            </div>
+            <div class="col-9 d-flex justify-content-end">
+                <br-button shape="pill" emphasis="primary" (click)="adicionarAnexo(fotografiasElementosAmostrais)">
+
+                    <br-icon icon-name="fa6-solid:plus"></br-icon>
+                    Incluir Nova Fotografia
+
+                </br-button>
+            </div>
+        </div>
+        <div class="br-table" title=" dos Elementos Amostrais">
+            <table>
+                <colgroup>
+                    <col span="6" style="width: 10%;">
+                    <col span="3" style="width: 10%;">
+                    <col span="1" style="width: 10%;">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th colspan="6">Descrição</th>
+                        <th colspan="3">Anexo</th>
+                        <th colspan="1">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let fotografia of fotografiasElementosAmostrais; let i = index">
+                        <td colspan="6">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-input density="medium"></br-input>
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="row mt-5 mb-3">
+                                <div class="col-12">
+                                    <br-upload label=""></br-upload>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <br-button shape="circle" emphasis="tertiary" aria-label="delete"
+                                (click)="removerAnexo(fotografiasElementosAmostrais, i)">
+                                <br-icon icon-name="fa6-solid:trash"></br-icon>
+                            </br-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Anexo 6 - Memória de cálculos do passivo ambiental</h4>
+
+        <h4>Anexo 7 - Memória de cálculos da planilha de avaliação</h4>
+
+        <h4>Fundamentação</h4>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <p>Após análise dos elementos técnicos apresentados, das características físicas do imóvel, de sua
+                    localização, das condições de acesso, da infraestrutura disponível e dos valores praticados no
+                    mercado
+                    regional, este analista conclui que o imóvel avaliado possui valor de mercado estimado em R$
+                    850.000,00
+                    (oitocentos e cinquenta mil reais). A estimativa considera as condições atuais de uso e ocupação, a
+                    aptidão produtiva da área e os fatores de valorização e depreciação incidentes, observados os
+                    critérios
+                    técnicos aplicáveis à avaliação de imóveis rurais. Ressalta-se que o valor indicado possui caráter
+                    estimativo e está sujeito à revisão mediante apresentação de novos elementos técnicos ou
+                    mercadológicos
+                    relevantes. </p>
+            </div>
+        </div>
+
+        <br-table style="width: 30%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Utilizado
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Grau de Fundamentação
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Limites
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <br-radio name="radio-group" value="3"
+                        (checkedChange)="tipoFundamentacao3 = $event.detail; recalcularFundamentacao();"></br-radio>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <b>Fundamentação III</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    0,80 a 1,25
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <br-radio name="radio-group" value="2"
+                        (checkedChange)="tipoFundamentacao2 = $event.detail; recalcularFundamentacao();"></br-radio>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <b>Fundamentação II</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    0,70 a 1,40
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <br-radio name="radio-group" value="1"
+                        (checkedChange)="tipoFundamentacao1 = $event.detail; recalcularFundamentacao();"></br-radio>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <b>Fundamentação I</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    0,50 a 2,00
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Área mínima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaMinima === 0 ? '-' : areaMinima + ' ha' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Área máxima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ areaMaxima === 0 ? '-' : areaMaxima + ' ha' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Nota agronômica mínima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ notaAgronomicaMinima === 0 ? '-' : notaAgronomicaMinima | number:'1.2-2' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Nota agronômica máxima</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{ notaAgronomicaMaxima === 0 ? '-' : notaAgronomicaMaxima | number:'1.2-2' }}
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2. Pesquisa de Mercado e Homogeneização</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <p>A pesquisa de mercado foi realizada mediante levantamento de ofertas e referências de transações
+                    de imóveis rurais localizados na mesma região ou em áreas com características semelhantes ao
+                    imóvel avaliando. Os elementos amostrais foram analisados considerando fatores como localização,
+                    área total, aptidão agrícola, condições de acesso, infraestrutura disponível e características
+                    do solo. Posteriormente, procedeu-se à homogeneização dos valores coletados, mediante aplicação
+                    de fatores de ajuste destinados a adequar as diferenças entre os imóveis pesquisados e o imóvel
+                    objeto da avaliação. Após a análise comparativa e o tratamento dos dados obtidos, estabeleceu-se
+                    um valor unitário de referência compatível com as condições do mercado imobiliário rural
+                    regional, servindo de fundamento para a determinação do valor final do imóvel.</p>
+            </div>
+        </div>
+
+        <h3>4.2.1. Elementos Amostrais da Pesquisa de Mercado de Terras</h3>
+        <div class="row mt-5 mb-3">
+            <div class="col-3">
+                <p style="font-size: x-large; font-weight: 700;">Elementos</p>
+            </div>
+        </div>
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    ID
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Elemento
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTI
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/h
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Nota Agronômica
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator Área
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 3
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 4
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    FHT
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/ha
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Saneamento
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let elemento of elementos; let i = index">
+
+                <br-table-cell>
+                    {{elemento.contador}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.elemento}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.area}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vti}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtn}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnh}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.notaAgronomica}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fatorArea}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator3}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator4}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fht}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnha}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.saneamento}}
+                </br-table-cell>
+
+            </br-table-row>
+        </br-table>
+
+        <h3>4.2.2. Parâmetros Estatísticos Pós Homogeneização</h3>
+        <br-table style="width: 50%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>Média</b>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>Desvio Padrão</b>
+                </br-table-header-cell>
+
+                <br-table-header-cell horizontalAlign="center">
+                    <b>CV</b>
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Saneado</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.542,37
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 1.284,56
+                </br-table-cell>
+
+                <br-table-cell>
+                    15,04%
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell>
+                    <b>Simples</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.731,25
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 1.452,83
+                </br-table-cell>
+
+                <br-table-cell>
+                    16,64%
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2.3. Definição do Intervalo de Confiança VTN/ha (IC 80%)</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>n-1</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    24
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Inversa da Distribuição t de Student</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    1,318
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.204,73
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.880,01
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    7,96% < µ < 8,95% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Grau de precisão</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    4,14%
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h3>4.2.4. Campo de Arbítrio do VTN</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 6.832,00
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 10.248,00
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    80% < µ < 120% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b style="font-size: 20px;">VTN Médio</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 8.540,00
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+
+        <h3>4.2.4. Campo de Arbítrio do VTI</h3>
+
+        <br-table style="width: 30%;">
+            <!-- LINHAS -->
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Inferior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 6.221.445,21
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>Limite Superior</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 9.332.167,82
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b>% < µ < %</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    80% < µ < 120% </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row">
+
+                <br-table-cell horizontalAlign="center">
+                    <b style="font-size: 20px;">VTI Médio</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    R$ 7.776.806,51
+                </br-table-cell>
+
+            </br-table-row>
+
+        </br-table>
+
+        <h4>Anexo 8 - Memória cálculo das benfeitorias dos elementos de amostra</h4>
+
+        <h4>Anexo 9 - Mapa Temáticos dos elementos de amostra</h4>
+        <div class="row mt-5 mb-3">
+            <div class="col-12">
+                <br-input label="Repositório dos arquivos vetoriais em format SHP" density="medium"></br-input>
+            </div>
+        </div>
+
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Bibliografia" icon="fa6-solid:book">
+        <div class="h3">Anexos</div>
+        <quill-editor theme="snow" class="editor-full" placeholder="">
+        </quill-editor>
+        <div class="h3">Bibliografia</div>
+        <quill-editor theme="snow" class="editor-full" placeholder="">
+        </quill-editor>
+    </br-tab-item>
+</br-tab>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos']">
+        Voltar
+    </br-button>
+</div>
+
+
+<br-scrim>
+    <br-modal id="incluirElemento" title-text="Adicionar Elemento" alignFooter="end" size="auto" auto-close
+        initial-focus-selector="#basic-select" [show]="false">
+
+        <div class="br-card">
+            <div class="card-header">
+                <div class="ml-3">
+                    <div class="text-weight-semi-bold text-up-02">Filtros</div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="row mt-3 mb-3">
+                    <div class="col-3">
+                        <br-input label="Elemento" density="medium"></br-input>
+                    </div>
+
+                    <div class="col-4 mt-4 d-flex justify-content-end">
+                        <div>
+                            <br-button emphasis="secondary">
+                                <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
+                                Limpar
+                            </br-button>
+                        </div>
+                        <div class="ml-3">
+                            <br-button emphasis="primary">
+                                <i class="fas fas fa-search mr-3" aria-hidden="true"></i>
+                                Buscar
+                            </br-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br-table>
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Elemento
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Área (ha)
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTI
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/h
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Nota Solos
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator Área
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 3
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Fator 4
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    FHT
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    VTN/ha
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+                    Saneamento
+                </br-table-header-cell>
+
+            </br-table-header-row>
+
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" *ngFor="let elemento of elementosLista; let i = index">
+
+                <br-table-cell>
+                    <br-radio name="radio-group" value="option4"
+                        (checkedChange)="selecionarElemento(elemento.contador, $event.detail);"> </br-radio>
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.elemento}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.area}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vti}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtn}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnh}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.notaAgronomica}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fatorArea}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator3}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fator4}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.fht}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.vtnha}}
+                </br-table-cell>
+
+                <br-table-cell>
+                    {{elemento.saneamento}}
+                </br-table-cell>
+
+            </br-table-row>
+        </br-table>
+
+        <div style="width: 1500px;"></div>
+
+        <div slot="footer">
+            <br-button type="button" emphasis="secondary" id="basic-cancel-btn"
+                (click)="fecharModalIncluirElemento()">Cancelar</br-button>
+            <br-button class="ml-3" type="button" emphasis="primary" id="basic-cancel-btn"
+                (click)="adicionarElemento(elementoSelecionado); fecharModalIncluirElemento()">Enviar</br-button>
+        </div>
+    </br-modal>
+</br-scrim>

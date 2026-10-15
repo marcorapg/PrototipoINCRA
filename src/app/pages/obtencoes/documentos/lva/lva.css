@@ -1,0 +1,55 @@
+/* Corrige altura fixa do GovBR Wizard para acompanhar seu conteúdo */
+br-wizard {
+    height: auto !important;
+}
+
+.label-input-disabled {
+    color: inherit;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.fix-overflow br-wizard-panel {
+    overflow: hidden;
+    height: auto;
+}
+
+.col-acoes {
+    width: 60px !important;
+    max-width: 60px !important;
+    min-width: 60px !important;
+}
+
+
+input[disabled] {
+    color: #f5c400 !important;
+}
+
+
+/* ----- Inventário Benfeitorias ----- */
+.tabela-resumo-benfeitorias {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.tabela-resumo-benfeitorias td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-resumo-benfeitorias .titulo {
+  font-weight: 600;
+  text-align: left;
+}
+
+.tabela-resumo-benfeitorias .valor {
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.br-modal-body{
+  width: 80% !important;
+}

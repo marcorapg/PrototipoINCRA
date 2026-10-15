@@ -1,0 +1,233 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Documentos', url: '/obtencoes/documentos' },
+    { label: 'Laudo de Vistoria e Avaliação', url: '/obtencoes/documentos/lva' }
+  ]">
+</app-breadcrumb>
+
+<div class="row mt-3 mb-3 align-items-center">
+    <div class="col-3">
+        <div class="h3 mb-0">Laudo de Vistoria e Avaliação</div>
+    </div>
+
+    <div class="col-9 d-flex justify-content-end align-items-center">
+        <br-button id="saveScrim" emphasis="primary">
+            <i class="fas fa-print mr-2"></i>
+            Imprimir
+        </br-button>
+
+        <br-button class="ml-3" id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos/lva/lvagerado']">
+            <i class="fas fa-pen mr-2"></i>
+            Enviar para Assinatura
+        </br-button>
+    </div>
+</div>
+
+<div class="laudo">
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <img src="images/brasao_brasil.png" alt="Brasão da República Federativa do Brasil" class="brasao">
+
+        <div class="orgao">
+            INSTITUTO NACIONAL DE COLONIZAÇÃO E REFORMA AGRÁRIA
+        </div>
+
+        <h1>LAUDO DE VISTORIA E AVALIAÇÃO - LVA</h1>
+    </header>
+
+
+    <!-- IDENTIFICAÇÃO DO IMÓVEL -->
+    <section class="identificacao">
+
+        <p>
+            <strong>Imóvel:</strong>
+            Fazenda Nossa Senhora do Carmo ou Brasileira
+        </p>
+
+        <p>
+            <strong>Área registrada:</strong>
+            10.621,3000 ha
+        </p>
+
+        <p>
+            <strong>Área georreferenciada e certificada:</strong>
+            10.584,1549 ha
+        </p>
+
+        <p>
+            <strong>Municípios / UF:</strong>
+            Ortigueira e Faxinal / PR
+        </p>
+
+        <p>
+            <strong>Proprietários:</strong>
+            Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli
+        </p>
+
+    </section>
+
+
+    <!-- RESPONSÁVEIS TÉCNICOS -->
+    <section class="responsaveis">
+
+        <p class="titulo-secao">
+            Responsáveis Técnicos:
+        </p>
+
+        <div class="responsavel">
+            <p>Eng.º Agrônomo Claudinei Chalioto da Silva</p>
+            <p>CREA/SC: 45860-0 - Visto/PR 80.900</p>
+        </div>
+
+        <div class="responsavel">
+            <p>Eng.º Agrônomo Rodrigo Camargo de Andrade Pinto</p>
+            <p>CREA/PR: 71.183/D</p>
+        </div>
+
+        <div class="responsavel">
+            <p>Eng.º Agrônomo Geraldo Batista Martins</p>
+            <p>CREA/PR: 23.366/D</p>
+        </div>
+
+    </section>
+
+</div>
+
+<section class="anexos">
+    <h3>Anexos</h3>
+
+    <div class="lista-anexos">
+        <p>
+            Anexo 1: Planilha de Avaliação / Homogeneização e saneamento (SEI 18072482);
+        </p>
+
+        <p>
+            Anexo 2: Mapas temáticos de uso atual, declividade e classes de capacidade de uso das terras do Imóvel
+            avaliando (SEI 17949935);
+        </p>
+
+        <p>
+            Anexo 3. Descrição e fotos das benfeitorias do Imóvel avaliando (SEI 17552692);
+        </p>
+
+        <p>
+            Anexo 4: Memória de cálculos dos valores das benfeitorias do Imóvel avaliando (SEI 17552703);
+        </p>
+
+        <p>
+            Anexo 5: Painel fotográfico dos 12 elementos amostrais NR e OF (SEI 17552732);
+        </p>
+
+        <p>
+            Anexo 6: Elementos amostrais - Fichas de pesquisa de NR, OF e OP (SEI 17915686);
+        </p>
+
+        <p>
+            Anexo 7: Elementos amostrais - Mapas temáticos de uso atual, declividade e classes de capacidade de uso (SEI
+            17478229);
+        </p>
+
+        <p>
+            Anexo 8. Painel fotográfico da Fazenda Brasileira (SEI 17564363);
+        </p>
+    </div>
+</section>
+
+<section class="bibliografia">
+    <h3>Bibliografia consultada</h3>
+
+    <div class="referencias">
+
+        <p class="referencia">
+            - Embrapa (Empresa Brasileira de Pesquisa Agropecuária) e Iapar
+            (Fundação Instituto Agronômico do Paraná).
+            <strong>Levantamento de reconhecimento dos solos do Estado do Paraná.</strong>
+            1984. Londrina – PR. Tomo I e II, 791 páginas.
+        </p>
+
+        <p class="referencia">
+            - INCRA.
+            <strong>Manual de obtenção de terras e perícia judicial</strong>,
+            aprovado pela Norma de Execução Incra DT nº 52, de 25 de outubro de 2006.
+            Brasília – DF: Incra, 2006. 180 p.
+        </p>
+
+        <p class="referencia">
+            - Associação Brasileira de Normas Técnicas.
+            <strong>Manual da Norma Brasileira de Regulamentação nº 14.653-3/2001
+                e atualizações.</strong>
+            Rio de Janeiro – RJ: ABNT, 2004. 85 p.
+        </p>
+
+        <p class="referencia">
+            - Demétrio, Valdemar Antonio.
+            <strong>Curso de engenharia de avaliações e perícias agronômicas:
+                conceitos gerais e exemplos.</strong>
+            Piracicaba: FEALQ, 1985. 312 p.
+        </p>
+
+        <p class="referencia">
+            - Lepsch, I. F.; Bellinazzi Jr., R.; Bertolini, D.; Espíndola, C. R.
+            <strong>Manual para levantamento utilitário do meio físico e
+                classificação de terras no sistema de capacidade de uso.</strong>
+            Campinas, SP: Sociedade Brasileira de Ciência do Solo, 1991. 175 p.
+        </p>
+
+        <p class="referencia">
+            - Ramalho Filho, A.; Beek, K. J.
+            <strong>Sistema de avaliação da aptidão agrícola das terras.</strong>
+            3. ed. Rio de Janeiro: Embrapa, 1995. 65 p.
+        </p>
+
+        <p class="referencia">
+            - Rossi, Marcelo Camargo Lima.
+            <strong>Avaliação de propriedades rurais.</strong>
+            São Paulo: Editora Agropecuária Nacional, 2005. 224 p.
+        </p>
+
+        <p class="referencia">
+            - Secretaria de Estado da Agricultura e do Abastecimento –
+            Departamento de Economia Rural.
+            <strong>Manual de avaliação de imóveis rurais.</strong>
+            Curitiba, PR: Seab/DERAL, 2010. 148 p.
+        </p>
+
+    </div>
+</section>
+
+<section class="data-local">
+    Curitiba - PR, 24 de outubro de 2023.
+</section>
+
+<section class="peritos-lista">
+
+    <div class="perito">
+        <strong>Claudinei Chalito da Silva</strong>
+        <span>Engenheiro Agrônomo / Perito Federal Agrário</span>
+        <span>CREA: SC-45.860/D Visto no PR 80.900</span>
+        <span>INCRA SR(PR) D1</span>
+    </div>
+
+    <div class="perito">
+        <strong>Geraldo Batista Martins</strong>
+        <span>Engenheiro Agrônomo / Perito Federal Agrário</span>
+        <span>CREA: PR-23.366/D</span>
+        <span>INCRA SR(PR) D1</span>
+    </div>
+
+    <div class="perito">
+        <strong>Rodrigo Camargo de Andrade Pinto</strong>
+        <span>Engenheiro Agrônomo / Perito Federal Agrário</span>
+        <span>CREA: CREA PR-71.183/D</span>
+        <span>INCRA SR(PR) D1</span>
+    </div>
+
+</section>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos/lva']">
+        Voltar
+    </br-button>
+</div>

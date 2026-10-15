@@ -1,0 +1,19 @@
+.col-3>label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+br-modal::part(container) {
+  width: 900px !important;
+  max-width: 90vw !important;
+}
+
+br-modal::part(body) {
+  max-height: 600px !important;
+  overflow-y: auto !important;
+}
