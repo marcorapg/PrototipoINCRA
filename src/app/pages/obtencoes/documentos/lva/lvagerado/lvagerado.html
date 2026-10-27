@@ -17,7 +17,13 @@
             Imprimir
         </br-button>
 
-        <br-button class="ml-3" id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos/lva/lvagerado']">
+        <br-button class="ml-3" emphasis="primary" (click)="abrirAnexos()">
+            <i class="fas fa-paperclip mr-2"></i>
+            Anexos
+        </br-button>
+
+        <br-button class="ml-3" id="closeScrim" emphasis="secondary"
+            [routerLink]="['/obtencoes/documentos/lva/lvagerado']">
             <i class="fas fa-pen mr-2"></i>
             Enviar para Assinatura
         </br-button>
@@ -35,107 +41,1343 @@
 
         <h1>LAUDO DE VISTORIA E AVALIAÇÃO - LVA</h1>
     </header>
-
-
-    <!-- IDENTIFICAÇÃO DO IMÓVEL -->
-    <section class="identificacao">
-
-        <p>
-            <strong>Imóvel:</strong>
-            Fazenda Nossa Senhora do Carmo ou Brasileira
-        </p>
-
-        <p>
-            <strong>Área registrada:</strong>
-            10.621,3000 ha
-        </p>
-
-        <p>
-            <strong>Área georreferenciada e certificada:</strong>
-            10.584,1549 ha
-        </p>
-
-        <p>
-            <strong>Municípios / UF:</strong>
-            Ortigueira e Faxinal / PR
-        </p>
-
-        <p>
-            <strong>Proprietários:</strong>
-            Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli
-        </p>
-
-    </section>
-
-
-    <!-- RESPONSÁVEIS TÉCNICOS -->
-    <section class="responsaveis">
-
-        <p class="titulo-secao">
-            Responsáveis Técnicos:
-        </p>
-
-        <div class="responsavel">
-            <p>Eng.º Agrônomo Claudinei Chalioto da Silva</p>
-            <p>CREA/SC: 45860-0 - Visto/PR 80.900</p>
-        </div>
-
-        <div class="responsavel">
-            <p>Eng.º Agrônomo Rodrigo Camargo de Andrade Pinto</p>
-            <p>CREA/PR: 71.183/D</p>
-        </div>
-
-        <div class="responsavel">
-            <p>Eng.º Agrônomo Geraldo Batista Martins</p>
-            <p>CREA/PR: 23.366/D</p>
-        </div>
-
-    </section>
-
 </div>
 
-<section class="anexos">
-    <h3>Anexos</h3>
+<section class="dados-gerais-laudo">
+    <h2>1. Dados Gerais</h2>
 
-    <div class="lista-anexos">
+    <div class="dados-gerais-grid">
+        <div class="campo-geral">
+            <span class="rotulo-geral">Ordem de Serviço</span>
+            <span class="valor-geral">1111213</span>
+        </div>
+
+        <div class="campo-geral">
+            <span class="rotulo-geral">Data da Avaliação</span>
+            <span class="valor-geral">01/11/2026</span>
+        </div>
+
+        <div class="campo-geral campo-geral-completo">
+            <span class="rotulo-geral">Responsáveis Técnicos</span>
+            <span class="valor-geral">
+                Engº. Agrônomo Claudinei Chalito da Silva,
+                Engº. Agrônomo Rodrigo Camargo de Andrade Pinto,
+                Engº. Agrônomo Geraldo Batista Martins
+            </span>
+        </div>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>1.1. Introdução</h2>
+
+    <div class="texto-introducao">
         <p>
-            Anexo 1: Planilha de Avaliação / Homogeneização e saneamento (SEI 18072482);
+            Apresentamos o Laudo de Vistoria e Avaliação - LVA do imóvel
+            rural denominado Fazenda Nossa Senhora do Carmo ou Brasileira,
+            com área georreferenciada e certificada de 10.584,1549 hectares,
+            localizado nos municípios de Ortigueira e Faxinal, fora da faixa
+            de fronteira internacional, com vistas à obtenção do imóvel para
+            fins de reforma agrária. O LAV é parte dos procedimentos derivados
+            do processo 54000.035854/2023-31, conforme Ordem de Serviço
+            Nº 684/2023 SR(PR)G/INCRA - BS 23/08/2023, juntada no evento
+            SEI 16580500 que nomeou a equipe técnica responsável pela
+            avaliação do imóvel.
         </p>
 
         <p>
-            Anexo 2: Mapas temáticos de uso atual, declividade e classes de capacidade de uso das terras do Imóvel
-            avaliando (SEI 17949935);
+            A avaliação foi regida por metodologia científica e rigor técnico
+            de acordo com normas e protocolos estabelecidos no manual de
+            obtenção de terras e Perícias Judiciais do INCRA e normas da ABNT
+            - Associação Brasileira de Normas Técnicas. O valor apurado do
+            bem reflete o valor de mercado do imóvel rural no período do
+            levantamento e pesquisa de campo realizada nos meses de junho
+            e julho de 2023 (12 a 16/06; 19 a 23/06; e 03 a 07/07).
+            Utilizou-se o método de avaliação de comparação de dados de
+            mercado, compostos por elementos amostrais selecionados de um
+            conjunto de imóveis ofertados, vendidos nos últimos 12 meses
+            informados pelos agentes de mercado de terras, assim como imóvel
+            paradigma utilizado para opinião sobre o valor do imóvel avaliando.
         </p>
 
         <p>
-            Anexo 3. Descrição e fotos das benfeitorias do Imóvel avaliando (SEI 17552692);
-        </p>
-
-        <p>
-            Anexo 4: Memória de cálculos dos valores das benfeitorias do Imóvel avaliando (SEI 17552703);
-        </p>
-
-        <p>
-            Anexo 5: Painel fotográfico dos 12 elementos amostrais NR e OF (SEI 17552732);
-        </p>
-
-        <p>
-            Anexo 6: Elementos amostrais - Fichas de pesquisa de NR, OF e OP (SEI 17915686);
-        </p>
-
-        <p>
-            Anexo 7: Elementos amostrais - Mapas temáticos de uso atual, declividade e classes de capacidade de uso (SEI
-            17478229);
-        </p>
-
-        <p>
-            Anexo 8. Painel fotográfico da Fazenda Brasileira (SEI 17564363);
+            Foram pesquisados, identificados e caracterizados quinze (15)
+            Elementos Amostrais, sendo cinco (05) OF - oferta, sete (07) NR -
+            Negócio Realizado e três (03) OP - Opiniões, que após tratamento
+            estatístico resultou em 6 elementos saneados. Outros imóveis
+            negociados e ofertados foram informados durante as entrevistas
+            com os agentes de mercado mas não foram usados nos cálculos
+            estatísticos para valoração da Fazenda Brasileira por não ter
+            sido possível identificar sua localização / perímetro e assim
+            não foi possível caracterizar os mesmos para lançar na plataforma
+            do método estatístico de avaliação comparativa.
         </p>
     </div>
 </section>
 
+<section class="identificacao-imovel">
+    <h2>1.2. Identificação do Imóvel</h2>
+
+    <div class="dados-grid">
+        <div class="campo">
+            <span class="rotulo">Processo de Obtenção</span>
+            <span class="valor">3547961</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Imóvel</span>
+            <span class="valor">Fazenda Nossa Senhora do Carmo ou Brasileira</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Municípios</span>
+            <span class="valor">Ortigueira e Faxinal</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">UF</span>
+            <span class="valor">PR</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Área registrada (ha)</span>
+            <span class="valor">1.303,79</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Área georreferenciada e certificada (ha)</span>
+            <span class="valor">1500</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Módulos Fiscais (MF)</span>
+            <span class="valor">529,2077</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Fração Mínima de Parcelamento (FMP)</span>
+            <span class="valor">Ortigueira: 2 ha; Faxinal: 3 ha</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Distância da sede (km)</span>
+            <span class="valor">5</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Município Polo de Influência</span>
+            <span class="valor">Londrina</span>
+        </div>
+
+        <div class="campo">
+            <span class="rotulo">Distância do Polo de Influência (km)</span>
+            <span class="valor">100</span>
+        </div>
+
+        <div class="campo campo-duplo">
+            <span class="rotulo">Código SNCR</span>
+            <span class="valor">710.040.724.254.8</span>
+        </div>
+
+        <div class="campo campo-duplo">
+            <span class="rotulo">Código Receita Federal</span>
+            <span class="valor">12341234-96</span>
+        </div>
+
+        <div class="campo campo-duplo">
+            <span class="rotulo">Código da Certificação SIGEF</span>
+            <span class="valor">88962a95-b040-4607-aea4-61225e9e26de</span>
+        </div>
+
+        <div class="campo campo-duplo">
+            <span class="rotulo">Código do CAR</span>
+            <span class="valor">SP-3505708-1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6D</span>
+        </div>
+
+        <div class="campo campo-completo">
+            <span class="rotulo">Proprietários</span>
+            <span class="valor">
+                Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli
+            </span>
+        </div>
+    </div>
+</section>
+
+<section class="localizacao-laudo">
+    <h2>1.3. Localização/Acesso</h2>
+
+    <table class="tabela-localizacao">
+        <thead>
+            <tr>
+                <th scope="col">Situação</th>
+                <th scope="col">Acesso Terrestre</th>
+                <th scope="col">Acesso Fluvial</th>
+                <th scope="col">Importância das Distâncias</th>
+                <th scope="col">Praticabilidade durante o ano</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Ótima</td>
+                <td>Asfaltada</td>
+                <td>0 - 1 h</td>
+                <td>Não significativa</td>
+                <td>Permanente</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Descrição do acesso, limites, confrontantes e mapa</h2>
+    <div class="texto-introducao">
+        <p>
+            O imóvel localiza-se nos municípios de Faxinal e OrCgueira no Bairro Rural Vista Alegre distante 15,4 km de
+            Faxinal e 50,0 km de Ortigueira. O Acesso é feito parCndo da cidade de Faxinal pelo prolongamento da Rua
+            Santos Dumont, saída para Vista Alegre ou Salto da Bufadeira, a partir do lago municipal, percorridos 4,2 km
+            por estrada com leito de terra batida, toma-se à esquerda e após percorrer outros 11,2 km chega-se ao
+            imóvel. Todas as estradas citadas são trafegáveis permanentemente, assim como outros acessos para
+            Ortigueira. Embora o imóvel apresente a maior parte de sua superWcie no Município de OrCgueira o acesso
+            melhor, mais curto, mais rápido e portanto mais usual se dá pela cidade de Faxinal.
+        </p>
+
+        <p><b>Limites e confrontantes:</b></p>
+        <ul>
+            <li><b>Norte:</b> Por linha seca com: Fazenda Primavera de Maria Zélia de Oliveira e Oliveira e Délcio
+                Ribeiro; Terras de Antônio Rodrigues; Terras de Romualdo Casavechia e Maria Aparecida Casavechia;
+                Fazenda Três Pousos de Vergílio Castonholi S/A Agropecuária;</li>
+            <li><b>Sul:</b> Pelo Rio do Peixe ou Alonso e por linha seca com Fazenda São Leopoldo de Klabim S/A.</li>
+            <li><b>Leste:</b> Fazenda Paraíso de Aniltom Dutra Guerra; Fazenda Brasília de Renildis Ferreira de Castro e
+                outros; Fazenda Apucarana Grande de Maristela G. Fonseca e outra; Rio Pereira Terras de Amavel Rodrigues
+                Roque; Sítio Pelizer de Wilson Oswaldo Pelizer; Chácara São Caetano de Benedito Dalbo e Filho; SíCo Vila
+                Formosa de Kassim Mohamed / Mahmud Baidun; SíCo São João de João Francisco de Souza; Sítio Correia ou
+                Santo Antônio de propriedade de Raimundo Correia de Oliveira; SíCo São Francisco de Adilson Luiz de
+                Oliveira; Fazenda Santa Bárbara de Renascença Participações S/A;</li>
+            <li><b>Oeste:</b> Fazenda N. Sra. Aparecida de Adir Moreira da Costa; Fazenda Estrela de Marcelo Pires do
+                Monte Lima e Tanja / Pascale Von; Gaevernits Lima; Rio Pereira</li>
+        </ul>
+    </div>
+</section>
+
+<section class="situacao-dominial">
+    <h2>1.4. Situação Dominial</h2>
+
+    <div class="dados-dominiais">
+        <div class="campo-dominial">
+            <span class="rotulo-dominial">Proprietários</span>
+            <span class="valor-dominial">
+                Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli
+            </span>
+        </div>
+
+        <div class="campo-dominial">
+            <span class="rotulo-dominial">Inventariante</span>
+            <span class="valor-dominial">Carlos Dias Souza</span>
+        </div>
+    </div>
+
+    <div class="titulo-matriculas">
+        <h3>Matrículas Apresentadas</h3>
+    </div>
+
+    <table class="tabela-matriculas">
+        <thead>
+            <tr>
+                <th scope="col">Área (ha)</th>
+                <th scope="col">Forma de Obtenção</th>
+                <th scope="col">Registro</th>
+                <th scope="col">Livro</th>
+                <th scope="col">Comarca</th>
+                <th scope="col">Ofício</th>
+                <th scope="col">Data do Registro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1500</td>
+                <td>Leilão</td>
+                <td>143782</td>
+                <td>15</td>
+                <td>Leopoldina</td>
+                <td>113</td>
+                <td>31/12/2015</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Fontes da Situação Dominial</h2>
+    <div class="texto-introducao">
+        <p>
+            A situação dominial do imóvel foi analisada com base na documentação apresentada pelo interessado, incluindo
+            matrícula atualizada do Cartório de Registro de Imóveis competente, certidões de inteiro teor e de ônus
+            reais, escritura pública de aquisição e demais documentos comprobatórios da cadeia dominial. Foram
+            consultadas, ainda, informações constantes dos registros cartoriais e documentos cadastrais disponíveis, com
+            o objetivo de verificar a origem da propriedade, a continuidade dos registros e a existência de eventuais
+            restrições ou pendências que possam afetar a titularidade do imóvel. As informações descritas possuem
+            caráter técnico e estão limitadas aos documentos e às fontes consultadas no âmbito da presente vistoria e
+            avaliação.
+        </p>
+    </div>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Observações da Situação Dominial</h2>
+    <div class="texto-introducao">
+        <p>
+            O imóvel apresenta documentação dominial aparentemente regular, conforme os documentos apresentados pelo
+            interessado e as informações obtidas junto ao Cartório de Registro de Imóveis competente. A análise
+            considerou a titularidade declarada, o histórico de transmissão da propriedade e a existência de eventuais
+            ônus, gravames ou restrições incidentes sobre o imóvel. Ressalta-se que a conclusão definitiva quanto à
+            situação dominial depende da validação da documentação registral e da inexistência de pendências que
+            comprometam a legitimidade da propriedade.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>2. Características Físicas, Edafoclimáticas, Econômicas e Sociais do Imóvel</h2>
+
+    <h2>2.1. Vegetação, recursos hídricas e solo</h2>
+    <div class="texto-introducao">
+        <p>
+            A área vistoriada apresenta cobertura vegetal composta predominantemente por pastagens, vegetação nativa
+            remanescente e espécies arbóreas esparsas, com diferentes graus de conservação. Os recursos hídricos incluem
+            cursos d’água naturais e pequenas áreas de drenagem, cuja disponibilidade varia conforme o período sazonal.
+            O solo apresenta características compatíveis com o uso agropecuário observado, com variações de textura,
+            profundidade e fertilidade natural, além de pontos sujeitos à erosão superficial. As condições de vegetação,
+            disponibilidade hídrica e características do solo devem ser consideradas na avaliação da aptidão agrícola,
+            do potencial produtivo e das limitações de uso do imóvel.
+        </p>
+    </div>
+</section>
+
+<section class="uso-imovel-laudo">
+    <h2>2.2. Uso atual do imóvel</h2>
+
+    <h3>Itens de Uso do Imóvel</h3>
+
+    <table class="tabela-uso-imovel">
+        <thead>
+            <tr>
+                <th scope="col">Uso</th>
+                <th scope="col">Área (ha)</th>
+                <th scope="col">% área</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Acudes/Lâmina dÁgua</td>
+                <td>300</td>
+                <td>20.00%</td>
+            </tr>
+
+            <tr>
+                <td>Área Improdutiva</td>
+                <td>750</td>
+                <td>50.00%</td>
+            </tr>
+
+            <tr>
+                <td>Reserva Legal</td>
+                <td>450</td>
+                <td>30.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>1500</td>
+                <td>100.00%</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+
+<section class="capacidade-uso-laudo">
+    <h2>2.3. Classe de Capacidade de Uso das Terras</h2>
+
+    <table class="tabela-capacidade-uso">
+        <thead>
+            <tr>
+                <th scope="col">Fatores limitantes</th>
+                <th scope="col">Características</th>
+                <th scope="col">Classe</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Fertilidade natural</td>
+                <td>Alta</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Profundidade efetiva</td>
+                <td>Rasa</td>
+                <td>IV</td>
+            </tr>
+            <tr>
+                <td>Drenagem interna</td>
+                <td>Forte</td>
+                <td>II</td>
+            </tr>
+            <tr>
+                <td>Deflúvio superficial</td>
+                <td>Lento</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Pedregosidade</td>
+                <td>Sem Pedras</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Riscos de Inundação</td>
+                <td>Muito Frequente</td>
+                <td>VIII</td>
+            </tr>
+            <tr>
+                <td>Classe de Declividade</td>
+                <td>Moderadamente Ondulado</td>
+                <td>III</td>
+            </tr>
+            <tr>
+                <td>Grau de erosão laminar</td>
+                <td>Não Aparente</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Sulcos rasos</td>
+                <td>Muito Frequentes</td>
+                <td>IV</td>
+            </tr>
+            <tr>
+                <td>Sulcos médios</td>
+                <td>Frequentes</td>
+                <td>IV</td>
+            </tr>
+            <tr>
+                <td>Sulcos profundos</td>
+                <td>Frequentes</td>
+                <td>VI</td>
+            </tr>
+            <tr>
+                <td>Seca Edafológica</td>
+                <td>Média</td>
+                <td>IV</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<section class="relevo-laudo">
+    <h2>2.4. Relevo</h2>
+
+    <table class="tabela-relevo">
+        <thead>
+            <tr>
+                <th scope="col">Classe de relevo</th>
+                <th scope="col">Classe de declividade (%)</th>
+                <th scope="col">Área aproximada (ha)</th>
+                <th scope="col">% da área</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Classe 1 - plano</td>
+                <td>0 - 2</td>
+                <td>100</td>
+                <td>6,67%</td>
+            </tr>
+            <tr>
+                <td>Classe 2 - suave moderado</td>
+                <td>2 - 5</td>
+                <td>200</td>
+                <td>13,33%</td>
+            </tr>
+            <tr>
+                <td>Classe 3 - moderadamente ondulado</td>
+                <td>5 - 10</td>
+                <td>150</td>
+                <td>10,00%</td>
+            </tr>
+            <tr>
+                <td>Classe 4 - ondulado</td>
+                <td>10 - 15</td>
+                <td>150</td>
+                <td>10,00%</td>
+            </tr>
+            <tr>
+                <td>Classe 5 - forte ondulado</td>
+                <td>15 - 45</td>
+                <td>100</td>
+                <td>6,67%</td>
+            </tr>
+            <tr>
+                <td>Classe 6 - montanhoso</td>
+                <td>45 - 70</td>
+                <td>300</td>
+                <td>20,00%</td>
+            </tr>
+            <tr>
+                <td>Classe 7 - escarpado</td>
+                <td>&gt; 70</td>
+                <td>250</td>
+                <td>16,67%</td>
+            </tr>
+            <tr>
+                <td>Classe 8 - escarpado APP</td>
+                <td>&gt; 100</td>
+                <td>250</td>
+                <td>16,67%</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td>1500</td>
+                <td>100,00%</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+
+<section class="nota-agronomica-laudo">
+    <h2>2.5. Nota Agronômica</h2>
+
+    <div class="situacao-agronomica">
+        <span class="rotulo-agronomico"><b>Situação: </b>Ótima</span>
+    </div>
+
+    <table class="tabela-nota-agronomica">
+        <thead>
+            <tr>
+                <th scope="col">Classe</th>
+                <th scope="col">Discriminação</th>
+                <th scope="col">Área (ha)</th>
+                <th scope="col">% da área</th>
+                <th scope="col">Índice</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Classe I</td>
+                <td>Lavoura sem restrições</td>
+                <td>200</td>
+                <td>13,33%</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Classe II</td>
+                <td>Lavoura com práticas simples</td>
+                <td>150</td>
+                <td>10,00%</td>
+                <td>0,8</td>
+            </tr>
+            <tr>
+                <td>Classe III</td>
+                <td>Lavoura com práticas intensas</td>
+                <td>150</td>
+                <td>10,00%</td>
+                <td>0,61</td>
+            </tr>
+            <tr>
+                <td>Classe IV</td>
+                <td>Lavoura esporádica e pastos</td>
+                <td>100</td>
+                <td>6,67%</td>
+                <td>0,47</td>
+            </tr>
+            <tr>
+                <td>Classe V</td>
+                <td>Pastagens com restrições</td>
+                <td>200</td>
+                <td>13,33%</td>
+                <td>0,39</td>
+            </tr>
+            <tr>
+                <td>Classe VI</td>
+                <td>Pastagens com práticas simples</td>
+                <td>300</td>
+                <td>20,00%</td>
+                <td>0,29</td>
+            </tr>
+            <tr>
+                <td>Classe VII</td>
+                <td>Áreas de uso restrito (florestas, solos extremamente pedregosos/muito rasos, relevo montanhoso)</td>
+                <td>100</td>
+                <td>6,67%</td>
+                <td>0,20</td>
+            </tr>
+            <tr>
+                <td>Classe VIII</td>
+                <td>Abrigo da vida silvestre (APP), áreas muito mal drenadas ou com relevo escarpado</td>
+                <td>300</td>
+                <td>20,00%</td>
+                <td>0,13</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Total</strong></td>
+                <td>1500</td>
+                <td>100,00%</td>
+                <td><strong>Nota agronômica:</strong> 0,45</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+<section class="introducao-laudo">
+    <h2>2.6. Aspectos Produtivos e Trabalhistas</h2>
+
+    <div class="texto-introducao">
+        <p>O imóvel apresenta atividade produtiva predominantemente voltada à pecuária extensiva, com utilização de
+            pastagens naturais e cultivadas, além de pequenas áreas destinadas ao cultivo de subsistência. A exploração
+            é conduzida pelo proprietário e seus familiares, com contratação eventual de mão de obra para serviços de
+            manutenção, manejo animal e conservação das instalações. Durante a vistoria, foram observadas estruturas
+            básicas de apoio à produção, incluindo cercas, currais e áreas de armazenamento. Quanto aos aspectos
+            trabalhistas, as informações disponíveis indicam a utilização de mão de obra familiar e eventual, devendo a
+            regularidade das relações de trabalho ser verificada mediante análise documental específica.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>2.7. Aspectos Sociais</h2>
+
+    <div class="texto-introducao">
+        <p>O imóvel está inserido em contexto rural, com acesso a serviços públicos e infraestrutura básica disponíveis
+            na comunidade local, embora sujeitos às limitações próprias da região. A ocupação é realizada pelo
+            proprietário e seus familiares, que desenvolvem atividades agropecuárias como principal fonte de
+            subsistência e geração de renda. O acesso à propriedade ocorre por estrada rural, com condições de
+            trafegabilidade variáveis conforme o período chuvoso. Foram considerados aspectos relacionados às condições
+            de moradia, acesso à educação, saúde, transporte, saneamento básico e integração socioeconômica com as
+            comunidades vizinhas, relevantes para a caracterização das condições sociais da área vistoriada.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3. Avaliação do Imóvel Rural</h2>
+
+    <h2 class="mt-5">3.1. Avaliação das Benfeitorias</h2>
+    <div class="texto-introducao">
+        <p>
+            As benfeitorias existentes no imóvel foram identificadas e avaliadas considerando suas características
+            construtivas, dimensões, estado de conservação, funcionalidade e vida útil aparente. Foram constatadas
+            edificações destinadas à moradia e ao apoio das atividades agropecuárias, além de cercas, curral,
+            reservatório de água e demais estruturas de infraestrutura rural. De modo geral, as benfeitorias apresentam
+            estado de conservação regular, com necessidade pontual de manutenção e reparos. A avaliação considerou os
+            custos estimados de reprodução ou reposição, depreciados em função da idade aparente, do desgaste físico e
+            da obsolescência funcional, visando à determinação do valor atual das benfeitorias existentes.
+        </p>
+    </div>
+</section>
+
+
+<section class="inventario-benfeitorias-laudo">
+    <h3>Inventário das Benfeitorias</h3>
+
+    <table class="tabela-benfeitorias">
+        <thead>
+            <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Unidade de medida</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor unitário</th>
+                <th scope="col">Valor total</th>
+                <th scope="col">Depreciação</th>
+                <th scope="col">Valor final</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Reprodutiva</td>
+                <td>Galpão</td>
+                <td>M²</td>
+                <td>100</td>
+                <td>R$ 300,00</td>
+                <td>R$ 30.000,00</td>
+                <td>40%</td>
+                <td>R$ 12.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Não Reprodutiva</td>
+                <td>Jardim</td>
+                <td>M²</td>
+                <td>20</td>
+                <td>R$ 50,00</td>
+                <td>R$ 1.000,00</td>
+                <td>80%</td>
+                <td>R$ 200,00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="resumo-benfeitorias">
+        <div class="linha-resumo">
+            <span>Valor Total das Benfeitorias</span>
+            <span>R$ 12.200,00</span>
+        </div>
+
+        <div class="linha-resumo">
+            <span>Benfeitorias Reprodutivas</span>
+            <span>R$ 12.000,00</span>
+        </div>
+
+        <div class="linha-resumo">
+            <span>Benfeitorias Não Reprodutivas</span>
+            <span>R$ 200,00</span>
+        </div>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3.2. Capacidade de Assentamento de Famílias Estimada</h2>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Introdução</h2>
+    <div class="texto-introducao">
+        <p>
+            As benfeitorias existentes no imóvel foram identificadas e avaliadas considerando suas características
+            construtivas, dimensões, estado de conservação, funcionalidade e vida útil aparente. Foram constatadas
+            edificações destinadas à moradia e ao apoio das atividades agropecuárias, além de cercas, curral,
+            reservatório de água e demais estruturas de infraestrutura rural. De modo geral, as benfeitorias apresentam
+            estado de conservação regular, com necessidade pontual de manutenção e reparos. A avaliação considerou os
+            custos estimados de reprodução ou reposição, depreciados em função da idade aparente, do desgaste físico e
+            da obsolescência funcional, visando à determinação do valor atual das benfeitorias existentes.
+        </p>
+    </div>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Cálculo de capacidade de famílias</h2>
+
+    <div class="reserva-legal">
+        <span class="rotulo-capacidade"><strong>Método:</strong> Pela Capacidade de renda do solo</span>
+    </div>
+
+    <div class="reserva-legal">
+        <span class="rotulo-capacidade"><strong>Área para Reserva Legal (ha):</strong> 735</span>
+    </div>
+
+    <table class="tabela-capacidade-familias">
+        <thead>
+            <tr>
+                <th scope="col">Classe</th>
+                <th scope="col">I</th>
+                <th scope="col">II</th>
+                <th scope="col">III</th>
+                <th scope="col">IV</th>
+                <th scope="col">V</th>
+                <th scope="col">VI</th>
+                <th scope="col">VII</th>
+                <th scope="col">VIII</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Reserva Legal</th>
+                <td>50</td>
+                <td>100</td>
+                <td>150</td>
+                <td>75</td>
+                <td>80</td>
+                <td>30</td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Área Calculada</th>
+                <td>50</td>
+                <td>100</td>
+                <td>150</td>
+                <td>25</td>
+                <td>70</td>
+                <td>120</td>
+                <td>250</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Renda por classe</th>
+                <td>R$ 3.728,30</td>
+                <td>R$ 2.982,64</td>
+                <td>R$ 2.274,26</td>
+                <td>R$ 1.752,30</td>
+                <td>R$ 1.454,04</td>
+                <td>R$ 1.081,21</td>
+                <td>R$ 745,66</td>
+                <td>R$ 0,00</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Renda líquida anual</th>
+                <td>R$ 186.415,00</td>
+                <td>R$ 298.264,00</td>
+                <td>R$ 341.139,45</td>
+                <td>R$ 43.807,53</td>
+                <td>R$ 101.782,59</td>
+                <td>R$ 129.744,84</td>
+                <td>R$ 186.415,00</td>
+                <td>R$ 0,00</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="4">
+                    Capacidade de Famílias pela Renda do Solo
+                </th>
+                <td colspan="5" class="resultado-capacidade">
+                    R$ 86.964.516,02
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Conclusão</h2>
+    <div class="texto-introducao">
+        <p>
+            As benfeitorias existentes no imóvel foram identificadas e avaliadas considerando suas características
+            construtivas, dimensões, estado de conservação, funcionalidade e vida útil aparente. Foram constatadas
+            edificações destinadas à moradia e ao apoio das atividades agropecuárias, além de cercas, curral,
+            reservatório de água e demais estruturas de infraestrutura rural. De modo geral, as benfeitorias apresentam
+            estado de conservação regular, com necessidade pontual de manutenção e reparos. A avaliação considerou os
+            custos estimados de reprodução ou reposição, depreciados em função da idade aparente, do desgaste físico e
+            da obsolescência funcional, visando à determinação do valor atual das benfeitorias existentes.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3.3. Áreas de Reserva Legal (ARL) e de Preservação Permanente (APP)</h2>
+
+    <div class="texto-introducao">
+        <p>
+            O imóvel possui áreas destinadas à Reserva Legal (ARL) e áreas de Preservação Permanente (APP), cuja
+            delimitação e caracterização devem observar a legislação ambiental vigente. A Reserva Legal compreende áreas
+            com cobertura de vegetação nativa ou em processo de regeneração, destinadas à conservação da biodiversidade
+            e ao uso sustentável dos recursos naturais. As APPs estão associadas principalmente às margens de cursos
+            d’água e a outras áreas ambientalmente protegidas existentes no imóvel. A análise dessas áreas considera as
+            informações constantes do Cadastro Ambiental Rural (CAR), os documentos apresentados e as observações
+            realizadas durante a vistoria, devendo eventuais divergências de delimitação, necessidade de recuperação
+            ambiental ou pendências de regularização ser verificadas mediante análise técnica específica.
+        </p>
+    </div>
+</section>
+
+<section class="areas-protegidas-laudo">
+    <div class="linha-area">
+        <span class="rotulo-area">ARL e APP total (ha)</span>
+        <span class="valor-area">300</span>
+    </div>
+
+    <div class="linha-area">
+        <span class="rotulo-area">% ARL e APP total</span>
+        <span class="texto-area">20,00 %</span>
+    </div>
+
+    <div class="linha-area">
+        <span class="rotulo-area">ARL e APP indevido (ha)</span>
+        <span class="valor-area">1200</span>
+    </div>
+
+    <div class="linha-area">
+        <span class="rotulo-area">% ARL e APP indevido</span>
+        <span class="texto-area">80,00 %</span>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3.4. Ativo Ambiental</h2>
+
+    <div class="texto-introducao">
+        <p>
+            O ativo ambiental do imóvel é composto pelas áreas de vegetação nativa, Reserva Legal (ARL), Áreas de
+            Preservação Permanente (APP), recursos hídricos e demais elementos naturais relevantes à conservação
+            ambiental. Esses componentes contribuem para a manutenção da biodiversidade, proteção do solo, conservação
+            dos recursos hídricos e equilíbrio ecológico da propriedade. A caracterização considerou as informações
+            cadastrais disponíveis e as observações realizadas durante a vistoria, levando em conta o estado de
+            conservação da cobertura vegetal, o uso atual do solo e a existência de eventuais áreas degradadas ou
+            passíveis de recuperação. A quantificação e a valoração do ativo ambiental dependem da delimitação das
+            áreas, da verificação de sua situação legal e dos critérios técnicos aplicáveis à avaliação.
+        </p>
+    </div>
+    <div class="reserva-legal">
+        <span class="rotulo-capacidade"><strong>Valor:</strong> R$ 150.000,00</span>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3.5. Passivo Ambiental e Recuperação Ambiental</h2>
+
+    <div class="texto-introducao">
+        <p>
+            Foram identificados pontos com sinais de degradação ambiental decorrentes do uso agropecuário,
+            caracterizados principalmente por erosão superficial do solo, redução da cobertura vegetal em áreas
+            específicas e possível comprometimento de trechos de preservação permanente. A recuperação ambiental deverá
+            priorizar o controle dos processos erosivos, a recomposição da cobertura vegetal nativa e a proteção dos
+            recursos hídricos, conforme as características e necessidades de cada área. Recomenda-se a avaliação técnica
+            das áreas afetadas para dimensionamento das intervenções necessárias, estimativa dos custos de recuperação e
+            verificação de eventuais obrigações de regularização ambiental, considerando a legislação vigente e as
+            informações constantes do Cadastro Ambiental Rural (CAR).
+        </p>
+    </div>
+    <div class="reserva-legal">
+        <span class="rotulo-capacidade"><strong>Valor:</strong> R$ 275.000,00</span>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>3.6. Ancianidade das Ocupações</h2>
+
+    <div class="texto-introducao">
+        <p>
+            Conforme informações prestadas pelo ocupante e documentos apresentados durante a vistoria, a ocupação do
+            imóvel remonta a aproximadamente 20 anos, período em que a área vem sendo utilizada predominantemente para
+            atividades agropecuárias e moradia familiar. Ao longo desse período, foram realizadas intervenções
+            destinadas à manutenção das áreas produtivas, implantação de benfeitorias e melhoria da infraestrutura
+            rural. A antiguidade da ocupação deverá ser confirmada mediante análise de documentos comprobatórios,
+            registros históricos, declarações e demais elementos disponíveis, para fins de caracterização da situação
+            ocupacional do imóvel.
+        </p>
+    </div>
+</section>
+
+<section class="antiguidade-ocupacoes-laudo">
+    <h2 style="border-bottom: none !important;">Índices de homogeneização quanto à ancianidade das ocupações</h2>
+
+    <div class="campos-ancianidade">
+        <div class="campo-ancianidade">
+            <span class="rotulo-ancianidade">Tempo de ocupação</span>
+            <span class="valor-ancianidade">
+                Posseiros com 1 ano ou menos
+            </span>
+        </div>
+
+        <div class="campo-ancianidade">
+            <span class="rotulo-ancianidade">% de área ocupada</span>
+            <span class="valor-ancianidade">Menos que 20%</span>
+        </div>
+    </div>
+
+    <p class="resultado-ancianidade">
+        <strong>Ancianidade das ocupações:</strong>
+        <span>1.00</span>
+    </p>
+</section>
+
+<section class="introducao-laudo">
+    <h2>4.1. Fundamentação</h2>
+
+    <div class="texto-introducao">
+        <p>
+            A presente vistoria e avaliação fundamenta-se na análise documental, nas informações prestadas pelo
+            interessado e nas observações realizadas em campo, considerando as características físicas, ambientais,
+            produtivas, sociais e dominiais do imóvel rural. Foram considerados os critérios técnicos aplicáveis à
+            avaliação de imóveis rurais, as normas pertinentes da Associação Brasileira de Normas Técnicas (ABNT),
+            especialmente a ABNT NBR 14653-3, e a legislação agrária e ambiental vigente. A caracterização da área, das
+            benfeitorias, das ocupações e dos recursos naturais visa subsidiar a análise técnica pelo Instituto Nacional
+            de Colonização e Reforma Agrária (INCRA), respeitando os limites das informações e dos documentos
+            disponíveis, sem prejuízo de verificações complementares necessárias à validação dos dados apresentados.
+        </p>
+    </div>
+</section>
+
+<section class="fundamentacao-laudo">
+    <table class="tabela-fundamentacao">
+        <thead>
+            <tr>
+                <th scope="col">Grau de Fundamentação</th>
+                <th scope="col">Limites</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Fundamentação II</th>
+                <td>0,70 a 1,40</td>
+            </tr>
+
+            <tr class="linha-separadora">
+                <td colspan="2" style="text-align: center;"><strong>Cálculos</strong></td>
+            </tr>
+
+            <tr>
+                <th scope="row">Área mínima</th>
+                <td>1050 ha</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Área máxima</th>
+                <td>2100 ha</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Nota agronômica mínima</th>
+                <td>5.11</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Nota agronômica máxima</th>
+                <td>10.22</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="introducao-laudo">
+    <h2>4.2. Pesquisa de Mercado e Homogeneização</h2>
+
+    <div class="texto-introducao">
+        <p>
+            A pesquisa de mercado foi realizada com base no levantamento de informações sobre imóveis rurais situados na
+            mesma região geoeconômica ou em áreas com características semelhantes, considerando dados de ofertas,
+            transações imobiliárias e outras fontes disponíveis. Foram selecionados elementos comparativos com atributos
+            relevantes, tais como localização, área total, aptidão agrícola, características do solo, disponibilidade
+            hídrica, infraestrutura, benfeitorias e condições de acesso. Os dados coletados foram submetidos a
+            procedimentos de homogeneização, mediante aplicação de fatores de ajuste destinados a reduzir as diferenças
+            entre os imóveis pesquisados e o imóvel avaliando. O tratamento das informações buscou assegurar a
+            consistência dos valores unitários obtidos e fornecer subsídios para a determinação do valor de mercado do
+            imóvel rural, observando os critérios técnicos aplicáveis e as disposições da ABNT NBR 14653-3.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>4.2.1. Elementos Amostrais da Pesquisa de Mercado de Terras</h2>
+
+    <h2 style="border-bottom: none !important;">Elementos</h2>
+
+    <table class="tabela-elementos">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Elemento</th>
+                <th scope="col">Área (ha)</th>
+                <th scope="col">VTI</th>
+                <th scope="col">VTN</th>
+                <th scope="col">VTN/h</th>
+                <th scope="col">Nota Solos</th>
+                <th scope="col">Fator Área</th>
+                <th scope="col">Fator 3</th>
+                <th scope="col">Fator 4</th>
+                <th scope="col">FHT</th>
+                <th scope="col">VTN/ha</th>
+                <th scope="col">Saneamento</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Fazenda Surubin</td>
+                <td>125,5</td>
+                <td>12.000</td>
+                <td>8.500</td>
+                <td>67,73</td>
+                <td>Boa</td>
+                <td>1,1</td>
+                <td>0,95</td>
+                <td>1,05</td>
+                <td>1,15</td>
+                <td>7.756</td>
+                <td>0,9</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Fazenda Monte Verde</td>
+                <td>145,2</td>
+                <td>11.500</td>
+                <td>9.300</td>
+                <td>64,05</td>
+                <td>Boa</td>
+                <td>1</td>
+                <td>0,98</td>
+                <td>1,08</td>
+                <td>1,12</td>
+                <td>9.300</td>
+                <td>0,88</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Fazenda Claros Montes</td>
+                <td>210,3</td>
+                <td>6.800</td>
+                <td>5.400</td>
+                <td>25,68</td>
+                <td>Regular</td>
+                <td>0,95</td>
+                <td>1,1</td>
+                <td>1</td>
+                <td>1,05</td>
+                <td>5.130</td>
+                <td>0,8</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="estatisticas-elementos-laudo">
+    <h2>4.2.2. Parâmetros Estatísticos Pós Homogeneização</h2>
+
+    <table class="tabela-estatisticas-elementos">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Média</th>
+                <th scope="col">Desvio Padrão</th>
+                <th scope="col">CV</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Saneado</th>
+                <td>R$ 8.542,37</td>
+                <td>R$ 1.284,56</td>
+                <td>15,04%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Simples</th>
+                <td>R$ 8.731,25</td>
+                <td>R$ 1.452,83</td>
+                <td>16,64%</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="precisao-avaliacao-laudo">
+    <h2>4.2.3. Definição do Intervalo de Confiança VTN/ha (IC 80%)</h2>
+
+    <table class="tabela-precisao-avaliacao">
+        <tbody>
+            <tr>
+                <th scope="row">n-1</th>
+                <td>24</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Inversa da Distribuição t de Student</th>
+                <td>1,318</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Limite Inferior</th>
+                <td>R$ 8.204,73</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Limite Superior</th>
+                <td>R$ 8.880,01</td>
+            </tr>
+
+            <tr>
+                <th scope="row">% &lt; μ &lt; %</th>
+                <td>7,96% &lt; μ &lt; 8,95%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Grau de precisão</th>
+                <td>4,14%</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="campo-arbitrio-vtn-laudo">
+    <h2>4.2.4. Campo de Arbítrio do VTN</h2>
+
+    <table class="tabela-arbitrio-vtn">
+        <tbody>
+            <tr>
+                <th scope="row">Limite Inferior</th>
+                <td>R$ 6.832,00</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Limite Superior</th>
+                <td>R$ 10.248,00</td>
+            </tr>
+
+            <tr>
+                <th scope="row">% &lt; μ &lt; %</th>
+                <td>80% &lt; μ &lt; 120%</td>
+            </tr>
+
+            <tr class="linha-vtn-medio">
+                <th scope="row">VTN Médio</th>
+                <td>R$ 8.540,00</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="introducao-laudo">
+    <h2>4.3. Resumo da Avaliação do Valor do Imóvel</h2>
+
+    <h2 class="mt-5" style="border-bottom: none !important;">Introdução</h2>
+
+    <div class="texto-introducao">
+        <p>
+            A avaliação do imóvel rural foi realizada considerando suas características físicas, localização, dimensão
+            territorial, aptidão agrícola, disponibilidade de recursos naturais, infraestrutura existente, benfeitorias
+            e condições de mercado da região. A determinação do valor foi fundamentada na pesquisa de mercado de imóveis
+            comparáveis, com aplicação de procedimentos de homogeneização para adequação das diferenças entre os
+            elementos pesquisados e o imóvel avaliando. Foram considerados, ainda, os aspectos dominiais, ambientais,
+            produtivos e ocupacionais identificados durante a vistoria, quando pertinentes à avaliação. O valor final
+            estimado representa a síntese dos dados levantados e dos critérios técnicos adotados, devendo ser
+            interpretado em conjunto com as informações, ressalvas e limitações registradas no presente laudo, em
+            conformidade com as normas técnicas aplicáveis à avaliação de imóveis rurais.
+        </p>
+    </div>
+</section>
+
+<section class="valores-unitarios-laudo">
+    <table class="tabela-valores-unitarios">
+        <thead>
+            <tr>
+                <th colspan="2">Valores Unitários</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>VTN/ha</td>
+                <td>R$ 6.221.445,21</td>
+            </tr>
+
+            <tr>
+                <td>VTI/ha</td>
+                <td>R$ 5.217.215,63</td>
+            </tr>
+
+            <tr>
+                <td>Custo/Família</td>
+                <td>R$ 16.241.615,31</td>
+            </tr>
+
+            <tr>
+                <td>Perc. Benfeitorias</td>
+                <td>13%</td>
+            </tr>
+
+            <tr>
+                <td>Passivo ambiental</td>
+                <td>R$ 130.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Ativo ambiental</td>
+                <td>R$ 533.000,00</td>
+            </tr>
+
+            <tr>
+                <td>Valor da Terra Nua mínima</td>
+                <td>R$ 111.342.112,81</td>
+            </tr>
+
+            <tr>
+                <td>Valor da Terra Nua média</td>
+                <td>R$ 115.241.352,16</td>
+            </tr>
+
+            <tr>
+                <td>Valor da Terra Nua máxima</td>
+                <td>R$ 118.641.222,71</td>
+            </tr>
+
+            <tr>
+                <td>Valor das Benfeitorias</td>
+                <td>R$ 2.232.162,77</td>
+            </tr>
+
+            <tr>
+                <td>Valor Total do Imóvel mínima</td>
+                <td>R$ 121.516.743,12</td>
+            </tr>
+
+            <tr>
+                <td>Valor Total do Imóvel média</td>
+                <td>R$ 130.312.546,47</td>
+            </tr>
+
+            <tr>
+                <td>Valor Total do Imóvel máxima</td>
+                <td>R$ 150.123.346,12</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="introducao-laudo">
+    <h2 class="mt-5" style="border-bottom: none !important;">Conclusão</h2>
+
+    <div class="texto-introducao">
+        <p>
+            Conclui-se que o valor estimado do imóvel rural foi determinado com base nas características observadas
+            durante a vistoria, na análise documental e nos resultados da pesquisa de mercado, considerando os atributos
+            físicos, produtivos, ambientais e as benfeitorias existentes. A estimativa reflete as condições de mercado
+            identificadas para imóveis rurais comparáveis na região, observados os procedimentos técnicos de
+            homogeneização e os critérios de avaliação aplicáveis. O valor final deverá ser registrado no quadro-resumo
+            do laudo, acompanhado da respectiva data de referência, memória de cálculo e demais elementos técnicos que
+            fundamentam a avaliação, servindo de subsídio às análises e decisões administrativas do INCRA.
+        </p>
+    </div>
+</section>
+
+<section class="introducao-laudo">
+    <h2>5. Considerações Finais</h2>
+
+    <div class="texto-introducao">
+        <p>
+            A vistoria e avaliação do imóvel rural permitiram caracterizar suas condições dominiais, físicas,
+            ambientais, produtivas e socioeconômicas, bem como identificar as benfeitorias existentes e as condições de
+            ocupação da área. Os dados levantados em campo, associados à análise documental e à pesquisa de mercado,
+            subsidiaram a elaboração do presente laudo e a estimativa do valor do imóvel, conforme os critérios técnicos
+            aplicáveis. Ressalta-se que as conclusões estão condicionadas à consistência e à veracidade das informações
+            disponibilizadas, bem como aos limites dos procedimentos realizados. Eventuais pendências documentais,
+            ambientais ou dominiais deverão ser objeto de análise complementar pelos setores competentes do INCRA, para
+            subsidiar as providências administrativas cabíveis.
+        </p>
+    </div>
+</section>
+
+<!-- --------------------------------------------------------------------------- -->
+
+<section class="anexos">
+    <h2 class="mb-5">6. Anexos</h2>
+
+    <div class="lista-anexos">
+        <p>Anexo 1 - Mapas Temáticos</p>
+        <p>Anexo 2 - Painel Fotográfico do imóvel avaliando</p>
+        <p>Anexo 3 - Painel fotográfico das benfeitorias</p>
+        <p>Anexo 4 - Ficha pesquisa dos elementos de amostras</p>
+        <p>Anexo 5 - Painel fotográfico dos elementos amostrais</p>
+        <p>Anexo 6 - Memória de cálculos do passivo ambiental</p>
+        <p>Anexo 7 - Memória de cálculos da planilha de avaliação</p>
+        <p>Anexo 8 - Memória cálculo das benfeitorias dos elementos de amostra</p>
+        <p>Anexo 9 - Mapa Temáticos dos elementos de amostra</p>
+    </div>
+</section>
+
 <section class="bibliografia">
-    <h3>Bibliografia consultada</h3>
+    <h2 class="mb-5">7. Bibliografia consultada</h2>
 
     <div class="referencias">
 

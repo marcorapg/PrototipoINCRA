@@ -1,0 +1,15 @@
+.label-input-disabled {
+    color: inherit;
+    display: block;
+    margin-bottom: 4px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+}

@@ -25,8 +25,8 @@
     </div>
 </div>
 
-<br-tab>
-    <br-tab-item tab-item-title="Dados Gerais" icon="fa6-solid:clipboard" is-active="true">
+<br-tab id="tabLVA">
+    <br-tab-item id="dadosGerais" tab-item-title="Dados Gerais" icon="fa6-solid:clipboard" is-active="true">
         <div class="h3">Dados Gerais</div>
         <div class="row mt-3 mb-3">
             <div class="col-6">
@@ -387,7 +387,7 @@
         </div>
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Características do Imóvel" icon="fa6-solid:house">
+    <br-tab-item id="caracteristicas" tab-item-title="Características do Imóvel" icon="fa6-solid:house">
         <div class="h3">Características Físicas, Edafoclimáticas, Econômicas e Sociais do Imóvel</div>
         <h3>2.1. Vegetação, recursos hídricas e solo</h3>
         <div class="row mt-3 mb-3">
@@ -1124,7 +1124,8 @@
 
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Avaliação do Imóvel Rural" icon="fa6-solid:ruler-combined" style="min-height: 4400px;">
+    <br-tab-item id="avaliacao" tab-item-title="Avaliação do Imóvel Rural" icon="fa6-solid:ruler-combined"
+        style="min-height: 4400px;">
         <div class="h3">Avaliação do Imóvel Rural</div>
         <h3>3.1. Avaliação das Benfeitorias</h3>
         <div class="row mt-3 mb-3">
@@ -1338,30 +1339,16 @@
         <br-table [hidden]="tipoCalculoCapacidadeFamilias != 'Pela Capacidade de renda do solo'">
 
             <!-- LINHAS -->
-            <br-table-row slot="row" style="width: 100%;">
+            <br-table-row slot="row" style="width: 40%;">
 
                 <br-table-cell>
-                    <b>20% da Reserva Legal</b>
+                    <b>Área para Reserva Legal (ha)</b>
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ areaTotal * 0.2 | number:'1.2-2' }}
-                </br-table-cell>
-
-                <br-table-cell>
-                    <br-select label="Classe" placeholder="Selecione uma opção"
-                        [value]="classeCalculoCapacidadeFamilias"
-                        (valueChange)="classeCalculoCapacidadeFamilias = $event.detail; cacularTabelaCapacidadeFamilias()"
-                        options='[
-                            { "label": "Classe I", "value": "Classe I", "selected": false },
-                            { "label": "Classe II", "value": "Classe II", "selected": false },
-                            { "label": "Classe III", "value": "Classe III", "selected": false },
-                            { "label": "Classe IV", "value": "Classe IV", "selected": false },
-                            { "label": "Classe V", "value": "Classe V", "selected": false },
-                            { "label": "Classe VI", "value": "Classe VI", "selected": false },
-                            { "label": "Classe VII", "value": "Classe VII", "selected": false }
-                        ]'>
-                    </br-select>
+                    <br-input [value]="areaReservaLegal"
+                        (valueChange)="areaReservaLegal = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
                 </br-table-cell>
 
             </br-table-row>
@@ -1413,7 +1400,63 @@
             <!-- LINHAS -->
             <br-table-row slot="row" style="width: 100%;">
 
-                <br-table-cell style="background: #F0F0F0">
+                <br-table-cell style="background: #F0F0F0" horizontalAlign="center">
+                    Reserva Legal
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseI"
+                        (valueChange)="areaReservaLegalPorClasseI = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseII"
+                        (valueChange)="areaReservaLegalPorClasseII = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseIII"
+                        (valueChange)="areaReservaLegalPorClasseIII = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseIV"
+                        (valueChange)="areaReservaLegalPorClasseIV = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseV"
+                        (valueChange)="areaReservaLegalPorClasseV = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseVI"
+                        (valueChange)="areaReservaLegalPorClasseVI = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseVII"
+                        (valueChange)="areaReservaLegalPorClasseVII = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+                <br-table-cell>
+                    <br-input [value]="areaReservaLegalPorClasseVIII"
+                        (valueChange)="areaReservaLegalPorClasseVIII = +$event.detail; cacularTabelaCapacidadeFamilias();">
+                    </br-input>
+                </br-table-cell>
+
+            </br-table-row>
+
+            <br-table-row slot="row" style="width: 100%;">
+
+                <br-table-cell style="background: #F0F0F0" horizontalAlign="center">
                     Área Calculada
                 </br-table-cell>
 
@@ -1453,7 +1496,7 @@
 
             <br-table-row slot="row" style="width: 100%;">
 
-                <br-table-cell style="background: #F0F0F0">
+                <br-table-cell style="background: #F0F0F0" horizontalAlign="center">
                     Renda por classe
                 </br-table-cell>
 
@@ -1501,7 +1544,7 @@
 
             <br-table-row slot="row" style="width: 100%;">
 
-                <br-table-cell style="background: #F0F0F0">
+                <br-table-cell style="background: #F0F0F0" horizontalAlign="center">
                     Renda líquida anual
                 </br-table-cell>
 
@@ -1547,10 +1590,9 @@
 
             </br-table-row>
 
-
             <br-table-row slot="row" style="width: 100%;">
 
-                <br-table-cell style="background: lightgrey">
+                <br-table-cell style="background: lightgrey" horizontalAlign="center">
                     <b>Capacidade de Famílias pela Renda do Solo</b>
                 </br-table-cell>
 
@@ -1559,7 +1601,9 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    <b>{{ capacidadeFamiliasRendaSolo }}</b>
+                    <b>{{ capacidadeFamiliasRendaSolo.toLocaleString('pt-BR', { minimumFractionDigits: 0,
+                        maximumFractionDigits:
+                        0 }) }}</b>
                 </br-table-cell>
 
             </br-table-row>
@@ -1717,7 +1761,8 @@
 
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Valor do Imóvel" icon="fa6-solid:money-bill-wave" style="min-height: 4000px;">
+    <br-tab-item id="valor" tab-item-title="Valor do Imóvel" icon="fa6-solid:money-bill-wave"
+        style="min-height: 4000px;">
         <h3>4.1. Fundamentação</h3>
         <div class="row mt-3 mb-3">
             <div class="col-12">
@@ -2383,16 +2428,13 @@
         </div>
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Considerações Finais" icon="fa6-solid:note-sticky">
+    <br-tab-item id="consideracoes" tab-item-title="Considerações Finais" icon="fa6-solid:note-sticky">
         <div class="h3">Considerações Finais</div>
         <quill-editor theme="snow" class="editor-full" placeholder="">
         </quill-editor>
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Anexos" icon="fa6-solid:paperclip">
-        <div class="h3">Anexos</div>
-        <quill-editor theme="snow" class="editor-full" placeholder="">
-        </quill-editor>
+    <br-tab-item id="anexos" tab-item-title="Anexos" icon="fa6-solid:paperclip">
         <h4>Anexo 1 - Mapas Temáticos</h4>
         <div class="row mt-3 mb-3">
             <div class="col-12">
@@ -2636,10 +2678,6 @@
             <br-table-header-row slot="header">
 
                 <br-table-header-cell>
-                    Utilizado
-                </br-table-header-cell>
-
-                <br-table-header-cell>
                     Grau de Fundamentação
                 </br-table-header-cell>
 
@@ -2652,28 +2690,6 @@
             <!-- LINHAS -->
             <br-table-row slot="row">
 
-                <br-table-cell horizontalAlign="center">
-                    <br-radio name="radio-group" value="3"
-                        (checkedChange)="tipoFundamentacao3 = $event.detail; recalcularFundamentacao();"></br-radio>
-                </br-table-cell>
-
-                <br-table-cell>
-                    <b>Fundamentação III</b>
-                </br-table-cell>
-
-                <br-table-cell>
-                    0,80 a 1,25
-                </br-table-cell>
-
-            </br-table-row>
-
-            <br-table-row slot="row">
-
-                <br-table-cell horizontalAlign="center">
-                    <br-radio name="radio-group" value="2"
-                        (checkedChange)="tipoFundamentacao2 = $event.detail; recalcularFundamentacao();"></br-radio>
-                </br-table-cell>
-
                 <br-table-cell>
                     <b>Fundamentação II</b>
                 </br-table-cell>
@@ -2684,26 +2700,21 @@
 
             </br-table-row>
 
-            <br-table-row slot="row">
-
-                <br-table-cell horizontalAlign="center">
-                    <br-radio name="radio-group" value="1"
-                        (checkedChange)="tipoFundamentacao1 = $event.detail; recalcularFundamentacao();"></br-radio>
-                </br-table-cell>
-
-                <br-table-cell>
-                    <b>Fundamentação I</b>
-                </br-table-cell>
-
-                <br-table-cell>
-                    0,50 a 2,00
-                </br-table-cell>
-
-            </br-table-row>
-
         </br-table>
 
         <br-table style="width: 30%;">
+            <!-- HEADER -->
+            <br-table-header-row slot="header">
+
+                <br-table-header-cell>
+                    Cálculos
+                </br-table-header-cell>
+
+                <br-table-header-cell>
+
+                </br-table-header-cell>
+
+            </br-table-header-row>
             <!-- LINHAS -->
             <br-table-row slot="row">
 
@@ -3152,10 +3163,7 @@
 
     </br-tab-item>
 
-    <br-tab-item tab-item-title="Bibliografia" icon="fa6-solid:book">
-        <div class="h3">Anexos</div>
-        <quill-editor theme="snow" class="editor-full" placeholder="">
-        </quill-editor>
+    <br-tab-item id="bibliografia" tab-item-title="Bibliografia" icon="fa6-solid:book">
         <div class="h3">Bibliografia</div>
         <quill-editor theme="snow" class="editor-full" placeholder="">
         </quill-editor>
@@ -3163,10 +3171,19 @@
 </br-tab>
 
 <!-- Rodapé -->
-<div class="br-modal-footer d-flex justify-content-start">
-    <br-button id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos']">
-        Voltar
-    </br-button>
+<div>
+    <div class="row mt-5 mb-3">
+        <div class="col-6 d-flex justify-content-start">
+            <br-button id="voltar" emphasis="secondary" [routerLink]="['/obtencoes/documentos']">
+                Voltar
+            </br-button>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <br-button id="proximo" emphasis="primary" (click)="proximaAba()">
+                Próximo
+            </br-button>
+        </div>
+    </div>
 </div>
 
 

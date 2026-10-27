@@ -36,6 +36,9 @@ import { Meusprocessos } from './pages/obtencoes/controleprocessos/meusprocessos
 import { Documentos } from './pages/obtencoes/documentos/documentos';
 import { Lva } from './pages/obtencoes/documentos/lva/lva';
 import { Lvagerado } from './pages/obtencoes/documentos/lva/lvagerado/lvagerado';
+import { Laf } from './pages/obtencoes/documentos/laf/laf';
+import { Lafgerado } from './pages/obtencoes/documentos/laf/lafgerado/lafgerado';
+import { Lvaanexos } from './pages/obtencoes/documentos/lva/lvaanexos/lvaanexos';
 
 
 export const routes: Routes = [
@@ -45,19 +48,19 @@ export const routes: Routes = [
     { path: 'cobranca/gestaoinadimplencia', component: Gestaoinadimplencia },
     { path: 'cobranca/gestaoinadimplencia/visualizarcaso/:id', component: Visualizarcaso },
     { path: 'cobranca/gestaoinadimplencia/painelgerencial', component: Painelgerencial },
-    { path: 'cobranca/gestaoinadimplencia/processamentolote', component: Processamentolote }, 
+    { path: 'cobranca/gestaoinadimplencia/processamentolote', component: Processamentolote },
 
     //Central de notificações
-    { path: 'centralnotificacoes', component: Centralnotificacoes }, 
-    { path: 'centralnotificacoes/gestaonotificacao', component: Gestaonotificacao }, 
+    { path: 'centralnotificacoes', component: Centralnotificacoes },
+    { path: 'centralnotificacoes/gestaonotificacao', component: Gestaonotificacao },
     { path: 'centralnotificacoes/gestaotemplate', component: Gestaotemplate },
     { path: 'centralnotificacoes/gestaotemplate/editartemplate', component: Editartemplate },
     { path: 'centralnotificacoes/gestaonotificacao/visualizarnotificacao', component: Visualizarnotificacao },
-    { path: 'centralnotificacoes/gestaoenvio', component: Gestaoenvio }, 
+    { path: 'centralnotificacoes/gestaoenvio', component: Gestaoenvio },
     { path: 'centralnotificacoes/gestaoenvio/visualizarenvio', component: Visualizarenvio },
 
     //Obtenções
-    { path: 'obtencoes', component: Obtencoes }, 
+    { path: 'obtencoes', component: Obtencoes },
     { path: 'obtencoes/relatoriosobtencoes', component: Relatoriosobtencoes },
     { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao', component: Relatorioprocessoporobtencao },
     { path: 'obtencoes/relatoriosobtencoes/relatorioprocessoporobtencao/resultadoprocessoporobtencao', component: Resultadoprocessoporobtencao },
@@ -74,12 +77,15 @@ export const routes: Routes = [
     { path: 'obtencoes/dashboardobtencao', component: Dashboardobtencao },
     { path: 'obtencoes/ofertaimovel', component: Ofertaimovel },
     { path: 'obtencoes/ofertaimovel/formularioofertaimovel', component: Formularioofertaimovel },
-    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel', component: Gestaoofertaimovel  },
-    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel', component: Analisarofertaimovel  },
-    { path: 'obtencoes/controleprocessos', component: Controleprocessos  },
-    { path: 'obtencoes/controleprocessos/gestaocontroleprocessos', component: Gestaocontroleprocessos  },
-    { path: 'obtencoes/controleprocessos/meusprocessos', component: Meusprocessos  },
-    { path: 'obtencoes/documentos', component: Documentos  },
-    { path: 'obtencoes/documentos/lva', component: Lva  },
-    { path: 'obtencoes/documentos/lva/lvagerado', component: Lvagerado  }
+    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel', component: Gestaoofertaimovel },
+    { path: 'obtencoes/ofertaimovel/gestaoofertaimovel/analisarofertaimovel', component: Analisarofertaimovel },
+    { path: 'obtencoes/controleprocessos', component: Controleprocessos },
+    { path: 'obtencoes/controleprocessos/gestaocontroleprocessos', component: Gestaocontroleprocessos },
+    { path: 'obtencoes/controleprocessos/meusprocessos', component: Meusprocessos },
+    { path: 'obtencoes/documentos', component: Documentos },
+    { path: 'obtencoes/documentos/lva', component: Lva },
+    { path: 'obtencoes/documentos/lva/lvagerado', component: Lvagerado },
+    { path: 'obtencoes/documentos/lva/lvaanexos', component: Lvaanexos },
+    { path: 'obtencoes/documentos/laf', component: Laf },
+    { path: 'obtencoes/documentos/laf/lafgerado', component: Lafgerado }
 ];

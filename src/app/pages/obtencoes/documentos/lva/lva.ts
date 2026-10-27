@@ -58,6 +58,37 @@ interface ElementoAmostra {
 export class Lva {
   constructor(private router: Router) { }
 
+  proximaAba() {
+    const tab = document.getElementById('tabLVA') as any;
+
+    const itens = Array.from(
+      tab.querySelectorAll('br-tab-item')
+    ) as any[];
+
+    const indiceAtual = itens.findIndex(
+      item => item.isActive === true ||
+        item.getAttribute('is-active') === 'true'
+    );
+
+    if (indiceAtual >= 0 && indiceAtual < itens.length - 1) {
+      const proximaAba = itens[indiceAtual + 1];
+      const id = proximaAba.getAttribute('tab-item-id');
+
+      // Atualiza a aba ativa no componente pai
+      tab.activeTabId = id;
+
+      // Atualiza isActive em todos os itens
+      itens.forEach((item, index) => {
+        item.isActive = index === indiceAtual + 1;
+      });
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   registros: ImovelRegistro[] = [
     {
       area: '',
@@ -662,13 +693,21 @@ export class Lva {
 
   //3.2 Calculo capacidade familias
   tipoCalculoCapacidadeFamilias: string = '';
-  classeCalculoCapacidadeFamilias: string = '';
 
   notaAgronomicaCapacidadeFamilias: number = 0;
-  areaClasseEscolhida:number = 300;
+  areaReservaLegal: number = 0;
   reservaLegalCapacidadeFamilias: number = this.areaTotal * 0.2;
 
   valorSalarioMinimo: number = 1621;
+
+  areaReservaLegalPorClasseI: number = 0;
+  areaReservaLegalPorClasseII: number = 0;
+  areaReservaLegalPorClasseIII: number = 0;
+  areaReservaLegalPorClasseIV: number = 0;
+  areaReservaLegalPorClasseV: number = 0;
+  areaReservaLegalPorClasseVI: number = 0;
+  areaReservaLegalPorClasseVII: number = 0;
+  areaReservaLegalPorClasseVIII: number = 0;
 
   areaCalculadaPorClasseI: number = 0;
   areaCalculadaPorClasseII: number = 0;
@@ -700,48 +739,14 @@ export class Lva {
   capacidadeFamiliasRendaSolo: number = 0;
 
   cacularTabelaCapacidadeFamilias(): void {
-    this.areaCalculadaPorClasseI = 100 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseII = 200 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseIII = 300 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseIV = 100 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseV = 150 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseVI = 150 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseVII = 500 - this.reservaLegalCapacidadeFamilias;
-    this.areaCalculadaPorClasseVIII = 0
-
-    switch (this.classeCalculoCapacidadeFamilias) {
-      case 'Classe I':
-        this.areaCalculadaPorClasseI = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe II':
-        this.areaCalculadaPorClasseII = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe III':
-        this.areaCalculadaPorClasseIII = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe IV':
-        this.areaCalculadaPorClasseIV = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe V':
-        this.areaCalculadaPorClasseV = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe VI':
-        this.areaCalculadaPorClasseVI = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe VII':
-        this.areaCalculadaPorClasseVII = this.areaClasseEscolhida - (0.2 * this.areaTotal);
-        break;
-
-      case 'Classe VIII':
-        this.areaCalculadaPorClasseVIII = 0;
-        break;        
-    }
+    this.areaCalculadaPorClasseI = 100 - this.areaReservaLegalPorClasseI;
+    this.areaCalculadaPorClasseII = 200 - this.areaReservaLegalPorClasseII;
+    this.areaCalculadaPorClasseIII = 300 - this.areaReservaLegalPorClasseIII;
+    this.areaCalculadaPorClasseIV = 100 - this.areaReservaLegalPorClasseIV;
+    this.areaCalculadaPorClasseV = 150 - this.areaReservaLegalPorClasseV;
+    this.areaCalculadaPorClasseVI = 150 - this.areaReservaLegalPorClasseVI;
+    this.areaCalculadaPorClasseVII = 500 - this.areaReservaLegalPorClasseVII;
+    this.areaCalculadaPorClasseVIII = 0 - this.areaReservaLegalPorClasseVIII;
 
     this.rendaPorClasseI = 2.3 * this.valorSalarioMinimo;
     this.rendaPorClasseII = 0.8 * 2.3 * this.valorSalarioMinimo;
@@ -752,16 +757,16 @@ export class Lva {
     this.rendaPorClasseVII = 0.2 * 2.3 * this.valorSalarioMinimo;
     this.rendaPorClasseVIII = 0;
 
-    this.rendaLiquidaPorClasseI = this.areaCalculadaPorClasseI * this.rendaLiquidaPorClasseI;
-    this.rendaLiquidaPorClasseII = this.areaCalculadaPorClasseII * this.rendaLiquidaPorClasseII;
-    this.rendaLiquidaPorClasseIII = this.areaCalculadaPorClasseIII * this.rendaLiquidaPorClasseIII;
-    this.rendaLiquidaPorClasseIV = this.areaCalculadaPorClasseIV * this.rendaLiquidaPorClasseIV;
-    this.rendaLiquidaPorClasseV = this.areaCalculadaPorClasseV * this.rendaLiquidaPorClasseV;
-    this.rendaLiquidaPorClasseVI = this.areaCalculadaPorClasseVI * this.rendaLiquidaPorClasseVI;
-    this.rendaLiquidaPorClasseVII = this.areaCalculadaPorClasseVII * this.rendaLiquidaPorClasseVII;
+    this.rendaLiquidaPorClasseI = this.areaCalculadaPorClasseI * this.rendaPorClasseI;
+    this.rendaLiquidaPorClasseII = this.areaCalculadaPorClasseII * this.rendaPorClasseII;
+    this.rendaLiquidaPorClasseIII = this.areaCalculadaPorClasseIII * this.rendaPorClasseIII;
+    this.rendaLiquidaPorClasseIV = this.areaCalculadaPorClasseIV * this.rendaPorClasseIV;
+    this.rendaLiquidaPorClasseV = this.areaCalculadaPorClasseV * this.rendaPorClasseV;
+    this.rendaLiquidaPorClasseVI = this.areaCalculadaPorClasseVI * this.rendaPorClasseVI;
+    this.rendaLiquidaPorClasseVII = this.areaCalculadaPorClasseVII * this.rendaPorClasseVII;
     this.rendaLiquidaPorClasseVIII = 0;
 
-    this.capacidadeFamiliasRendaSolo = (this.rendaLiquidaPorClasseI + this.rendaLiquidaPorClasseII + this.rendaLiquidaPorClasseIII + this.rendaLiquidaPorClasseIV + this.rendaLiquidaPorClasseV + this.rendaLiquidaPorClasseVI + this.rendaLiquidaPorClasseVII) / 24 * this.valorSalarioMinimo;
+    this.capacidadeFamiliasRendaSolo = (this.rendaLiquidaPorClasseI + this.rendaLiquidaPorClasseII + this.rendaLiquidaPorClasseIII + this.rendaLiquidaPorClasseIV + this.rendaLiquidaPorClasseV + this.rendaLiquidaPorClasseVI + this.rendaLiquidaPorClasseVII) / (24 * this.valorSalarioMinimo);
   }
 
   //3.3 Áreas de Reserva Legal (ARL) e de Preservação Permanente (APP)

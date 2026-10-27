@@ -17,6 +17,13 @@
     background: #fff;
 }
 
+h2 {
+    font-size: 16pt;
+    font-weight: 600;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
 
 /* =========================================
    CABEÇALHO
@@ -95,6 +102,1433 @@
     margin: 0;
 }
 
+/* =========================================
+   DADOS GERAIS
+========================================= */
+
+.dados-gerais-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.dados-gerais-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.dados-gerais-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px 24px;
+}
+
+.campo-geral {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.rotulo-geral {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.4;
+}
+
+.valor-geral {
+    font-size: 10.5pt;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.campo-geral-completo {
+    grid-column: 1 / -1;
+}
+
+/* Telas menores */
+@media screen and (max-width: 700px) {
+    .dados-gerais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-geral-completo {
+        grid-column: auto;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .dados-gerais-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .dados-gerais-grid {
+        gap: 14px 18px;
+    }
+
+    .rotulo-geral {
+        font-size: 8pt;
+    }
+
+    .valor-geral {
+        font-size: 9.5pt;
+    }
+
+    .campo-geral {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   INTRODUÇÃO
+========================================= */
+
+.introducao-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.introducao-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.texto-introducao {
+    font-size: 11pt;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
+
+.texto-introducao p {
+    margin: 0 0 12px;
+    text-indent: 1.25cm;
+    orphans: 3;
+    widows: 3;
+}
+
+.texto-introducao p:last-child {
+    margin-bottom: 0;
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .introducao-laudo {
+        font-size: 10pt;
+    }
+
+    .introducao-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .texto-introducao {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    .texto-introducao p {
+        margin-bottom: 10px;
+        text-indent: 1.25cm;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+}
+
+
+
+/* =========================================
+   IDENTIFICAÇÂO DO IMÒVEL
+========================================= */
+
+
+.identificacao-imovel {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    width: 100%;
+    font-size: 11pt;
+}
+
+.identificacao-imovel h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.dados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 5px;
+}
+
+.rotulo {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.3;
+}
+
+.valor {
+    font-size: 10.5pt;
+    font-weight: 500;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.campo-duplo {
+    grid-column: span 2;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+/* Adaptação para telas menores */
+@media screen and (max-width: 800px) {
+    .dados-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .campo-duplo,
+    .campo-completo {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .identificacao-imovel {
+        font-size: 10pt;
+    }
+
+    .identificacao-imovel h2 {
+        font-size: 14pt;
+        margin-bottom: 16px;
+    }
+
+    .dados-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px 18px;
+    }
+
+    .campo,
+    .campo-duplo,
+    .campo-completo {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .rotulo {
+        font-size: 8pt;
+    }
+
+    .valor {
+        font-size: 9pt;
+    }
+}
+
+/* =========================================
+   LOCALIZAÇÃO/ACESSO
+========================================= */
+
+.localizacao-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.localizacao-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-localizacao {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-localizacao thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-localizacao th {
+    font-size: 9.5pt;
+    font-weight: 400;
+    text-align: left;
+    padding: 16px 24px;
+    line-height: 1.4;
+}
+
+.tabela-localizacao td {
+    font-size: 10pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    padding: 18px 24px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.tabela-localizacao th:first-child,
+.tabela-localizacao td:first-child {
+    padding-left: 24px;
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .localizacao-laudo {
+        font-size: 10pt;
+    }
+
+    .localizacao-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .localizacao-laudo {
+        font-size: 14pt;
+    }
+
+    .tabela-localizacao th {
+        font-size: 8.5pt;
+        padding: 12px 10px;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-localizacao td {
+        font-size: 9pt;
+        padding: 14px 10px;
+    }
+
+    .tabela-localizacao tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   SITUAÇÃO DOMINIAL
+========================================= */
+
+.situacao-dominial {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.situacao-dominial h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.dados-dominiais {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.campo-dominial {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.rotulo-dominial {
+    font-size: 9pt;
+    color: #555;
+}
+
+.valor-dominial {
+    font-size: 10.5pt;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.titulo-matriculas {
+    margin-bottom: 18px;
+}
+
+.titulo-matriculas h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tabela-matriculas {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-matriculas thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-matriculas th {
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    padding: 16px 12px;
+    line-height: 1.4;
+}
+
+.tabela-matriculas td {
+    font-size: 10pt;
+    text-align: left;
+    vertical-align: middle;
+    padding: 18px 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.tabela-matriculas th:first-child,
+.tabela-matriculas td:first-child {
+    padding-left: 24px;
+}
+
+.tabela-matriculas tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Telas menores */
+@media screen and (max-width: 800px) {
+    .tabela-matriculas {
+        table-layout: auto;
+    }
+
+    .tabela-matriculas th,
+    .tabela-matriculas td {
+        padding: 12px 8px;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .situacao-dominial h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .dados-dominiais {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .titulo-matriculas h3 {
+        font-size: 12pt;
+    }
+
+    .tabela-matriculas th {
+        font-size: 8pt;
+        padding: 12px 6px;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-matriculas td {
+        font-size: 8.5pt;
+        padding: 14px 6px;
+    }
+}
+
+/* =========================================
+   USO DO IMÓVEL
+========================================= */
+
+.uso-imovel-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.uso-imovel-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 30px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.uso-imovel-laudo h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 0 0 32px;
+}
+
+.tabela-uso-imovel {
+    width: 40%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-uso-imovel thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-uso-imovel th {
+    padding: 16px 24px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.tabela-uso-imovel td {
+    padding: 18px 24px;
+    font-size: 10pt;
+    text-align: left;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-uso-imovel th:first-child,
+.tabela-uso-imovel td:first-child {
+    width: 50%;
+}
+
+.tabela-uso-imovel th:nth-child(2),
+.tabela-uso-imovel td:nth-child(2) {
+    width: 25%;
+}
+
+.tabela-uso-imovel th:nth-child(3),
+.tabela-uso-imovel td:nth-child(3) {
+    width: 25%;
+}
+
+.tabela-uso-imovel tfoot td {
+    font-weight: 400;
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 700px) {
+
+    .tabela-uso-imovel th,
+    .tabela-uso-imovel td {
+        padding: 12px 8px;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .uso-imovel-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 20px;
+    }
+
+    .uso-imovel-laudo h3 {
+        font-size: 12pt;
+        margin-bottom: 18px;
+    }
+
+    .tabela-uso-imovel th {
+        font-size: 8.5pt;
+        padding: 12px 10px;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-uso-imovel td {
+        font-size: 9pt;
+        padding: 14px 10px;
+    }
+
+    .tabela-uso-imovel tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   2.3. Classe de Capacidade de Uso das Terras
+========================================= */
+
+.capacidade-uso-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.capacidade-uso-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-capacidade-uso {
+    width: 40%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-capacidade-uso thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-capacidade-uso th {
+    padding: 14px 18px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.tabela-capacidade-uso td {
+    padding: 14px 18px;
+    font-size: 9.5pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-capacidade-uso th:nth-child(1),
+.tabela-capacidade-uso td:nth-child(1) {
+    width: 45%;
+}
+
+.tabela-capacidade-uso th:nth-child(2),
+.tabela-capacidade-uso td:nth-child(2) {
+    width: 45%;
+}
+
+.tabela-capacidade-uso th:nth-child(3),
+.tabela-capacidade-uso td:nth-child(3) {
+    width: 10%;
+}
+
+.tabela-capacidade-uso tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 700px) {
+
+    .tabela-capacidade-uso th,
+    .tabela-capacidade-uso td {
+        padding: 10px 8px;
+    }
+
+    .tabela-capacidade-uso td {
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .capacidade-uso-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .tabela-capacidade-uso th {
+        font-size: 8pt;
+        padding: 10px 8px;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-capacidade-uso td {
+        font-size: 8.5pt;
+        padding: 10px 8px;
+    }
+
+    .tabela-capacidade-uso tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   2.4. Relevo
+========================================= */
+
+.relevo-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.relevo-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-relevo {
+    width: 40%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-relevo thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-relevo th {
+    padding: 14px 18px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.tabela-relevo td {
+    padding: 16px 18px;
+    font-size: 9.5pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-relevo th:nth-child(1),
+.tabela-relevo td:nth-child(1) {
+    width: 29%;
+}
+
+.tabela-relevo th:nth-child(2),
+.tabela-relevo td:nth-child(2) {
+    width: 29%;
+}
+
+.tabela-relevo th:nth-child(3),
+.tabela-relevo td:nth-child(3) {
+    width: 28%;
+}
+
+.tabela-relevo th:nth-child(4),
+.tabela-relevo td:nth-child(4) {
+    width: 14%;
+}
+
+.tabela-relevo tfoot td {
+    font-weight: 400;
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 700px) {
+
+    .tabela-relevo th,
+    .tabela-relevo td {
+        padding: 10px 8px;
+        font-size: 8.5pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .relevo-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .tabela-relevo th {
+        padding: 10px 8px;
+        font-size: 8pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-relevo td {
+        padding: 12px 8px;
+        font-size: 8.5pt;
+    }
+
+    .tabela-relevo tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   2.5. Nota Agronômica
+========================================= */
+
+.nota-agronomica-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.nota-agronomica-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.situacao-agronomica {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+.rotulo-agronomico {
+    font-size: 9pt;
+    color: #555;
+}
+
+.valor-agronomico {
+    font-size: 10.5pt;
+    line-height: 1.5;
+}
+
+.tabela-nota-agronomica {
+    width: 60%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-nota-agronomica thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-nota-agronomica th {
+    padding: 14px 12px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.tabela-nota-agronomica td {
+    padding: 14px 12px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-nota-agronomica th:nth-child(1),
+.tabela-nota-agronomica td:nth-child(1) {
+    width: 10%;
+}
+
+.tabela-nota-agronomica th:nth-child(2),
+.tabela-nota-agronomica td:nth-child(2) {
+    width: 30%;
+}
+
+.tabela-nota-agronomica th:nth-child(3),
+.tabela-nota-agronomica td:nth-child(3) {
+    width: 20%;
+}
+
+.tabela-nota-agronomica th:nth-child(4),
+.tabela-nota-agronomica td:nth-child(4) {
+    width: 20%;
+}
+
+.tabela-nota-agronomica th:nth-child(5),
+.tabela-nota-agronomica td:nth-child(5) {
+    width: 20%;
+}
+
+.tabela-nota-agronomica tfoot td {
+    border-bottom: none;
+}
+
+.tabela-nota-agronomica tfoot strong {
+    font-weight: 600;
+}
+
+/* Telas menores */
+@media screen and (max-width: 700px) {
+    .tabela-nota-agronomica {
+        table-layout: auto;
+    }
+
+    .tabela-nota-agronomica th,
+    .tabela-nota-agronomica td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .nota-agronomica-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .rotulo-agronomico {
+        font-size: 8pt;
+    }
+
+    .valor-agronomico {
+        font-size: 9.5pt;
+    }
+
+    .tabela-nota-agronomica th {
+        padding: 10px 6px;
+        font-size: 7.5pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-nota-agronomica td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+
+    .tabela-nota-agronomica tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   Inventário das Benfeitorias
+========================================= */
+
+
+.inventario-benfeitorias-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.inventario-benfeitorias-laudo h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-benfeitorias {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tabela-benfeitorias thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-benfeitorias th {
+    padding: 14px 12px;
+    font-size: 8.5pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.tabela-benfeitorias td {
+    padding: 16px 12px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Largura proporcional das colunas */
+.tabela-benfeitorias th:nth-child(1),
+.tabela-benfeitorias td:nth-child(1) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(2),
+.tabela-benfeitorias td:nth-child(2) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(3),
+.tabela-benfeitorias td:nth-child(3) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(4),
+.tabela-benfeitorias td:nth-child(4) {
+    width: 10%;
+}
+
+.tabela-benfeitorias th:nth-child(5),
+.tabela-benfeitorias td:nth-child(5) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(6),
+.tabela-benfeitorias td:nth-child(6) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(7),
+.tabela-benfeitorias td:nth-child(7) {
+    width: 11%;
+}
+
+.tabela-benfeitorias th:nth-child(8),
+.tabela-benfeitorias td:nth-child(8) {
+    width: 12%;
+}
+
+.resumo-benfeitorias {
+    width: 100%;
+}
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    border-bottom: 1px solid #ddd;
+}
+
+.linha-resumo span:last-child {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Telas menores */
+@media screen and (max-width: 900px) {
+    .tabela-benfeitorias {
+        table-layout: auto;
+    }
+
+    .tabela-benfeitorias th,
+    .tabela-benfeitorias td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .inventario-benfeitorias-laudo h3 {
+        font-size: 12pt;
+        margin-bottom: 16px;
+    }
+
+    .tabela-benfeitorias th {
+        padding: 10px 6px;
+        font-size: 7.5pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-benfeitorias td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+
+    .tabela-benfeitorias tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .linha-resumo {
+        padding: 9px 6px;
+        font-size: 8.5pt;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   RESERVA LEGAL
+========================================= */
+
+
+.capacidade-familias-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.capacidade-familias-laudo h3 {
+    font-size: 12pt;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.metodo-capacidade {
+    margin-bottom: 28px;
+}
+
+.valor-capacidade {
+    display: block;
+    font-size: 10pt;
+    line-height: 1.5;
+}
+
+.reserva-legal {
+    display: grid;
+    grid-template-columns: 350px minmax(150px, 300px);
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding: 8px 24px;
+}
+
+.rotulo-capacidade {
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.tabela-capacidade-familias {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-capacidade-familias thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-capacidade-familias th,
+.tabela-capacidade-familias td {
+    padding: 14px 10px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    font-size: 9pt;
+    font-weight: 400;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-capacidade-familias thead th {
+    text-align: center;
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.tabela-capacidade-familias thead th:first-child {
+    width: 195px;
+    text-align: center;
+}
+
+.tabela-capacidade-familias tbody th {
+    background-color: #f0f0f0;
+    text-align: left;
+    padding-left: 24px;
+    width: 195px;
+}
+
+.tabela-capacidade-familias tbody td {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tabela-capacidade-familias tfoot th {
+    background-color: #d6d6d6;
+    text-align: left;
+    font-weight: 600;
+    padding: 18px 24px;
+}
+
+.tabela-capacidade-familias tfoot td {
+    text-align: center;
+    font-weight: 600;
+    padding: 18px 10px;
+}
+
+.tabela-capacidade-familias tfoot .resultado-capacidade {
+    white-space: nowrap;
+}
+
+/* Telas menores */
+@media screen and (max-width: 900px) {
+    .tabela-capacidade-familias {
+        table-layout: auto;
+    }
+
+    .tabela-capacidade-familias th,
+    .tabela-capacidade-familias td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+
+    .reserva-legal {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .capacidade-familias-laudo h3 {
+        font-size: 11pt;
+    }
+
+    .tabela-capacidade-familias th,
+    .tabela-capacidade-familias td {
+        padding: 10px 5px;
+        font-size: 7.5pt;
+    }
+
+    .tabela-capacidade-familias thead {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-capacidade-familias tbody th,
+    .tabela-capacidade-familias tfoot th {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-capacidade-familias tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   3.3. Áreas de Reserva Legal (ARL) e de Preservação Permanente (APP)
+========================================= */
+
+
+.areas-protegidas-laudo {
+    width: 100%;
+    max-width: 540px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.linha-area {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    align-items: center;
+    gap: 16px;
+    min-height: 52px;
+    padding: 12px 22px;
+    border-bottom: 1px solid #ccc;
+}
+
+.rotulo-area {
+    font-size: 10pt;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.valor-area,
+.texto-area {
+    font-size: 10.5pt;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.valor-area {
+    overflow-wrap: anywhere;
+}
+
+/* Telas menores */
+@media screen and (max-width: 500px) {
+    .linha-area {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 12px 8px;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .linha-area {
+        min-height: 44px;
+        padding: 10px 12px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .rotulo-area {
+        font-size: 9pt;
+    }
+
+    .valor-area,
+    .texto-area {
+        font-size: 9.5pt;
+    }
+}
+
+/* =========================================
+   3.6. Ancianidade das Ocupações
+========================================= */
+
+
+.antiguidade-ocupacoes-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.antiguidade-ocupacoes-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.campos-ancianidade {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 558px;
+}
+
+.campo-ancianidade {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rotulo-ancianidade {
+    font-size: 10pt;
+    color: #333;
+    line-height: 1.4;
+}
+
+.valor-ancianidade {
+    font-size: 10.5pt;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.resultado-ancianidade {
+    margin: 22px 0 0;
+    font-size: 10.5pt;
+    line-height: 1.5;
+}
+
+.resultado-ancianidade strong {
+    font-weight: 600;
+}
+
+.resultado-ancianidade span {
+    font-weight: 400;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+    .antiguidade-ocupacoes-laudo h2 {
+        font-size: 14pt;
+    }
+
+    .campos-ancianidade {
+        max-width: 100%;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .antiguidade-ocupacoes-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .campos-ancianidade {
+        gap: 14px;
+    }
+
+    .rotulo-ancianidade {
+        font-size: 9pt;
+    }
+
+    .valor-ancianidade,
+    .resultado-ancianidade {
+        font-size: 9.5pt;
+    }
+
+    .campo-ancianidade,
+    .resultado-ancianidade {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
 
 /* =========================================
    IMPRESSÃO
@@ -131,10 +1565,585 @@
 
 }
 
+/* =========================================
+   4.1. Fundamentação
+========================================= */
 
 
+.fundamentacao-laudo {
+    width: 100%;
+    max-width: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-fundamentacao {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-fundamentacao thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-fundamentacao th,
+.tabela-fundamentacao td {
+    width: 50%;
+    padding: 14px 24px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 10pt;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-fundamentacao thead th {
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.tabela-fundamentacao tbody th {
+    font-weight: 600;
+}
+
+.tabela-fundamentacao tbody td {
+    font-weight: 400;
+}
+
+.tabela-fundamentacao .linha-separadora td {
+    background-color: #f0f0f0;
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.tabela-fundamentacao .linha-separadora+tr th,
+.tabela-fundamentacao .linha-separadora+tr td {
+    border-top: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-fundamentacao th,
+    .tabela-fundamentacao td {
+        padding: 12px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-fundamentacao th,
+    .tabela-fundamentacao td {
+        padding: 10px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-fundamentacao thead,
+    .tabela-fundamentacao .linha-separadora td {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-fundamentacao tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
 
 
+/* =========================================
+   4.2.1. Elementos Amostrais da Pesquisa de Mercado de Terras
+========================================= */
+
+
+.elementos-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.elementos-laudo h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-elementos {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-elementos thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-elementos th {
+    padding: 14px 10px;
+    font-size: 8.5pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.tabela-elementos td {
+    padding: 16px 10px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-elementos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Largura das colunas */
+.tabela-elementos th:nth-child(1),
+.tabela-elementos td:nth-child(1) {
+    width: 5%;
+}
+
+.tabela-elementos th:nth-child(2),
+.tabela-elementos td:nth-child(2) {
+    width: 8%;
+}
+
+.tabela-elementos th:nth-child(3),
+.tabela-elementos td:nth-child(3) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(4),
+.tabela-elementos td:nth-child(4),
+.tabela-elementos th:nth-child(5),
+.tabela-elementos td:nth-child(5) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(6),
+.tabela-elementos td:nth-child(6) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(7),
+.tabela-elementos td:nth-child(7) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(8),
+.tabela-elementos td:nth-child(8),
+.tabela-elementos th:nth-child(9),
+.tabela-elementos td:nth-child(9),
+.tabela-elementos th:nth-child(10),
+.tabela-elementos td:nth-child(10),
+.tabela-elementos th:nth-child(11),
+.tabela-elementos td:nth-child(11) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(12),
+.tabela-elementos td:nth-child(12) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(13),
+.tabela-elementos td:nth-child(13) {
+    width: 8%;
+}
+
+/* Telas menores */
+@media screen and (max-width: 1000px) {
+    .tabela-elementos {
+        table-layout: auto;
+    }
+
+    .tabela-elementos th,
+    .tabela-elementos td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .elementos-laudo h3 {
+        font-size: 12pt;
+        margin-bottom: 16px;
+    }
+
+    .tabela-elementos th {
+        padding: 9px 5px;
+        font-size: 7pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-elementos td {
+        padding: 10px 5px;
+        font-size: 7.5pt;
+    }
+
+    .tabela-elementos tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   4.2.2. Parâmetros Estatísticos Pós Homogeneização
+========================================= */
+
+.estatisticas-elementos-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-estatisticas-elementos {
+    width: 60%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-estatisticas-elementos thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-estatisticas-elementos th,
+.tabela-estatisticas-elementos td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-estatisticas-elementos thead th {
+    font-weight: 600;
+    text-align: center;
+    border-bottom: none;
+}
+
+.tabela-estatisticas-elementos tbody th {
+    font-weight: 600;
+    width: 20%;
+}
+
+.tabela-estatisticas-elementos tbody td {
+    font-weight: 400;
+}
+
+.tabela-estatisticas-elementos tbody tr:last-child th,
+.tabela-estatisticas-elementos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-estatisticas-elementos th,
+    .tabela-estatisticas-elementos td {
+        padding: 12px 8px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-estatisticas-elementos th,
+    .tabela-estatisticas-elementos td {
+        padding: 10px 12px;
+        font-size: 9pt;
+    }
+
+    .tabela-estatisticas-elementos thead {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-estatisticas-elementos tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   4.2.3. Definição do Intervalo de Confiança VTN/ha (IC 80%)
+========================================= */
+
+.precisao-avaliacao-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-precisao-avaliacao {
+    width: 100%;
+    max-width: 540px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-precisao-avaliacao th,
+.tabela-precisao-avaliacao td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-precisao-avaliacao th {
+    width: 50%;
+    font-weight: 600;
+}
+
+.tabela-precisao-avaliacao td {
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.tabela-precisao-avaliacao tr:last-child th,
+.tabela-precisao-avaliacao tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-precisao-avaliacao th,
+    .tabela-precisao-avaliacao td {
+        padding: 12px 10px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-precisao-avaliacao th,
+    .tabela-precisao-avaliacao td {
+        padding: 12px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-precisao-avaliacao tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   4.2.4. Campo de Arbítrio do VTN
+========================================= */
+
+.campo-arbitrio-vtn-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.campo-arbitrio-vtn-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-arbitrio-vtn {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-arbitrio-vtn th,
+.tabela-arbitrio-vtn td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-arbitrio-vtn th {
+    width: 50%;
+    font-weight: 600;
+}
+
+.tabela-arbitrio-vtn td {
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.tabela-arbitrio-vtn .linha-vtn-medio th {
+    font-size: 13pt;
+    font-weight: 600;
+}
+
+.tabela-arbitrio-vtn .linha-vtn-medio td {
+    font-size: 10.5pt;
+}
+
+.tabela-arbitrio-vtn tr:last-child th,
+.tabela-arbitrio-vtn tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-arbitrio-vtn th,
+    .tabela-arbitrio-vtn td {
+        padding: 12px 10px;
+        font-size: 9pt;
+    }
+
+    .tabela-arbitrio-vtn .linha-vtn-medio th {
+        font-size: 11pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .campo-arbitrio-vtn-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .tabela-arbitrio-vtn th,
+    .tabela-arbitrio-vtn td {
+        padding: 12px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-arbitrio-vtn .linha-vtn-medio th {
+        font-size: 12pt;
+    }
+
+    .tabela-arbitrio-vtn tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   4.3. Resumo da Avaliação do Valor do Imóvel
+========================================= */
+
+
+.valores-unitarios-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-valores-unitarios {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-valores-unitarios thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-valores-unitarios thead th {
+    padding: 16px 24px;
+    font-size: 10pt;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.tabela-valores-unitarios tbody td {
+    width: 50%;
+    padding: 16px 24px;
+    font-size: 10pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+    overflow-wrap: anywhere;
+}
+
+.tabela-valores-unitarios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-valores-unitarios thead th,
+    .tabela-valores-unitarios tbody td {
+        padding: 12px 10px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .tabela-valores-unitarios thead th {
+        padding: 12px 16px;
+        font-size: 9pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-valores-unitarios tbody td {
+        padding: 12px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-valores-unitarios tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   3.6. Ancianidade das Ocupações
+========================================= */
+
+/* =========================================
+   3.6. Ancianidade das Ocupações
+========================================= */
 
 /* ------ SECTION ------ */
 section {
@@ -143,20 +2152,10 @@ section {
 
     padding: 18px 40px 30px 40px;
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 11px;
     line-height: 1.42;
 
     color: #000;
-}
-
-/* ------ ANEXOS ------ */
-.anexos h2 {
-    margin: 0 0 14px 0;
-    padding: 0;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.2;
 }
 
 .lista-anexos {
@@ -165,9 +2164,6 @@ section {
 
 .lista-anexos p {
     margin: 0 0 12px 0;
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.25;
 }
 
 
@@ -181,10 +2177,6 @@ section {
     padding: 0;
 
     text-align: left;
-
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.42;
 }
 
 .referencia strong {

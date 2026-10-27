@@ -1,0 +1,223 @@
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Documentos', url: '/obtencoes/documentos' },
+    { label: 'Laudo de Agronômico de Fiscalização', url: '/obtencoes/documentos/laf' }
+  ]">
+</app-breadcrumb>
+
+<div class="row mt-3 mb-3 align-items-center">
+    <div class="col-3">
+        <div class="h3 mb-0">Laudo de Agronômico de Fiscalização</div>
+    </div>
+
+    <div class="col-9 d-flex justify-content-end align-items-center">
+        <br-button id="saveScrim" emphasis="primary">
+            <i class="fas fa-save mr-2"></i>
+            Salvar
+        </br-button>
+
+        <br-button class="ml-3" id="closeScrim" emphasis="secondary"
+            [routerLink]="['/obtencoes/documentos/laf/lafgerado']">
+            <i class="fas fa-check-double mr-2"></i>
+            Finalizar Laudo
+        </br-button>
+    </div>
+</div>
+
+<br-tab>
+    <br-tab-item tab-item-title="Dados Gerais" icon="fa6-solid:clipboard" is-active="true">
+        <h3>Dados Gerais</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <label for="ordemServico" class="label-input-disabled">
+                    Ordem de Serviço
+                </label>
+                <br-input id="ordemServico" density="medium" readonly="true" state="warning"
+                    value="35466987">123146</br-input>
+            </div>
+            <div class="col-6">
+                <label for="dataAvaliacao" class="label-input-disabled">
+                    Data da Avaliação *
+                </label>
+                <br-datetime-picker id="dataAvaliacao" name="agendamento" mode="date" locale="pt-BR"
+                    selection-mode="single" initial-moment="now" disabled-dates="12/05/2026 20/05/2026"
+                    placeholder="Selecione data" required>
+                </br-datetime-picker>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <label for="responsaveis" class="label-input-disabled">
+                    Responsáveis Técnicos
+                </label>
+                <br-input id="responsaveis" readonly="true" state="warning" density="medium"
+                    value="Engº. Agrônomo Claudinei Chalito da Silva, Engº. Agrônomo Rodrigo Camargo de Andrade Pinto, Engº. Agrônomo Geraldo Batista Martins"></br-input>
+            </div>
+        </div>
+
+        <h2>1. Identificação Inicial</h2>
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-input id="processoObtencao" label="Processo de Obtenção" readonly="true" state="warning"
+                    density="medium" value="3547961"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="imovel" label="Imóvel" density="medium" readonly="true" state="warning"
+                    value="Fazenda Nossa Senhora do Carmo ou Brasileira"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="municipio" label="Municípios" readonly="true" state="warning" density="medium"
+                    value="Ortigueira e Faxinal"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="uf" label="UF" density="medium" readonly="true" state="warning" value="PR"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-3">
+                <br-input id="areaRegistrada" label="Área registrada (ha)" density="medium" readonly="true"
+                    state="warning" value="1.303,79"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="areaGeorreferenciada" label="Área georreferenciada e certificada (ha)" density="medium"
+                    value="1500" [value]="areaTotal" (valueChange)="areaTotal = +$event.detail"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="modulosFiscais" label="Módulos Fiscais (MF)" density="medium" readonly="true"
+                    state="warning" value="529,2077"></br-input>
+            </div>
+            <div class="col-3">
+                <br-input id="fracaoMinima" label="Fração Mínima de Parcelamento (FMP)" density="medium" readonly="true"
+                    state="warning" value="Ortigueira: 2 ha; Faxinal: 3 ha"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-4">
+                <br-input id="distanciaSede" label="Distância da sede (km)" density="medium" value=""></br-input>
+            </div>
+            <div class="col-4">
+                <br-select label="Município Pólo de Influência" placeholder="Selecione uma opção" options='[
+                    { "label": "Petrópolis", "value": "Petrópolis", "selected": false },
+                    { "label": "Leopoldina", "value": "Leopoldina", "selected": false },
+                    { "label": "São Carlos", "value": "São Carlos", "selected": false },
+                    { "label": "Ribeirão Preto", "value": "Ribeirão Preto", "selected": false }
+                ]'>
+                </br-select>
+            </div>
+            <div class="col-4">
+                <br-input id="distanciaPoloInfluencia" label="Distância do Pólo de Influência (km)" density="medium"
+                    value=""></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <br-input id="codigoSNCR" label="Código SNCR" density="medium" readonly="true" state="warning"
+                    value="710.040.724.254.8"></br-input>
+            </div>
+            <div class="col-6">
+                <br-input id="codigoReceitaFederal" label="Código Receita Federal" density="medium"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-6">
+                <br-input id="codigoSIGEF" label="Código da Certificação SIGEF " density="medium" value=""></br-input>
+            </div>
+            <div class="col-6">
+                <br-input id="codigoCAR" label="Código do CAR" density="medium"></br-input>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <br-input id="fracaoMinima" label="Proprietários" density="medium" readonly="true" state="warning"
+                    value="Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli"></br-input>
+            </div>
+        </div>
+
+        <h2>1.1. Considerações Preliminares</h2>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h2>1.2. Objetivos</h2>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+
+        <h2>2. Fundamentação Legal</h2>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>        
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Características Gerais da Região de Influência do Imóvel" icon="fa6-solid:house">
+            <h3>Dados Gerais</h3>
+        <h3>1.2. Objeticos</h3>
+        <div class="row mt-3 mb-3">
+            <div class="col-12">
+                <quill-editor theme="snow" class="editor-full" placeholder="">
+                </quill-editor>
+            </div>
+        </div>
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Características Físicas e Edafoclimáticas do Imóvel" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Uso do Imóvel" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Efetivo Pecuário" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Benfeitorias" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Índices de Produtividade" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Conservação do Recursos Naturais" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Aspectos Sociais e Trabalhistas" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Uso Potencial Recomendado/Viabilidade de Assentamento" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Outras Informações" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Do Cumprimento da Função Social do Imóvel" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Conclusão" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Referências Bibliográficas" icon="fa6-solid:house">
+    </br-tab-item>
+
+    <br-tab-item tab-item-title="Anexos" icon="fa6-solid:house">
+    </br-tab-item>
+</br-tab>
+
+<!-- Rodapé -->
+<div class="br-modal-footer d-flex justify-content-start">
+    <br-button id="closeScrim" emphasis="secondary" [routerLink]="['/obtencoes/documentos']">
+        Voltar
+    </br-button>
+</div>

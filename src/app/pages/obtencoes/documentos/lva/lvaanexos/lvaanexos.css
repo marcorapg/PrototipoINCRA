@@ -1,0 +1,187 @@
+.pagina-anexos {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Títulos das seções */
+.pagina-anexos h2 {
+    margin: 0 0 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #bdbdbd;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Dados gerais */
+.secao-dados {
+    margin-bottom: 40px;
+}
+
+.dados-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px 24px;
+}
+
+.campo {
+    min-width: 0;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 4px;
+    color: #385778;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.campo p {
+    margin: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+/* Anexos */
+.secao-anexos>h2 {
+    margin-bottom: 24px;
+}
+
+.anexo {
+    margin-bottom: 28px;
+}
+
+.anexo h3 {
+    margin: 0 0 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #bdbdbd;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.conteudo-anexo {
+    min-height: 80px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dados-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .pagina-anexos h2,
+    .anexo h3 {
+        font-size: 18px;
+    }
+}
+
+/* Impressão / PDF */
+@media print {
+    .pagina-anexos {
+        font-size: 12px;
+    }
+
+    .anexo h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+}
+
+.cabecalho-laudo {
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #1351b4;
+}
+
+.cabecalho-laudo h1 {
+    margin: 0;
+    color: #222;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.cabecalho-laudo p {
+    margin: 4px 0 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.mapa-tematico {
+    width: 100%;
+    margin: 0 auto 32px;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.mapa-tematico h4 {
+    margin: 0 0 12px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.mapa-tematico img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.registro-fotografico {
+    width: 100%;
+    margin: 0 auto 32px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.descricao-fotografia {
+    margin: 0 0 16px;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    text-indent: 24px;
+}
+
+.registro-fotografico figure {
+    margin: 0;
+    text-align: center;
+}
+
+.registro-fotografico img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    max-height: 650px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.registro-fotografico figcaption {
+    margin-top: 8px;
+    color: #555;
+    font-size: 12px;
+    text-align: center;
+}
