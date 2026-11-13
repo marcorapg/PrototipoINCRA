@@ -1,3 +1,12 @@
+h2 {
+    padding-top: 10px;
+    font-size: 16pt;
+    font-weight: 600;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
 .pagina-anexos {
     width: 100%;
     padding: 0;
@@ -184,4 +193,535 @@
     color: #555;
     font-size: 12px;
     text-align: center;
+}
+
+
+figcaption {
+    font-size: 18px !important;
+    font-weight: 600;
+}
+
+/* ---------------------------------- */
+/* LINK IMAGENS */
+/* ---------------------------------- */
+
+.repositorio-fotografias {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.label-repositorio {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.repositorio-fotografias a {
+    color: #1351b4;
+    text-decoration: underline;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.repositorio-fotografias a:hover {
+    color: #0c326f;
+}
+
+
+
+
+
+
+/* =========================================
+   4.1. Fundamentação
+========================================= */
+
+
+.fundamentacao-laudo {
+    width: 100%;
+    max-width: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-fundamentacao {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-fundamentacao thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-fundamentacao th,
+.tabela-fundamentacao td {
+    width: 50%;
+    padding: 14px 24px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 10pt;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-fundamentacao thead th {
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.tabela-fundamentacao tbody th {
+    font-weight: 600;
+}
+
+.tabela-fundamentacao tbody td {
+    font-weight: 400;
+}
+
+.tabela-fundamentacao .linha-separadora td {
+    background-color: #f0f0f0;
+    font-weight: 400;
+    border-bottom: none;
+}
+
+.tabela-fundamentacao .linha-separadora+tr th,
+.tabela-fundamentacao .linha-separadora+tr td {
+    border-top: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-fundamentacao th,
+    .tabela-fundamentacao td {
+        padding: 12px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-fundamentacao th,
+    .tabela-fundamentacao td {
+        padding: 10px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-fundamentacao thead,
+    .tabela-fundamentacao .linha-separadora td {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-fundamentacao tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   4.2.1. Elementos Amostrais da Pesquisa de Mercado de Terras
+========================================= */
+
+
+.elementos-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.elementos-laudo h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-elementos {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-elementos thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-elementos th {
+    padding: 14px 10px;
+    font-size: 8.5pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.tabela-elementos td {
+    padding: 16px 10px;
+    font-size: 9pt;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-elementos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Largura das colunas */
+.tabela-elementos th:nth-child(1),
+.tabela-elementos td:nth-child(1) {
+    width: 5%;
+}
+
+.tabela-elementos th:nth-child(2),
+.tabela-elementos td:nth-child(2) {
+    width: 8%;
+}
+
+.tabela-elementos th:nth-child(3),
+.tabela-elementos td:nth-child(3) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(4),
+.tabela-elementos td:nth-child(4),
+.tabela-elementos th:nth-child(5),
+.tabela-elementos td:nth-child(5) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(6),
+.tabela-elementos td:nth-child(6) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(7),
+.tabela-elementos td:nth-child(7) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(8),
+.tabela-elementos td:nth-child(8),
+.tabela-elementos th:nth-child(9),
+.tabela-elementos td:nth-child(9),
+.tabela-elementos th:nth-child(10),
+.tabela-elementos td:nth-child(10),
+.tabela-elementos th:nth-child(11),
+.tabela-elementos td:nth-child(11) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(12),
+.tabela-elementos td:nth-child(12) {
+    width: 7%;
+}
+
+.tabela-elementos th:nth-child(13),
+.tabela-elementos td:nth-child(13) {
+    width: 8%;
+}
+
+/* Telas menores */
+@media screen and (max-width: 1000px) {
+    .tabela-elementos {
+        table-layout: auto;
+    }
+
+    .tabela-elementos th,
+    .tabela-elementos td {
+        padding: 10px 6px;
+        font-size: 8pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .elementos-laudo h3 {
+        font-size: 12pt;
+        margin-bottom: 16px;
+    }
+
+    .tabela-elementos th {
+        padding: 9px 5px;
+        font-size: 7pt;
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-elementos td {
+        padding: 10px 5px;
+        font-size: 7.5pt;
+    }
+
+    .tabela-elementos tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   4.2.2. Parâmetros Estatísticos Pós Homogeneização
+========================================= */
+
+.estatisticas-elementos-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-estatisticas-elementos {
+    width: 60%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-estatisticas-elementos thead {
+    background-color: #f0f0f0;
+}
+
+.tabela-estatisticas-elementos th,
+.tabela-estatisticas-elementos td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-estatisticas-elementos thead th {
+    font-weight: 600;
+    text-align: center;
+    border-bottom: none;
+}
+
+.tabela-estatisticas-elementos tbody th {
+    font-weight: 600;
+    width: 20%;
+}
+
+.tabela-estatisticas-elementos tbody td {
+    font-weight: 400;
+}
+
+.tabela-estatisticas-elementos tbody tr:last-child th,
+.tabela-estatisticas-elementos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-estatisticas-elementos th,
+    .tabela-estatisticas-elementos td {
+        padding: 12px 8px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-estatisticas-elementos th,
+    .tabela-estatisticas-elementos td {
+        padding: 10px 12px;
+        font-size: 9pt;
+    }
+
+    .tabela-estatisticas-elementos thead {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .tabela-estatisticas-elementos tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================
+   4.2.3. Definição do Intervalo de Confiança VTN/ha (IC 80%)
+========================================= */
+
+.precisao-avaliacao-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.tabela-precisao-avaliacao {
+    width: 100%;
+    max-width: 540px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-precisao-avaliacao th,
+.tabela-precisao-avaliacao td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-precisao-avaliacao th {
+    width: 50%;
+    font-weight: 600;
+}
+
+.tabela-precisao-avaliacao td {
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.tabela-precisao-avaliacao tr:last-child th,
+.tabela-precisao-avaliacao tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-precisao-avaliacao th,
+    .tabela-precisao-avaliacao td {
+        padding: 12px 10px;
+        font-size: 9pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+
+    .tabela-precisao-avaliacao th,
+    .tabela-precisao-avaliacao td {
+        padding: 12px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-precisao-avaliacao tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* =========================================
+   4.2.4. Campo de Arbítrio do VTN
+========================================= */
+
+.campo-arbitrio-vtn-laudo {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 11pt;
+}
+
+.campo-arbitrio-vtn-laudo h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.tabela-arbitrio-vtn {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-arbitrio-vtn th,
+.tabela-arbitrio-vtn td {
+    padding: 16px 24px;
+    font-size: 10pt;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-arbitrio-vtn th {
+    width: 50%;
+    font-weight: 600;
+}
+
+.tabela-arbitrio-vtn td {
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.tabela-arbitrio-vtn .linha-vtn-medio th {
+    font-size: 13pt;
+    font-weight: 600;
+}
+
+.tabela-arbitrio-vtn .linha-vtn-medio td {
+    font-size: 10.5pt;
+}
+
+.tabela-arbitrio-vtn tr:last-child th,
+.tabela-arbitrio-vtn tr:last-child td {
+    border-bottom: none;
+}
+
+/* Telas menores */
+@media screen and (max-width: 600px) {
+
+    .tabela-arbitrio-vtn th,
+    .tabela-arbitrio-vtn td {
+        padding: 12px 10px;
+        font-size: 9pt;
+    }
+
+    .tabela-arbitrio-vtn .linha-vtn-medio th {
+        font-size: 11pt;
+    }
+}
+
+/* Impressão e geração de PDF */
+@media print {
+    .campo-arbitrio-vtn-laudo h2 {
+        font-size: 14pt;
+        margin-bottom: 14px;
+    }
+
+    .tabela-arbitrio-vtn th,
+    .tabela-arbitrio-vtn td {
+        padding: 12px 16px;
+        font-size: 9pt;
+    }
+
+    .tabela-arbitrio-vtn .linha-vtn-medio th {
+        font-size: 12pt;
+    }
+
+    .tabela-arbitrio-vtn tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
 }

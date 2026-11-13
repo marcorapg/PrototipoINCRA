@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { BrButton, BrInput, BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
+import { BrButton, BrCheckbox, BrInput, BrSelect } from '@govbr-ds/webcomponents-angular/standalone';
 import { Breadcrumb } from '../../../../componentes/breadcrumb/breadcrumb';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-relatorioempenho',
-  imports: [BrButton, BrInput, BrSelect, Breadcrumb, RouterLink, CommonModule],
+  imports: [BrButton, BrInput, BrSelect, BrCheckbox, Breadcrumb, RouterLink, CommonModule],
   templateUrl: './relatorioempenho.html',
   styleUrl: './relatorioempenho.css'
 })
@@ -14,6 +14,7 @@ export class Relatorioempenho {
 
   subtituloRelatorio: string = '';
   tipoRelatorio: string = '1';
+  incluirPOFontes: boolean = false;
 
   alterarTipoRelatorio(event: Event) {
     const select = event.target as HTMLElement & { value: string };
@@ -39,7 +40,7 @@ export class Relatorioempenho {
       return;
     }
 
-    const url = `${rota}?subtitulo=${encodeURIComponent(this.subtituloRelatorio)}`;
+    const url = `${rota}?subtitulo=${encodeURIComponent(this.subtituloRelatorio)}&incluirPOFontes=${encodeURIComponent(this.incluirPOFontes)}`;
 
     console.log(url);
     window.open(

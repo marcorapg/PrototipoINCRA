@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Resultadorestosapagar implements OnInit {
   subtitulo = '';
+  exibirPOFontes:boolean = false;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -17,6 +18,7 @@ export class Resultadorestosapagar implements OnInit {
     this.subtitulo =
       this.route.snapshot.queryParamMap.get('subtitulo') ?? '';
 
-    console.log(this.subtitulo);
+    this.exibirPOFontes =
+      (this.route.snapshot.queryParamMap.get('incluirPOFontes') ?? '') == 'true';
   }
 }

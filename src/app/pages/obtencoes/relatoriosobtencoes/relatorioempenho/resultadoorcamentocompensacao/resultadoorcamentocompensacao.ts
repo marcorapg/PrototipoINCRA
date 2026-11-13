@@ -10,13 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Resultadoorcamentocompensacao {
   subtitulo = '';
+  exibirPOFontes: boolean = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.subtitulo =
       this.route.snapshot.queryParamMap.get('subtitulo') ?? '';
 
-    console.log(this.subtitulo);
+    this.exibirPOFontes =
+      (this.route.snapshot.queryParamMap.get('incluirPOFontes') ?? '') == 'true';
   }
 }

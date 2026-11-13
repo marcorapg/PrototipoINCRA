@@ -80,7 +80,19 @@
                         </th>
 
                         <th class="commitment-table__cell commitment-table__cell--imovel">
+                            Município
+                        </th>
+
+                        <th class="commitment-table__cell commitment-table__cell--imovel">
                             Imóvel
+                        </th>
+
+                        <th [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            PO
+                        </th>
+
+                        <th [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            Fonte
                         </th>
 
                         <th class="commitment-table__cell commitment-table__cell--processo">
@@ -89,7 +101,7 @@
 
                         <th class="commitment-table__cell commitment-table__cell--processo">
                             Exercício
-                        </th>                        
+                        </th>
 
                         <th class="commitment-table__cell commitment-table__cell--area">
                             Área (ha)
@@ -138,8 +150,20 @@
                             MG
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Araxá
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda Surubim e Outras
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0002
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -193,8 +217,20 @@
                             CE
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Fortaleza
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda São Francisco I
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0001
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -248,8 +284,20 @@
                             GO
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Goiânia
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda Vale dos Santos
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0001
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1056
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -259,7 +307,7 @@
                         <td class="commitment-table__cell commitment-table__cell--number">
                             2024
                         </td>
-                        
+
                         <td class="commitment-table__cell commitment-table__cell--number">
                             1.555
                         </td>
@@ -302,8 +350,20 @@
                             GO
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Anápolis
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda São Geraldo
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0002
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1056
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -356,8 +416,20 @@
                             BA
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Salvador
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda São Joaquim
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0001
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -407,11 +479,23 @@
                         </td>
 
                         <td class="commitment-table__cell">
-                            PA
+                            PB
+                        </td>
+
+                        <td class="commitment-table__cell">
+                            João Pessoa
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda Rainha
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0001
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -464,8 +548,20 @@
                             SP
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Campinas
+                        </td>
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda Três Irmãos
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0002
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -475,7 +571,7 @@
                         <td class="commitment-table__cell commitment-table__cell--number">
                             2026
                         </td>
-                        
+
                         <td class="commitment-table__cell commitment-table__cell--number">
                             252
                         </td>
@@ -518,8 +614,20 @@
                             PE
                         </td>
 
+                        <td class="commitment-table__cell">
+                            Recife
+                        </td>                        
+
                         <td class="commitment-table__cell commitment-table__cell--imovel">
                             Fazenda São Francisco III
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            0001
+                        </td>
+
+                        <td [hidden]="!exibirPOFontes" class="commitment-table__cell commitment-table__cell--processo">
+                            1057
                         </td>
 
                         <td class="commitment-table__cell commitment-table__cell--processo">
@@ -566,7 +674,7 @@
                             Total
                         </td>
 
-                        <td class="commitment-table__cell" colspan="3">
+                        <td class="commitment-table__cell" [attr.colspan]="exibirPOFontes ? 6 : 4">
                             8 imóveis
                         </td>
 
@@ -596,7 +704,7 @@
                     <!-- Espaçador -->
                     <tr class="commitment-table__row commitment-table__row--spacer">
 
-                        <td class="commitment-table__cell commitment-table__cell--spacer" colspan="9"></td>
+                        <td class="commitment-table__cell commitment-table__cell--spacer" [attr.colspan]="exibirPOFontes ? 14 : 12"></td>
 
                     </tr>
 
@@ -604,7 +712,7 @@
                     <!-- Empenhado total -->
                     <tr class="commitment-table__row commitment-table__row--summary">
 
-                        <td class="commitment-table__cell commitment-table__cell--summary-label" colspan="8">
+                        <td class="commitment-table__cell commitment-table__cell--summary-label" [attr.colspan]="exibirPOFontes ? 11 : 9">
                             Empenhado total
                         </td>
 
@@ -628,7 +736,7 @@
                     <tr class="commitment-table__row commitment-table__row--available">
 
                         <td class="commitment-table__cell commitment-table__cell--summary-label commitment-table__cell--available-label"
-                            colspan="8">
+                            [attr.colspan]="exibirPOFontes ? 11 : 9">
                             Saldo disponível
                         </td>
 

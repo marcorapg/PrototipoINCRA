@@ -15,7 +15,7 @@ export class Lvagerado {
 
   abrirAnexos() {
     const url = this.router.serializeUrl(
-      this.router.createUrlTree(['/obtencoes/documentos/lva/lvaanexos'])
+      this.router.createUrlTree(['obtencoes/documentos/lva/lvaanexos'])
     );
 
     window.open(url, '_blank');

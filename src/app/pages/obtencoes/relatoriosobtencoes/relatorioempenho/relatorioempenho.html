@@ -22,9 +22,9 @@
             <div class="card-content">
 
                 <div class="row mt-3 mb-3">
-                   <div class="col-2">
-                        <br-select label="Tipo de relatório *" is-multiple="false" required="true" placeholder="Selecione uma opção"
-                            (valueChange)="alterarTipoRelatorio($event)" options='[
+                    <div class="col-2">
+                        <br-select label="Tipo de relatório *" is-multiple="false" required="true"
+                            placeholder="Selecione uma opção" (valueChange)="alterarTipoRelatorio($event)" options='[
                             { "label": "LOA atual", "value": "1", "selected": true },
                             { "label": "Restos a pagar", "value": "2", "selected": false },
                             { "label": "Adjudicação", "value": "3", "selected": false },
@@ -32,17 +32,18 @@
                         ]'>
                         </br-select>
                     </div>
+
                     <div class="col-3">
-                        <br-select [hidden]="tipoRelatorio == '3' || tipoRelatorio == '4'" label="Forma de Obtenção" is-multiple="true"
-                            placeholder="Selecione uma opção" options='[
+                        <br-select [hidden]="tipoRelatorio == '3' || tipoRelatorio == '4'" label="Forma de Obtenção"
+                            is-multiple="true" placeholder="Selecione uma opção" options='[
                         { "label": "Desapropriação Lei 8.629/93", "value": "1", "selected": false },
                         { "label": "Desapropriação Lei 4.132/62", "value": "2", "selected": false },
                         { "label": "Compra e Venda Decreto 433/92", "value": "3", "selected": false },
                         { "label": "Leilão", "value": "4", "selected": false }
                         ]'></br-select>
 
-                        <br-select [hidden]="tipoRelatorio == '1' || tipoRelatorio == '2'" label="Ano *" is-multiple="false"
-                            placeholder="Selecione uma opção" options='[
+                        <br-select [hidden]="tipoRelatorio == '1' || tipoRelatorio == '2'" label="Ano *"
+                            is-multiple="false" placeholder="Selecione uma opção" options='[
                         { "label": "2026", "value": "1", "selected": false },
                         { "label": "2025", "value": "2", "selected": false },
                         { "label": "2024", "value": "3", "selected": false },
@@ -51,8 +52,8 @@
                     </div>
 
                     <div class="col-2">
-                        <br-select label="Superintendências" is-multiple="true" placeholder="Selecione uma opção" keep-open-on-select="true"
-                            options='[
+                        <br-select label="Superintendências" is-multiple="true" placeholder="Selecione uma opção"
+                            keep-open-on-select="true" options='[
                             { "label": "SR(01) PA", "value": "01", "selected": false },
                             { "label": "SR(02) CE", "value": "02", "selected": false },
                             { "label": "SR(03) PE", "value": "03", "selected": false },
@@ -82,8 +83,9 @@
                         </br-select>
                     </div>
 
-                    <div class="col-2">
-                        <br-select label="UF" is-multiple="true" keep-open-on-select="true" placeholder="Selecione uma opção" options='[
+                    <div class="col-1">
+                        <br-select label="UF" is-multiple="false" keep-open-on-select="true"
+                            placeholder="Selecione uma opção" options='[
                         { "label": "AC", "value": "1", "selected": false },
                         { "label": "AL", "value": "2", "selected": false },
                         { "label": "AP", "value": "3", "selected": false },
@@ -114,25 +116,68 @@
                         ]'></br-select>
                     </div>
 
-                    <div class="col-3 mt-4 d-flex justify-content-end">
+                    <div class="col-2">
+                        <br-select label="Cidade" is-multiple="true" keep-open-on-select="true"
+                            placeholder="Selecione uma opção" options='[
+                            { "label": "Rio Branco", "value": "1", "selected": false },
+                            { "label": "Maceió", "value": "2", "selected": false },
+                            { "label": "Macapá", "value": "3", "selected": false },
+                            { "label": "Manaus", "value": "4", "selected": false },
+                            { "label": "Salvador", "value": "5", "selected": false },
+                            { "label": "Fortaleza", "value": "6", "selected": false },
+                            { "label": "Brasília", "value": "7", "selected": false },
+                            { "label": "Vitória", "value": "8", "selected": false },
+                            { "label": "Goiânia", "value": "9", "selected": false },
+                            { "label": "São Luís", "value": "10", "selected": false },
+                            { "label": "Cuiabá", "value": "11", "selected": false },
+                            { "label": "Campo Grande", "value": "12", "selected": false },
+                            { "label": "Belo Horizonte", "value": "13", "selected": false },
+                            { "label": "Belém", "value": "14", "selected": false },
+                            { "label": "João Pessoa", "value": "15", "selected": false },
+                            { "label": "Curitiba", "value": "16", "selected": false },
+                            { "label": "Recife", "value": "17", "selected": false },
+                            { "label": "Teresina", "value": "18", "selected": false },
+                            { "label": "Rio de Janeiro", "value": "19", "selected": false },
+                            { "label": "Natal", "value": "20", "selected": false },
+                            { "label": "Porto Alegre", "value": "21", "selected": false },
+                            { "label": "Porto Velho", "value": "22", "selected": false },
+                            { "label": "Boa Vista", "value": "23", "selected": false },
+                            { "label": "Florianópolis", "value": "24", "selected": false },
+                            { "label": "São Paulo", "value": "25", "selected": false },
+                            { "label": "Aracaju", "value": "26", "selected": false },
+                            { "label": "Palmas", "value": "27", "selected": false }
+                        ]'></br-select>
+                    </div>
+
+                    <div class="col-2 mt-5">
+                        <br-checkbox name="default01" label="Exibir PO e Fontes" [checked]="incluirPOFontes"
+                            (checkedChange)="incluirPOFontes = $event.detail"></br-checkbox>
+                    </div>
+                </div>
+
+                <div class="row mt-3 mb-3">
+
+                    <div class="col-7">
+                        <br-input label="Subtítulo do PDF (Opcional)" placeholder="Ex: Relatório Anual 2026"
+                            (valueChange)="onSubtituloChange($event)" density="medium"></br-input>
+                    </div>
+                    <div class="col-5 mt-4 d-flex justify-content-end">
 
                         <br-button emphasis="secondary">
                             <i class="fas fa-eraser mr-3" aria-hidden="true"></i>
                             Limpar
                         </br-button>
 
-
                         <br-button emphasis="primary" class="ml-3" (click)="gerarRelatorio()">
                             <i class="fas fa-clipboard-list mr-3" aria-hidden="true"></i>
                             Gerar PDF
                         </br-button>
 
-                    </div>
-                </div>
-                <div class="row mt-3 mb-3">
-                    <div class="col-12">
-                        <br-input label="Subtítulo do PDF (Opcional)" placeholder="Ex: Relatório Anual 2026" (valueChange)="onSubtituloChange($event)"
-                            density="medium"></br-input>
+                        <br-button emphasis="primary" class="ml-3" (click)="gerarRelatorio()">
+                            <i class="fas fa-clipboard-list mr-3" aria-hidden="true"></i>
+                            Gerar Excel
+                        </br-button>
+
                     </div>
                 </div>
             </div>
