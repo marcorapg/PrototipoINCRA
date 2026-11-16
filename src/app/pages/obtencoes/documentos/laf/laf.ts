@@ -1108,7 +1108,7 @@ export class Laf {
     );
   }
 
-  //4.4. Áreas com outros usos
+  //4.6. Áreas de pastagem
   registrosAreaPastagem: RegistroAreaPastagem[] = [
     {
       tipoPastagem: '',
@@ -1139,6 +1139,8 @@ export class Laf {
       0
     );
   }
+
+  //4.7. Áreas aproveitável X não utilizada total
 
   //5. Efetivo Pecuário
   registrosEfetivoPecuario: RegistroEfetivoPecuario[] = [

@@ -1,1 +1,2051 @@
-<p>lafgerado works!</p>
+<app-breadcrumb [items]="[
+    { label: 'Página inicial', url: '/' },
+    { label: 'Obtenções', url: '/obtencoes/' },
+    { label: 'Documentos', url: '/obtencoes/documentos' },
+    { label: 'Laudo de Agronômico de Fiscalização', url: '/obtencoes/documentos/laf' }
+  ]">
+</app-breadcrumb>
+
+<div class="row mt-3 mb-3 align-items-center">
+    <div class="col-3">
+        <div class="h3 mb-0">Laudo de Agronômico de Fiscalização</div>
+    </div>
+
+    <div class="col-9 d-flex justify-content-end align-items-center">
+        <br-button id="saveScrim" emphasis="primary">
+            <i class="fas fa-print mr-2"></i>
+            Imprimir
+        </br-button>
+
+        <br-button class="ml-3" id="closeScrim" emphasis="secondary"
+            [routerLink]="['/obtencoes/documentos/lva/lvagerado']">
+            <i class="fas fa-pen mr-2"></i>
+            Enviar para Assinatura
+        </br-button>
+    </div>
+</div>
+
+<div class="laudo">
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <img src="images/brasao_brasil.png" alt="Brasão da República Federativa do Brasil" class="brasao">
+
+        <div class="orgao">
+            INSTITUTO NACIONAL DE COLONIZAÇÃO E REFORMA AGRÁRIA
+        </div>
+
+        <h1>LAUDO DE AGRONÔMICO DE FISCALIZAÇÂO - LAF</h1>
+    </header>
+</div>
+
+<main class="laudo">
+    <section class="secao">
+        <h2>1. Dados Gerais</h2>
+        <div class="grade grade-geral">
+            <div class="campo">
+                <span class="rotulo">Ordem de Serviço</span>
+                <span class="valor">111213</span>
+            </div>
+            <div class="campo">
+                <span class="rotulo">Data da Avaliação</span>
+                <span class="valor">18/11/2026</span>
+            </div>
+            <div class="campo campo-total">
+                <span class="rotulo">Responsáveis Técnicos</span>
+                <span class="valor">Engº. Agrônomo Claudinei Chalito da Silva, Engº. Agrônomo Rodrigo Camargo de Andrade
+                    Pinto, Engº. Agrônomo Geraldo Batista Martins</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao">
+        <h2>1.1. Introdução</h2>
+        <div class="texto-longo" aria-label="Introdução">O presente Laudo de Vistoria e Avaliação tem por finalidade
+            apresentar as características gerais do imóvel rural vistoriado, contemplando aspectos relacionados à sua
+            localização, dimensão territorial, condições de acesso, ocupação, utilização do solo, benfeitorias
+            existentes e demais elementos relevantes para sua caracterização e avaliação. A vistoria foi realizada
+            mediante inspeção *in loco*, levantamento de informações e análise dos documentos disponibilizados, buscando
+            verificar as condições atuais do imóvel e subsidiar a avaliação técnica conforme os critérios e
+            procedimentos adotados pelo INCRA.</div>
+    </section>
+
+    <section class="secao">
+        <h2>1.2. Identificação do Imóvel</h2>
+        <div class="grade grade-imovel">
+            <div class="campo"><span class="rotulo">Processo de Obtenção</span><span class="valor">3547961</span></div>
+            <div class="campo"><span class="rotulo">Imóvel</span><span class="valor">Fazenda Nossa Senhora do Carmo ou
+                    Brasileira</span></div>
+            <div class="campo"><span class="rotulo">Municípios</span><span class="valor">Ortigueira e Faxinal</span>
+            </div>
+            <div class="campo"><span class="rotulo">UF</span><span class="valor">PR</span></div>
+
+            <div class="campo"><span class="rotulo">Área registrada (ha)</span><span class="valor">1.303,79</span></div>
+            <div class="campo"><span class="rotulo">Área georreferenciada e certificada (ha)</span><span
+                    class="valor">1500</span></div>
+            <div class="campo"><span class="rotulo">Módulos Fiscais (MF)</span><span class="valor">529,2077</span></div>
+            <div class="campo"><span class="rotulo">Fração Mínima de Parcelamento (FMP)</span><span
+                    class="valor">Ortigueira: 2 ha; Faxinal: 3 ha</span></div>
+
+            <div class="campo campo-metade"><span class="rotulo">Distância da sede (km)</span><span
+                    class="valor">10</span></div>
+            <div class="campo campo-metade"><span class="rotulo">Município Polo de Influência</span><span
+                    class="valor">Petrópolis</span></div>
+            <div class="campo campo-metade"><span class="rotulo">Distância do Polo de Influência (km)</span><span
+                    class="valor">50</span></div>
+
+            <div class="campo campo-metade"><span class="rotulo">Código SNCR</span><span
+                    class="valor">710.040.724.254.8</span></div>
+            <div class="campo campo-metade"><span class="rotulo">Código Receita Federal</span><span
+                    class="valor">42424544767896312</span></div>
+            <div class="campo campo-metade"><span class="rotulo">Código da Certificação SIGEF</span><span
+                    class="valor">0a4bba28-1dd7-4505-8849-e2bdbd5af11a6</span></div>
+            <div class="campo campo-metade"><span class="rotulo">Código do CAR</span><span
+                    class="valor">GO-5211206-411E1D9F5CC14B32ADB678BF51E3E8BF</span></div>
+            <div class="campo campo-total"><span class="rotulo">Proprietários</span><span class="valor">Espólio de
+                    Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli</span></div>
+        </div>
+    </section>
+
+    <section class="secao">
+        <h2>1.3. Localização/Acesso</h2>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Situação</th>
+                    <th>Acesso Terrestre</th>
+                    <th>Acesso Fluvial</th>
+                    <th>Importância das Distâncias</th>
+                    <th>Praticabilidade durante o ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Muito Boa</td>
+                    <td>1ª classe não asfaltada</td>
+                    <td>1 - 3 h</td>
+                    <td>Relativa</td>
+                    <td>Permanente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Descrição do acesso, limites, confrontantes e mapa</h3>
+        <div class="texto-longo texto-medio" aria-label="Descrição do acesso, limites, confrontantes e mapa">O acesso ao
+            imóvel é realizado a partir da rodovia estadual MG-XXX, seguindo por aproximadamente 12 km em estrada
+            vicinal não pavimentada, com condições satisfatórias de trafegabilidade durante a maior parte do ano. Os
+            limites da propriedade encontram-se demarcados predominantemente por cercas de arame farpado e marcos
+            físicos, apresentando confrontação ao norte com a Fazenda Santa Helena, ao sul com o Córrego do Barreiro, a
+            leste com o imóvel rural denominado Sítio Boa Vista e a oeste com terras pertencentes a terceiros. A
+            delimitação territorial foi analisada com base nos documentos cartográficos e informações disponibilizadas,
+            sendo sua representação espacial apresentada no mapa de localização e delimitação do imóvel, que permite
+            identificar seu perímetro, vias de acesso, confrontações e inserção na região.</div>
+    </section>
+
+    <section class="secao">
+        <h2>1.4. Situação Dominial</h2>
+        <div class="grade grade-dominial">
+            <div class="campo campo-total">
+                <span class="rotulo">Proprietários</span>
+                <span class="valor">Espólio de Oswaldo Salvador Petrilli e de Maria do Carmo Petrilli</span>
+            </div>
+            <div class="campo campo-total">
+                <span class="rotulo">Inventariante</span>
+                <span class="valor">Carlos Mota Mourão</span>
+            </div>
+        </div>
+
+        <h3 class="subtitulo">Matrículas Apresentadas</h3>
+        <table class="tabela tabela-matriculas">
+            <thead>
+                <tr>
+                    <th>Área (ha)</th>
+                    <th>Forma de Obtenção</th>
+                    <th>Registro</th>
+                    <th>Livro</th>
+                    <th>Comarca</th>
+                    <th>Ofício</th>
+                    <th>Data do Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>800</td>
+                    <td>Arrendamento</td>
+                    <td>1324</td>
+                    <td>13</td>
+                    <td>20</td>
+                    <td>12</td>
+                    <td>02/05/1986</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Fontes da Situação Dominial</h3>
+        <div class="texto-longo texto-fonte" aria-label="Fontes da Situação Dominial">A análise da situação dominial do
+            imóvel foi fundamentada na documentação apresentada pelo interessado, compreendendo matrícula imobiliária
+            atualizada, certidões expedidas pelo Cartório de Registro de Imóveis competente, informações constantes no
+            Cadastro Nacional de Imóveis Rurais (CNIR), dados do Sistema Nacional de Cadastro Rural (SNCR) e documentos
+            complementares relacionados à cadeia dominial. Foram consultadas, ainda, informações disponíveis nas bases
+            cadastrais do INCRA, com o objetivo de verificar a correspondência entre os dados registrais e cadastrais,
+            identificar eventuais inconsistências e subsidiar a caracterização da situação jurídica e dominial do
+            imóvel.</div>
+
+        <h3>Observações da Situação Dominial</h3>
+        <div class="texto-longo texto-observacoes" aria-label="Observações da Situação Dominial">Durante a análise da
+            documentação dominial, verificou-se que o imóvel possui registro imobiliário individualizado, com matrícula
+            ativa no Cartório de Registro de Imóveis da circunscrição competente. Os dados constantes na matrícula
+            apresentam correspondência parcial com as informações cadastrais disponíveis no SNCR e no SIGEF, tendo sido
+            identificadas pequenas divergências nas descrições de área e perímetro, sem elementos suficientes para
+            indicar sobreposição de limites ou conflito de titularidade. Recomenda-se a atualização dos dados cadastrais
+            e, se necessário, a realização de procedimentos de retificação registral, a fim de assegurar maior
+            compatibilidade entre as informações registrais, cadastrais e geoespaciais do imóvel.</div>
+    </section>
+
+    <!-- Seção do LAF: inserir dentro de <main class="laudo"> -->
+    <section class="secao">
+        <h2>2. Características Gerais da Região de Influência do Imóvel</h2>
+
+        <h3>2.1. Localização geográfica e divisão político-administrativa</h3>
+        <div class="texto-longo">O imóvel rural objeto do presente Laudo de Vistoria e Avaliação encontra-se localizado
+            na zona rural do município de Montes Claros, situado na região Norte do Estado de Minas Gerais, integrando a
+            Região Geográfica Intermediária de Montes Claros e a Região Geográfica Imediata de Montes Claros, conforme
+            divisão regional estabelecida pelo Instituto Brasileiro de Geografia e Estatística (IBGE). A região
+            caracteriza-se pela predominância de atividades agropecuárias, apresentando ocupação territorial composta
+            por propriedades rurais de diferentes dimensões, comunidades tradicionais e pequenos núcleos populacionais.
+            O município possui posição estratégica no contexto regional, exercendo influência econômica e administrativa
+            sobre localidades circunvizinhas, especialmente em razão da concentração de serviços públicos,
+            estabelecimentos comerciais, instituições de ensino e infraestrutura de transporte. O acesso à região ocorre
+            principalmente por meio das rodovias BR-135, BR-251 e BR-365, complementadas por estradas estaduais e
+            vicinais que interligam as comunidades rurais à sede municipal. A localização geográfica do imóvel e sua
+            inserção na organização político-administrativa regional constituem fatores relevantes para a análise das
+            condições de acessibilidade, integração territorial, comercialização da produção agropecuária e viabilidade
+            de implantação de projetos de assentamento rural.</div>
+
+        <h3>2.2. Aspectos fisiográficos</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, situada no município de Montes Claros, no Norte
+            de Minas Gerais, apresenta características fisiográficas marcadas pela ocorrência de relevo
+            predominantemente plano a ondulado, com presença de chapadas, depressões e elevações residuais, inseridas no
+            contexto geomorfológico regional da Depressão do São Francisco. O clima predominante é tropical, com estação
+            chuvosa concentrada entre os meses de outubro e março e período seco relativamente prolongado, apresentando
+            temperaturas médias anuais elevadas e distribuição irregular das precipitações. A cobertura vegetal natural
+            caracteriza-se pela transição entre formações do Cerrado e da Caatinga, com ocorrência de cerrado sensu
+            stricto, cerradão, matas secas e vegetação adaptada às condições de sazonalidade hídrica. Os solos
+            apresentam variabilidade quanto à profundidade, textura e fertilidade natural, destacando-se a ocorrência de
+            Latossolos, Argissolos e Cambissolos, com diferentes graus de aptidão para atividades agropecuárias. A rede
+            hidrográfica regional integra predominantemente a bacia do rio São Francisco, sendo constituída por cursos
+            d'água permanentes e intermitentes, cuja disponibilidade hídrica sofre influência direta do regime sazonal
+            de chuvas. Essas características fisiográficas condicionam as formas de ocupação e utilização das terras,
+            exigindo práticas adequadas de manejo do solo, conservação da vegetação nativa e gestão dos recursos
+            hídricos para assegurar a sustentabilidade das atividades produtivas.</div>
+
+        <h3>2.3. Geologia</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta características geológicas associadas predominantemente às unidades
+            sedimentares e metassedimentares do Grupo Bambuí, inseridas no contexto geotectônico da Bacia do São
+            Francisco. Destacam-se formações constituídas por rochas carbonáticas, especialmente calcários e dolomitos,
+            intercaladas com pelitos, siltitos e outras litologias sedimentares, além da ocorrência localizada de
+            coberturas detríticas e depósitos aluvionares recentes. A presença de rochas carbonáticas favorece o
+            desenvolvimento de feições cársticas, como cavidades naturais subterrâneas, dolinas e sistemas de drenagem
+            subterrânea, que podem influenciar a dinâmica hidrogeológica e as condições de estabilidade do terreno. Os
+            processos de intemperismo e alteração das rochas contribuem para a formação de solos com diferentes
+            características físicas e químicas, condicionando sua aptidão agrícola e suscetibilidade à erosão. Sob o
+            aspecto hidrogeológico, destacam-se os aquíferos associados às formações carbonáticas e aos depósitos
+            sedimentares, cuja disponibilidade e produtividade variam conforme as condições estruturais e litológicas
+            locais. Essas características geológicas devem ser consideradas na avaliação do potencial de utilização das
+            terras, na identificação de eventuais restrições ambientais e geotécnicas e no planejamento de intervenções
+            destinadas à implantação de infraestrutura e atividades produtivas no imóvel rural.</div>
+
+        <h3>2.4. Geomorfologia/Relevo</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, situada no município de Montes Claros, no Norte
+            de Minas Gerais, apresenta configuração geomorfológica caracterizada pela predominância de superfícies
+            aplainadas e suavemente onduladas, intercaladas por áreas de relevo ondulado, chapadas, colinas e elevações
+            residuais, inseridas principalmente no contexto da Depressão do São Francisco. As formas de relevo resultam
+            da atuação prolongada de processos de intemperismo, erosão e dissecação fluvial sobre diferentes unidades
+            geológicas, destacando-se a presença de vales, encostas e superfícies de acumulação sedimentar. As
+            declividades variam conforme a posição na paisagem, predominando terrenos com condições favoráveis à
+            mecanização agrícola e à implantação de atividades agropecuárias, embora ocorram setores com maior
+            inclinação e suscetibilidade a processos erosivos. Nas áreas associadas às formações carbonáticas, podem ser
+            observadas feições de relevo cárstico, incluindo depressões fechadas e afloramentos rochosos, que
+            representam condicionantes específicos ao uso e à ocupação do solo. A configuração topográfica regional
+            influencia diretamente a dinâmica de escoamento superficial, a distribuição dos solos, a disponibilidade
+            hídrica e a acessibilidade das diferentes porções do território. Dessa forma, o conhecimento das
+            características geomorfológicas e das classes de declividade constitui elemento fundamental para a definição
+            da capacidade de uso das terras, identificação de áreas com restrições ambientais e planejamento sustentável
+            das atividades produtivas e da infraestrutura rural.</div>
+
+        <h3>2.5. Solos</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta diversidade de classes de solos, condicionada pelas características
+            geológicas, geomorfológicas, climáticas e pela cobertura vegetal predominante. Destaca-se a ocorrência de
+            Latossolos, Argissolos, Cambissolos e Neossolos, distribuídos conforme as condições de relevo, material de
+            origem e intensidade dos processos de intemperismo. Os Latossolos predominam em superfícies mais estáveis e
+            suavemente onduladas, apresentando, em geral, boa profundidade, drenagem satisfatória e potencial para
+            utilização agropecuária, embora possam exigir correção da acidez e adubação para melhoria da fertilidade. Os
+            Argissolos caracterizam-se pela diferenciação textural entre horizontes, podendo apresentar maior
+            suscetibilidade à erosão em terrenos declivosos. Os Cambissolos e Neossolos, frequentemente associados a
+            áreas de relevo mais movimentado e afloramentos rochosos, apresentam limitações relacionadas à profundidade
+            efetiva, pedregosidade e capacidade de retenção de água. Em determinadas áreas de influência de rochas
+            carbonáticas, podem ocorrer solos com maior fertilidade natural, favorecendo atividades agrícolas
+            específicas. De modo geral, a utilização sustentável desses solos depende da adoção de práticas
+            conservacionistas, como manutenção da cobertura vegetal, plantio em nível, manejo adequado das pastagens e
+            controle do escoamento superficial, considerando as limitações e potencialidades de cada unidade pedológica.
+        </div>
+
+        <h3>2.6. Recursos hídricos</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta recursos hídricos superficiais e subterrâneos associados predominantemente
+            à bacia hidrográfica do rio São Francisco, com destaque para a bacia do rio Verde Grande e seus afluentes. A
+            rede de drenagem regional é composta por cursos d'água perenes e intermitentes, nascentes, pequenos córregos
+            e reservatórios artificiais utilizados principalmente para abastecimento humano, dessedentação animal e
+            atividades agropecuárias. A disponibilidade hídrica apresenta significativa variação sazonal, em decorrência
+            da concentração das precipitações no período chuvoso e da ocorrência de estiagens prolongadas, que podem
+            comprometer a vazão dos cursos d'água e a capacidade de armazenamento dos reservatórios. Os recursos
+            hídricos subterrâneos estão associados, entre outros, a aquíferos desenvolvidos em formações carbonáticas do
+            Grupo Bambuí, cuja produtividade depende das condições de fraturamento, dissolução das rochas e recarga
+            hídrica. Em determinadas localidades, a exploração de águas subterrâneas por meio de poços tubulares
+            constitui importante alternativa para o abastecimento das propriedades rurais. Entretanto, a utilização
+            desses recursos exige atenção quanto à disponibilidade, à qualidade da água e à regularidade das captações
+            perante os órgãos competentes. Dessa forma, a conservação das nascentes, a proteção das matas ciliares, o
+            controle de processos erosivos e a adoção de práticas eficientes de armazenamento e uso da água representam
+            medidas fundamentais para garantir a sustentabilidade das atividades produtivas e a segurança hídrica da
+            população rural.</div>
+
+        <h3>2.7. Clima</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, situada no município de Montes Claros, no Norte
+            de Minas Gerais, apresenta clima predominantemente tropical com estação seca, caracterizado por temperaturas
+            elevadas ao longo do ano e marcada sazonalidade das precipitações pluviométricas. Conforme a classificação
+            climática de Köppen-Geiger, predomina na região o tipo Aw, com verão chuvoso e inverno seco, embora possam
+            ocorrer variações locais em função das condições de relevo e altitude. As temperaturas médias anuais
+            situam-se, em geral, entre 22 °C e 25 °C, enquanto os índices pluviométricos anuais apresentam valores
+            aproximados entre 800 mm e 1.100 mm, com maior concentração das chuvas entre os meses de outubro e março. O
+            período de estiagem, normalmente compreendido entre abril e setembro, caracteriza-se pela redução
+            significativa das precipitações, diminuição da umidade relativa do ar e aumento da demanda hídrica das
+            culturas agrícolas e pastagens. A irregularidade na distribuição temporal das chuvas, associada à ocorrência
+            de períodos prolongados de deficiência hídrica, constitui importante fator limitante para determinadas
+            atividades agropecuárias, especialmente aquelas dependentes exclusivamente da precipitação natural. A
+            elevada evapotranspiração potencial também influencia o balanço hídrico regional, exigindo planejamento
+            adequado das épocas de plantio, seleção de culturas adaptadas às condições climáticas e adoção de técnicas
+            de conservação da água e do solo. Dessa forma, as características climáticas regionais devem ser
+            consideradas na avaliação da aptidão agrícola, na definição dos sistemas produtivos e no planejamento de
+            estratégias destinadas à sustentabilidade das atividades rurais.</div>
+
+        <h3>Quadro temperatura X disponibilidade hídrica</h3>
+        <div class="campo">
+            <span class="rotulo">Arquivo anexado</span>
+            <span class="valor">Nenhum arquivo identificado na imagem</span>
+        </div>
+
+        <h3>2.8. Vegetação</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta cobertura vegetal característica de uma zona de transição entre os biomas
+            Cerrado e Caatinga, com predominância de formações savânicas e florestais adaptadas às condições climáticas
+            regionais. Destacam-se fitofisionomias como Cerrado *sensu stricto*, cerradão, florestas estacionais
+            deciduais e semideciduais, além de formações campestres e vegetação associada aos cursos d'água. A
+            composição florística regional inclui espécies arbóreas e arbustivas adaptadas à sazonalidade das chuvas,
+            como pequizeiro (*Caryocar brasiliense*), barbatimão (*Stryphnodendron adstringens*), aroeira-do-sertão
+            (*Myracrodruon urundeuva*) e ipês (*Handroanthus* spp.), cuja ocorrência varia conforme as condições
+            edáficas e ambientais. Nas áreas próximas aos cursos d'água e nascentes, são encontradas formações de
+            vegetação ciliar, importantes para a proteção dos recursos hídricos, estabilização das margens e manutenção
+            da biodiversidade. A ocupação agropecuária histórica contribuiu para a substituição de parcelas da vegetação
+            nativa por pastagens cultivadas, áreas agrícolas e estruturas rurais, resultando na fragmentação de habitats
+            e em diferentes estágios de conservação dos remanescentes vegetais. Apesar das alterações antrópicas, a
+            vegetação regional desempenha funções ecológicas relevantes, incluindo proteção do solo, regulação do ciclo
+            hidrológico, conservação da fauna e manutenção da diversidade biológica. Dessa forma, recomenda-se que o
+            planejamento do uso e ocupação das terras considere a preservação dos remanescentes nativos, a recuperação
+            de áreas degradadas e o cumprimento das exigências legais relativas às Áreas de Preservação Permanente (APP)
+            e à Reserva Legal, visando à compatibilização das atividades produtivas com a conservação ambiental.</div>
+
+        <h3>Quadro de Flora Regional</h3>
+        <h4>Flora Regional</h4>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome comum</th>
+                    <th>Nome científico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Babosa</td>
+                    <td>Aloe vera</td>
+                </tr>
+                <tr>
+                    <td>Capim-limão</td>
+                    <td>Cymbopogon citratus</td>
+                </tr>
+                <tr>
+                    <td>Gengibre</td>
+                    <td>Zingiber officinale</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2.9. Fauna</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta diversidade faunística associada às formações vegetais do Cerrado e às
+            áreas de transição com a Caatinga, abrangendo espécies de mamíferos, aves, répteis, anfíbios e invertebrados
+            adaptados às condições ambientais regionais. Entre os mamíferos de ocorrência potencial, destacam-se o
+            tamanduá-mirim (*Tamandua tetradactyla*), o tatu-peba (*Euphractus sexcinctus*), o veado-catingueiro
+            (*Subulo gouazoubira*) e a raposa-do-campo (*Lycalopex vetulus*). A avifauna regional compreende espécies
+            como seriema (*Cariama cristata*), carcará (*Caracara plancus*), bem-te-vi (*Pitangus sulphuratus*) e
+            diferentes representantes das famílias Columbidae e Psittacidae. Os ambientes aquáticos e as áreas próximas
+            aos cursos d'água também oferecem condições para a ocorrência de anfíbios, répteis e outras espécies
+            associadas à disponibilidade hídrica. A expansão das atividades agropecuárias, a fragmentação da vegetação
+            nativa, as queimadas e a alteração dos habitats naturais constituem fatores de pressão sobre a
+            biodiversidade local, podendo comprometer o deslocamento, a alimentação e a reprodução da fauna silvestre.
+            Nesse contexto, a conservação dos remanescentes vegetais, a manutenção de corredores ecológicos, a proteção
+            das Áreas de Preservação Permanente (APP) e a recuperação de ambientes degradados representam medidas
+            relevantes para a preservação da diversidade biológica regional. Ressalta-se que as espécies mencionadas
+            correspondem a registros de ocorrência potencial na região, não constituindo confirmação de sua presença no
+            imóvel, a qual dependerá de levantamento faunístico específico.</div>
+
+        <h3>Fauna Regional</h3>
+        <h4>Quadro de Fauna Regional</h4>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome comum</th>
+                    <th>Nome científico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vaca/Boi</td>
+                    <td>Bos taurus</td>
+                </tr>
+                <tr>
+                    <td>Cavalo</td>
+                    <td>Equus caballus</td>
+                </tr>
+                <tr>
+                    <td>Ovelha</td>
+                    <td>Ovis aries</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2.10. Recursos institucionais</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, dispõe de estrutura institucional composta por órgãos públicos, entidades de
+            assistência técnica, instituições de ensino e pesquisa, organizações representativas dos produtores rurais e
+            agentes de apoio ao desenvolvimento socioeconômico regional. Destacam-se a atuação da Prefeitura Municipal,
+            por meio das secretarias responsáveis pelas políticas de agricultura, meio ambiente, infraestrutura, saúde e
+            assistência social, bem como a presença de instituições estaduais e federais vinculadas ao desenvolvimento
+            rural, à regularização fundiária e à conservação dos recursos naturais. Entre os principais agentes
+            institucionais de referência, encontram-se o Instituto Nacional de Colonização e Reforma Agrária (INCRA), a
+            Empresa de Assistência Técnica e Extensão Rural do Estado de Minas Gerais (EMATER-MG), o Instituto Mineiro
+            de Agropecuária (IMA) e o Instituto Estadual de Florestas (IEF). A região também conta com instituições de
+            ensino e pesquisa, como a Universidade Estadual de Montes Claros (Unimontes) e a Universidade Federal de
+            Minas Gerais (UFMG), por meio de seu campus regional, que contribuem para a formação profissional, a
+            produção de conhecimento e o desenvolvimento de tecnologias aplicáveis ao meio rural. Adicionalmente,
+            sindicatos, associações comunitárias, cooperativas e instituições financeiras podem desempenhar papel
+            relevante no acesso ao crédito, na organização produtiva e na comercialização da produção agropecuária. A
+            disponibilidade desses recursos institucionais constitui fator favorável ao desenvolvimento territorial e à
+            eventual implantação de projetos de assentamento, considerando as possibilidades de articulação de políticas
+            públicas, assistência técnica, capacitação profissional e fortalecimento das atividades econômicas das
+            famílias beneficiárias.</div>
+
+        <h3>2.11. Estrutura fundiária</h3>
+        <div class="texto-longo">A estrutura fundiária da região de influência do imóvel rural, localizada no município
+            de Montes Claros, no Norte de Minas Gerais, caracteriza-se pela coexistência de pequenas, médias e grandes
+            propriedades rurais, refletindo diferentes processos históricos de ocupação territorial, concentração da
+            propriedade da terra e desenvolvimento das atividades agropecuárias. Observa-se a presença de
+            estabelecimentos vinculados à agricultura familiar, predominantemente voltados à produção de subsistência e
+            à comercialização de excedentes, bem como de propriedades de maior extensão destinadas principalmente à
+            pecuária de corte e à exploração agrícola comercial. A distribuição territorial apresenta heterogeneidade
+            quanto às dimensões dos imóveis, às formas de posse e domínio e aos níveis de utilização produtiva das
+            terras. Em determinadas localidades, verificam-se áreas ocupadas por comunidades rurais tradicionais,
+            pequenos produtores e assentamentos de reforma agrária, cuja dinâmica socioeconômica está relacionada à
+            disponibilidade de recursos naturais, à infraestrutura regional e ao acesso às políticas públicas de
+            desenvolvimento rural. A análise da estrutura fundiária deve considerar os dados do Sistema Nacional de
+            Cadastro Rural (SNCR), do Cadastro Nacional de Imóveis Rurais (CNIR) e do Censo Agropecuário do IBGE,
+            permitindo identificar a distribuição dos estabelecimentos por classes de área, a concentração fundiária e
+            as características predominantes de exploração. Essas informações constituem elementos relevantes para a
+            avaliação da inserção territorial do imóvel, a identificação de demandas por acesso à terra e a análise da
+            viabilidade de implantação de projetos de assentamento rural, observadas as condições socioeconômicas e
+            produtivas da região.</div>
+
+        <h3>2.12. Perfil regional</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta perfil socioeconômico caracterizado pela integração entre atividades
+            agropecuárias, comerciais, industriais e de prestação de serviços, destacando-se o município como importante
+            polo regional de desenvolvimento econômico e oferta de serviços públicos e privados. A economia rural é
+            marcada pela predominância da pecuária de corte e de leite, agricultura familiar e cultivo de produtos
+            agrícolas adaptados às condições climáticas locais, como milho, feijão, mandioca e sorgo, além de atividades
+            de horticultura e fruticultura em áreas com disponibilidade hídrica adequada. A população rural encontra-se
+            distribuída em comunidades, povoados e propriedades de diferentes dimensões, apresentando distintos níveis
+            de acesso à infraestrutura, assistência técnica, crédito rural e serviços essenciais. A dinâmica regional é
+            influenciada pela sazonalidade das precipitações, pela disponibilidade de recursos hídricos e pelas
+            condições de acesso aos mercados consumidores, fatores que condicionam a produtividade e a estabilidade
+            econômica das atividades agropecuárias. Montes Claros exerce função estratégica na oferta de serviços de
+            saúde, educação, comércio, transporte e apoio institucional, contribuindo para a integração econômica dos
+            municípios circunvizinhos. Apesar dessas potencialidades, persistem desafios relacionados à desigualdade
+            socioeconômica, à vulnerabilidade hídrica, à infraestrutura rural e à necessidade de diversificação
+            produtiva. Nesse contexto, a implantação de projetos de assentamento rural poderá contribuir para o
+            fortalecimento da agricultura familiar, a geração de trabalho e renda e o desenvolvimento territorial
+            sustentável, desde que acompanhada de planejamento adequado, investimentos em infraestrutura e políticas
+            públicas de apoio à produção e à comercialização agrícola.</div>
+
+        <h3>2.13. Perfil municipal</h3>
+        <div class="texto-longo">O município de Montes Claros, localizado na região Norte do Estado de Minas Gerais,
+            destaca-se como um dos principais centros urbanos, econômicos e administrativos do interior mineiro,
+            exercendo significativa influência sobre os municípios circunvizinhos. Sua economia apresenta estrutura
+            diversificada, com participação expressiva dos setores de comércio, serviços, indústria e agropecuária,
+            sendo esta última caracterizada principalmente pela pecuária bovina, agricultura familiar e cultivo de
+            produtos adaptados às condições edafoclimáticas regionais. A população municipal concentra-se
+            predominantemente na área urbana, enquanto a zona rural é composta por comunidades, povoados e propriedades
+            de diferentes dimensões, com atividades produtivas voltadas tanto ao abastecimento local quanto à
+            comercialização regional. O município dispõe de infraestrutura de transporte, estabelecimentos de saúde,
+            instituições de ensino superior, serviços financeiros e órgãos públicos que contribuem para sua função de
+            polo regional. Entretanto, determinadas localidades rurais apresentam limitações relacionadas à
+            disponibilidade hídrica, à conservação das estradas vicinais, ao saneamento básico e ao acesso regular à
+            assistência técnica e aos serviços públicos essenciais. As condições climáticas, marcadas pela
+            irregularidade das precipitações e pela ocorrência de períodos prolongados de estiagem, representam fatores
+            relevantes para o planejamento das atividades agropecuárias e para a segurança hídrica das comunidades
+            rurais. Nesse contexto, Montes Claros apresenta potencial para o fortalecimento da agricultura familiar e a
+            implantação de projetos de assentamento rural, desde que consideradas as características ambientais, a
+            disponibilidade de infraestrutura, as condições de acesso aos mercados e a necessidade de investimentos
+            destinados à sustentabilidade econômica e social das famílias beneficiárias.</div>
+
+        <h3>2.14. Perfil municipal</h3>
+        <div class="texto-longo">O município de Montes Claros, situado na região Norte do Estado de Minas Gerais,
+            constitui importante polo econômico, administrativo e de prestação de serviços, exercendo influência sobre
+            diversos municípios da região. Sua estrutura socioeconômica caracteriza-se pela diversificação das
+            atividades produtivas, com destaque para os setores de comércio, serviços, indústria e agropecuária. No meio
+            rural, predominam atividades relacionadas à pecuária bovina de corte e leite, agricultura familiar e cultivo
+            de produtos como milho, feijão, mandioca e sorgo, desenvolvidas sob condições climáticas marcadas pela
+            sazonalidade das chuvas e ocorrência de períodos de estiagem. A infraestrutura municipal compreende rede
+            rodoviária de integração regional, estabelecimentos de ensino, unidades de saúde, instituições financeiras e
+            órgãos públicos de apoio ao desenvolvimento rural. Entretanto, determinadas comunidades rurais apresentam
+            limitações quanto ao abastecimento de água, saneamento básico, conservação das estradas vicinais e acesso à
+            assistência técnica especializada. A estrutura fundiária municipal é composta por estabelecimentos
+            agropecuários de diferentes dimensões, abrangendo pequenas propriedades familiares, médias unidades
+            produtivas e grandes imóveis destinados à exploração comercial. Nesse contexto, o município apresenta
+            condições favoráveis ao desenvolvimento de iniciativas voltadas ao fortalecimento da agricultura familiar e
+            à implantação de projetos de assentamento, desde que acompanhadas de investimentos em infraestrutura, acesso
+            ao crédito rural, assistência técnica e políticas públicas destinadas à promoção da sustentabilidade
+            econômica, social e ambiental das famílias beneficiárias.</div>
+
+        <h3>2.15. Indicadores socioeconômicos</h3>
+        <div class="texto-longo">O município de Montes Claros, localizado na região Norte de Minas Gerais, apresenta
+            indicadores socioeconômicos que evidenciam sua importância como polo regional de desenvolvimento econômico,
+            comercial e de prestação de serviços. A estrutura econômica municipal caracteriza-se pela participação
+            expressiva dos setores de serviços, comércio e indústria, complementados pelas atividades agropecuárias
+            desenvolvidas predominantemente na zona rural. A distribuição da população apresenta elevada concentração
+            urbana, enquanto as comunidades rurais possuem características socioeconômicas heterogêneas, com diferentes
+            níveis de renda, escolaridade, infraestrutura e acesso aos serviços públicos essenciais. No meio rural,
+            destacam-se a agricultura familiar, a pecuária e as atividades produtivas de pequena escala, cuja geração de
+            renda está diretamente relacionada às condições climáticas, à disponibilidade hídrica e ao acesso aos
+            mercados consumidores. Apesar da presença de instituições de ensino, estabelecimentos de saúde e
+            equipamentos públicos de abrangência regional, persistem desigualdades territoriais relacionadas ao
+            saneamento básico, à infraestrutura viária, às oportunidades de emprego e à disponibilidade de serviços
+            especializados nas comunidades mais afastadas da sede municipal.
+        </div>
+
+        <h3>2.16. Uso da terra e produção agropecuária</h3>
+        <div class="texto-longo">O uso da terra e a produção agropecuária no município de Montes Claros, localizado na
+            região Norte de Minas Gerais, caracterizam-se pela predominância de atividades pecuárias e agrícolas
+            adaptadas às condições edafoclimáticas regionais, com destaque para a criação de bovinos de corte e leite, a
+            agricultura familiar e o cultivo de lavouras temporárias. A ocupação do espaço rural compreende áreas de
+            pastagens naturais e cultivadas, lavouras de sequeiro, pequenas áreas irrigadas, remanescentes de vegetação
+            nativa e estruturas destinadas ao apoio das atividades produtivas. Entre as principais culturas agrícolas
+            destacam-se milho, feijão, mandioca e sorgo, além da produção de hortaliças e frutas em propriedades com
+            disponibilidade hídrica adequada. A pecuária bovina constitui uma das atividades tradicionais da região,
+            sendo desenvolvida predominantemente em sistemas extensivos e semi-intensivos, com utilização de pastagens e
+            suplementação alimentar durante os períodos de estiagem. A produção agropecuária municipal apresenta
+            diferentes níveis de tecnificação, abrangendo desde estabelecimentos familiares com utilização predominante
+            de mão de obra própria até propriedades empresariais com maior mecanização e emprego de tecnologias
+            produtivas.
+
+            A distribuição das atividades produtivas é condicionada principalmente pela disponibilidade de água, pela
+            fertilidade dos solos, pelas características do relevo e pela infraestrutura de acesso e comercialização.
+            Dados da EMATER-MG, com base no Censo Agropecuário de 2017, registram aproximadamente 93 mil hectares de
+            pastagens formadas no município, evidenciando a relevância territorial da atividade pecuária.&#x20;
+        </div>
+
+        <h3>Quadro de uso da terra</h3>
+        <h4>Uso da terra</h4>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Unidade</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pecuária</td>
+                    <td>Cabeças</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Extração de leite</td>
+                    <td>Litros</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2.17. Infraestrutura socioeconômica</h3>
+        <div class="texto-longo">A infraestrutura socioeconômica da região de influência do imóvel rural, situada no
+            município de Montes Claros, no Norte de Minas Gerais, caracteriza-se pela concentração de serviços públicos,
+            estabelecimentos comerciais, instituições de ensino, unidades de saúde e equipamentos de apoio às atividades
+            produtivas na sede municipal, que exerce importante função de polo regional. A infraestrutura de transporte
+            é composta por rodovias federais e estaduais, complementadas por estradas municipais e vicinais responsáveis
+            pela interligação das comunidades rurais aos centros urbanos e aos mercados consumidores. O município dispõe
+            de serviços de abastecimento de água, energia elétrica, telecomunicações, atendimento bancário, educação
+            básica e superior, assistência médica e apoio institucional ao desenvolvimento agropecuário. Entretanto, a
+            distribuição desses serviços apresenta diferenças significativas entre as áreas urbanas e rurais,
+            especialmente quanto à disponibilidade de saneamento básico, conservação das vias de acesso, conectividade
+            digital e regularidade do abastecimento hídrico.</div>
+
+        <h3>2.18. Zoneamento ecológico-econômico</h3>
+        <div class="texto-longo">O Zoneamento Ecológico-Econômico (ZEE) da região de influência do imóvel rural,
+            localizada no município de Montes Claros, no Norte de Minas Gerais, constitui importante instrumento de
+            planejamento territorial e gestão ambiental, destinado a orientar o uso sustentável dos recursos naturais e
+            a compatibilização das atividades econômicas com as potencialidades e limitações ambientais. A análise
+            regional considera aspectos relacionados à vulnerabilidade natural, potencialidade social, aptidão agrícola,
+            disponibilidade hídrica, cobertura vegetal, características dos solos e condições socioeconômicas,
+            permitindo identificar áreas com diferentes níveis de restrição e potencial de utilização produtiva. A
+            região apresenta diversidade de ambientes, incluindo áreas favoráveis ao desenvolvimento agropecuário,
+            formações vegetais nativas e setores ambientalmente sensíveis, especialmente aqueles associados a cursos
+            d'água, nascentes, terrenos suscetíveis à erosão e ecossistemas de maior fragilidade. Nesse contexto, as
+            diretrizes do ZEE de Minas Gerais devem subsidiar a avaliação da capacidade de uso das terras, a
+            identificação de restrições ambientais e o planejamento de atividades produtivas sustentáveis, especialmente
+            em estudos voltados à implantação de projetos de assentamento rural, sendo necessária a consulta às bases
+            cartográficas oficiais para determinar o enquadramento específico do imóvel nas unidades de zoneamento
+            correspondentes.</div>
+
+        <h3>2.19. Projetos de assentamento</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta histórico de iniciativas voltadas à reforma agrária e ao desenvolvimento da
+            agricultura familiar, incluindo a implantação de projetos de assentamento rural destinados à democratização
+            do acesso à terra e à promoção da inclusão socioeconômica de famílias beneficiárias. Esses projetos
+            caracterizam-se pela organização de unidades produtivas familiares, com atividades predominantemente
+            relacionadas à agricultura de subsistência, à comercialização de excedentes, à pecuária de pequeno porte e à
+            produção diversificada de alimentos. As condições de desenvolvimento dos assentamentos são influenciadas
+            pela disponibilidade hídrica, aptidão agrícola dos solos, infraestrutura de transporte, acesso à assistência
+            técnica, crédito rural e proximidade dos mercados consumidores. Entre os principais desafios regionais
+            destacam-se a irregularidade das precipitações, a necessidade de recuperação de áreas degradadas, a melhoria
+            das estradas vicinais e a ampliação dos serviços essenciais às comunidades rurais. A experiência regional
+            com projetos de assentamento constitui referência relevante para a análise da viabilidade de destinação do
+            imóvel à reforma agrária, permitindo considerar alternativas de organização territorial, dimensionamento das
+            unidades produtivas, implantação de infraestrutura coletiva e desenvolvimento de sistemas agropecuários
+            sustentáveis, observadas as diretrizes técnicas e administrativas estabelecidas pelo INCRA.</div>
+
+        <h3>2.20. Unidades de conservação</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta áreas naturais protegidas destinadas à conservação da biodiversidade, à
+            manutenção dos recursos hídricos e à preservação de ecossistemas representativos do Cerrado e de formações
+            florestais associadas. Entre as unidades de conservação de destaque na região encontram-se o Parque Estadual
+            da Lapa Grande, situado no município de Montes Claros, e o Parque Estadual da Serra do Cabral, localizado em
+            municípios da região Norte de Minas Gerais. Essas áreas desempenham importante papel na proteção de
+            remanescentes de vegetação nativa, formações geológicas, cavidades naturais subterrâneas, nascentes e
+            habitats da fauna silvestre. A presença de unidades de conservação e de eventuais zonas de amortecimento
+            constitui fator relevante para o planejamento territorial, uma vez que pode estabelecer restrições e
+            condicionantes à ocupação e à exploração econômica das terras.</div>
+
+        <h3>2.21. Demais observações</h3>
+        <div class="texto-longo">A região de influência do imóvel rural, localizada no município de Montes Claros, no
+            Norte de Minas Gerais, apresenta aspectos institucionais, sanitários, turísticos e culturais relevantes para
+            a caracterização socioambiental e o planejamento territorial. No âmbito institucional, destaca-se a
+            importância da atuação dos conselhos municipais vinculados ao desenvolvimento rural e ao meio ambiente, bem
+            como dos instrumentos de planejamento e gestão destinados à promoção da agricultura familiar, conservação
+            dos recursos naturais e desenvolvimento sustentável, cuja existência, composição e vigência deverão ser
+            confirmadas junto à administração municipal. Quanto às condições sanitárias, a região apresenta fatores
+            ambientais e epidemiológicos que justificam a atenção das autoridades de saúde para doenças como
+            leishmaniose, doença de Chagas, esquistossomose e arboviroses, sendo necessária a consulta aos dados
+            oficiais de vigilância epidemiológica para identificação da ocorrência e distribuição dessas enfermidades,
+            sem pressupor sua condição endêmica em todas as localidades. Em relação ao patrimônio natural e cultural,
+            destacam-se áreas de interesse turístico e científico, especialmente o Parque Estadual da Lapa Grande,
+            reconhecido pela presença de formações cársticas, cavernas, paisagens naturais e sítios de interesse
+            arqueológico. A região também apresenta manifestações culturais tradicionais, comunidades rurais e elementos
+            do patrimônio histórico associados ao processo de ocupação territorial do Norte de Minas Gerais. Dessa
+            forma, recomenda-se que os estudos destinados à implantação de projetos de assentamento considerem a
+            existência de instrumentos municipais de gestão, os riscos epidemiológicos regionais e a eventual presença
+            de áreas de interesse turístico, arqueológico, histórico ou cultural, visando à proteção do patrimônio
+            natural e cultural e à promoção de condições adequadas de saúde, segurança e qualidade de vida para as
+            famílias beneficiárias.</div>
+    </section>
+
+    <!-- Inserir dentro de <main class="laudo"> existente -->
+    <section class="secao laf-fisicas">
+        <h2>3. Características Físicas e Edafoclimáticas do Imóvel</h2>
+
+        <h3>3.1. Vegetação</h3>
+        <div class="texto-longo">A cobertura vegetal do imóvel rural caracteriza-se pela presença de remanescentes de
+            vegetação nativa associados ao bioma Cerrado, com ocorrência de formações savânicas e florestais em
+            diferentes estágios de conservação e regeneração natural, intercaladas por áreas antropizadas destinadas
+            predominantemente à exploração agropecuária. Foram identificados fragmentos de cerrado *sensu stricto*,
+            formações arbustivo-arbóreas e trechos de vegetação mais densa, especialmente nas proximidades de cursos
+            d'água e áreas de maior restrição ao uso agrícola. Entre as espécies vegetais de ocorrência potencial
+            destacam-se o pequizeiro (*Caryocar brasiliense*), a aroeira-do-sertão (*Myracrodruon urundeuva*) e
+            diferentes espécies de ipês (*Handroanthus* spp.), cuja presença efetiva deverá ser confirmada mediante
+            levantamento florístico específico. As áreas destinadas à atividade pecuária apresentam predominância de
+            pastagens cultivadas, com ocorrência pontual de espécies herbáceas espontâneas e vegetação secundária em
+            regeneração. Observam-se alterações na cobertura vegetal decorrentes do histórico de ocupação e utilização
+            das terras, incluindo supressão de vegetação nativa, fragmentação de habitats e processos localizados de
+            degradação ambiental. A conservação dos remanescentes vegetais existentes, especialmente daqueles situados
+            em Áreas de Preservação Permanente (APP) e Reserva Legal, constitui fator essencial para a manutenção da
+            biodiversidade, proteção dos recursos hídricos e estabilidade dos solos, devendo ser considerada no
+            planejamento do uso sustentável do imóvel e na avaliação de sua aptidão para implantação de projeto de
+            assentamento rural.</div>
+
+        <h3>3.2. Descrição e classificação do relevo</h3>
+        <table class="tabela tabela-relevo">
+            <thead>
+                <tr>
+                    <th>Classe de relevo</th>
+                    <th>Classe de declividade (%)</th>
+                    <th>Área aproximada (ha)</th>
+                    <th>% da área</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Classe 1 - plano</td>
+                    <td>0 - 2</td>
+                    <td>100</td>
+                    <td>6,67%</td>
+                </tr>
+                <tr>
+                    <td>Classe 2 - suave ondulado</td>
+                    <td>2 - 5</td>
+                    <td>200</td>
+                    <td>13,33%</td>
+                </tr>
+                <tr>
+                    <td>Classe 3 - moderadamente ondulado</td>
+                    <td>5 - 10</td>
+                    <td>300</td>
+                    <td>20,00%</td>
+                </tr>
+                <tr>
+                    <td>Classe 4 - ondulado</td>
+                    <td>10 - 15</td>
+                    <td>400</td>
+                    <td>26,67%</td>
+                </tr>
+                <tr>
+                    <td>Classe 5 - forte ondulado</td>
+                    <td>15 - 45</td>
+                    <td>200</td>
+                    <td>13,33%</td>
+                </tr>
+                <tr>
+                    <td>Classe 6 - montanhoso</td>
+                    <td>45 - 70</td>
+                    <td>100</td>
+                    <td>6,67%</td>
+                </tr>
+                <tr>
+                    <td>Classe 7 - escarpado</td>
+                    <td>&gt; 70</td>
+                    <td>200</td>
+                    <td>13,33%</td>
+                </tr>
+                <tr>
+                    <td>Classe 8 - escarpado-APP</td>
+                    <td>&gt; 100</td>
+                    <td>0</td>
+                    <td>0,00%</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="linha-total">
+                    <th colspan="2" scope="row">Total</th>
+                    <td>1.500</td>
+                    <td>100,00%</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>3.3. Solos</h3>
+        <div class="texto-longo">Os solos do imóvel rural apresentam características físicas e químicas compatíveis com
+            as condições edafoclimáticas da região de Montes Claros, no Norte de Minas Gerais, sendo constituídos
+            predominantemente por Latossolos Vermelho-Amarelos e Argissolos Vermelho-Amarelos, com ocorrência localizada
+            de Cambissolos e Neossolos em áreas de relevo mais movimentado. Os Latossolos apresentam, em geral, elevada
+            profundidade, boa drenagem e textura média a argilosa, proporcionando condições favoráveis ao
+            desenvolvimento de atividades agropecuárias, embora possam apresentar limitações relacionadas à acidez e à
+            baixa disponibilidade natural de determinados nutrientes. Os Argissolos caracterizam-se pela diferenciação
+            textural entre horizontes, podendo apresentar maior suscetibilidade a processos erosivos, especialmente em
+            terrenos com declividade acentuada e cobertura vegetal reduzida. Nas áreas de solos menos desenvolvidos,
+            observam-se limitações associadas à menor profundidade efetiva, pedregosidade e capacidade de retenção de
+            água. Durante a caracterização preliminar, foram considerados aspectos relacionados à textura, estrutura,
+            drenagem, profundidade, fertilidade aparente e ocorrência de processos de degradação, identificando-se
+            condições gerais favoráveis à utilização agropecuária em parte significativa do imóvel. Recomenda-se a
+            realização de análises físicas e químicas laboratoriais e levantamentos pedológicos complementares para
+            confirmação das classes de solos, determinação de sua aptidão agrícola e definição das práticas de manejo,
+            correção da fertilidade e conservação necessárias à exploração sustentável das terras.</div>
+
+        <h3 class="subtitulo">Classe de Capacidade de Uso das Terras</h3>
+        <table class="tabela tabela-capacidade-uso">
+            <thead>
+                <tr>
+                    <th>Fatores limitantes</th>
+                    <th>Características</th>
+                    <th>Classe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fertilidade natural</td>
+                    <td>Média</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td>Profundidade efetiva</td>
+                    <td>Rasa</td>
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Drenagem interna</td>
+                    <td>Forte</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td>Deflúvio superficial</td>
+                    <td>Muito Lento</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td>Pedregosidade</td>
+                    <td>Muito Pedregoso</td>
+                    <td>VII</td>
+                </tr>
+                <tr>
+                    <td>Riscos de inundação</td>
+                    <td>Frequente</td>
+                    <td>V</td>
+                </tr>
+                <tr>
+                    <td>Classe de Declividade</td>
+                    <td>Suave ondulado</td>
+                    <td>II</td>
+                </tr>
+                <tr>
+                    <td>Grau de erosão laminar</td>
+                    <td>Severa</td>
+                    <td>VI</td>
+                </tr>
+                <tr>
+                    <td>Sulcos rasos</td>
+                    <td>Muito Frequentes</td>
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Sulcos médios</td>
+                    <td>Ocasionais</td>
+                    <td>III</td>
+                </tr>
+                <tr>
+                    <td>Sulcos profundos</td>
+                    <td>Muito Frequentes</td>
+                    <td>VII</td>
+                </tr>
+                <tr>
+                    <td>Seca Edafológica</td>
+                    <td>Ligeira</td>
+                    <td>II</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.4. Nota Agronômica</h3>
+        <div class="campo laf-situacao"><span class="rotulo">Situação</span><span class="valor">Ótima</span></div>
+        <table class="tabela tabela-nota-agronomica">
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    <th>Discriminação</th>
+                    <th>Área (ha)</th>
+                    <th>% da área</th>
+                    <th>Índice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Classe I</td>
+                    <td>Lavoura sem restrições</td>
+                    <td>300</td>
+                    <td>20,00%</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Classe II</td>
+                    <td>Lavoura com práticas simples</td>
+                    <td>100</td>
+                    <td>6,67%</td>
+                    <td>0,8</td>
+                </tr>
+                <tr>
+                    <td>Classe III</td>
+                    <td>Lavoura com práticas intensas</td>
+                    <td>50</td>
+                    <td>3,33%</td>
+                    <td>0,61</td>
+                </tr>
+                <tr>
+                    <td>Classe IV</td>
+                    <td>Lavoura esporádica e pastos</td>
+                    <td>50</td>
+                    <td>3,33%</td>
+                    <td>0,47</td>
+                </tr>
+                <tr>
+                    <td>Classe V</td>
+                    <td>Pastagens com restrições</td>
+                    <td>100</td>
+                    <td>6,67%</td>
+                    <td>0,39</td>
+                </tr>
+                <tr>
+                    <td>Classe VI</td>
+                    <td>Pastagens com práticas simples</td>
+                    <td>400</td>
+                    <td>26,67%</td>
+                    <td>0,29</td>
+                </tr>
+                <tr>
+                    <td>Classe VII</td>
+                    <td>Áreas de uso restrito (florestas, solos extremamente pedregosos/muito rasos, relevo montanhoso)
+                    </td>
+                    <td>400</td>
+                    <td>26,67%</td>
+                    <td>0,2</td>
+                </tr>
+                <tr>
+                    <td>Classe VIII</td>
+                    <td>Abrigo da vida silvestre (APP), áreas muito mal drenadas ou com relevo escarpado</td>
+                    <td>100</td>
+                    <td>6,67%</td>
+                    <td>0,13</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="linha-total">
+                    <th colspan="3" scope="row">Nota agronômica</th>
+                    <td>100,01%</td>
+                    <td>0,45</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>3.5. Recursos Hídricos</h3>
+        <div class="texto-longo">Os recursos hídricos do imóvel rural são constituídos por cursos d'água de pequeno
+            porte, nascentes, reservatórios artificiais e fontes subterrâneas, cuja disponibilidade está diretamente
+            relacionada às características hidrogeológicas e ao regime sazonal de precipitações da região de Montes
+            Claros, no Norte de Minas Gerais. Durante a vistoria, foram identificados, hipoteticamente, dois córregos de
+            regime intermitente, uma nascente localizada em área de vegetação nativa e três pequenos reservatórios
+            utilizados para dessedentação animal e apoio às atividades agropecuárias. O abastecimento das instalações
+            residenciais e produtivas ocorre predominantemente por meio de poço tubular, complementado pela captação e
+            armazenamento de águas superficiais. A disponibilidade hídrica apresenta redução significativa durante o
+            período de estiagem, podendo limitar determinadas atividades agrícolas e a manutenção das pastagens. Nas
+            proximidades dos cursos d'água, observaram-se trechos com vegetação ciliar parcialmente conservada e
+            ocorrências pontuais de assoreamento e degradação das margens, indicando a necessidade de medidas de
+            recuperação ambiental. A qualidade e a quantidade dos recursos hídricos deverão ser verificadas mediante
+            análises específicas e estudos de disponibilidade, considerando também a regularidade das captações e
+            eventuais exigências de outorga. De modo geral, o imóvel apresenta potencial de aproveitamento hídrico para
+            atividades agropecuárias de pequena e média escala, condicionado à adoção de práticas de conservação,
+            proteção das nascentes, uso eficiente da água e planejamento adequado da demanda hídrica, especialmente em
+            eventual projeto de assentamento rural.</div>
+    </section>
+
+    <section class="secao uso-imovel-laudo">
+        <h2>4. Uso do Imóvel</h2>
+        <h3>Introdução</h3>
+        <div class="texto-longo">A caracterização do uso do imóvel rural tem por finalidade identificar e quantificar as
+            diferentes formas de ocupação e exploração das terras, considerando as atividades agropecuárias
+            desenvolvidas, a cobertura vegetal existente, as áreas destinadas à infraestrutura e as porções sujeitas a
+            restrições ambientais ou legais. Durante a vistoria, foram identificadas áreas utilizadas para agricultura,
+            pecuária, pastagens naturais e cultivadas, vegetação nativa, benfeitorias, estradas internas e demais usos
+            associados à dinâmica produtiva da propriedade. O levantamento foi realizado mediante observação direta,
+            análise de informações cartográficas e consulta aos dados disponibilizados pelo responsável pelo imóvel,
+            buscando estabelecer a distribuição espacial e a extensão das diferentes classes de uso e cobertura do solo.
+            As informações obtidas subsidiam a avaliação do aproveitamento econômico das terras, a identificação de
+            áreas subutilizadas ou degradadas, o cálculo dos índices de produtividade e a análise do potencial de
+            utilização do imóvel para fins de reforma agrária, observadas suas características ambientais, produtivas e
+            as disposições legais aplicáveis.</div>
+
+        <h3>4.1. Áreas com produtos vegetais isolados</h3>
+        <h4>Áreas com produtos vegetais isolados</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome do produto</th>
+                        <th>Área plantada (ha)</th>
+                        <th>Área colhida (ha)</th>
+                        <th>Quantidade colhida</th>
+                        <th>Unidade</th>
+                        <th>Indicador de restrição</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abacate</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>40</td>
+                        <td>Cento</td>
+                        <td>Sem Restrição</td>
+                        <td>Proprietário</td>
+                    </tr>
+                    <tr>
+                        <td>Abacaxi</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>30</td>
+                        <td>Cento</td>
+                        <td>Sem Restrição</td>
+                        <td>Proprietário</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td>7,00</td>
+                        <td>7,00</td>
+                        <td colspan="4"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.2. Áreas com produtos vegetais em consórcio ou rotação</h3>
+        <h4>Áreas com produtos vegetais em consórcio ou rotação</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome do produto</th>
+                        <th>Forma de exploração</th>
+                        <th>Sequencial do grupo</th>
+                        <th>Área plantada (ha)</th>
+                        <th>Área colhida (ha)</th>
+                        <th>Quantidade colhida</th>
+                        <th>Unidade</th>
+                        <th>Indicador de restrição</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alfafa</td>
+                        <td>Rotação</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>Ton.</td>
+                        <td>Sem Restrição</td>
+                        <td>Arrendatário</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3">Total</th>
+                        <td>2,00</td>
+                        <td>2,00</td>
+                        <td colspan="4"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.3. Áreas de exploração granjeira ou aquícola</h3>
+        <h4>Áreas de exploração granjeira ou aquícola</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Denominação</th>
+                        <th>Área explorada (ha)</th>
+                        <th>Indicador de restrição</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aquicultura</td>
+                        <td>1</td>
+                        <td>Sem Restrição</td>
+                        <td>Proprietário</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td>1,00</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.4. Áreas com outros usos</h3>
+        <h4>Áreas com outros usos</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Denominação</th>
+                        <th>Área utilizada (ha)</th>
+                        <th>Indicador de restrição</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pesque-pague</td>
+                        <td>3</td>
+                        <td>Sem Restrição</td>
+                        <td>Parceiro</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td>3,00</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.5. Áreas com restrição legal/técnica</h3>
+        <h4>Áreas com restrição legal/técnica</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Denominação</th>
+                        <th>Área (ha)</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reserva Legal</td>
+                        <td>100</td>
+                        <td>Proprietário</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td>100,00</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.6. Áreas de pastagem</h3>
+        <h4>Áreas de pastagem</h4>
+        <div class="tabela-rolagem">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Tipo de pastagem</th>
+                        <th>Área utilizada (ha)</th>
+                        <th>Indicador de restrição</th>
+                        <th>Responsável pela exploração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plantada</td>
+                        <td>10</td>
+                        <td>Sem Restrição</td>
+                        <td>Comodatário</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <td>10,00</td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>4.7. Áreas aproveitável X não utilizada total</h3>
+        <table class="tabela tabela-resumo-uso">
+            <tbody>
+                <tr>
+                    <th>Área total do imóvel (ha)</th>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <th>Área aproveitável não utilizada - ANU - com uso e sem restrição (ha)</th>
+                    <td>123</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Conclusão</h3>
+        <div class="texto-longo"></div>
+    </section>
+
+    <!-- Fragmento HTML: inserir dentro de <main class="laudo"> existente -->
+    <section class="secao efetivo-pecuario-laudo">
+        <h2>5. Efetivo Pecuário</h2>
+
+        <h3>Introdução</h3>
+        <div class="texto-longo">O levantamento do efetivo pecuário do imóvel rural tem por finalidade identificar e
+            quantificar os animais existentes na propriedade, considerando as diferentes espécies, categorias
+            zootécnicas, sistemas de criação e finalidades produtivas. Durante a vistoria, foram obtidas informações
+            referentes à composição dos rebanhos bovino, equino, suíno, ovino, caprino e de outras espécies
+            eventualmente exploradas, mediante observação direta e consulta aos registros e informações disponibilizados
+            pelo responsável pelo imóvel. A caracterização do efetivo pecuário permite avaliar a intensidade de
+            utilização das áreas de pastagem, a capacidade de suporte das terras, as condições de manejo e a
+            infraestrutura destinada à atividade, incluindo currais, cercas, instalações de alimentação e pontos de
+            dessedentação animal. Os dados levantados também subsidiam a análise da exploração pecuária, a estimativa da
+            produção animal e a apuração dos indicadores de eficiência produtiva, especialmente aqueles relacionados ao
+            Grau de Eficiência na Exploração (GEE), conforme os critérios técnicos e normativos aplicáveis à avaliação
+            de imóveis rurais pelo INCRA.</div>
+
+        <h3>Cálculo do efetivo pecuário</h3>
+        <h3 class="subtitulo">Efetivo pecuário</h3>
+        <table class="tabela tabela-efetivo-pecuario">
+            <thead>
+                <tr>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Região</th>
+                    <th scope="col">Fator conversão</th>
+                    <th scope="col">Número de cabeças</th>
+                    <th scope="col">Número de UA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vacas 3 anos e mais</td>
+                    <td>Nordeste</td>
+                    <td>0,83</td>
+                    <td>50</td>
+                    <td>41,50</td>
+                </tr>
+                <tr>
+                    <td>Touros (Reprodutor)</td>
+                    <td>Nordeste</td>
+                    <td>1,24</td>
+                    <td>10</td>
+                    <td>12,40</td>
+                </tr>
+                <tr>
+                    <td>Bovinos menores de 1 ano</td>
+                    <td>Nordeste</td>
+                    <td>0,26</td>
+                    <td>40</td>
+                    <td>10,40</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row" colspan="4">Total</th>
+                    <td>64,30</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Conclusão</h3>
+        <div class="texto-longo">Com base nas informações levantadas durante a vistoria e na análise das condições de
+            exploração pecuária do imóvel rural, verifica-se a predominância da bovinocultura de corte, desenvolvida em
+            sistema extensivo, com utilização de pastagens naturais e cultivadas, complementada pela criação de equinos
+            destinados ao apoio das atividades agropecuárias. O efetivo animal identificado apresenta distribuição
+            compatível com a infraestrutura existente, embora tenham sido observadas limitações relacionadas ao manejo
+            das pastagens, à disponibilidade sazonal de forragem e à capacidade de suporte de determinadas áreas. A
+            avaliação preliminar indica a necessidade de aprimoramento das práticas de manejo zootécnico, recuperação de
+            pastagens degradadas e adequação da taxa de lotação animal, visando ao aumento da produtividade e à
+            conservação dos recursos naturais. Os quantitativos apurados, convertidos em unidades animais conforme os
+            índices técnicos aplicáveis, deverão subsidiar os cálculos de utilização e eficiência da exploração
+            pecuária, contribuindo para a determinação dos indicadores de produtividade do imóvel. Dessa forma,
+            conclui-se que a atividade pecuária apresenta potencial de desenvolvimento, condicionado à adoção de medidas
+            de melhoria da infraestrutura, planejamento alimentar do rebanho e utilização sustentável das áreas
+            destinadas à produção animal.</div>
+    </section>
+
+    <!-- Inserir dentro de <main class="laudo"> existente -->
+    <section class="secao benfeitorias-laudo">
+        <h2>6. Benfeitorias</h2>
+
+        <h3>Introdução</h3>
+        <div class="texto-longo">O levantamento das benfeitorias existentes no imóvel rural tem por finalidade
+            identificar, caracterizar e avaliar as construções, instalações e demais estruturas incorporadas à
+            propriedade, considerando suas características construtivas, dimensões, estado de conservação,
+            funcionalidade e contribuição para o desenvolvimento das atividades agropecuárias. Durante a vistoria, foram
+            identificadas benfeitorias destinadas ao uso residencial, produtivo e operacional, incluindo casas de
+            moradia, galpões, currais, cercas, reservatórios de água, instalações de apoio e vias internas de
+            circulação. A avaliação contempla a análise dos materiais empregados, da idade aparente das construções, das
+            condições de manutenção e da depreciação física e funcional, observando os critérios técnicos estabelecidos
+            pelas normas de avaliação de imóveis rurais e pelos procedimentos adotados pelo INCRA. As informações
+            levantadas subsidiam a determinação do valor das benfeitorias, sua participação na composição do valor total
+            do imóvel e a análise das possibilidades de aproveitamento das estruturas existentes em eventual projeto de
+            assentamento rural.</div>
+
+        <h3>Inventário das Benfeitorias</h3>
+        <div class="tabela-rolagem">
+            <table class="tabela tabela-benfeitorias">
+                <thead>
+                    <tr>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Unidade de medida</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Valor unitário</th>
+                        <th scope="col">Valor total</th>
+                        <th scope="col">Depreciação</th>
+                        <th scope="col">Valor final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reprodutiva</td>
+                        <td>Galpão</td>
+                        <td>m²</td>
+                        <td>1</td>
+                        <td>R$ 2.000,00</td>
+                        <td>R$ 2.000,00</td>
+                        <td>0,8</td>
+                        <td>R$ 1.600,00</td>
+                    </tr>
+                    <tr>
+                        <td>Reprodutiva</td>
+                        <td>Poço</td>
+                        <td>UD</td>
+                        <td>1</td>
+                        <td>R$ 3.000,00</td>
+                        <td>R$ 3.000,00</td>
+                        <td>0,6</td>
+                        <td>R$ 1.800,00</td>
+                    </tr>
+                    <tr>
+                        <td>Não reprodutiva</td>
+                        <td>Trator</td>
+                        <td>UD</td>
+                        <td>1</td>
+                        <td>R$ 120.000,00</td>
+                        <td>R$ 120.000,00</td>
+                        <td>0,4</td>
+                        <td>R$ 48.000,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="resumo-benfeitorias">
+            <div class="linha-resumo"><span>Valor Total das Benfeitorias</span><strong>R$ 51.400,00</strong></div>
+            <div class="linha-resumo"><span>Benfeitorias Reprodutivas</span><strong>R$ 3.400,00</strong></div>
+            <div class="linha-resumo"><span>Benfeitorias Não Reprodutivas</span><strong>R$ 48.000,00</strong></div>
+        </div>
+    </section>
+
+    <!-- Fragmento para inserir dentro de <main class="laudo"> -->
+    <section class="secao indices-produtividade">
+        <h2>7. Índices de Produtividade</h2>
+        <h3>Introdução</h3>
+        <div class="texto-longo">A análise dos índices de produtividade do imóvel rural tem por finalidade avaliar o
+            grau de aproveitamento econômico das terras e a eficiência das atividades agropecuárias desenvolvidas,
+            considerando as características físicas, ambientais e produtivas da propriedade. Para essa avaliação, são
+            utilizados os indicadores de Grau de Utilização da Terra (GUT) e Grau de Eficiência na Exploração (GEE),
+            calculados com base nas áreas efetivamente utilizadas, nas áreas aproveitáveis, nos quantitativos de
+            produção vegetal e no efetivo pecuário existente, observados os índices de rendimento e de lotação
+            estabelecidos na legislação aplicável. O levantamento das informações foi realizado mediante vistoria
+            técnica, análise documental e consulta aos registros de produção disponibilizados pelo responsável pelo
+            imóvel. Os resultados obtidos permitem verificar o enquadramento do imóvel quanto ao atendimento dos
+            parâmetros legais de produtividade, subsidiando sua classificação fundiária e a análise de sua possível
+            destinação à reforma agrária, conforme os critérios estabelecidos pela Lei nº 8.629/1993 e demais normas
+            pertinentes.</div>
+
+        <h3>Grau de utilização da terra</h3>
+        <h4>Área efetivamente utilizada</h4>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Área (ha)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Culturas Temporárias</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Culturas Permanentes</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Culturas Semi-perenes</td>
+                    <td>50</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Área Efetivamente Utilizada (AEU)</th>
+                    <td>80,00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h4>Área aproveitável</h4>
+        <table class="tabela tabela-indicadores">
+            <tbody>
+                <tr>
+                    <th>Benfeitorias, Sede, Estradas e Instalações Não-Produtivas (ha)</th>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <th>Mata Atlântica</th>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <th>APP Total (ha)</th>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <th>Reserva Legal (ha)</th>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <th>Áreas Ocupadas por Corpos d'Água Naturais / Inaproveitáveis (ha)</th>
+                    <td>20</td>
+                </tr>
+                <tr class="linha-resultado">
+                    <th>Área aproveitável total (AT) (ha)</th>
+                    <td>230</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>GUT - Grau de Utilização da Terra</h3>
+        <table class="tabela tabela-indicadores">
+            <tbody>
+                <tr>
+                    <th>GUT (%)</th>
+                    <td>34,78</td>
+                </tr>
+                <tr class="linha-resultado">
+                    <th>Status da Função Social Critério GUT</th>
+                    <td>Não cumprido</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Observações</h3>
+        <div class="texto-longo">A apuração do Grau de Utilização da Terra (GUT) foi realizada com base na relação
+            percentual entre a área efetivamente utilizada nas atividades agropecuárias e a área aproveitável total do
+            imóvel rural, considerando os critérios técnicos e legais aplicáveis. Durante a vistoria, foram
+            identificadas áreas destinadas à exploração agrícola, pastagens naturais e cultivadas, além de parcelas sem
+            utilização produtiva aparente, cuja caracterização foi considerada na composição dos indicadores. As áreas
+            legalmente protegidas e aquelas classificadas como não aproveitáveis foram analisadas conforme suas
+            características e restrições de uso, observando-se as disposições normativas pertinentes. Verificou-se a
+            existência de porções do imóvel com potencial produtivo ainda não plenamente explorado, especialmente em
+            áreas de pastagem com baixa intensidade de utilização e terrenos aptos ao desenvolvimento de atividades
+            agrícolas. Dessa forma, o GUT apurado constitui indicador relevante para a avaliação do aproveitamento
+            territorial da propriedade, devendo ser analisado conjuntamente com o Grau de Eficiência na Exploração (GEE)
+            para subsidiar a classificação do imóvel quanto à produtividade, conforme os parâmetros estabelecidos pela
+            legislação agrária vigente.</div>
+
+        <h3>Grau de eficiência na exploração - GEE</h3>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Atividade/Produto</th>
+                    <th>Produção Obtida</th>
+                    <th>Índice de Rendimento</th>
+                    <th>Produção Padrão Equivalente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abacate</td>
+                    <td>40</td>
+                    <td>300</td>
+                    <td>12.000,00</td>
+                </tr>
+                <tr>
+                    <td>Abacaxi</td>
+                    <td>30</td>
+                    <td>120</td>
+                    <td>3.600,00</td>
+                </tr>
+                <tr>
+                    <td>Alfafa</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>6,00</td>
+                </tr>
+                <tr>
+                    <td>Pecuária</td>
+                    <td>64,3</td>
+                    <td>1,2</td>
+                    <td>77,16</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">Soma da Produção Padrão Equivalente (SPE)</th>
+                    <td>15.683,16</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Grau de Eficiência na Exploração (GEE)</h3>
+        <table class="tabela tabela-indicadores">
+            <tbody>
+                <tr>
+                    <th>Grau de Eficiência na Exploração (GEE)</th>
+                    <td>19.603,95</td>
+                </tr>
+                <tr class="linha-resultado">
+                    <th>Status do Grau de Eficiência Produtiva (GEE)</th>
+                    <td>Produtivo</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Fragmento HTML para inserir dentro de <main class="laudo"> -->
+    <section class="secao conservacao-recursos-laudo">
+        <h2>8. Conservação de Recursos Naturais</h2>
+
+        <h3>Caracterização ambiental</h3>
+        <div class="texto-longo">
+            <p>O imóvel rural apresenta características ambientais típicas da região de transição entre formações
+                savânicas e florestais do bioma Cerrado, com predominância de áreas destinadas à atividade agropecuária,
+                intercaladas por fragmentos de vegetação nativa em diferentes estágios de regeneração. O relevo varia de
+                plano a suavemente ondulado, com ocorrência de solos predominantemente argilosos e moderada
+                suscetibilidade a processos erosivos. A rede hidrográfica local é composta por cursos d'água de pequeno
+                porte e nascentes, associados a áreas de preservação permanente (APP), nas quais se observa cobertura
+                vegetal parcialmente conservada. Foram identificados trechos com sinais de degradação ambiental,
+                especialmente em áreas de pastagem submetidas ao pisoteio intensivo de animais e próximas às margens dos
+                cursos d'água. De modo geral, o imóvel apresenta condições ambientais satisfatórias, embora sejam
+                necessárias medidas pontuais de recuperação da vegetação nativa, conservação do solo e proteção dos
+                recursos hídricos, visando à manutenção do equilíbrio ecológico e à sustentabilidade das atividades
+                produtivas.</p>
+        </div>
+
+        <h3>Problemas ambientais observados no imóvel</h3>
+        <h3 class="subtitulo">Problemas ambientais</h3>
+        <table class="tabela tabela-problemas-ambientais">
+            <thead>
+                <tr>
+                    <th>Ocorrência</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Erosão: Erosão em sulcos ocasionais, em poucos pontos, por falha na formação das pastagens.</td>
+                </tr>
+                <tr>
+                    <td>Compactação de solos</td>
+                </tr>
+                <tr>
+                    <td>Assoreamento: Causado por áreas de empréstimo não recuperadas.</td>
+                </tr>
+                <tr>
+                    <td>Alagamento do solo (saturação), nas áreas de brejo, que são de pequenas extensões relativamente
+                        ao tamanho do imóvel.</td>
+                </tr>
+                <tr>
+                    <td>Obstrução de cursos d'água (observar se há efeitos sobre a intensidade de inundações, pesca,
+                        navegação e sobre os padrões de drenagem)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Detalhamento das ocorrências</h3>
+        <div class="texto-longo">
+            <p>Durante a vistoria ambiental do imóvel rural, foram identificadas ocorrências pontuais de degradação dos
+                recursos naturais, caracterizadas principalmente por processos erosivos superficiais, compactação do
+                solo em áreas de pastagem, assoreamento de pequenos cursos d’água e supressão parcial da vegetação
+                nativa em áreas ambientalmente sensíveis. Observou-se a presença de erosão laminar e formação de sulcos
+                em terrenos de maior declividade, associadas ao manejo inadequado das pastagens e à insuficiência de
+                práticas conservacionistas. Nas proximidades das áreas de preservação permanente (APP), foram
+                constatados trechos com cobertura vegetal reduzida e sinais de pisoteio por animais, contribuindo para a
+                exposição do solo e o transporte de sedimentos para os corpos hídricos. Verificaram-se, ainda, indícios
+                de compactação decorrentes do trânsito frequente de máquinas agrícolas e da concentração de bovinos em
+                determinadas áreas. Não foram identificadas evidências significativas de contaminação química do solo ou
+                dos recursos hídricos. Recomenda-se a adoção de medidas corretivas, incluindo recuperação das áreas
+                degradadas, recomposição da vegetação ciliar, adequação do manejo das pastagens e implantação de
+                práticas de conservação do solo e da água, visando à mitigação dos impactos ambientais e à recuperação
+                das funções ecológicas comprometidas.</p>
+        </div>
+    </section>
+
+    <!-- Fragmento HTML: inserir dentro de <main class="laudo"> -->
+    <section class="secao">
+        <h2>9. Aspectos Sociais e Trabalhistas</h2>
+
+        <h3>Introdução</h3>
+        <div class="texto-longo">A análise dos aspectos sociais e trabalhistas do imóvel rural tem por finalidade
+            caracterizar as condições de ocupação, moradia, organização do trabalho e relações socioeconômicas
+            existentes na propriedade, considerando as atividades produtivas desenvolvidas e a população diretamente
+            envolvida. Durante a vistoria, foram levantadas informações relativas à composição da força de trabalho, aos
+            vínculos empregatícios, às condições de saúde e segurança ocupacional, à disponibilidade de infraestrutura
+            básica e ao acesso a serviços essenciais, como educação, saúde, transporte e saneamento. Foram observadas,
+            ainda, as condições gerais de habitabilidade das residências existentes, a utilização de mão de obra
+            familiar e contratada e a eventual ocorrência de situações de vulnerabilidade social ou irregularidades
+            trabalhistas. As informações obtidas visam subsidiar a caracterização socioeconômica do imóvel e a avaliação
+            das condições de trabalho e permanência das famílias residentes, considerando a legislação trabalhista e as
+            normas aplicáveis ao meio rural.</div>
+
+        <h3>Quantitativos de residentes e assalariados</h3>
+        <table class="tabela">
+            <tbody>
+                <tr>
+                    <th scope="row">Famílias residentes</th>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <th scope="row">Pessoas residentes</th>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th scope="row">Assalariados permanentes - com carteira</th>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th scope="row">Assalariados permanentes - sem carteira</th>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">Assalariados com contrato de experiência - sem carteira</th>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mão de obra familiar relativa ao proprietário</th>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Relação dos assalariados</h3>
+        <h3 class="subtitulo">Assalariados</h3>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Situação Trabalhista</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Marco Lourdes Souza</td>
+                    <td>123.544.538-90</td>
+                    <td>Com carteira</td>
+                </tr>
+                <tr>
+                    <td>Rogério Souza</td>
+                    <td>131.623.234-12</td>
+                    <td>Com carteira</td>
+                </tr>
+                <tr>
+                    <td>Leonardo Moraes</td>
+                    <td>354.972.631-45</td>
+                    <td>Com carteira</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Conclusão</h3>
+        <div class="texto-longo">
+            Durante a vistoria realizada no imóvel rural, foram observadas condições sociais e trabalhistas consideradas
+            satisfatórias, com predominância de mão de obra familiar e contratação eventual de trabalhadores para
+            atividades sazonais, especialmente nos períodos de plantio, colheita e manutenção das pastagens. As
+            residências existentes apresentam condições básicas de habitabilidade, dispondo de abastecimento de água por
+            poço artesiano, fornecimento de energia elétrica e instalações sanitárias individuais, embora tenham sido
+            identificadas limitações relacionadas ao acesso a serviços públicos de saúde, educação e transporte
+            coletivo. Quanto às relações de trabalho, não foram constatados indícios aparentes de trabalho infantil,
+            trabalho em condições análogas à escravidão ou outras situações graves de violação de direitos trabalhistas,
+            ressalvando-se que a vistoria não substitui fiscalização específica dos órgãos competentes. Não foram
+            relatados conflitos fundiários, disputas possessórias ou divergências significativas entre proprietários,
+            ocupantes e confrontantes. Verificou-se, entretanto, a necessidade de melhorias pontuais nas condições de
+            segurança ocupacional, especialmente quanto à disponibilização e utilização de equipamentos de proteção
+            individual (EPIs), ao armazenamento de produtos agroquímicos e à orientação dos trabalhadores sobre práticas
+            preventivas. De modo geral, os aspectos sociais e trabalhistas observados não indicam situações de conflito
+            ou vulnerabilidade acentuada, recomendando-se a manutenção das condições adequadas de trabalho e a
+            implementação das melhorias identificadas.
+        </div>
+    </section>
+
+    <!-- Fragmento HTML: inserir dentro de <main class="laudo"> -->
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>10. Uso Potencial Recomendado/Viabilidade de Assentamento</h2>
+        <div class="texto-longo">A análise integrada das características físicas, ambientais, produtivas e de
+            infraestrutura do imóvel rural indica condições potencialmente favoráveis à implantação de projeto de
+            assentamento, observadas as limitações identificadas durante a vistoria. A localização do imóvel, com acesso
+            por rodovia estadual e estradas vicinais, proporciona condições razoáveis de deslocamento e escoamento da
+            produção, embora sejam necessárias melhorias pontuais na infraestrutura viária, especialmente durante o
+            período chuvoso. Quanto à aptidão agrícola, predominam terras com relevo plano a suavemente ondulado, solos
+            de fertilidade natural moderada e condições adequadas ao desenvolvimento de atividades agropecuárias
+            diversificadas, incluindo culturas anuais, horticultura, fruticultura e pecuária de pequeno porte, mediante
+            adoção de práticas apropriadas de manejo e conservação do solo. A capacidade de uso das terras apresenta
+            restrições localizadas, principalmente em áreas de maior declividade, solos suscetíveis à erosão e ambientes
+            sujeitos à proteção ambiental, os quais deverão ser considerados no planejamento da ocupação territorial. A
+            infraestrutura existente, composta por edificações rurais, rede de energia elétrica, fontes de abastecimento
+            hídrico e vias internas de circulação, poderá contribuir para a estruturação inicial do assentamento, embora
+            sejam necessários investimentos complementares em saneamento básico, abastecimento de água, recuperação de
+            estradas e instalações de apoio à produção. Considerando o conjunto dos fatores analisados, o imóvel
+            apresenta viabilidade preliminar para destinação à reforma agrária, condicionada à realização de estudos
+            complementares sobre disponibilidade hídrica, capacidade de suporte ambiental, dimensionamento das unidades
+            produtivas, custos de implantação e sustentabilidade econômica das atividades propostas, de modo a assegurar
+            condições adequadas de permanência e desenvolvimento socioeconômico das famílias beneficiárias.</div>
+
+        <h3>Capacidade de Assentamento</h3>
+        <h3>Introdução</h3>
+        <div class="texto-longo">A análise da capacidade de assentamento do imóvel rural tem por finalidade estimar o
+            número potencial de famílias que poderão ser beneficiadas pela implantação de projeto de assentamento,
+            considerando as características territoriais, ambientais, produtivas e socioeconômicas da propriedade. Para
+            essa estimativa, são consideradas a área total do imóvel, as áreas legalmente protegidas, as restrições de
+            uso e ocupação do solo, a aptidão agrícola, a disponibilidade de recursos hídricos, a infraestrutura
+            existente e as condições necessárias à sustentabilidade econômica das unidades produtivas. O dimensionamento
+            da capacidade de assentamento busca assegurar a distribuição adequada das terras, compatibilizando o
+            aproveitamento produtivo com a conservação dos recursos naturais e a viabilidade das atividades
+            agropecuárias. A estimativa apresentada possui caráter técnico preliminar, podendo ser ajustada em função de
+            estudos complementares, do planejamento territorial e das diretrizes estabelecidas pelo INCRA para a
+            implantação de projetos de reforma agrária.</div>
+
+        <div class="grade grade-dominial dados-capacidade">
+            <div class="campo">
+                <span class="rotulo">Método de cálculo de capacidade de famílias</span>
+                <span class="valor">Pela Capacidade de renda do solo</span>
+            </div>
+            <div class="campo">
+                <span class="rotulo">Área para Reserva Legal (ha)</span>
+                <span class="valor">300</span>
+            </div>
+        </div>
+
+        <div class="tabela-rolagem">
+            <table class="tabela tabela-capacidade-assentamento">
+                <thead>
+                    <tr>
+                        <th scope="col">Classe</th>
+                        <th scope="col">I</th>
+                        <th scope="col">II</th>
+                        <th scope="col">III</th>
+                        <th scope="col">IV</th>
+                        <th scope="col">V</th>
+                        <th scope="col">VI</th>
+                        <th scope="col">VII</th>
+                        <th scope="col">VIII</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Reserva Legal</th>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>20</td>
+                        <td>20</td>
+                        <td>60</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Área Calculada</th>
+                        <td>0</td>
+                        <td>150</td>
+                        <td>250</td>
+                        <td>80</td>
+                        <td>130</td>
+                        <td>90</td>
+                        <td>500</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Renda por classe</th>
+                        <td>R$ 3.728,30</td>
+                        <td>R$ 2.982,64</td>
+                        <td>R$ 2.274,26</td>
+                        <td>R$ 1.752,30</td>
+                        <td>R$ 1.454,04</td>
+                        <td>R$ 1.081,21</td>
+                        <td>R$ 745,66</td>
+                        <td>R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Renda líquida anual</th>
+                        <td>R$ 0,00</td>
+                        <td>R$ 447.396,00</td>
+                        <td>R$ 568.565,75</td>
+                        <td>R$ 140.184,08</td>
+                        <td>R$ 189.024,81</td>
+                        <td>R$ 97.308,63</td>
+                        <td>R$ 372.830,00</td>
+                        <td>R$ 0,00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4" scope="row">Capacidade de Famílias pela Renda do Solo</th>
+                        <td colspan="5">47</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>Conclusão</h3>
+        <div class="texto-longo">Com base na análise das características físicas, ambientais, produtivas e
+            socioeconômicas do imóvel rural, conclui-se que a propriedade apresenta condições potencialmente favoráveis
+            à implantação de projeto de assentamento, considerando a disponibilidade de terras agricultáveis, a aptidão
+            agrícola predominante e as possibilidades de diversificação das atividades produtivas. A capacidade estimada
+            de assentamento deverá observar a área efetivamente aproveitável, excluídas as áreas legalmente protegidas e
+            aquelas com restrições ambientais ou limitações significativas de uso, de modo a assegurar dimensões
+            adequadas às unidades produtivas e condições de sustentabilidade econômica das famílias beneficiárias.
+            Ressalta-se que a definição do número definitivo de famílias dependerá do detalhamento do parcelamento
+            territorial, da disponibilidade de recursos hídricos, das necessidades de infraestrutura e dos estudos de
+            viabilidade técnica e econômica. Dessa forma, considera-se preliminarmente viável a destinação do imóvel à
+            implantação de projeto de assentamento, condicionada ao atendimento das exigências legais, ambientais e
+            técnicas aplicáveis, bem como à adoção de medidas que garantam o uso sustentável dos recursos naturais e o
+            desenvolvimento socioeconômico das famílias assentadas.</div>
+    </section>
+
+
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>11. Outras Informações</h2>
+        <div class="texto-longo">Durante a vistoria do imóvel rural, foram levantadas informações complementares
+            relevantes à avaliação de sua capacidade de assentamento, destacando-se a existência de áreas com potencial
+            para implantação de atividades produtivas diversificadas, a disponibilidade de recursos hídricos
+            superficiais e subterrâneos e a presença de infraestrutura básica passível de aproveitamento pelas futuras
+            famílias beneficiárias. Observou-se, ainda, a proximidade relativa de centros urbanos e estabelecimentos
+            comerciais, fator que poderá favorecer o acesso a insumos, serviços essenciais e mercados consumidores. Como
+            aspectos que demandam atenção, destacam-se a necessidade de adequação das vias internas, a ampliação dos
+            sistemas de abastecimento de água e energia elétrica e a recuperação de áreas pontualmente degradadas.
+            Recomenda-se que o planejamento do futuro assentamento contemple espaços destinados ao uso comunitário, à
+            implantação de equipamentos coletivos e ao desenvolvimento de atividades produtivas sustentáveis,
+            considerando as particularidades ambientais e socioeconômicas da região. Tais informações deverão subsidiar
+            os estudos complementares e a definição das estratégias de ocupação e organização territorial do imóvel.
+        </div>
+    </section>
+
+
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>12. Do Cumprimento da Função Social do Imóvel</h2>
+        <h3>12.1. Classificação do imóvel</h3>
+        <div class="texto-longo">Considerando as características territoriais, produtivas e ambientais identificadas
+            durante a vistoria, o imóvel rural apresenta condições de exploração agropecuária diversificada, com
+            predominância de áreas destinadas à pecuária extensiva e à agricultura de pequena escala. Para fins de
+            classificação fundiária, a propriedade enquadra-se, hipoteticamente, como grande propriedade rural, tendo em
+            vista sua área total e o módulo fiscal estabelecido para o município de localização. Quanto ao
+            aproveitamento econômico, foram identificadas áreas produtivas subutilizadas, com potencial de
+            intensificação sustentável das atividades agropecuárias. A classificação quanto à produtividade dependerá da
+            apuração dos indicadores técnicos pertinentes, especialmente do Grau de Utilização da Terra (GUT) e do Grau
+            de Eficiência na Exploração (GEE), conforme os critérios legais aplicáveis. Dessa forma, a classificação
+            definitiva do imóvel deverá considerar os dados cadastrais, a dimensão territorial, os índices de
+            produtividade e as demais informações técnicas necessárias à avaliação de sua situação fundiária e de sua
+            potencial destinação à reforma agrária.</div>
+        <h3>12.2. Aspectos ambientais</h3>
+        <div class="texto-longo">A análise dos aspectos ambientais do imóvel rural evidencia a presença de áreas com
+            diferentes níveis de conservação e utilização dos recursos naturais, caracterizadas pela predominância de
+            pastagens, áreas destinadas à agricultura e fragmentos remanescentes de vegetação nativa do bioma Cerrado.
+            Foram identificadas Áreas de Preservação Permanente (APP) associadas a cursos d’água e nascentes, bem como
+            áreas destinadas à Reserva Legal, cuja delimitação e regularidade deverão ser verificadas mediante análise
+            da documentação ambiental e dos registros disponíveis no Cadastro Ambiental Rural (CAR). Durante a vistoria,
+            observaram-se ocorrências pontuais de degradação ambiental, incluindo processos erosivos superficiais,
+            compactação do solo e redução da cobertura vegetal em trechos próximos aos corpos hídricos. Apesar dessas
+            limitações, o imóvel apresenta potencial para utilização agropecuária sustentável, desde que sejam adotadas
+            medidas de conservação do solo, proteção dos recursos hídricos, recuperação de áreas degradadas e manejo
+            adequado da vegetação nativa. Recomenda-se que eventuais intervenções e o planejamento de ocupação
+            territorial observem a legislação ambiental vigente, especialmente quanto à manutenção das áreas legalmente
+            protegidas e à compatibilização das atividades produtivas com a conservação dos recursos naturais.</div>
+        <h3>12.3. Relações trabalhistas</h3>
+        <div class="texto-longo">A análise das relações trabalhistas no imóvel rural indica a predominância de mão de
+            obra familiar, complementada pela contratação eventual de trabalhadores para execução de atividades
+            agropecuárias sazonais, especialmente nos períodos de plantio, colheita e manejo do rebanho. Durante a
+            vistoria, foram obtidas informações sobre as condições de contratação, remuneração, jornada de trabalho,
+            segurança ocupacional e disponibilidade de equipamentos de proteção individual (EPIs). Não foram
+            identificados indícios aparentes de trabalho infantil, trabalho em condições análogas à escravidão ou outras
+            situações graves de violação dos direitos trabalhistas. Entretanto, observaram-se oportunidades de melhoria
+            relacionadas à formalização das contratações temporárias, à capacitação dos trabalhadores e à adoção de
+            medidas preventivas de saúde e segurança no trabalho rural. Ressalta-se que as constatações decorrem de
+            observações e informações coletadas durante a vistoria, não substituindo fiscalização trabalhista
+            específica. Recomenda-se a observância da legislação trabalhista vigente e das disposições da Norma
+            Regulamentadora nº 31 (NR-31), visando assegurar condições adequadas de trabalho e proteção à saúde e à
+            integridade física dos trabalhadores rurais.</div>
+        <h3>12.4. Bem-estar dos proprietários e trabalhadores</h3>
+        <div class="texto-longo">A avaliação das condições de bem-estar dos proprietários e trabalhadores do imóvel
+            rural evidencia a existência de infraestrutura básica destinada à moradia, ao desenvolvimento das atividades
+            produtivas e ao atendimento das necessidades cotidianas dos ocupantes. As edificações residenciais
+            apresentam condições gerais satisfatórias de habitabilidade, dispondo de energia elétrica, abastecimento de
+            água e instalações sanitárias, embora tenham sido identificadas necessidades pontuais de manutenção e
+            melhorias nos sistemas de saneamento. O acesso aos serviços públicos de saúde, educação, transporte e
+            assistência social ocorre predominantemente na sede municipal, exigindo deslocamentos periódicos em razão da
+            distância e das condições das vias de acesso. Quanto ao ambiente de trabalho, foram observadas condições
+            razoáveis de segurança e conforto, com necessidade de aprimoramento das instalações de apoio, dos espaços
+            destinados ao descanso e das medidas de prevenção de acidentes. Não foram identificadas situações aparentes
+            de vulnerabilidade social grave ou condições degradantes de moradia. De modo geral, o imóvel apresenta
+            condições básicas de bem-estar para seus ocupantes, recomendando-se investimentos complementares em
+            infraestrutura, saneamento, segurança ocupacional e acessibilidade aos serviços essenciais, visando à
+            melhoria da qualidade de vida dos proprietários, trabalhadores e respectivos núcleos familiares.</div>
+    </section>
+
+
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>13. Conclusão</h2>
+        <div class="texto-longo">Com base nas informações levantadas durante a vistoria, na análise da documentação
+            disponibilizada e na avaliação integrada dos aspectos fundiários, ambientais, produtivos, sociais,
+            trabalhistas e econômicos, conclui-se que o imóvel rural apresenta características potencialmente favoráveis
+            à sua destinação para fins de reforma agrária, observadas as limitações técnicas e legais identificadas. A
+            propriedade dispõe de áreas com aptidão para exploração agropecuária diversificada, recursos hídricos e
+            infraestrutura básica passível de aproveitamento, embora sejam necessários investimentos complementares na
+            recuperação de áreas degradadas, adequação das vias de acesso, melhoria das instalações existentes e
+            implantação de estruturas de apoio às futuras unidades produtivas. Quanto à situação dominial, foram
+            identificadas divergências cadastrais pontuais que demandam verificação e eventual regularização, sem
+            prejuízo da realização de análises jurídicas complementares. Sob o aspecto ambiental, recomenda-se a adoção
+            de medidas de conservação do solo, proteção dos recursos hídricos e recuperação das áreas legalmente
+            protegidas que apresentem sinais de degradação. As condições sociais e trabalhistas observadas não
+            evidenciaram situações graves de irregularidade, ressalvada a necessidade de melhorias específicas e de
+            verificação pelos órgãos competentes. A capacidade de assentamento deverá ser definida mediante estudos
+            detalhados de parcelamento territorial, disponibilidade de áreas aproveitáveis, viabilidade econômica e
+            sustentabilidade ambiental. Dessa forma, considera-se que o imóvel reúne condições preliminares para
+            prosseguimento dos estudos técnicos e administrativos destinados à avaliação de sua possível incorporação ao
+            Programa Nacional de Reforma Agrária, ficando a decisão definitiva condicionada à conclusão da avaliação
+            econômica, à regularidade jurídica e ambiental, ao atendimento dos requisitos legais aplicáveis e à
+            manifestação dos setores competentes do INCRA.</div>
+    </section>
+
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>14. Referências Bibliográficas</h2>
+        <div class="texto-longo">
+            <p>BRASIL. **Lei nº 4.504, de 30 de novembro de 1964.** Dispõe sobre o Estatuto da Terra e dá outras
+                providências. Brasília, DF, 1964.</p>
+
+            <p>BRASIL. **Lei nº 8.629, de 25 de fevereiro de 1993.** Dispõe sobre a regulamentação dos dispositivos
+                constitucionais relativos à reforma agrária. Brasília, DF, 1993.</p>
+
+            <p>BRASIL. **Lei nº 12.651, de 25 de maio de 2012.** Dispõe sobre a proteção da vegetação nativa. Brasília,
+                DF,
+                2012.</p>
+
+            <p>BRASIL. **Lei nº 13.465, de 11 de julho de 2017.** Dispõe sobre a regularização fundiária rural e urbana
+                e
+                outras providências. Brasília, DF, 2017.</p>
+
+            <p>BRASIL. Ministério do Trabalho e Emprego. **Norma Regulamentadora nº 31 (NR-31): Segurança e Saúde no
+                Trabalho na Agricultura, Pecuária, Silvicultura, Exploração Florestal e Aquicultura.** Brasília, DF.</p>
+
+            <p>INSTITUTO NACIONAL DE COLONIZAÇÃO E REFORMA AGRÁRIA (INCRA). **Manual de Obtenção de Terras e Perícia
+                Judicial.** Brasília, DF: INCRA, 2006.</p>
+
+            <p>ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS (ABNT). **NBR 14653-1: Avaliação de bens — Parte 1:
+                Procedimentos
+                gerais.** Rio de Janeiro: ABNT, 2019.</p>
+
+            <p>ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS (ABNT). **NBR 14653-3: Avaliação de bens — Parte 3: Imóveis
+                rurais
+                e seus componentes.** Rio de Janeiro: ABNT, 2019.</p>
+
+            <p>EMPRESA BRASILEIRA DE PESQUISA AGROPECUÁRIA (EMBRAPA). **Sistema Brasileiro de Classificação de Solos.**
+                5.
+                ed. rev. e ampl. Brasília, DF: Embrapa, 2018.</p>
+
+            <p>INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). **Manual Técnico da Vegetação Brasileira.** 2.
+                ed.
+                Rio de Janeiro: IBGE, 2012.</p>
+        </div>
+    </section>
+
+    <section class="secao capacidade-assentamento-laudo">
+        <h2>15. Anexos</h2>
+        <div class="texto-longo">
+            <section class="documentos-anexos">
+                <h3>Lista de Documentos Anexos</h3>
+
+                <p>
+                    Integram o presente Laudo de Vistoria e Avaliação os documentos
+                    técnicos, cartográficos, cadastrais, registrais e fotográficos
+                    utilizados para subsidiar a caracterização do imóvel rural,
+                    a análise de sua situação fundiária, a avaliação das condições
+                    ambientais e produtivas e a verificação de sua potencial
+                    destinação à reforma agrária.
+                </p>
+
+                <ol>
+                    <li>
+                        <strong>Anexo I – Documentação Dominial:</strong>
+                        Cópia da matrícula atualizada do imóvel, certidões cartorárias
+                        e documentos relacionados à cadeia dominial.
+                    </li>
+
+                    <li>
+                        <strong>Anexo II – Documentação Cadastral:</strong>
+                        Certificado de Cadastro de Imóvel Rural (CCIR), comprovante
+                        de inscrição no Cadastro Ambiental Rural (CAR) e informações
+                        do Sistema Nacional de Cadastro Rural (SNCR).
+                    </li>
+
+                    <li>
+                        <strong>Anexo III – Planta e Memorial Descritivo:</strong>
+                        Representação cartográfica do perímetro do imóvel, coordenadas
+                        geográficas, confrontações e memorial descritivo georreferenciado.
+                    </li>
+
+                    <li>
+                        <strong>Anexo IV – Mapas Temáticos:</strong>
+                        Mapas de localização, acesso, uso e cobertura do solo,
+                        recursos hídricos, relevo, aptidão agrícola e áreas
+                        ambientalmente protegidas.
+                    </li>
+
+                    <li>
+                        <strong>Anexo V – Relatório Fotográfico:</strong>
+                        Registro das condições gerais do imóvel, benfeitorias,
+                        áreas produtivas, recursos naturais, acessos e eventuais
+                        ocorrências de degradação ambiental.
+                    </li>
+
+                    <li>
+                        <strong>Anexo VI – Levantamento das Benfeitorias:</strong>
+                        Relação das edificações, instalações, cercas, estradas internas
+                        e demais estruturas existentes, acompanhada de suas
+                        características e avaliações.
+                    </li>
+
+                    <li>
+                        <strong>Anexo VII – Avaliação Agronômica:</strong>
+                        Levantamento das características dos solos, capacidade de uso
+                        das terras, aptidão agrícola e condições de exploração
+                        agropecuária.
+                    </li>
+
+                    <li>
+                        <strong>Anexo VIII – Avaliação Ambiental:</strong>
+                        Informações sobre Áreas de Preservação Permanente (APP),
+                        Reserva Legal, passivos ambientais e medidas recomendadas
+                        de recuperação.
+                    </li>
+
+                    <li>
+                        <strong>Anexo IX – Pesquisa de Mercado:</strong>
+                        Elementos amostrais, dados de imóveis rurais comparáveis,
+                        memória de cálculo e procedimentos de homogeneização
+                        utilizados na avaliação.
+                    </li>
+
+                    <li>
+                        <strong>Anexo X – Estudo de Capacidade de Assentamento:</strong>
+                        Demonstrativo das áreas aproveitáveis, critérios de
+                        dimensionamento das unidades produtivas e estimativa
+                        preliminar do número de famílias beneficiárias.
+                    </li>
+
+                    <li>
+                        <strong>Anexo XI – Documentação Complementar:</strong>
+                        Declarações, entrevistas, informações prestadas pelos
+                        ocupantes e demais documentos considerados relevantes
+                        à elaboração do laudo.
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </section>
+</main>

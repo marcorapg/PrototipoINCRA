@@ -2574,22 +2574,24 @@
             <br-table-row slot="row">
 
                 <br-table-cell style="background-color: lightgrey; border-width: 1px 1px 1px 1px; border-color: black;">
-                    Área aproveitável não utilizada - ANU - sem uso e sem restrição (ha)
+                    Área total do imóvel (ha)
                 </br-table-cell>
 
                 <br-table-cell style="border-width: 1px 1px 1px 1px; border-color: black;">
-
+                    {{ areaTotal }}
                 </br-table-cell>
 
             </br-table-row>
 
             <br-table-row slot="row">
                 <br-table-cell style="background-color: lightgrey;">
-                    Área total do imóvel (ha)
+                    Área aproveitável não utilizada - ANU - sem uso e sem restrição (ha)
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ areaTotal }}
+                    {{ totalAreaPlantada + totalAreaPlantadaConsorcioRotacao +
+                    totalAreaExploracaoGranjeiraAgricola + totalAreaOutrosUsos + totalAreaRestricaoLegalTecnica +
+                    totalAreaPastagem }}
                 </br-table-cell>
 
             </br-table-row>
@@ -2694,7 +2696,7 @@
                             { "label": "Norte", "value": "Norte", "selected": false },
                             { "label": "Nordeste", "value": "Nordeste", "selected": false }
                         ]'
-                        (valueChange)="registro.regiao= $event.detail; registro.fatorConversao = obterFatorConversao(registro.categoria, registro.regiao); calcularTotaltotalEfetivoPecuario();">
+                        (valueChange)="registro.regiao= $event.detail; registro.fatorConversao = obterFatorConversao(registro.categoria, registro.regiao); registro.numeroEfetivoPecuario = registro.fatorConversao * registro.numeroCabecas; calcularTotaltotalEfetivoPecuario();">
                     </br-select>
                 </br-table-cell>
 
@@ -3158,7 +3160,7 @@
             </div>
         </div>
 
-        <h3>7.2. Grau de eficiência na exploração - GEE</h3>
+        <h3>Grau de eficiência na exploração - GEE</h3>
 
         <br-table style="width: 100%;">
 
@@ -3199,7 +3201,7 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ registro.quantidadeColhida * registro.rendimento }}
+                    {{ registro.quantidadeColhida * registro.rendimento | number:'1.2-2' }}
                 </br-table-cell>
 
             </br-table-row>
@@ -3221,14 +3223,13 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ registro.quantidadeColhida * registro.rendimento }}
+                    {{ registro.quantidadeColhida * registro.rendimento | number:'1.2-2' }}
                 </br-table-cell>
 
             </br-table-row>
 
             <!-- LINHA Pecuária -->
-            <br-table-row slot="row"
-                *ngFor="let registro of registrosAreaProdutoVegetalConsorcioRotacao; let i = index">
+            <br-table-row slot="row" *ngFor="let item of [1]">
 
                 <br-table-cell>
                     Pecuária
@@ -3239,11 +3240,11 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ totalEfetivoPecuario }}
+                    {{ obterIndicePecuaria(1) }}
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ totalEfetivoPecuario * obterIndicePecuaria(1) }}
+                    {{ totalEfetivoPecuario * obterIndicePecuaria(1) | number:'1.2-2' }}
                 </br-table-cell>
 
             </br-table-row>
@@ -3254,7 +3255,9 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ 1 }}
+                    {{ (registrosAreaProdutoVegetal.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) + 
+                       registrosAreaProdutoVegetalConsorcioRotacao.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) +
+                       totalEfetivoPecuario * obterIndicePecuaria(1))  | number:'1.2-2' }}
                 </br-table-cell>
             </br-table-row>
         </br-table>
@@ -3271,7 +3274,9 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ formatGrauUtilizacaoTerra() | number:'1.2-2' }}
+                    {{ ((registrosAreaProdutoVegetal.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) + 
+                       registrosAreaProdutoVegetalConsorcioRotacao.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) +
+                       totalEfetivoPecuario * obterIndicePecuaria(1)) / totalGrauUtilizacaoTerra) * 100 | number:'1.2-2' }}
                 </br-table-cell>
 
             </br-table-row>
@@ -3282,7 +3287,9 @@
                 </br-table-cell>
 
                 <br-table-cell>
-                    {{ formatGrauUtilizacaoTerra() > 80 ? 'Produtivo' : 'Improdutivo' }}
+                    {{ ((registrosAreaProdutoVegetal.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) + 
+                       registrosAreaProdutoVegetalConsorcioRotacao.reduce((total, registro) => total + (registro.quantidadeColhida * registro.rendimento || 0),0) +
+                       totalEfetivoPecuario * obterIndicePecuaria(1)) / totalGrauUtilizacaoTerra) * 100 >= 100 ? 'Produtivo' : 'Improdutivo' }}
                 </br-table-cell>
             </br-table-row>
         </br-table>
@@ -3521,10 +3528,10 @@
                     </br-input>
                 </br-table-cell>
 
-                <br-table-cell>
+                <br-table-cell>         
                     <br-select options='[
                             { "label": "Com carteira", "value": "1", "selected": false },
-                            { "label": "Sem carteira": "2", "selected": false },
+                            { "label": "Sem carteira", "value": "2", "selected": false },
                             { "label": "Contrato de experiência", "value": "3", "selected": false }
                         ]'>
                     </br-select>
@@ -3585,6 +3592,32 @@
         </div>
 
         <br-table [hidden]="tipoCalculoCapacidadeFamilias != 'Pela Área e Módulo Fiscal'">
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" style="width: 40%;">
+
+                <br-table-cell>
+                    <b>Área aproveitável total (ATT)</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    850
+                </br-table-cell>
+
+            </br-table-row>
+
+            <!-- LINHAS -->
+            <br-table-row slot="row" style="width: 40%;">
+
+                <br-table-cell>
+                    <b>Módulos Fiscais (MF)</b>
+                </br-table-cell>
+
+                <br-table-cell>
+                    673
+                </br-table-cell>
+
+            </br-table-row>
 
             <!-- LINHAS -->
             <br-table-row slot="row" style="width: 40%;">
@@ -3959,11 +3992,10 @@
         <h3>Anexos</h3>
         <div class="row mt-3 mb-3">
             <div class="col-12">
-                <quill-editor theme="snow" class="editor-full"
-                    placeholder="Listagem de anexos do laudo.">
+                <quill-editor theme="snow" class="editor-full" placeholder="Listagem de anexos do laudo.">
                 </quill-editor>
             </div>
-        </div>    
+        </div>
     </br-tab-item>
 </br-tab>
 
